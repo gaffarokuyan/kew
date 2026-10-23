@@ -79,3 +79,22 @@ export function Avatar({ name, size = 40 }: { name: string; size?: number }) {
     </Svg>
   );
 }
+
+/** Course badge: the Kurdish tricolour with the 21-ray sun. */
+export function Flag({ w = 34 }: { w?: number }) {
+  const rays = 21, r1 = 3.4, r2 = 6.2, pts: string[] = [];
+  for (let i = 0; i < rays; i++) {
+    const a = (i / rays) * Math.PI * 2 - Math.PI / 2, b = a + (Math.PI / rays) * 0.6, c = a - (Math.PI / rays) * 0.6;
+    const p = (ang: number, r: number) => `${(15 + Math.cos(ang) * r).toFixed(2)},${(10 + Math.sin(ang) * r).toFixed(2)}`;
+    pts.push(`${p(a, r2)} ${p(b, r1)} ${p(c, r1)}`);
+  }
+  return (
+    <Svg width={w} height={(w * 2) / 3} viewBox="0 0 30 20">
+      <Rect x={0} y={0} width={30} height={20} rx={3} fill="#fff" />
+      <Path d="M3 0h24a3 3 0 0 1 3 3v3.67H0V3a3 3 0 0 1 3-3Z" fill="#ed2024" />
+      <Path d="M0 13.33h30V17a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3Z" fill="#278e43" />
+      <G fill="#febd11">{pts.map((p, i) => <Polygon key={i} points={p} />)}<Circle cx={15} cy={10} r={3.6} /></G>
+      <Rect x={0.5} y={0.5} width={29} height={19} rx={2.6} fill="none" stroke="rgba(0,0,0,0.12)" />
+    </Svg>
+  );
+}

@@ -1,9 +1,10 @@
 import { router } from "expo-router";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Circle, Text as SvgText } from "react-native-svg";
-import { sfx } from "@/lib/audio";
-import { t } from "@/lib/i18n";
-import { learned, update, useS, wordStrength } from "@/lib/store";
+import { speak, sfx } from "@/lib/audio";
+import { SAYINGS } from "@/lib/course";
+import { M, t, up } from "@/lib/i18n";
+import { day, learned, update, useS, wordStrength } from "@/lib/store";
 import { Icon } from "@/ui/icons";
 import { Btn, confetti, Meter, toast } from "@/ui/kit";
 import { F, useTheme } from "@/ui/theme";
@@ -21,7 +22,7 @@ function Ring({ p }: { p: number }) {
 
 export default function Practice() {
   const th = useTheme(); const s = useS(); const lw = learned(s); const weak = lw.filter((k) => wordStrength(k, s) < 3);
-  const d = s.daily;
+  const d = s.daily; const say = SAYINGS[Math.floor(new Date(day() + "T12:00").getTime() / 864e5) % SAYINGS.length];
   const quests = [
     { id: "xp", tx: t("qXp", { n: s.goal }), v: d.xp, max: s.goal, g: 10, ic: <Icon.bolt size={26} color={th.zer} /> },
     { id: "les", tx: t("qLessons"), v: d.lessons, max: 2, g: 15, ic: <Icon.target size={26} color={th.sor} /> },
@@ -38,6 +39,11 @@ export default function Practice() {
     <ScrollView style={{ backgroundColor: th.bg }} contentContainerStyle={{ padding: 16, gap: 16, maxWidth: 560, width: "100%", alignSelf: "center" }}>
       <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: 30, color: th.ink }}>{t("practice")}</Text>
       <Text style={{ fontFamily: F.body, color: th.muted, marginTop: -10 }}>{t("practiceLead")}</Text>
+      <Pressable onPress={() => speak(say[0])} accessibilityRole="button" style={[card, { backgroundColor: th.zerSoft, borderColor: th.zer, gap: 4 }]}>
+        <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, letterSpacing: 1.4, color: th.zerDeep }}>{up(t("saying"))}</Text>
+        <Text style={{ fontFamily: F.bodyHeavy, fontSize: 18, color: th.ink }}>{say[0]}</Text>
+        <Text style={{ fontFamily: F.body, color: th.muted }}>{M(say[1])}</Text>
+      </Pressable>
       <View style={[card, { flexDirection: "row", alignItems: "center", gap: 16 }]}>
         <Ring p={d.xp / s.goal} />
         <View><Text style={{ fontFamily: F.display, fontSize: 20, color: th.ink }}>{t("dailyGoal")}</Text><Text style={{ fontFamily: F.body, color: th.muted }}>{d.xp} / {s.goal} XP · {t("lessonsN", { n: d.lessons })}</Text></View>

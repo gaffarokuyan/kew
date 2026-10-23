@@ -202,9 +202,13 @@ function KewSays({ text, voice = true }: { text: string; voice?: boolean }) {
   return (
     <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 8 }}>
       <Kew size={96} />
-      <View style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 10, padding: 14, borderRadius: 18, borderWidth: 2, borderColor: th.line, backgroundColor: th.surface, marginBottom: 20 }}>
-        {voice && hasAudio(text) ? <Spk text={text} size={40} /> : null}
-        <Text style={{ flex: 1, fontFamily: F.bodyHeavy, fontSize: 19, color: th.ink }}>{text}</Text>
+      <View style={{ flex: 1, marginBottom: 24 }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 10, padding: 14, borderRadius: 18, borderWidth: 2, borderColor: th.line, backgroundColor: th.surface }}>
+          {voice && hasAudio(text) ? <Spk text={text} size={40} /> : null}
+          <Text style={{ flex: 1, fontFamily: F.bodyHeavy, fontSize: 19, color: th.ink }}>{text}</Text>
+        </View>
+        {/* speech-bubble tail pointing at Kew */}
+        <View style={{ position: "absolute", left: -7, bottom: 18, width: 14, height: 14, backgroundColor: th.surface, borderLeftWidth: 2, borderBottomWidth: 2, borderColor: th.line, transform: [{ rotate: "45deg" }] }} />
       </View>
     </View>
   );

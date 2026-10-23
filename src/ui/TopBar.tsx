@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
 import { t, tArr } from "@/lib/i18n";
 import { day, dayAdd, HEART_MS, MAXH, update, useS } from "@/lib/store";
-import { Sun } from "./art";
+import { Flag } from "./art";
 import { Icon } from "./icons";
 import { Btn, Sheet, toast } from "./kit";
 import { F, useTheme } from "./theme";
@@ -31,10 +31,8 @@ export function TopBar() {
   const buy = (cost: number, fn: () => void, msg: string) => { if (s.gems < cost) return toast(t("notEnough")); update((x) => { x.gems -= cost; fn(); }); sfx("chest"); setShop(false); toast(msg); };
   return (
     <View style={{ paddingTop: ins.top, backgroundColor: th.bg, borderBottomWidth: 2, borderColor: th.line }}>
-      <View style={{ height: 56, flexDirection: "row", alignItems: "center", paddingHorizontal: 14, gap: 2 }}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 6, flex: 1 }}>
-          <Sun size={30} /><Text style={{ fontFamily: F.display, fontSize: 24, color: th.ink }}>Kew</Text>
-        </View>
+      <View style={{ height: 58, flexDirection: "row", alignItems: "center", paddingHorizontal: 14, gap: 10 }}>
+        <View style={{ flex: 1, alignItems: "flex-start" }}><View style={{ padding: 6, borderRadius: 10, borderWidth: 2, borderColor: th.line }}><Flag w={30} /></View></View>
         <Stat onPress={() => setStreak(true)} label={t("streakAria", { n: s.streak })}><Icon.fire size={22} color={s.last === day() ? "#ff8a1f" : th.faint} />{num(s.streak, s.last === day() ? "#ff8a1f" : th.faint)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("gemsAria", { n: s.gems })}><Icon.gem size={22} color={th.sky} />{num(s.gems, th.sky)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("heartsAria", { n: s.hearts })}><Icon.heart size={22} color={th.sor} />{num(s.hearts, th.sor)}</Stat>
