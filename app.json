@@ -54,6 +54,12 @@
     "backgroundColor": "#f3f6f2",
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1841a0df-2601-4531-97a5-694b017734cb"
+      }
+    },
+    "owner": "gaffardevs-team"
   }
 }
