@@ -7,11 +7,11 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "bundleIdentifier": "com.okuyanstudio.kew",
+      "bundleIdentifier": "com.okuyanstudio.jujilang",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.okuyanstudio.kew",
+      "package": "com.okuyanstudio.jujilang",
       "edgeToEdgeEnabled": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/android-icon-foreground.png",
