@@ -32,9 +32,9 @@ export function TopBar() {
   return (
     <View style={{ paddingTop: ins.top, backgroundColor: th.bg, borderBottomWidth: 1, borderColor: th.line }}>
       <View style={{ height: 58, flexDirection: "row", alignItems: "center", paddingHorizontal: 12, gap: 2, maxWidth: 640, width: "100%", alignSelf: "center" }}>
-        <View style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 6, paddingLeft: 4 }} accessible accessibilityRole="header" accessibilityLabel="Kew">
+        <View style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 6, paddingLeft: 4 }} accessible accessibilityRole="header" accessibilityLabel="JujiLang">
           <Sun size={20} color={th.zer} />
-          <Text style={{ fontFamily: F.italicBold, fontSize: 26, lineHeight: 30, color: th.ink, letterSpacing: -0.4 }}>Kew</Text>
+          <Text style={{ fontFamily: F.italicBold, fontSize: 26, lineHeight: 30, color: th.ink, letterSpacing: -0.4 }}>JujiLang</Text>
         </View>
         <Stat onPress={() => setStreak(true)} label={t("streakAria", { n: s.streak })}><Icon.fire size={22} color={s.last === day() ? th.fire : th.faint} />{num(s.streak, s.last === day() ? th.fire : th.muted)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("gemsAria", { n: s.gems })}><Icon.gem size={21} color={th.sky} />{num(s.gems, th.skyDeep)}</Stat>
