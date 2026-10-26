@@ -1,4 +1,4 @@
-# JujiLang (maskot: Kew) — Kurmancî (native)
+# Juji (maskot: Juji kirpi) — Kurmancî (native)
 
 Expo SDK 58 · React Native 0.88 · Expo Router · expo-audio · Reanimated · react-native-svg
 

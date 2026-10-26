@@ -51,7 +51,7 @@ export default function Onboarding() {
             <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 6 }}>
               <Juji size={124} />
               <View style={{ flex: 1, paddingBottom: 14 }}>
-                <Text accessibilityRole="header" style={{ fontFamily: F.italicBold, fontSize: 64, lineHeight: 68, color: th.ink, letterSpacing: -1 }}>JujiLang</Text>
+                <Text accessibilityRole="header" style={{ fontFamily: F.italicBold, fontSize: 64, lineHeight: 68, color: th.ink, letterSpacing: -1 }}>Juji</Text>
                 <Text style={{ fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>Kurmancî</Text>
               </View>
             </View>
