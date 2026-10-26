@@ -2,6 +2,7 @@ import { useState } from "react";
 import Svg, { Circle, Ellipse, G, Path, Polygon, Rect } from "react-native-svg";
 import { Text, View, type StyleProp, type ViewStyle } from "react-native";
 import { CHARS } from "@/lib/course";
+import { jujiNodes, type JNode } from "./jujiArt";
 import { useTheme } from "./theme";
 
 export function Sun({ size = 34, color }: { size?: number; color?: string }) {
@@ -18,29 +19,20 @@ export function Sun({ size = 34, color }: { size?: number; color?: string }) {
   );
 }
 
-export function Kew({ size = 120, sad = false }: { size?: number; sad?: boolean }) {
-  const th = useTheme();
+const JUJI = { happy: jujiNodes(false), sad: jujiNodes(true) };
+function jNode(n: JNode, k: number): React.ReactElement {
+  const { p } = n;
+  if (n.t === "circle") return <Circle key={k} {...p} />;
+  if (n.t === "ellipse") return <Ellipse key={k} {...p} />;
+  if (n.t === "g") return <G key={k} {...p}>{n.c?.map(jNode)}</G>;
+  return <Path key={k} d={String(p.d)} {...p} />;
+}
+
+/** Juji, the app's hedgehog mascot ("jûjî" in Kurmancî). Artwork lives in jujiArt.ts. */
+export function Juji({ size = 120, sad = false }: { size?: number; sad?: boolean }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 120 120">
-      <Ellipse cx={60} cy={111} rx={30} ry={5} fill={th.shadow} />
-      <Path d="M24 70 Q10 64 14 52 Q24 60 32 60Z" fill="#8c98a6" />
-      <Ellipse cx={58} cy={76} rx={38} ry={30} fill="#aeb9c6" />
-      <Ellipse cx={66} cy={86} rx={25} ry={18} fill="#efe2c9" />
-      <G strokeLinecap="round" strokeWidth={4.5} fill="none">
-        <Path d="M34 68 q4 8 2 16" stroke="#2a2a2a" /><Path d="M40 66 q4 8 2 17" stroke="#b5562a" />
-        <Path d="M46 65 q4 9 2 18" stroke="#2a2a2a" /><Path d="M52 66 q4 9 2 17" stroke="#b5562a" />
-      </G>
-      <Circle cx={72} cy={40} r={22} fill="#aeb9c6" />
-      <Ellipse cx={78} cy={46} rx={13} ry={12} fill="#f7eedc" />
-      <Path d="M58 36 Q72 31 90 38" fill="none" stroke="#1d1d1d" strokeWidth={4.5} strokeLinecap="round" />
-      <Path d="M90 38 Q86 56 66 60" fill="none" stroke="#1d1d1d" strokeWidth={4.5} strokeLinecap="round" />
-      {sad ? (
-        <Path d="M74 39 q5 -3 10 0" stroke="#1d1d1d" strokeWidth={3} fill="none" strokeLinecap="round" />
-      ) : (
-        <G><Circle cx={79} cy={38} r={6.5} fill="#d2342c" /><Circle cx={79.5} cy={38} r={4} fill="#1d1d1d" /><Circle cx={81} cy={36.6} r={1.4} fill="#fff" /></G>
-      )}
-      <Path d="M91 40 L103 45 L91 50 Q88 45 91 40Z" fill="#d2342c" />
-      <Path d="M50 103 v8 M50 111 h-5 M50 111 h5 M66 103 v8 M66 111 h-5 M66 111 h5" stroke="#d2342c" strokeWidth={3.5} strokeLinecap="round" />
+    <Svg width={size} height={size} viewBox="0 0 120 120" accessibilityLabel="Juji" importantForAccessibility="no-hide-descendants">
+      {(sad ? JUJI.sad : JUJI.happy).map(jNode)}
     </Svg>
   );
 }
@@ -62,7 +54,7 @@ export function Chest({ size = 80, open = false, lock = false }: { size?: number
 }
 
 export function Avatar({ name, size = 40 }: { name: string; size?: number }) {
-  if (name === "Kew") return <View style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: "#e8eef3", alignItems: "center", justifyContent: "center", overflow: "hidden" }}><Kew size={size * 1.1} /></View>;
+  if (name === "Juji") return <View style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: "#F3E3C4", alignItems: "center", justifyContent: "center", overflow: "hidden" }}><Juji size={size * 1.12} /></View>;
   if (name === "Rovî") return <View style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: "#ffe6cf", alignItems: "center", justifyContent: "center" }}><Text style={{ fontSize: size * 0.6 }}>🦊</Text></View>;
   const c = CHARS[name] || { c: "#1f8a4c", hair: "#333", g: "m" };
   return (

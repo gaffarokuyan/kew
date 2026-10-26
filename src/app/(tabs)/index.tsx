@@ -8,7 +8,7 @@ import { NODES, SECTIONS, UNIQUE, UNIT, UNITS, type Level, type NodeT, type Unit
 import { M, t } from "@/lib/i18n";
 import { nodeTitle } from "@/lib/nodes";
 import { firstOpen, isDone, unlocked, update, useS } from "@/lib/store";
-import { Chest, Diamond, Kew, KilimRule, Medallion } from "@/ui/art";
+import { Chest, Diamond, Juji, KilimRule, Medallion } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
 import { Btn, confetti, Sheet, Spk, toast } from "@/ui/kit";
@@ -116,7 +116,7 @@ export default function Learn() {
     return (
       <View style={{ height: H.end, alignItems: "center", justifyContent: "center", gap: 10 }}>
         <KilimRule color={th.zer} h={10} seed={41} style={{ width: 160, alignSelf: "center" }} />
-        <Kew size={96} />
+        <Juji size={96} />
         <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t("pathEnd", { u: UNITS.length, n: NODES.length, w: UNIQUE })}</Text>
       </View>
     );
@@ -216,7 +216,7 @@ function NodeSheets({ sheet, close }: { sheet: null | { type: string; id: string
         <Text style={{ fontFamily: F.display, fontSize: TS.xl + 2, color: th.ink, textAlign: "center" }}>{t("gemsWon", { n: sheet.gems! })}</Text>
         <Text style={{ fontFamily: F.body, color: th.muted, textAlign: "center" }}>{t("chestText")}</Text>
         <View style={{ flexDirection: "row", gap: 12, alignItems: "center", padding: 12, borderRadius: 14, borderTopLeftRadius: 4, backgroundColor: alpha(ucol(u.col, th), 0.13) }}>
-          <Kew size={56} />
+          <Juji size={56} />
           <View style={{ flex: 1 }}><Text style={{ fontFamily: F.serif, fontSize: TS.md + 1, color: th.ink }}>{t("unitDone", { u: u.ku })}</Text><Text style={{ fontFamily: F.body, color: th.muted, fontSize: 13 }}>{t("unitDoneText")}</Text></View>
         </View>
         <Btn title={t("cont")} onPress={close} />

@@ -4,7 +4,7 @@ import Svg, { Line, Rect, Text as SvgText } from "react-native-svg";
 import { LEVELS, NODES, SECTIONS, UNIT, UNITS } from "@/lib/course";
 import { LANGS, t, t2, tArr } from "@/lib/i18n";
 import { day, dayAdd, getS, learned, useS, type State } from "@/lib/store";
-import { Diamond, Kew, KilimRule } from "@/ui/art";
+import { Diamond, Juji, KilimRule } from "@/ui/art";
 import { Icon } from "@/ui/icons";
 import { Btn, H2, Meter } from "@/ui/kit";
 import { F, levelCol, TS, useTheme } from "@/ui/theme";
@@ -51,7 +51,7 @@ export default function Profile() {
       <View style={{ flexDirection: "row", alignItems: "center", gap: 14 }}>
         <View style={{ width: 88, height: 88, alignItems: "center", justifyContent: "center" }}>
           <View style={{ position: "absolute", width: 66, height: 66, borderRadius: 14, transform: [{ rotate: "45deg" }], backgroundColor: th.keskSoft }} />
-          <View><Kew size={84} /></View>
+          <View><Juji size={84} /></View>
         </View>
         <View style={{ flex: 1 }}>
           <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: TS.xxl, lineHeight: 38, color: th.ink }}>{t("learner")}</Text>

@@ -8,7 +8,7 @@ import { NODE, NODES, UNIT, UNITS, WORD } from "@/lib/course";
 import { buildEx, genJump, genLearn, genReview, genSent, lev, mean, norm, pick, shuffle, type Ex, type W } from "@/lib/exercises";
 import { M, t, tArr, locale } from "@/lib/i18n";
 import { addXP, day, dayAdd, getS, learned, markWord, MAXH, update, useS, wordStrength } from "@/lib/store";
-import { Kew, KilimRule, Medallion, Sun } from "@/ui/art";
+import { Juji, KilimRule, Medallion, Sun } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
 import { Btn, confetti, Lead, Pic, Sheet, Spk, Title } from "@/ui/kit";
@@ -150,7 +150,7 @@ export default function Lesson() {
         <Footer e={e} verdict={verdict} answer={answer} combo={combo} onCheck={() => answer && judge(answer.get())} onNext={next} bottom={ins.bottom} />
       </KeyboardAvoidingView>
       <Sheet visible={quit} center onClose={() => setQuit(false)}>
-        <View style={{ alignItems: "center" }}><Kew size={110} sad /></View>
+        <View style={{ alignItems: "center" }}><Juji size={110} sad /></View>
         <Text style={{ fontFamily: F.display, fontSize: TS.xl, color: th.ink, textAlign: "center" }}>{t("quitQ")}</Text>
         <Text style={{ fontFamily: F.body, color: th.muted, textAlign: "center" }}>{t("quitText")}</Text>
         <Btn title={t("keepGoing")} onPress={() => setQuit(false)} />
@@ -205,17 +205,17 @@ function Kind({ icon, label, color }: { icon: React.ReactNode; label: string; co
 }
 function Q({ children }: { children: React.ReactNode }) { const th = useTheme(); return <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: 29, lineHeight: 34, color: th.ink, letterSpacing: -0.2 }}>{children}</Text>; }
 
-function KewSays({ text, voice = true }: { text: string; voice?: boolean }) {
+function JujiSays({ text, voice = true }: { text: string; voice?: boolean }) {
   const th = useTheme();
   return (
     <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 8 }}>
-      <Kew size={96} />
+      <Juji size={96} />
       <View style={{ flex: 1, marginBottom: 24 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10, padding: 14, borderRadius: 16, borderBottomLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface }}>
           {voice && hasAudio(text) ? <Spk text={text} size={40} /> : null}
           <Text style={{ flex: 1, fontFamily: voice ? F.serif : F.bodyHeavy, fontSize: voice ? 22 : 19, lineHeight: voice ? 27 : 25, color: th.ink }}>{text}</Text>
         </View>
-        {/* speech-bubble tail pointing at Kew */}
+        {/* speech-bubble tail pointing at Juji */}
         <View style={{ position: "absolute", left: -6, bottom: 10, width: 12, height: 12, backgroundColor: th.surface, borderLeftWidth: 1.5, borderBottomWidth: 1.5, borderColor: th.line2, transform: [{ rotate: "45deg" }] }} />
       </View>
     </View>
@@ -271,7 +271,7 @@ function Choice({ e, locked, verdict, setAnswer }: P<"mc" | "mcr" | "listen">) {
   useEffect(() => { setAnswer({ val: sel, get: () => ({ ok: norm(sel!) === norm(correct), ans: correct, mean: e.t === "mcr" ? null : mean(w), ku: w.ku }) }); }, [sel]);
   return (<>
     {e.t === "mc" && <><Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("howSay")} /><Q>{t("howSayQ", { w: mean(w) })}</Q></>}
-    {e.t === "mcr" && <><Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("whatMeans")} /><KewSays text={w.ku} /></>}
+    {e.t === "mcr" && <><Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("whatMeans")} /><JujiSays text={w.ku} /></>}
     {e.t === "listen" && <><Kind icon={<Icon.ear size={18} color={th.keskDeep} />} label={t("hearSelect")} />
       <View style={{ flexDirection: "row", justifyContent: "center", gap: 14, paddingVertical: 10 }}><Spk text={w.ku} size={84} /><Spk text={w.ku} slow size={60} /></View></>}
     <View style={{ gap: 10 }}>
@@ -356,7 +356,7 @@ function Build({ e, locked, setAnswer }: P<"build">) {
     </Pressable>);
   return (<>
     <Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={e.rev ? t("toBase") : t("toKu")} />
-    <KewSays text={e.prompt} voice={!!e.rev} />
+    <JujiSays text={e.prompt} voice={!!e.rev} />
     <View style={{ minHeight: 120, flexDirection: "row", flexWrap: "wrap", alignContent: "flex-start", gap: 8, paddingVertical: 10, backgroundColor: "transparent" }}>
       <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: 62, height: 1.5, backgroundColor: th.line2 }} />
       <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, bottom: 2, height: 1.5, backgroundColor: th.line2 }} />
@@ -417,12 +417,12 @@ function ResultView({ phase, practice, kind, jumpUnit, close, setPhase }: { phas
     </SafeAreaView>);
 
   if (phase.p === "fail") return wrap(<>
-    <Kew size={140} sad /><Title>{t("failTitle")}</Title><Lead>{t("failText")}</Lead>
+    <Juji size={140} sad /><Title>{t("failTitle")}</Title><Lead>{t("failText")}</Lead>
     <Btn title={t("practiceHeart")} kind="sky" onPress={() => router.replace({ pathname: "/lesson", params: { practice: "weak" } })} style={{ alignSelf: "stretch" }} />
     <Btn title={t("home")} kind="ghost" onPress={close} style={{ alignSelf: "stretch" }} />
   </>);
-  if (phase.p === "jumpFail") return wrap(<><Kew size={140} sad /><Title>{t("jumpFail")}</Title><Lead>{t("jumpFailText")}</Lead><Btn title={t("home")} onPress={close} style={{ alignSelf: "stretch" }} /></>);
-  if (phase.p === "jumpPass") return wrap(<><Kew size={140} /><Title>{t("jumpPass")}</Title><Lead>{t("jumpPassText", { u: UNIT[jumpUnit!].ku })}</Lead><Btn title={t("contOn")} onPress={close} style={{ alignSelf: "stretch" }} /></>);
+  if (phase.p === "jumpFail") return wrap(<><Juji size={140} sad /><Title>{t("jumpFail")}</Title><Lead>{t("jumpFailText")}</Lead><Btn title={t("home")} onPress={close} style={{ alignSelf: "stretch" }} /></>);
+  if (phase.p === "jumpPass") return wrap(<><Juji size={140} /><Title>{t("jumpPass")}</Title><Lead>{t("jumpPassText", { u: UNIT[jumpUnit!].ku })}</Lead><Btn title={t("contOn")} onPress={close} style={{ alignSelf: "stretch" }} /></>);
   if (phase.p === "streak") {
     const days = [...Array(7)].map((_, i) => dayAdd(day(), i - 6));
     return wrap(<>

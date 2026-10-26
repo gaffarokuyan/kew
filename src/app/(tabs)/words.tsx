@@ -5,7 +5,7 @@ import { UNITS } from "@/lib/course";
 import { norm } from "@/lib/exercises";
 import { M, t } from "@/lib/i18n";
 import { learned, useS, wordStrength } from "@/lib/store";
-import { Diamond, Kew, KilimRule } from "@/ui/art";
+import { Diamond, Juji, KilimRule } from "@/ui/art";
 import { PageHead, Spk } from "@/ui/kit";
 import { F, TS, ucol, useTheme } from "@/ui/theme";
 
@@ -18,7 +18,7 @@ export default function Words() {
   }, [q, s]);
   if (!lw.size) return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 24, gap: 14, backgroundColor: th.bg }}>
-      <Kew size={120} />
+      <Juji size={120} />
       <KilimRule color={th.line2} accent={th.zer} h={10} seed={3} style={{ width: 140, alignSelf: "center" }} />
       <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t("wordsEmpty")}</Text>
     </View>

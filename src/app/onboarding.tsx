@@ -7,7 +7,7 @@ import { sfx } from "@/lib/audio";
 import { LEVELS, levelFirstUnit, UNITS, type Level } from "@/lib/course";
 import { LANGS, T, t, t2, tArr } from "@/lib/i18n";
 import { type Lang, update, useS } from "@/lib/store";
-import { Diamond, Kew, KilimRule, Medallion } from "@/ui/art";
+import { Diamond, Juji, KilimRule, Medallion } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Btn, Lead, Title, toast } from "@/ui/kit";
 import { F, levelCol, TS, useTheme } from "@/ui/theme";
@@ -49,7 +49,7 @@ export default function Onboarding() {
         <Animated.View key={step} entering={FadeInDown.duration(320)} style={{ width: "100%", maxWidth: 440, alignSelf: "center", gap: 18 }}>
           {step === 0 && <>
             <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 6 }}>
-              <Kew size={124} />
+              <Juji size={124} />
               <View style={{ flex: 1, paddingBottom: 14 }}>
                 <Text accessibilityRole="header" style={{ fontFamily: F.italicBold, fontSize: 64, lineHeight: 68, color: th.ink, letterSpacing: -1 }}>JujiLang</Text>
                 <Text style={{ fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>Kurmancî</Text>
@@ -71,7 +71,7 @@ export default function Onboarding() {
             </View>
           </>}
           {step === 1 && <>
-            <Kew size={140} />
+            <Juji size={140} />
             <Title align="left" size={40}>{t("onbHi")}</Title>
             <Lead align="left">{t("onbHiText")}</Lead>
             <KilimRule color={th.kesk} accent={th.zer} h={12} seed={5} />
