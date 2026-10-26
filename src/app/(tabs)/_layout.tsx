@@ -1,11 +1,13 @@
 import { Tabs } from "expo-router";
-import { Pressable, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
 import { t, useLang } from "@/lib/i18n";
 import { Icon } from "@/ui/icons";
 import { TopBar } from "@/ui/TopBar";
-import { useTheme } from "@/ui/theme";
+import { Diamond } from "@/ui/art";
+import { buzz } from "@/ui/haptics";
+import { F, useTheme } from "@/ui/theme";
 
 const TABS = [
   { name: "index", label: "learn", icon: Icon.path },
@@ -20,13 +22,15 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{ header: () => <TopBar />, sceneStyle: { backgroundColor: th.bg } }}
       tabBar={({ state, navigateToTab }) => (
-        <View style={{ flexDirection: "row", gap: 6, paddingHorizontal: 10, paddingTop: 8, paddingBottom: 8 + ins.bottom, backgroundColor: th.bg, borderTopWidth: 2, borderColor: th.line }}>
+        <View style={{ flexDirection: "row", paddingHorizontal: 8, paddingTop: 4, paddingBottom: 6 + ins.bottom, backgroundColor: th.bg, borderTopWidth: 1, borderColor: th.line }}>
           {state.routes.map((r, i) => {
             const on = state.index === i; const tab = TABS.find((x) => x.name === r.name)!; const Ic = tab.icon;
             return (
-              <Pressable key={r.key} onPress={() => { sfx("tap"); if (!on) navigateToTab(r.key); }} accessibilityRole="tab" accessibilityLabel={t(tab.label)} accessibilityState={{ selected: on }}
-                style={{ flex: 1, alignItems: "center", justifyContent: "center", height: 52, borderRadius: 14, borderWidth: 2, borderColor: on ? th.sky : "transparent", backgroundColor: on ? th.skySoft : "transparent" }}>
-                <Ic size={30} color={on ? th.sky : th.faint} />
+              <Pressable key={r.key} onPress={() => { sfx("tap"); if (!on) { buzz("select"); navigateToTab(r.key); } }} accessibilityRole="tab" accessibilityLabel={t(tab.label)} accessibilityState={{ selected: on }}
+                style={({ pressed }) => ({ flex: 1, alignItems: "center", justifyContent: "center", minHeight: 56, gap: 2, opacity: pressed ? 0.7 : 1 })}>
+                <View style={{ height: 8, justifyContent: "center" }}>{on ? <Diamond size={8} color={th.zer} /> : null}</View>
+                <Ic size={26} color={on ? th.ink : th.faint} bg={th.bg} />
+                <Text style={{ fontFamily: on ? F.bodyHeavy : F.body, fontSize: 12, color: on ? th.ink : th.muted }}>{t(tab.label)}</Text>
               </Pressable>
             );
           })}

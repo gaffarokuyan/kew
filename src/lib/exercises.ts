@@ -1,5 +1,6 @@
 import { ALLWORDS, NODE, UNIT, UNITS, WORD, type NodeT, type SentRow, type Unit, type Word } from "./course";
 import { M, locale } from "./i18n";
+import { hasAudio } from "./audio";
 
 export type W = { ku: string; m: string; pic: string | null; unit?: string };
 export type Ex =
@@ -57,11 +58,12 @@ export function genLearn(n: NodeT, voice: boolean, known: Record<string, unknown
   const picd = fresh.concat(prev).filter((w) => w.pic);
   if (picd.length) { const w = pick(picd, 1)[0], others = pick(pool.filter((x) => x.pic && x.ku !== w.ku), 3); if (others.length >= 2) ex.push({ t: "pic", w, cards: shuffle([w, ...others]) }); }
   const mixd = shuffle(fresh.concat(pick(prev, 2)));
-  if (voice) mixd.slice(0, 2).forEach((w) => ex.push(lsEx(w, pool)));
+  if (voice) mixd.filter((w) => hasAudio(w.ku)).slice(0, 2).forEach((w) => ex.push(lsEx(w, pool)));
   mixd.slice(2, 4).forEach((w) => ex.push(mcrEx(w, pool)));
   const mp = fresh.concat(prev); if (mp.length >= 4) ex.push({ t: "match", pairs: pick(mp, Math.min(5, mp.length)) });
   if (a > 0 || u.words.length <= 5) ex.push(buildEx(pick(u.sents, 1)[0], u));
-  if (voice && fresh.length) ex.push({ t: "type", w: pick(fresh, 1)[0] });
+  const heard = fresh.filter((w) => hasAudio(w.ku));
+  if (voice && heard.length) ex.push({ t: "type", w: pick(heard, 1)[0] });
   return head.concat(shuffle(ex));
 }
 export function genSent(n: NodeT, voice: boolean): Ex[] {
@@ -74,7 +76,8 @@ export function genSent(n: NodeT, voice: boolean): Ex[] {
       ex.push({ t: "fill", s, j: c.j, opts: shuffle([c.c, ...distract(w, "ku", pool, 2)]), ans: c.c });
     }
   });
-  if (voice) { const s = pick(u.sents, 1)[0]; ex.push({ t: "type", w: { ku: s[0], m: s[1], pic: null } }); }
+  const hs = u.sents.filter((s) => hasAudio(s[0]));
+  if (voice && hs.length) { const s = pick(hs, 1)[0]; ex.push({ t: "type", w: { ku: s[0], m: s[1], pic: null } }); }
   ex.push({ t: "match", pairs: pick(pool, Math.min(5, pool.length)) });
   return shuffle(ex).slice(0, 12);
 }
@@ -82,9 +85,9 @@ export function genReview(keys: string[], voice: boolean, listenOnly = false, n 
   const ex: Ex[] = []; const ws = keys.map((k) => WORD[k]).filter(Boolean) as Word[];
   ws.forEach((w, i) => {
     const pool = ALLWORDS.filter((x) => x.unit === w.unit) as W[];
-    if (listenOnly) { ex.push(i % 2 && voice ? { t: "type", w } : lsEx(w, pool)); return; }
+    if (listenOnly) { if (!hasAudio(w.ku)) { ex.push(mcrEx(w, pool)); return; } ex.push(i % 2 && voice ? { t: "type", w } : lsEx(w, pool)); return; }
     const r = i % 4, pics = pool.filter((x) => x.pic && x.ku !== w.ku);
-    ex.push(r === 0 ? mcEx(w, pool) : r === 2 && voice ? lsEx(w, pool) : r === 3 && w.pic && pics.length >= 2 ? { t: "pic", w, cards: shuffle([w, ...pick(pics, 3)]) } : mcrEx(w, pool));
+    ex.push(r === 0 ? mcEx(w, pool) : r === 2 && voice && hasAudio(w.ku) ? lsEx(w, pool) : r === 3 && w.pic && pics.length >= 2 ? { t: "pic", w, cards: shuffle([w, ...pick(pics, 3)]) } : mcrEx(w, pool));
   });
   if (!listenOnly && ws.length >= 4) ex.push({ t: "match", pairs: pick(ws, Math.min(5, ws.length)) });
   return shuffle(ex).slice(0, n);

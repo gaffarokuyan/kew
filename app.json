@@ -42,16 +42,16 @@
         {
           "image": "./assets/splash-icon.png",
           "imageWidth": 200,
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#F7F5F0",
           "dark": {
-            "backgroundColor": "#131f24"
+            "backgroundColor": "#161A2B"
           }
         }
       ],
       "expo-status-bar"
     ],
     "scheme": "kew",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#F7F5F0",
     "experiments": {
       "typedRoutes": true
     },

@@ -1,4 +1,4 @@
-import { Baloo2_600SemiBold, Baloo2_800ExtraBold } from "@expo-google-fonts/baloo-2";
+import { Alegreya_500Medium_Italic, Alegreya_700Bold, Alegreya_700Bold_Italic, Alegreya_800ExtraBold } from "@expo-google-fonts/alegreya";
 import { Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold, useFonts } from "@expo-google-fonts/nunito";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
@@ -19,7 +19,7 @@ SplashScreen.preventAutoHideAsync().catch(() => {});
 export default function RootLayout() {
   const th = useTheme();
   const [ready, setReady] = useState(false);
-  const [fonts] = useFonts({ Baloo2_600SemiBold, Baloo2_800ExtraBold, Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold });
+  const [fonts] = useFonts({ Alegreya_500Medium_Italic, Alegreya_700Bold, Alegreya_700Bold_Italic, Alegreya_800ExtraBold, Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold });
 
   useEffect(() => {
     (async () => {

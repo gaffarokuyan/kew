@@ -8,7 +8,8 @@ export type Unit = {
   id: string; ku: string; col: string; name: Meaning; words: WordRow[]; sents: SentRow[];
   tips?: [string, Meaning][]; note?: Meaning; story?: { title: string; lines: StoryLine[] }; si: number;
 };
-export type Section = { lvl: "A1" | "A2"; name: Meaning; sub: Meaning; units: Omit<Unit, "si">[] };
+export type Level = "A1" | "A2" | "B1";
+export type Section = { lvl: Level; name: Meaning; sub: Meaning; units: Omit<Unit, "si">[] };
 export type Char = { c: string; hair: string; g: "m" | "f"; scarf?: string; moust?: number };
 export type NodeT = { id: string; unit: string; ui: number; type: "learn" | "sent" | "story" | "chest"; range?: [number, number]; k?: number };
 export type Word = { ku: string; m: Meaning; pic: string | null; unit: string };
@@ -45,3 +46,8 @@ UNITS.forEach((u, ui) => {
 });
 export const NODE: Record<string, NodeT> = Object.fromEntries(NODES.map((n) => [n.id, n]));
 export const NODE_INDEX: Record<string, number> = Object.fromEntries(NODES.map((n, i) => [n.id, i]));
+
+/** CEFR levels in course order, derived from the content (A1, A2, B1, …). */
+export const LEVELS: Level[] = SECTIONS.reduce<Level[]>((a, s) => (a.includes(s.lvl) ? a : [...a, s.lvl]), []);
+/** First unit of a level (undefined if the level is not in the content). */
+export const levelFirstUnit = (lvl: Level) => UNITS.find((u) => SECTIONS[u.si].lvl === lvl);

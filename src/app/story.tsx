@@ -6,12 +6,13 @@ import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context"
 import { hasAudio, speak, sfx, stopVoice } from "@/lib/audio";
 import { NODE, UNIT } from "@/lib/course";
 import { shuffle } from "@/lib/exercises";
-import { M, t, up, kuUp } from "@/lib/i18n";
+import { M, t } from "@/lib/i18n";
 import { addXP, getS, update } from "@/lib/store";
-import { Avatar, Sun } from "@/ui/art";
+import { Avatar, KilimRule, Medallion, Sun } from "@/ui/art";
+import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
 import { Btn, confetti, toast } from "@/ui/kit";
-import { F, useTheme } from "@/ui/theme";
+import { F, TS, useTheme } from "@/ui/theme";
 
 export default function Story() {
   const { node } = useLocalSearchParams<{ node: string }>();
@@ -30,19 +31,22 @@ export default function Story() {
     stopVoice(); const xp = 15 + (mistakes.current === 0 ? 5 : 0);
     const streakUp = addXP(xp);
     update((x) => { x.done[n.id] = true; x.stats.stories++; x.stats.lessons++; x.daily.lessons++; if (mistakes.current === 0) x.stats.perfect++; });
-    sfx("win"); confetti(); setDone({ xp, streakUp });
+    sfx("win"); buzz("win"); confetti(); setDone({ xp, streakUp });
   };
   const check = () => {
     if (!q || !sel) return;
-    if (sel === q.options[0]) { sfx("ok"); setSel(null); setWrong([]); setI(i + 1); }
-    else { sfx("bad"); mistakes.current++; setWrong((w) => [...w, sel]); setSel(null); toast(t("tryAgain")); }
+    if (sel === q.options[0]) { sfx("ok"); buzz("ok"); setSel(null); setWrong([]); setI(i + 1); }
+    else { sfx("bad"); buzz("bad"); mistakes.current++; setWrong((w) => [...w, sel]); setSel(null); toast(t("tryAgain")); }
   };
 
   if (done) return (
     <SafeAreaView style={{ flex: 1, backgroundColor: th.bg, alignItems: "center", justifyContent: "center", padding: 22, gap: 18 }}>
-      <Sun size={130} />
-      <Text style={{ fontFamily: F.display, fontSize: 30, color: th.zerDeep, textAlign: "center" }}>{t("lessonDone")}</Text>
-      <Text style={{ fontFamily: F.display, fontSize: 26, color: th.ink }}>+{done.xp} XP</Text>
+      <View style={{ alignItems: "center", justifyContent: "center" }}>
+        <Medallion size={170} color={th.zer} accent={th.sor} core={false} />
+        <View style={{ position: "absolute" }}><Sun size={74} color={th.zer} /></View>
+      </View>
+      <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: TS.xxl, color: th.ink, textAlign: "center" }}>{t("lessonDone")}</Text>
+      <Text style={{ fontFamily: F.display, fontSize: TS.xl, color: th.zerDeep }}>+{done.xp} XP</Text>
       <Btn title={t("contOn")} onPress={() => router.back()} style={{ alignSelf: "stretch" }} />
     </SafeAreaView>
   );
@@ -50,33 +54,34 @@ export default function Story() {
   return (
     <SafeAreaView edges={["top"]} style={{ flex: 1, backgroundColor: th.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 14, paddingHorizontal: 16, height: 56 }}>
-        <Pressable onPress={() => { stopVoice(); router.back(); }} accessibilityLabel={t("quitAria")} hitSlop={10}><Icon.x size={26} color={th.faint} /></Pressable>
-        <View style={{ flex: 1, height: 16, borderRadius: 99, backgroundColor: th.surface2, overflow: "hidden" }}>
-          <View style={{ width: `${Math.round((i / st.lines.length) * 100)}%`, height: "100%", backgroundColor: th.kesk }} />
+        <Pressable onPress={() => { stopVoice(); router.back(); }} accessibilityRole="button" accessibilityLabel={t("quitAria")} style={{ width: 44, height: 44, marginLeft: -10, alignItems: "center", justifyContent: "center" }}><Icon.x size={24} color={th.muted} /></Pressable>
+        <View style={{ flex: 1, height: 14, borderRadius: 7, backgroundColor: th.surface2, overflow: "hidden" }}>
+          <View style={{ width: `${Math.round((i / st.lines.length) * 100)}%`, height: "100%", borderRadius: 7, backgroundColor: th.kesk }} />
         </View>
-        <Icon.heart size={24} color={th.sky} /><Text style={{ fontFamily: F.bodyHeavy, color: th.sky }}>∞</Text>
+        <Icon.heart size={22} color={th.sky} /><Text style={{ fontFamily: F.bodyHeavy, color: th.skyDeep }}>∞</Text>
       </View>
       <ScrollView ref={scroll} contentContainerStyle={{ padding: 18, gap: 14, maxWidth: 560, width: "100%", alignSelf: "center" }}>
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Icon.story size={18} color={th.kesk} /><Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, letterSpacing: 1.4, color: th.kesk }}>{up(t("story"))}</Text></View>
-        <Text style={{ fontFamily: F.display, fontSize: 28, color: th.ink }}>{st.title}</Text>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Icon.story size={18} color={th.keskDeep} /><Text style={{ fontFamily: F.italicBold, fontSize: TS.md, color: th.keskDeep }}>{t("story")}</Text></View>
+        <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: TS.xxl, lineHeight: 38, color: th.ink }}>{st.title}</Text>
+        <KilimRule color={th.kesk} accent={th.zer} h={10} seed={st.title.length} style={{ marginBottom: 4 }} />
         {shown.map((l, k) => { const mine = l[0] === me; return (
           <Animated.View key={k} entering={FadeInUp.duration(260)} style={{ flexDirection: mine ? "row-reverse" : "row", gap: 10, alignItems: "flex-start" }}>
             <Avatar name={l[0]} size={42} />
-            <Pressable onPress={() => speak(l[1])} style={{ flexShrink: 1, padding: 12, borderRadius: 18, borderWidth: 2, borderColor: mine ? th.sky : th.line, backgroundColor: mine ? th.skySoft : th.surface, gap: 3 }}>
-              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 11, letterSpacing: 1.2, color: th.muted, textAlign: mine ? "right" : "left" }}>{kuUp(l[0])}</Text>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>{hasAudio(l[1]) ? <Icon.spk size={16} color={th.sky} /> : null}<Text style={{ flexShrink: 1, fontFamily: F.bodyHeavy, fontSize: 18, color: th.ink }}>{l[1]}</Text></View>
+            <Pressable onPress={() => speak(l[1])} accessibilityRole="button" accessibilityLabel={`${l[0]}: ${l[1]}`} style={{ flexShrink: 1, padding: 12, borderRadius: 16, borderTopLeftRadius: mine ? 16 : 4, borderTopRightRadius: mine ? 4 : 16, borderWidth: 1.5, borderColor: mine ? th.sky : th.line2, backgroundColor: mine ? th.skySoft : th.surface, gap: 3 }}>
+              <Text style={{ fontFamily: F.italic, fontSize: TS.sm, color: th.muted, textAlign: mine ? "right" : "left" }}>{l[0]}</Text>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>{hasAudio(l[1]) ? <Icon.spk size={16} color={mine ? th.skyDeep : th.sky} /> : null}<Text style={{ flexShrink: 1, fontFamily: F.serif, fontSize: 21, lineHeight: 26, color: th.ink }}>{l[1]}</Text></View>
               <Text style={{ fontFamily: F.body, color: th.muted }}>{M(l[2])}</Text>
             </Pressable>
           </Animated.View>); })}
-        {q && <View style={{ padding: 14, borderRadius: 18, backgroundColor: th.surface2, gap: 10 }}>
-          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: th.ink }}>{M(q.q)}</Text>
+        {q && <View style={{ padding: 14, borderRadius: 14, borderTopLeftRadius: 4, backgroundColor: th.surface2, gap: 10 }}>
+          <Text style={{ fontFamily: F.serif, fontSize: TS.lg, color: th.ink }}>{M(q.q)}</Text>
           {opts.map((o) => { const bad = wrong.includes(o), on = sel === o; return (
-            <Pressable key={o} disabled={bad} onPress={() => { sfx("tap"); setSel(o); speak(o); }}
-              style={{ padding: 14, borderRadius: 14, borderWidth: 2, borderBottomWidth: 4, borderColor: bad ? th.sor : on ? th.sky : th.line, backgroundColor: bad ? th.sorSoft : on ? th.skySoft : th.surface, opacity: bad ? 0.6 : 1 }}>
-              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 17, color: th.ink }}>{o}</Text></Pressable>); })}
+            <Pressable key={o} disabled={bad} onPress={() => { sfx("tap"); buzz("select"); setSel(o); speak(o); }} accessibilityRole="button" accessibilityState={{ selected: on, disabled: bad }}
+              style={{ minHeight: 52, padding: 13, borderRadius: 12, borderTopLeftRadius: 4, borderWidth: on || bad ? 2 : 1.5, borderBottomWidth: 4, borderColor: bad ? th.sor : on ? th.sky : th.line2, backgroundColor: bad ? th.sorSoft : on ? th.skySoft : th.surface, opacity: bad ? 0.6 : 1 }}>
+              <Text style={{ fontFamily: F.serif, fontSize: 19, color: th.ink }}>{o}</Text></Pressable>); })}
         </View>}
       </ScrollView>
-      <View style={{ padding: 16, paddingBottom: 16 + ins.bottom, borderTopWidth: 2, borderColor: th.line }}>
+      <View style={{ padding: 16, paddingBottom: 16 + ins.bottom, borderTopWidth: 1, borderColor: th.line }}>
         {q ? <Btn title={t("check")} disabled={!sel} onPress={check} />
           : <Btn title={i >= st.lines.length ? t("finish") : t("cont")} onPress={() => (i >= st.lines.length ? finish() : setI(i + 1))} />}
       </View>
