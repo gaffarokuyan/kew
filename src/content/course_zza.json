@@ -1,1 +1,935 @@
-{"SECTIONS":[],"CHARS":{},"SAYINGS":[]}
+{
+ "SECTIONS": [
+  {
+   "lvl": "A1",
+   "name": "Destpêk|Beginning|Anfang",
+   "sub": "Selam, tanışma, aile, sayılar, yemek, renkler, zaman, günlük işler|Greetings, introductions, family, numbers, food, colours, time, daily life|Begrüßung, Vorstellung, Familie, Zahlen, Essen, Farben, Zeit, Alltag",
+   "units": [
+    {
+     "id": "zza_silam",
+     "ku": "Merheba!",
+     "col": "#2F6B4F",
+     "name": "Selamlaşma|Greetings|Begrüßung",
+     "words": [
+      [
+       "merheba",
+       "merhaba|hello|hallo",
+       "👋"
+      ],
+      [
+       "selam",
+       "selam|hi|hallo"
+      ],
+      [
+       "e",
+       "evet|yes|ja",
+       "✅"
+      ],
+      [
+       "nê",
+       "hayır|no|nein",
+       "❌"
+      ],
+      [
+       "weş",
+       "iyi, sağlıklı|well, fine|gut, gesund"
+      ],
+      [
+       "senî",
+       "nasıl|how|wie"
+      ],
+      [
+       "ez",
+       "ben|I|ich"
+      ],
+      [
+       "ti",
+       "sen|you|du"
+      ],
+      [
+       "weş bê",
+       "sağ ol, teşekkürler|thanks (be well)|danke (bleib gesund)",
+       "🙏"
+      ],
+      [
+       "sodir",
+       "sabah|morning|Morgen",
+       "🌅"
+      ],
+      [
+       "şew",
+       "gece|night|Nacht",
+       "🌙"
+      ],
+      [
+       "xatir bê to",
+       "hoşça kal|goodbye|auf Wiedersehen"
+      ]
+     ],
+     "sents": [
+      [
+       "Merheba, ti senî yê?",
+       "Merhaba, nasılsın?|Hello, how are you?|Hallo, wie geht es dir?"
+      ],
+      [
+       "Ez weş a, weş bê.",
+       "İyiyim, sağ ol.|I am fine, thanks.|Mir geht es gut, danke."
+      ],
+      [
+       "Sodir be xêr bo!",
+       "Günaydın!|Good morning!|Guten Morgen!"
+      ],
+      [
+       "Şew be xêr bo!",
+       "İyi geceler!|Good night!|Gute Nacht!"
+      ],
+      [
+       "E, ez weş a.",
+       "Evet, iyiyim.|Yes, I am fine.|Ja, mir geht es gut."
+      ],
+      [
+       "Xatir bê to, embaz!",
+       "Hoşça kal, arkadaş!|Goodbye, friend!|Tschüss, Freund!"
+      ]
+     ],
+     "tips": [
+      [
+       "Ti senî yê? / Ti senî ya?",
+       "Erkeğe «yê», kadına «ya» denir: fiil ve «olmak» eki cinsiyete göre değişir.|To a man «yê», to a woman «ya»: verb and copula endings change with gender.|Zu einem Mann «yê», zu einer Frau «ya»: Verb- und Kopulaendungen richten sich nach dem Geschlecht."
+      ],
+      [
+       "Ez weş a.",
+       "«-a» birinci tekil kişinin «olmak» ekidir: Ez weş a = İyiyim.|«-a» is the copula for «I»: Ez weş a = I am fine.|«-a» ist die Kopula für «ich»: Ez weş a = mir geht es gut."
+      ]
+     ]
+    },
+    {
+     "id": "zza_ez",
+     "ku": "Ez Kam a?",
+     "col": "#7A4A2A",
+     "name": "Kendini tanıt|Introduce yourself|Stell dich vor",
+     "words": [
+      [
+       "name",
+       "ad, isim|name|Name",
+       "🪪"
+      ],
+      [
+       "nameyê mi",
+       "adım|my name|mein Name"
+      ],
+      [
+       "nameyê to",
+       "adın|your name|dein Name"
+      ],
+      [
+       "çi",
+       "ne|what|was"
+      ],
+      [
+       "kam",
+       "kim|who|wer"
+      ],
+      [
+       "kotî",
+       "nere|where|wo"
+      ],
+      [
+       "ra",
+       "-den (yer)|from|aus"
+      ],
+      [
+       "wendekar",
+       "öğrenci|student|Schüler(in)",
+       "🎒"
+      ],
+      [
+       "malim",
+       "öğretmen|teacher|Lehrer(in)",
+       "🧑‍🏫"
+      ],
+      [
+       "embaz",
+       "arkadaş|friend|Freund(in)",
+       "🤝"
+      ],
+      [
+       "dewe",
+       "köy|village|Dorf",
+       "🏡"
+      ],
+      [
+       "sûke",
+       "şehir, çarşı|town, market|Stadt, Markt",
+       "🏙️"
+      ]
+     ],
+     "sents": [
+      [
+       "Nameyê to çi yo?",
+       "Adın ne?|What is your name?|Wie heißt du?"
+      ],
+      [
+       "Nameyê mi Rojda yo.",
+       "Benim adım Rojda.|My name is Rojda.|Ich heiße Rojda."
+      ],
+      [
+       "Ez Dêrsim ra ya.",
+       "Ben Dersimliyim.|I am from Dersim.|Ich komme aus Dersim."
+      ],
+      [
+       "Ez Çewlig ra ya.",
+       "Ben Bingöllüyüm.|I am from Çewlig.|Ich komme aus Çewlig."
+      ],
+      [
+       "Ez wendekar a.",
+       "Ben öğrenciyim.|I am a student.|Ich bin Schüler(in)."
+      ],
+      [
+       "O malim o.",
+       "O (erkek) öğretmendir.|He is a teacher.|Er ist Lehrer."
+      ],
+      [
+       "Ma embaz ê.",
+       "Biz arkadaşız.|We are friends.|Wir sind Freunde."
+      ],
+      [
+       "Ti kotî ra yê?",
+       "Nerelisin?|Where are you from?|Woher kommst du?"
+      ]
+     ],
+     "tips": [
+      [
+       "Ez ... a / O ... o / A ... a / Ma ... ê",
+       "«Olmak» ekleri: ben -a, o (erkek) -o, o (kadın) -a, biz/siz/onlar -ê. Ünlüden sonra «y» girer: Rojda yo, Dêrsim ra ya.|Copula: I -a, he -o, she -a, we/you/they -ê. After a vowel add «y»: Rojda yo, Dêrsim ra ya.|Kopula: ich -a, er -o, sie -a, wir/ihr/sie -ê. Nach Vokal kommt «y»: Rojda yo, Dêrsim ra ya."
+      ],
+      [
+       "... ra",
+       "«ra» sonradan gelir ve «-den» demektir: Dêrsim ra = Dersimden.|«ra» comes after the noun and means «from»: Dêrsim ra = from Dersim.|«ra» steht nach dem Nomen und heißt «aus»: Dêrsim ra = aus Dersim."
+      ]
+     ],
+     "story": {
+      "title": "Embazê Newe",
+      "lines": [
+       [
+        "Azad",
+        "Merheba! Nameyê to çi yo?",
+        "Merhaba! Adın ne?|Hello! What is your name?|Hallo! Wie heißt du?"
+       ],
+       [
+        "Rojda",
+        "Nameyê mi Rojda yo. Nameyê to çi yo?",
+        "Benim adım Rojda. Senin adın ne?|My name is Rojda. What is yours?|Ich heiße Rojda. Und du?"
+       ],
+       [
+        "Azad",
+        "Nameyê mi Azad o. Ti kotî ra ya?",
+        "Benim adım Azad. Nerelisin?|My name is Azad. Where are you from?|Ich heiße Azad. Woher kommst du?",
+        {
+         "q": "Azad ne soruyor?|What does Azad ask?|Was fragt Azad?",
+         "options": [
+          "Nameyê mi Azad o. Ti kotî ra ya?",
+          "Nameyê mi Azad o. Ti senî ya?",
+          "Nameyê mi Azad o. Ti çi wazena?"
+         ]
+        }
+       ],
+       [
+        "Rojda",
+        "Ez Dêrsim ra ya. Ez wendekar a.",
+        "Dersimliyim. Öğrenciyim.|I am from Dersim. I am a student.|Ich komme aus Dersim. Ich bin Studentin."
+       ],
+       [
+        "Azad",
+        "Ez zî wendekar a! Ez Çewlig ra ya.",
+        "Ben de öğrenciyim! Bingöllüyüm.|I am a student too! I am from Çewlig.|Ich bin auch Student! Ich komme aus Çewlig."
+       ],
+       [
+        "Rojda",
+        "Weş o! Ma embaz ê.",
+        "Ne güzel! Arkadaşız.|Great! We are friends.|Schön! Wir sind Freunde.",
+        {
+         "q": "Rojda sonunda ne diyor?|What does Rojda say at the end?|Was sagt Rojda am Ende?",
+         "options": [
+          "Weş o! Ma embaz ê.",
+          "Xatir bê to.",
+          "Ez nêzana."
+         ]
+        }
+       ],
+       [
+        "Azad",
+        "E, ma embaz ê. Xatir bê to!",
+        "Evet, arkadaşız. Hoşça kal!|Yes, we are friends. Goodbye!|Ja, wir sind Freunde. Tschüss!"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "zza_keye",
+     "ku": "Keye",
+     "col": "#8C3B3B",
+     "name": "Aile|Family|Familie",
+     "words": [
+      [
+       "keye",
+       "ev; aile|house; family|Haus; Familie",
+       "🏠"
+      ],
+      [
+       "maye",
+       "anne|mother|Mutter",
+       "👩"
+      ],
+      [
+       "pi",
+       "baba|father|Vater",
+       "👨"
+      ],
+      [
+       "bira",
+       "erkek kardeş|brother|Bruder",
+       "👦"
+      ],
+      [
+       "waye",
+       "kız kardeş|sister|Schwester",
+       "👧"
+      ],
+      [
+       "lajek",
+       "oğlan, oğul|boy, son|Junge, Sohn"
+      ],
+      [
+       "keynek",
+       "kız, kız çocuk|girl, daughter|Mädchen, Tochter"
+      ],
+      [
+       "cinî",
+       "kadın; eş|woman; wife|Frau; Ehefrau"
+      ],
+      [
+       "ap",
+       "amca|uncle|Onkel"
+      ],
+      [
+       "pîl",
+       "büyük|big, old|groß, alt"
+      ],
+      [
+       "qij",
+       "küçük|small, young|klein, jung"
+      ],
+      [
+       "mi",
+       "benim; beni|my; me|mein; mich"
+      ]
+     ],
+     "sents": [
+      [
+       "Maya mi keye de ya.",
+       "Annem evde.|My mother is at home.|Meine Mutter ist zu Hause."
+      ],
+      [
+       "Piyê mi dewe de kar keno.",
+       "Babam köyde çalışıyor.|My father works in the village.|Mein Vater arbeitet im Dorf."
+      ],
+      [
+       "Birayê mi pîl o.",
+       "Ağabeyim büyük.|My brother is older.|Mein Bruder ist älter."
+      ],
+      [
+       "Waya mi qij a.",
+       "Kız kardeşim küçük.|My sister is little.|Meine Schwester ist klein."
+      ],
+      [
+       "No keye pîl o.",
+       "Bu ev büyük.|This house is big.|Dieses Haus ist groß."
+      ],
+      [
+       "Apê mi sûke de yo.",
+       "Amcam şehirde.|My uncle is in town.|Mein Onkel ist in der Stadt."
+      ],
+      [
+       "Keyeyê ma dewe de yo.",
+       "Evimiz köyde.|Our house is in the village.|Unser Haus ist im Dorf."
+      ]
+     ],
+     "tips": [
+      [
+       "piyê mi / maya mi",
+       "İyelik eki (ezafe): eril isimden sonra «-ê», dişil isimden sonra «-a»: piyê mi (babam), maya mi (annem).|Possessive link (ezafe): masculine «-ê», feminine «-a»: piyê mi (my father), maya mi (my mother).|Verbindung (Ezafe): männlich «-ê», weiblich «-a»: piyê mi (mein Vater), maya mi (meine Mutter)."
+      ],
+      [
+       "... de",
+       "«de» = -de, içinde: keye de (evde), dewe de (köyde).|«de» = in, at: keye de (at home), dewe de (in the village).|«de» = in, bei: keye de (zu Hause), dewe de (im Dorf)."
+      ]
+     ]
+    },
+    {
+     "id": "zza_hume",
+     "ku": "Yew, Di, Hîrê",
+     "col": "#2B5A7A",
+     "name": "Sayılar|Numbers|Zahlen",
+     "words": [
+      [
+       "yew",
+       "bir|one|eins",
+       "1️⃣"
+      ],
+      [
+       "di",
+       "iki|two|zwei",
+       "2️⃣"
+      ],
+      [
+       "hîrê",
+       "üç|three|drei",
+       "3️⃣"
+      ],
+      [
+       "çar",
+       "dört|four|vier",
+       "4️⃣"
+      ],
+      [
+       "panc",
+       "beş|five|fünf",
+       "5️⃣"
+      ],
+      [
+       "şeş",
+       "altı|six|sechs",
+       "6️⃣"
+      ],
+      [
+       "hewt",
+       "yedi|seven|sieben",
+       "7️⃣"
+      ],
+      [
+       "heşt",
+       "sekiz|eight|acht",
+       "8️⃣"
+      ],
+      [
+       "new",
+       "dokuz|nine|neun",
+       "9️⃣"
+      ],
+      [
+       "des",
+       "on|ten|zehn",
+       "🔟"
+      ],
+      [
+       "serre",
+       "yıl, yaş|year, years old|Jahr",
+       "📅"
+      ],
+      [
+       "çend",
+       "kaç|how many|wie viele"
+      ]
+     ],
+     "sents": [
+      [
+       "Ti çend serre yê?",
+       "Kaç yaşındasın?|How old are you?|Wie alt bist du?"
+      ],
+      [
+       "Ez des serre ya.",
+       "On yaşındayım.|I am ten years old.|Ich bin zehn Jahre alt."
+      ],
+      [
+       "Di birayê mi estê.",
+       "İki erkek kardeşim var.|I have two brothers.|Ich habe zwei Brüder."
+      ],
+      [
+       "Hîrê embazê mi estê.",
+       "Üç arkadaşım var.|I have three friends.|Ich habe drei Freunde."
+      ],
+      [
+       "Keyeyê ma de panc kesî estê.",
+       "Evimizde beş kişi var.|There are five people in our house.|In unserem Haus sind fünf Personen."
+      ],
+      [
+       "Yew, di, hîrê, çar, panc!",
+       "Bir, iki, üç, dört, beş!|One, two, three, four, five!|Eins, zwei, drei, vier, fünf!"
+      ]
+     ],
+     "tips": [
+      [
+       "hewt rojî / panc kesî",
+       "Sayıdan sonra isim çoğul olur; eril çoğul eki «-î»: rojî, kesî. İyelikte «-ê»: di birayê mi.|After a number the noun is plural; masculine plural «-î»: rojî, kesî. With a possessor «-ê»: di birayê mi.|Nach einer Zahl steht der Plural; männlicher Plural «-î»: rojî, kesî. Mit Besitzer «-ê»: di birayê mi."
+      ],
+      [
+       "... estê",
+       "«est o / est a / estê» = var: Di birayê mi estê = İki kardeşim var.|«est o / est a / estê» = there is/are: Di birayê mi estê = I have two brothers.|«est o / est a / estê» = es gibt/haben: Di birayê mi estê = ich habe zwei Brüder."
+      ]
+     ]
+    },
+    {
+     "id": "zza_nan",
+     "ku": "Nan û Awe",
+     "col": "#9A6B1F",
+     "name": "Yiyecek ve içecek|Food and drink|Essen und Trinken",
+     "words": [
+      [
+       "nan",
+       "ekmek|bread|Brot",
+       "🍞"
+      ],
+      [
+       "awe",
+       "su|water|Wasser",
+       "💧"
+      ],
+      [
+       "şit",
+       "süt|milk|Milch",
+       "🥛"
+      ],
+      [
+       "penîr",
+       "peynir|cheese|Käse",
+       "🧀"
+      ],
+      [
+       "goşt",
+       "et|meat|Fleisch",
+       "🥩"
+      ],
+      [
+       "sêwe",
+       "elma|apple|Apfel",
+       "🍎"
+      ],
+      [
+       "engure",
+       "üzüm|grapes|Trauben",
+       "🍇"
+      ],
+      [
+       "çay",
+       "çay|tea|Tee",
+       "🍵"
+      ],
+      [
+       "mast",
+       "yoğurt|yogurt|Joghurt"
+      ],
+      [
+       "werdene",
+       "yemek|to eat|essen"
+      ],
+      [
+       "şimitene",
+       "içmek|to drink|trinken"
+      ],
+      [
+       "waştene",
+       "istemek|to want|wollen"
+      ]
+     ],
+     "sents": [
+      [
+       "Ez nan wena.",
+       "Ekmek yiyorum.|I am eating bread.|Ich esse Brot."
+      ],
+      [
+       "O sêwe weno.",
+       "O (erkek) elma yiyor.|He is eating an apple.|Er isst einen Apfel."
+      ],
+      [
+       "Ma awe şimenê.",
+       "Su içiyoruz.|We are drinking water.|Wir trinken Wasser."
+      ],
+      [
+       "Ez çay wazena.",
+       "Çay istiyorum.|I want tea.|Ich möchte Tee."
+      ],
+      [
+       "Ti şit wazenê?",
+       "Süt istiyor musun?|Do you want milk?|Möchtest du Milch?"
+      ],
+      [
+       "Nan û penîr weş o.",
+       "Ekmek ve peynir güzel.|Bread and cheese is nice.|Brot und Käse ist lecker."
+      ],
+      [
+       "Ez goşt nêwena.",
+       "Et yemiyorum.|I don't eat meat.|Ich esse kein Fleisch."
+      ]
+     ],
+     "tips": [
+      [
+       "ez wena / o weno / a wena / ma wenê",
+       "Şimdiki zaman ekleri: ben -a, o (erkek) -o, o (kadın) -a, biz/siz/onlar -ê.|Present endings: I -a, he -o, she -a, we/you/they -ê.|Präsensendungen: ich -a, er -o, sie -a, wir/ihr/sie -ê."
+      ],
+      [
+       "nê-",
+       "Olumsuzluk ön eki: ez wena (yiyorum) → ez nêwena (yemiyorum).|Negative prefix: ez wena (I eat) → ez nêwena (I don't eat).|Verneinung: ez wena (ich esse) → ez nêwena (ich esse nicht)."
+      ]
+     ],
+     "story": {
+      "title": "Sodir",
+      "lines": [
+       [
+        "Dayik",
+        "Sodir be xêr bo, Azad!",
+        "Günaydın, Azad!|Good morning, Azad!|Guten Morgen, Azad!"
+       ],
+       [
+        "Azad",
+        "Sodir be xêr bo! Ez nan wazena.",
+        "Günaydın! Ekmek istiyorum.|Good morning! I want bread.|Guten Morgen! Ich möchte Brot."
+       ],
+       [
+        "Dayik",
+        "Nan û penîr hazir ê. Ti çay wazenê?",
+        "Ekmek ve peynir burada. Çay ister misin?|Here is bread and cheese. Do you want tea?|Hier sind Brot und Käse. Möchtest du Tee?",
+        {
+         "q": "Anne ne soruyor?|What does the mother ask?|Was fragt die Mutter?",
+         "options": [
+          "Nan û penîr hazir ê. Ti çay wazenê?",
+          "Nan û penîr hazir ê. Ti kotî ra yê?",
+          "Nan û penîr hazir ê. Nameyê to çi yo?"
+         ]
+        }
+       ],
+       [
+        "Azad",
+        "Nê, ez şit wazena.",
+        "Hayır, süt istiyorum.|No, I want milk.|Nein, ich möchte Milch."
+       ],
+       [
+        "Dayik",
+        "Şit zî est o. Sêwe zî est a.",
+        "Al sana süt. Elma da var.|Here is milk for you. There is an apple too.|Hier ist Milch für dich. Es gibt auch einen Apfel."
+       ],
+       [
+        "Azad",
+        "Weş bê, dayê!",
+        "Sağ ol, anne!|Thanks, mum!|Danke, Mama!",
+        {
+         "q": "Azad sonunda ne diyor?|What does Azad say at the end?|Was sagt Azad am Ende?",
+         "options": [
+          "Weş bê, dayê!",
+          "Ez nêwena.",
+          "Şew be xêr bo!"
+         ]
+        }
+       ]
+      ]
+     }
+    },
+    {
+     "id": "zza_reng",
+     "ku": "Rengî",
+     "col": "#5A3F86",
+     "name": "Renkler|Colours|Farben",
+     "words": [
+      [
+       "reng",
+       "renk|colour|Farbe",
+       "🎨"
+      ],
+      [
+       "sur",
+       "kırmızı|red|rot",
+       "🟥"
+      ],
+      [
+       "kesk",
+       "yeşil|green|grün",
+       "🟩"
+      ],
+      [
+       "zerd",
+       "sarı|yellow|gelb",
+       "🟨"
+      ],
+      [
+       "sipî",
+       "beyaz|white|weiß",
+       "⬜"
+      ],
+      [
+       "siya",
+       "siyah|black|schwarz",
+       "⬛"
+      ],
+      [
+       "kewe",
+       "mavi|blue|blau",
+       "🟦"
+      ],
+      [
+       "no",
+       "bu (eril)|this (masc.)|dies (m.)"
+      ],
+      [
+       "na",
+       "bu (dişil)|this (fem.)|diese (f.)"
+      ],
+      [
+       "rindek",
+       "güzel|pretty|hübsch"
+      ],
+      [
+       "kitab",
+       "kitap|book|Buch",
+       "📕"
+      ],
+      [
+       "mange",
+       "inek|cow|Kuh",
+       "🐄"
+      ]
+     ],
+     "sents": [
+      [
+       "Sêwa sure",
+       "Kırmızı elma|A red apple|Ein roter Apfel"
+      ],
+      [
+       "No kitab sur o.",
+       "Bu kitap kırmızı.|This book is red.|Dieses Buch ist rot."
+      ],
+      [
+       "Na mange sipîye ya.",
+       "Bu inek beyaz.|This cow is white.|Diese Kuh ist weiß."
+      ],
+      [
+       "Asmên kewe yo.",
+       "Gökyüzü mavi.|The sky is blue.|Der Himmel ist blau."
+      ],
+      [
+       "Reng zerd rindek o.",
+       "Sarı renk güzel.|Yellow is a pretty colour.|Gelb ist eine schöne Farbe."
+      ],
+      [
+       "Na keynek rindek a.",
+       "Bu kız güzel.|This girl is pretty.|Dieses Mädchen ist hübsch."
+      ]
+     ],
+     "tips": [
+      [
+       "no / na / nê",
+       "«Bu»: eril için «no», dişil için «na», çoğul için «nê».|«This»: masculine «no», feminine «na», plural «nê».|«Dies»: männlich «no», weiblich «na», Plural «nê»."
+      ],
+      [
+       "sêwa sure",
+       "Sıfat isimden sonra gelir ve cinsiyete uyar: sêwe (dişil) → sêwa sure.|The adjective follows the noun and agrees: sêwe (fem.) → sêwa sure.|Das Adjektiv folgt dem Nomen und passt sich an: sêwe (f.) → sêwa sure."
+      ]
+     ]
+    },
+    {
+     "id": "zza_roj",
+     "ku": "Roj û Şew",
+     "col": "#1F5E63",
+     "name": "Zaman|Time|Zeit",
+     "words": [
+      [
+       "roj",
+       "gün; güneş|day; sun|Tag; Sonne",
+       "☀️"
+      ],
+      [
+       "ewro",
+       "bugün|today|heute"
+      ],
+      [
+       "meşte",
+       "yarın|tomorrow|morgen"
+      ],
+      [
+       "vizêr",
+       "dün|yesterday|gestern"
+      ],
+      [
+       "şan",
+       "akşam|evening|Abend",
+       "🌆"
+      ],
+      [
+       "hefte",
+       "hafta|week|Woche",
+       "📆"
+      ],
+      [
+       "mekteb",
+       "okul|school|Schule",
+       "🏫"
+      ],
+      [
+       "kar",
+       "iş|work|Arbeit",
+       "💼"
+      ],
+      [
+       "şiyene",
+       "gitmek|to go|gehen"
+      ],
+      [
+       "ameyene",
+       "gelmek|to come|kommen"
+      ],
+      [
+       "rakewtene",
+       "uyumak|to sleep|schlafen",
+       "😴"
+      ],
+      [
+       "keye de",
+       "evde|at home|zu Hause"
+      ]
+     ],
+     "sents": [
+      [
+       "Ewro ez şina mekteb.",
+       "Bugün okula gidiyorum.|Today I am going to school.|Heute gehe ich zur Schule."
+      ],
+      [
+       "Meşte ma yenê dewe.",
+       "Yarın köye geliyoruz.|Tomorrow we are coming to the village.|Morgen kommen wir ins Dorf."
+      ],
+      [
+       "Şan de ez keye de ya.",
+       "Akşam evdeyim.|In the evening I am at home.|Am Abend bin ich zu Hause."
+      ],
+      [
+       "Şew de ez rakewena.",
+       "Gece uyuyorum.|At night I sleep.|In der Nacht schlafe ich."
+      ],
+      [
+       "Piyê mi şino kar.",
+       "Babam işe gidiyor.|My father goes to work.|Mein Vater geht zur Arbeit."
+      ],
+      [
+       "Hefte de hewt rojî estê.",
+       "Haftada yedi gün var.|There are seven days in a week.|Eine Woche hat sieben Tage."
+      ]
+     ],
+     "tips": [
+      [
+       "ez şina / o şino / ma şinê",
+       "«şiyene» (gitmek) şimdiki zamanda «şin-» olur: ez şina, o şino, a şina, ma şinê.|«şiyene» (to go) has the present stem «şin-»: ez şina, o şino, a şina, ma şinê.|«şiyene» (gehen) hat den Präsensstamm «şin-»: ez şina, o şino, a şina, ma şinê."
+      ]
+     ]
+    },
+    {
+     "id": "zza_kar",
+     "ku": "Ez Çi Kena?",
+     "col": "#6B4F2A",
+     "name": "Günlük işler|Daily life|Alltag",
+     "words": [
+      [
+       "kerdene",
+       "yapmak|to do|tun"
+      ],
+      [
+       "vatene",
+       "söylemek|to say|sagen"
+      ],
+      [
+       "zanayene",
+       "bilmek|to know|wissen"
+      ],
+      [
+       "dîyene",
+       "görmek|to see|sehen",
+       "👀"
+      ],
+      [
+       "wendene",
+       "okumak|to read, to study|lesen",
+       "📖"
+      ],
+      [
+       "nuştene",
+       "yazmak|to write|schreiben",
+       "✍️"
+      ],
+      [
+       "musayene",
+       "öğrenmek|to learn|lernen"
+      ],
+      [
+       "Kirmanckî",
+       "Zazaca (Kirmanckî)|Zazaki (Kirmanckî)|Zazaki (Kirmanckî)"
+      ],
+      [
+       "ziwan",
+       "dil|language|Sprache",
+       "🗣️"
+      ],
+      [
+       "estor",
+       "at|horse|Pferd",
+       "🐎"
+      ],
+      [
+       "xebat",
+       "çalışma, emek|work, effort|Arbeit, Mühe"
+      ],
+      [
+       "hêdî",
+       "yavaş|slowly|langsam",
+       "🐢"
+      ]
+     ],
+     "sents": [
+      [
+       "Ez Kirmanckî musena.",
+       "Zazaca öğreniyorum.|I am learning Zazaki.|Ich lerne Zazaki."
+      ],
+      [
+       "Ez kitab wanena.",
+       "Kitap okuyorum.|I am reading a book.|Ich lese ein Buch."
+      ],
+      [
+       "Ti çi kenê?",
+       "Ne yapıyorsun?|What are you doing?|Was machst du?"
+      ],
+      [
+       "Ez nêzana.",
+       "Bilmiyorum.|I don't know.|Ich weiß nicht."
+      ],
+      [
+       "Ez estor vînena.",
+       "Bir at görüyorum.|I see a horse.|Ich sehe ein Pferd."
+      ],
+      [
+       "Hêdî vace, ez fam nêkena.",
+       "Yavaş söyle, anlamıyorum.|Say it slowly, I don't understand.|Sag es langsam, ich verstehe nicht."
+      ],
+      [
+       "Ziwanê ma rindek o.",
+       "Dilimiz güzel.|Our language is beautiful.|Unsere Sprache ist schön."
+      ]
+     ],
+     "tips": [
+      [
+       "ez fam kena / ez fam nêkena",
+       "«fam kerdene» = anlamak. Olumsuz: nê- fiile gelir: ez fam nêkena.|«fam kerdene» = to understand. Negative: nê- goes on the verb: ez fam nêkena.|«fam kerdene» = verstehen. Verneinung: nê- am Verb: ez fam nêkena."
+      ],
+      [
+       "vace!",
+       "Emir: «vace» = söyle!, «bê» = gel!, «şo» = git!|Imperative: «vace» = say!, «bê» = come!, «şo» = go!|Imperativ: «vace» = sag!, «bê» = komm!, «şo» = geh!"
+      ]
+     ],
+     "note": "Kirmanckî A1 tamam! Ziwanê ma rindek o.|Kirmanckî A1 complete! Our language is beautiful.|Kirmanckî A1 geschafft! Unsere Sprache ist schön."
+    }
+   ]
+  }
+ ],
+ "CHARS": {},
+ "SAYINGS": [
+  [
+   "Ziwanê ma, cayê ma yo.",
+   "Dilimiz yurdumuzdur.|Our language is our home.|Unsere Sprache ist unsere Heimat."
+  ]
+ ]
+}

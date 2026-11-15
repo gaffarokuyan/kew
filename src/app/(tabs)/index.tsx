@@ -4,7 +4,7 @@ import { FlatList, Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 import Animated, { useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming } from "react-native-reanimated";
 import { speak, sfx } from "@/lib/audio";
-import { META, NODES, SECTIONS, uniqueWords, UNIT, UNITS, type Level, type NodeT, type Unit } from "@/lib/course";
+import { courseId, META, NODES, SECTIONS, uniqueWords, UNIT, UNITS, type Level, type NodeT, type Unit } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
 import { nodeTitle } from "@/lib/nodes";
 import { firstOpen, isDone, unlocked, update, useS } from "@/lib/store";
@@ -124,7 +124,7 @@ export default function Learn() {
       <View style={{ height: H.end, alignItems: "center", justifyContent: "center", gap: 10 }}>
         <KilimRule color={th.zer} h={10} seed={41} style={{ width: 160, alignSelf: "center" }} />
         <Juji size={96} />
-        <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t("pathEnd", { u: UNITS.length, n: NODES.length, w: uniqueWords() })}</Text>
+        <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t(courseId() === "zza" ? "pathEndZza" : "pathEnd", { u: UNITS.length, n: NODES.length, w: uniqueWords() })}</Text>
       </View>
     );
   };

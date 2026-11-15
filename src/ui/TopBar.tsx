@@ -3,8 +3,9 @@ import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
-import { t, tArr } from "@/lib/i18n";
-import { day, dayAdd, HEART_MS, MAXH, update, useS } from "@/lib/store";
+import { M, t, tArr } from "@/lib/i18n";
+import { COURSES, type CourseId } from "@/lib/course";
+import { day, dayAdd, HEART_MS, MAXH, switchCourse, update, useS } from "@/lib/store";
 import { Diamond, Sun } from "./art";
 import { Icon } from "./icons";
 import { Btn, Sheet, toast } from "./kit";
@@ -24,7 +25,7 @@ function Stat({ onPress, children, label }: { onPress: () => void; children: Rea
 
 export function TopBar() {
   const th = useTheme(); const s = useS(); const ins = useSafeAreaInsets();
-  const [shop, setShop] = useState(false); const [streak, setStreak] = useState(false);
+  const [shop, setShop] = useState(false); const [streak, setStreak] = useState(false); const [course, setCourse] = useState(false);
   const num = (n: number, c: string) => <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: c, fontVariant: ["tabular-nums"] }}>{n}</Text>;
   const wait = minsToHeart(s.hearts, s.heartAt);
   const days = [...Array(7)].map((_, i) => dayAdd(day(), i - 6));
@@ -35,6 +36,10 @@ export function TopBar() {
         <View style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 6, paddingLeft: 4 }} accessible accessibilityRole="header" accessibilityLabel="Juji">
           <Sun size={20} color={th.zer} />
           <Text style={{ fontFamily: F.italicBold, fontSize: 26, lineHeight: 30, color: th.ink, letterSpacing: -0.4 }}>Juji</Text>
+          <Pressable onPress={() => { sfx("tap"); setCourse(true); }} accessibilityRole="button" accessibilityLabel={t("course")} hitSlop={8}
+            style={{ marginLeft: 4, paddingHorizontal: 9, paddingVertical: 4, borderRadius: 8, borderWidth: 1.5, borderColor: th.line2 }}>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, color: th.muted }}>{COURSES.find((c) => c.id === s.course)?.name ?? "Kurmancî"} ▾</Text>
+          </Pressable>
         </View>
         <Stat onPress={() => setStreak(true)} label={t("streakAria", { n: s.streak })}><Icon.fire size={22} color={s.last === day() ? th.fire : th.faint} />{num(s.streak, s.last === day() ? th.fire : th.muted)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("gemsAria", { n: s.gems })}><Icon.gem size={21} color={th.sky} />{num(s.gems, th.skyDeep)}</Stat>
@@ -66,6 +71,13 @@ export function TopBar() {
         <WeekDots days={days} xpLog={s.xpLog} />
         <Text style={{ fontFamily: F.body, color: th.muted }}>{s.last === day() ? t("streakDoneToday") : t("streakTodo")}</Text>
         <Btn title={t("ok")} onPress={() => setStreak(false)} />
+      </Sheet>
+      <Sheet visible={course} onClose={() => setCourse(false)}>
+        <Text style={{ fontFamily: F.display, fontSize: TS.xl, color: th.ink }}>{t("course")}</Text>
+        {COURSES.map((c) => (
+          <Btn key={c.id} title={`${c.name} · ${M(c.sub)}${c.beta ? " · " + t("courseBeta") : ""}`} upper={false} kind={s.course === c.id ? "primary" : "ghost"}
+            onPress={() => { switchCourse(c.id as CourseId); setCourse(false); sfx("tap"); }} />))}
+        {s.course === "zza" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteZza")}</Text> : null}
       </Sheet>
     </View>
   );
