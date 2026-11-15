@@ -59,8 +59,6 @@ export default function Learn() {
   const list = useRef<FlatList<Row>>(null);
   const [sheet, setSheet] = useState<null | { type: "node" | "chest" | "guide" | "jump"; id: string; gems?: number }>(null);
   const [topUnit, setTopUnit] = useState(UNITS[0].id);
-  // switching course: drop state that points at the other course's units
-  useEffect(() => { setTopUnit(UNITS[0].id); setSheet(null); }, [s.course]);
   const cur = firstOpen(s);
 
   useFocusEffect(useCallback(() => {
@@ -216,7 +214,8 @@ function PathNode({ n, off, cur, onPress }: { n: NodeT; off: number; cur: boolea
 
 function NodeSheets({ sheet, close }: { sheet: null | { type: string; id: string; gems?: number }; close: () => void }) {
   const th = useTheme();
-  if (!sheet) return null;
+  // a sheet left open from the other course points at units that are not loaded now
+  if (!sheet || (!UNIT[sheet.id.split(":")[0]] && !UNIT[sheet.id])) return null;
   if (sheet.type === "chest") {
     const u = UNIT[sheet.id.split(":")[0]];
     return (

@@ -13,8 +13,9 @@ export const hasAudio = (text: string) => audioFor(text) != null;
 
 let voice: AudioPlayer | null = null;
 const fx: Record<string, AudioPlayer> = {};
+const taps: AudioPlayer[] = []; let tapI = 0;
 const SFX = {
-  ok: require("../../assets/sfx/ok.mp3"), bad: require("../../assets/sfx/bad.mp3"), tap: require("../../assets/sfx/tap.mp3"),
+  ok: require("../../assets/sfx/ok.mp3"), bad: require("../../assets/sfx/bad.mp3"), tap: require("../../assets/sfx/tap.wav"),
   combo: require("../../assets/sfx/combo.mp3"), win: require("../../assets/sfx/win.mp3"), chest: require("../../assets/sfx/chest.mp3"),
   fire: require("../../assets/sfx/fire.mp3"),
 };
@@ -24,6 +25,12 @@ export async function initAudio() {
   try { await setAudioModeAsync({ playsInSilentMode: true, interruptionMode: "mixWithOthers", shouldPlayInBackground: false }); } catch {}
   voice = createAudioPlayer(null);
   (Object.keys(SFX) as Sfx[]).forEach((k) => { fx[k] = createAudioPlayer(SFX[k]); fx[k].volume = 0.6; });
+  // taps come fast: keep a few pre-rewound players so a tap never waits for a seek
+  for (let i = 0; i < 3; i++) {
+    const p = createAudioPlayer(SFX.tap); p.volume = 0.5;
+    p.addListener("playbackStatusUpdate", (st) => { if (st.didJustFinish) p.seekTo(0).catch(() => {}); });
+    taps.push(p);
+  }
 }
 
 /** Plays the recording of a Kurmancî word or sentence. Returns false when no recording exists. */
@@ -52,6 +59,7 @@ export function sfx(name: Sfx) {
   else if (name === "bad") Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error).catch(() => {});
   else Haptics.selectionAsync().catch(() => {});
   if (!s.set.sfx) return;
+  if (name === "tap" && taps.length) { const p = taps[tapI++ % taps.length]; try { p.play(); } catch {} return; }
   const p = fx[name]; if (!p) return;
   try { p.seekTo(0); p.play(); } catch {}
 }
