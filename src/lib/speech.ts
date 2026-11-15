@@ -1,4 +1,5 @@
 import { AudioQuality, IOSOutputFormat, requestRecordingPermissionsAsync, setAudioModeAsync, type RecordingOptions } from "expo-audio";
+import { Platform } from "react-native";
 import { getS, update } from "./store";
 
 /** Speech check endpoint (Supabase Edge Function that forwards the clip to a Kurmancî speech recogniser). */
@@ -29,10 +30,15 @@ export class SttError extends Error { constructor(public kind: "net" | "server" 
 /** Send the recording and get back what the recogniser heard.
  *  Uses XMLHttpRequest: React Native's XHR uploads `{ uri, name, type }` form parts from disk,
  *  which the global (expo) fetch does not support. */
-export function recognize(uri: string): Promise<string> {
+export async function recognize(uri: string): Promise<string> {
+  const fd = new FormData();
+  if (Platform.OS === "web") {
+    // in the browser the recording is a blob: URL (webm/opus)
+    let blob: Blob;
+    try { blob = await (await fetch(uri)).blob(); } catch { throw new SttError("empty"); }
+    fd.append("file", blob, "say.webm");
+  } else fd.append("file", { uri, name: "say.m4a", type: "audio/mp4" } as unknown as Blob);
   return new Promise((resolve, reject) => {
-    const fd = new FormData();
-    fd.append("file", { uri, name: "say.m4a", type: "audio/mp4" } as unknown as Blob);
     const x = new XMLHttpRequest();
     x.open("POST", STT_URL);
     x.setRequestHeader("x-juji-app", APP_TOKEN);

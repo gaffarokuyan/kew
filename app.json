@@ -53,7 +53,8 @@
     "scheme": "kew",
     "backgroundColor": "#F7F5F0",
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/kew"
     },
     "extra": {
       "eas": {
