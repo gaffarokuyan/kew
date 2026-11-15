@@ -59,6 +59,8 @@ export default function Learn() {
   const list = useRef<FlatList<Row>>(null);
   const [sheet, setSheet] = useState<null | { type: "node" | "chest" | "guide" | "jump"; id: string; gems?: number }>(null);
   const [topUnit, setTopUnit] = useState(UNITS[0].id);
+  // switching course: drop state that points at the other course's units
+  useEffect(() => { setTopUnit(UNITS[0].id); setSheet(null); }, [s.course]);
   const cur = firstOpen(s);
 
   useFocusEffect(useCallback(() => {
@@ -129,7 +131,7 @@ export default function Learn() {
     );
   };
 
-  const bu = UNIT[topUnit]; const bnodes = NODES.filter((n) => n.unit === bu.id);
+  const bu = UNIT[topUnit] ?? UNITS[0]; const bnodes = NODES.filter((n) => n.unit === bu.id);
   const bOpen = unlocked(bnodes[0].id, s), bDone = bnodes.filter((n) => s.done[n.id]).length, bJump = !bOpen && UNITS.indexOf(bu) > 0;
   const bCol = bOpen ? ucol(bu.col, th) : th.lockedDeep;
   return (
