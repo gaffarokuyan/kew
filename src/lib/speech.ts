@@ -26,19 +26,28 @@ export async function recMode(on: boolean) {
 
 export class SttError extends Error { constructor(public kind: "net" | "server" | "empty") { super(kind); } }
 
-/** Send the recording and get back what the recogniser heard. */
-export async function recognize(uri: string): Promise<string> {
-  const fd = new FormData();
-  fd.append("file", { uri, name: "say.m4a", type: "audio/mp4" } as unknown as Blob);
-  const ctl = new AbortController(); const tm = setTimeout(() => ctl.abort(), 15000);
-  let r: Response;
-  try { r = await fetch(STT_URL, { method: "POST", body: fd, headers: { "x-juji-app": APP_TOKEN }, signal: ctl.signal }); }
-  catch { throw new SttError("net"); } finally { clearTimeout(tm); }
-  if (!r.ok) throw new SttError("server");
-  const j = (await r.json().catch(() => ({}))) as { text?: string };
-  const text = (j.text || "").trim();
-  if (!text) throw new SttError("empty");
-  return text;
+/** Send the recording and get back what the recogniser heard.
+ *  Uses XMLHttpRequest: React Native's XHR uploads `{ uri, name, type }` form parts from disk,
+ *  which the global (expo) fetch does not support. */
+export function recognize(uri: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const fd = new FormData();
+    fd.append("file", { uri, name: "say.m4a", type: "audio/mp4" } as unknown as Blob);
+    const x = new XMLHttpRequest();
+    x.open("POST", STT_URL);
+    x.setRequestHeader("x-juji-app", APP_TOKEN);
+    x.timeout = 20000;
+    x.onload = () => {
+      if (x.status < 200 || x.status >= 300) return reject(new SttError("server"));
+      let text = "";
+      try { text = String((JSON.parse(x.responseText) as { text?: string }).text || "").trim(); } catch {}
+      if (!text) return reject(new SttError("empty"));
+      resolve(text);
+    };
+    x.onerror = () => reject(new SttError("net"));
+    x.ontimeout = () => reject(new SttError("net"));
+    x.send(fd);
+  });
 }
 
 /* ---------- comparing what was said with the target ---------- */
