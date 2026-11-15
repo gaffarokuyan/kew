@@ -4,7 +4,7 @@ import { FlatList, Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 import Animated, { useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming } from "react-native-reanimated";
 import { speak, sfx } from "@/lib/audio";
-import { NODES, SECTIONS, UNIQUE, UNIT, UNITS, type Level, type NodeT, type Unit } from "@/lib/course";
+import { META, NODES, SECTIONS, uniqueWords, UNIT, UNITS, type Level, type NodeT, type Unit } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
 import { nodeTitle } from "@/lib/nodes";
 import { firstOpen, isDone, unlocked, update, useS } from "@/lib/store";
@@ -37,8 +37,15 @@ function buildRows(): Row[] {
   return rows;
 }
 
-const ROWS = buildRows();
-const OFFSETS = (() => { let y = 0; return ROWS.map((r) => { const o = { length: H[r.k], offset: y }; y += H[r.k]; return o; }); })();
+let ROWS: Row[] = [], OFFSETS: { length: number; offset: number }[] = [], ROWS_REV = -1;
+/** Path rows for the active course (rebuilt when the course changes). */
+function rows() {
+  if (ROWS_REV !== META.rev) {
+    ROWS = buildRows(); ROWS_REV = META.rev;
+    OFFSETS = (() => { let y = 0; return ROWS.map((r) => { const o = { length: H[r.k], offset: y }; y += H[r.k]; return o; }); })();
+  }
+  return ROWS;
+}
 const chestGems = () => 20 + Math.floor(Math.random() * 4) * 5;
 /** Unit whose rows sit under the sticky banner at a given scroll offset. */
 function unitAt(y: number) {
@@ -48,7 +55,7 @@ function unitAt(y: number) {
 }
 
 export default function Learn() {
-  const th = useTheme(); const s = useS();
+  const th = useTheme(); const s = useS(); rows();
   const list = useRef<FlatList<Row>>(null);
   const [sheet, setSheet] = useState<null | { type: "node" | "chest" | "guide" | "jump"; id: string; gems?: number }>(null);
   const [topUnit, setTopUnit] = useState(UNITS[0].id);
@@ -117,7 +124,7 @@ export default function Learn() {
       <View style={{ height: H.end, alignItems: "center", justifyContent: "center", gap: 10 }}>
         <KilimRule color={th.zer} h={10} seed={41} style={{ width: 160, alignSelf: "center" }} />
         <Juji size={96} />
-        <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t("pathEnd", { u: UNITS.length, n: NODES.length, w: UNIQUE })}</Text>
+        <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t("pathEnd", { u: UNITS.length, n: NODES.length, w: uniqueWords() })}</Text>
       </View>
     );
   };
@@ -127,7 +134,7 @@ export default function Learn() {
   const bCol = bOpen ? ucol(bu.col, th) : th.lockedDeep;
   return (
     <View style={{ flex: 1, backgroundColor: th.bg }}>
-      <FlatList ref={list} data={ROWS} renderItem={render} keyExtractor={(r, i) => r.k + i} extraData={s}
+      <FlatList ref={list} data={rows()} renderItem={render} keyExtractor={(r, i) => r.k + i} extraData={s}
         getItemLayout={(_, i) => ({ ...OFFSETS[i], index: i })}
         onScroll={(e) => { const id = unitAt(e.nativeEvent.contentOffset.y); if (id !== topUnit) setTopUnit(id); }} scrollEventThrottle={64}
         contentContainerStyle={{ paddingHorizontal: 16, paddingTop: BANNER + 4, paddingBottom: 30, maxWidth: 560, width: "100%", alignSelf: "center" }}

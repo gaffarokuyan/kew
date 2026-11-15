@@ -2,7 +2,7 @@
   "expo": {
     "name": "Juji",
     "slug": "kew",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
@@ -19,9 +19,9 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "blockedPermissions": [
-        "android.permission.RECORD_AUDIO",
         "android.permission.SYSTEM_ALERT_WINDOW"
-      ]
+      ],
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,8 +32,8 @@
       [
         "expo-audio",
         {
-          "microphonePermission": false,
-          "recordAudioAndroid": false,
+          "microphonePermission": "Juji, konuşma alıştırmalarında Kurmancî telaffuzunu kontrol etmek için mikrofonunu kullanır.",
+          "recordAudioAndroid": true,
           "enableBackgroundPlayback": false
         }
       ],

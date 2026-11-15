@@ -1,13 +1,15 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import Animated, { FadeIn, FadeInDown, SlideInDown, useAnimatedStyle, useSharedValue, withSequence, withTiming } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { hasAudio, speak, sfx, stopVoice } from "@/lib/audio";
-import { NODE, NODES, UNIT, UNITS, WORD } from "@/lib/course";
-import { buildEx, genJump, genLearn, genReview, genSent, lev, mean, norm, pick, shuffle, type Ex, type W } from "@/lib/exercises";
+import { closeness, micAllowed, PASS, pauseSpeak, recMode, recognize, REC_OPTS, SttError } from "@/lib/speech";
+import { useAudioRecorder } from "expo-audio";
+import { courseId, NODE, NODES, UNIT, UNITS, WORD } from "@/lib/course";
+import { buildEx, genJump, genLearn, genMistakes, genReview, genSent, genSounds, lev, mean, norm, pick, shuffle, type Ex, type W } from "@/lib/exercises";
 import { M, t, tArr, locale } from "@/lib/i18n";
-import { addXP, day, dayAdd, getS, learned, markWord, MAXH, update, useS, wordStrength } from "@/lib/store";
+import { addXP, day, dayAdd, dueScore, getS, learned, markSent, markWord, MAXH, update, useS, wordStrength } from "@/lib/store";
 import { Juji, KilimRule, Medallion, Sun } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
@@ -15,8 +17,8 @@ import { Btn, confetti, Lead, Pic, Sheet, Spk, Title } from "@/ui/kit";
 import { WeekDots } from "@/ui/TopBar";
 import { F, TS, useTheme } from "@/ui/theme";
 
-type Kind = "learn" | "sent" | "jump" | "weak" | "mistakes" | "listen" | "sprint";
-type Info = { pi?: number; ok: boolean; ans?: string; mean?: string | null; ku?: string; typo?: boolean; match?: boolean; slip?: boolean; sentence?: boolean };
+type Kind = "learn" | "sent" | "jump" | "weak" | "mistakes" | "listen" | "sprint" | "sounds";
+type Info = { pi?: number; heard?: string; said?: boolean; ok: boolean; ans?: string; mean?: string | null; ku?: string; typo?: boolean; match?: boolean; slip?: boolean; sentence?: boolean };
 type Ans = { val: string | null; get: () => Info };
 type Phase = { p: "play" } | { p: "done"; xp: number; acc: number; secs: number; gems: number; goalHit: boolean; streakUp: boolean } | { p: "fail" } | { p: "streak" } | { p: "jumpPass" } | { p: "jumpFail" };
 
@@ -32,9 +34,12 @@ function build(params: { node?: string; practice?: string; jump?: string }) {
     return { kind: n.type as Kind, exs: n.type === "learn" ? genLearn(n, v, s.words) : genSent(n, v), id: n.id, practice: false, xp: 10 };
   }
   const kind = (params.practice || "weak") as Kind; const lw = learned();
-  let ws = kind === "mistakes" ? [...s.mistakes] : [...lw].sort((a, b) => wordStrength(a) - wordStrength(b) || Math.random() - 0.5).slice(0, 8);
+  if (kind === "sounds") return { kind, exs: genSounds(10), id: null, practice: true, xp: 10 };
+  if (kind === "mistakes") return { kind, exs: genMistakes([...s.mistakes], [...s.msents], v), id: null, practice: true, xp: 10 };
+  // spaced repetition: most overdue words first
+  let ws = [...lw].sort((a, b) => dueScore(b) - dueScore(a) || wordStrength(a) - wordStrength(b) || Math.random() - 0.5).slice(0, 8);
   if (ws.length < 4) ws = [...new Set([...ws, ...lw])].slice(0, 8);
-  const exs: Ex[] = kind === "sprint" ? [0, 1, 2].map(() => ({ t: "match", pairs: pick(lw.map((k) => WORD[k]) as W[], Math.min(5, lw.length)) }) as Ex) : genReview(ws, v, kind === "listen");
+  const exs: Ex[] = kind === "sprint" ? [0, 1, 2].map(() => ({ t: "match", pairs: pick(lw.map((k) => WORD[k]) as W[], Math.min(5, lw.length)) }) as Ex) : genReview(ws, v, kind === "listen", 99, (k) => wordStrength(k));
   return { kind, exs, id: null, practice: true, xp: 10 };
 }
 
@@ -43,7 +48,7 @@ export default function Lesson() {
   const th = useTheme(); const s = useS(); const ins = useSafeAreaInsets();
   const init = useMemo(() => build(params), []);
   const [queue, setQueue] = useState<Ex[]>(() => init.exs.map((e) => ({ ...e })));
-  const total = init.exs.length, graded = init.exs.filter((e) => e.t !== "new").length;
+  const total = init.exs.length, graded = init.exs.filter((e) => e.t !== "new" && e.t !== "tip").length;
   const [done, setDone] = useState(0);
   const [step, setStep] = useState(0);
   const [verdict, setVerdict] = useState<Info | null>(null);
@@ -72,12 +77,12 @@ export default function Lesson() {
     else { sfx("bad"); R.combo = 0; R.mistakes++; if (info.ku) { markWord(info.ku, false); if (WORD[info.ku]) R.wrong.add(info.ku); } loseLife(); }
     if (ok && R.combo >= 3 && R.combo % 2 === 1) sfx("combo");
     setCombo(R.combo);
-    if (info.sentence && ok && info.ku) speak(info.ku);
+    if (info.sentence && info.ku) { markSent(info.ku, ok); if (ok) speak(info.ku); }
     setVerdict({ ...info, pi: rnd(20) });
   };
 
   const next = () => {
-    const R = Rf.current; const ex = queue[0]; const ok = ex.t === "new" || verdict?.ok;
+    const R = Rf.current; const ex = queue[0]; const ok = ex.t === "new" || ex.t === "tip" || verdict?.ok;
     let q = queue.slice(1);
     if (ok) setDone((d) => d + 1);
     else {
@@ -122,6 +127,13 @@ export default function Lesson() {
   useEffect(() => { if (isJump && lives <= 0 && !verdict) finishJump(false); }, [lives]);
 
   const close = () => { stopVoice(); router.back(); };
+  /** «Can't speak now»: drop every speaking exercise for this lesson and pause them for 15 minutes. */
+  const skipSpeak = () => {
+    pauseSpeak(); setVerdict(null); setAnswer(null); setStep((x) => x + 1);
+    const q = queue.slice(1).filter((x) => x.t !== "speak"); setDone((d) => d + 1 + (queue.length - 1 - q.length));
+    if (!q.length) return isJump ? finishJump(true) : finish();
+    setQueue(q);
+  };
 
   if (phase.p !== "play") return <ResultView phase={phase} practice={init.practice} kind={init.kind} jumpUnit={params.jump} close={close} setPhase={setPhase} />;
   if (!e) return null;
@@ -144,10 +156,10 @@ export default function Lesson() {
         </View>
         <ScrollView contentContainerStyle={{ padding: 18, gap: 18, flexGrow: 1, maxWidth: 560, width: "100%", alignSelf: "center" }} keyboardShouldPersistTaps="handled">
           <Animated.View key={step} entering={FadeIn.duration(220)} style={{ gap: 18 }}>
-            <Exercise e={e} locked={locked} setAnswer={setAnswer} judge={judge} verdict={verdict} lose={loseLife} />
+            <Exercise e={e} locked={locked} setAnswer={setAnswer} judge={judge} verdict={verdict} lose={loseLife} skip={skipSpeak} />
           </Animated.View>
         </ScrollView>
-        <Footer e={e} verdict={verdict} answer={answer} combo={combo} onCheck={() => answer && judge(answer.get())} onNext={next} bottom={ins.bottom} />
+        <Footer e={e} verdict={verdict} answer={answer} combo={combo} onCheck={() => answer && judge(answer.get())} onNext={next} onSkip={skipSpeak} bottom={ins.bottom} />
       </KeyboardAvoidingView>
       <Sheet visible={quit} center onClose={() => setQuit(false)}>
         <View style={{ alignItems: "center" }}><Juji size={110} sad /></View>
@@ -161,15 +173,16 @@ export default function Lesson() {
 }
 
 /* ================= footer ================= */
-function Footer({ e, verdict, answer, combo, onCheck, onNext, bottom }: { e: Ex; verdict: Info | null; answer: Ans | null; combo: number; onCheck: () => void; onNext: () => void; bottom: number }) {
+function Footer({ e, verdict, answer, combo, onCheck, onNext, onSkip, bottom }: { e: Ex; verdict: Info | null; answer: Ans | null; combo: number; onCheck: () => void; onNext: () => void; onSkip: () => void; bottom: number }) {
   const th = useTheme();
-  if (e.t === "new") return <View style={{ padding: 16, paddingBottom: 16 + bottom, borderTopWidth: 1, borderColor: th.line }}><Btn title={t("cont")} onPress={onNext} /></View>;
+  if (e.t === "new" || e.t === "tip") return <View style={{ padding: 16, paddingBottom: 16 + bottom, borderTopWidth: 1, borderColor: th.line }}><Btn title={t("cont")} onPress={onNext} /></View>;
   if (!verdict) {
+    if (e.t === "speak") return <View style={{ padding: 16, paddingBottom: 16 + bottom, borderTopWidth: 1, borderColor: th.line }}><Btn title={t("cantSpeak")} kind="ghost" onPress={onSkip} /></View>;
     if (e.t === "match") return <View style={{ padding: 16, paddingBottom: 22 + bottom, borderTopWidth: 1, borderColor: th.line }}><Text style={{ textAlign: "center", fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>{t("matchHint")}</Text></View>;
     return <View style={{ padding: 16, paddingBottom: 16 + bottom, borderTopWidth: 1, borderColor: th.line }}><Btn title={t("check")} disabled={!answer?.val} onPress={onCheck} /></View>;
   }
   const ok = verdict.ok; const pr = tArr("praise");
-  const title = ok ? (verdict.typo ? t("typo") : pr[(verdict.pi ?? 0) % pr.length]) : t("correctIs");
+  const title = verdict.said ? (ok ? t("jujiOk") : t("sayAgain")) : ok ? (verdict.typo ? t("typo") : pr[(verdict.pi ?? 0) % pr.length]) : t("correctIs");
   const showCombo = ok && combo >= 3 && combo % 2 === 1;
   return (
     <Animated.View entering={SlideInDown.duration(220)} accessibilityLiveRegion="polite"
@@ -183,9 +196,11 @@ function Footer({ e, verdict, answer, combo, onCheck, onNext, bottom }: { e: Ex;
         </View>
         <View style={{ flex: 1 }}>
           <Text style={{ fontFamily: F.display, fontSize: TS.xl - 2, lineHeight: 28, color: ok ? th.keskDeep : th.sorDeep }}>{title}</Text>
-          {verdict.match ? (verdict.slip ? <Text style={{ fontFamily: F.body, color: th.ink }}>{t("fewTries")}</Text> : null)
+          {verdict.said ? null : verdict.match ? (verdict.slip ? <Text style={{ fontFamily: F.body, color: th.ink }}>{t("fewTries")}</Text> : null)
             : (!ok || verdict.typo) ? <Text style={{ fontFamily: F.serif, color: th.ink, fontSize: TS.lg }}>{verdict.ans}</Text> : null}
-          {verdict.mean && !verdict.match ? <Text style={{ fontFamily: F.body, color: th.muted }}>{ok ? `${verdict.ans} = ${verdict.mean}` : verdict.mean}</Text> : null}
+          {verdict.said ? <Text style={{ fontFamily: F.serif, color: th.ink, fontSize: TS.lg }}>{verdict.ans}</Text> : null}
+          {verdict.said && verdict.heard ? <Text style={{ fontFamily: F.italic, color: th.muted }}>{t("heard", { h: verdict.heard })}</Text> : null}
+          {verdict.mean && !verdict.match && !verdict.said ? <Text style={{ fontFamily: F.body, color: th.muted }}>{ok ? `${verdict.ans} = ${verdict.mean}` : verdict.mean}</Text> : null}
         </View>
         {verdict.ku && hasAudio(verdict.ku) ? <Spk text={verdict.ku} size={40} /> : null}
       </View>
@@ -195,7 +210,7 @@ function Footer({ e, verdict, answer, combo, onCheck, onNext, bottom }: { e: Ex;
 }
 
 /* ================= exercises ================= */
-type Common = { locked: boolean; verdict: Info | null; setAnswer: (a: Ans | null) => void; judge: (i: Info) => void; lose: () => void };
+type Common = { locked: boolean; verdict: Info | null; setAnswer: (a: Ans | null) => void; judge: (i: Info) => void; lose: () => void; skip: () => void };
 type ExP = Common & { e: Ex };
 type P<K extends Ex["t"]> = Common & { e: Extract<Ex, { t: K }> };
 
@@ -245,6 +260,9 @@ function Exercise(p: ExP) {
     case "match": return <Match {...c} e={e} />;
     case "build": return <Build {...c} e={e} />;
     case "fill": return <Fill {...c} e={e} />;
+    case "speak": return <SpeakEx {...c} e={e} />;
+    case "tip": return <TipCard unit={e.unit} />;
+    case "sound": return <SoundEx {...c} e={e} />;
     default: return <TypeEx {...c} e={e} />;
   }
 }
@@ -385,19 +403,117 @@ function Fill({ e, locked, verdict, setAnswer }: P<"fill">) {
   </>);
 }
 
-function TypeEx({ e, locked, setAnswer }: P<"type">) {
-  const th = useTheme(); const w = e.w; const [v, setV] = useState("");
+function TypeEx({ e, locked, setAnswer }: P<"type" | "recall">) {
+  const th = useTheme(); const w = e.w; const [v, setV] = useState(""); const recall = e.t === "recall";
   const ref = useRef<React.ComponentRef<typeof TextInput>>(null);
-  useEffect(() => { const tm = setTimeout(() => speak(w.ku), 300); return () => clearTimeout(tm); }, []);
+  useEffect(() => { if (recall) return; const tm = setTimeout(() => speak(w.ku), 300); return () => clearTimeout(tm); }, []);
   useEffect(() => { setAnswer({ val: v.trim() ? v : null, get: () => { const a = norm(v), b = norm(w.ku), d = lev(a, b), ok = d === 0 || (d === 1 && b.length > 4); return { ok, ans: w.ku, mean: mean(w), ku: w.ku, typo: ok && d === 1 }; } }); }, [v]);
   return (<>
-    <Kind icon={<Icon.ear size={18} color={th.keskDeep} />} label={t("hearType")} />
-    <View style={{ flexDirection: "row", justifyContent: "center", gap: 14, paddingVertical: 6 }}><Spk text={w.ku} size={76} /><Spk text={w.ku} slow size={56} /></View>
+    {recall ? <><Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("recallKind")} /><Q>{t("recallQ", { w: mean(w) })}</Q></>
+      : <><Kind icon={<Icon.ear size={18} color={th.keskDeep} />} label={t("hearType")} />
+        <View style={{ flexDirection: "row", justifyContent: "center", gap: 14, paddingVertical: 6 }}><Spk text={w.ku} size={76} /><Spk text={w.ku} slow size={56} /></View></>}
     <TextInput ref={ref} value={v} onChangeText={setV} editable={!locked} placeholder={t("typePh")} placeholderTextColor={th.faint} autoCapitalize="none" autoCorrect={false} spellCheck={false} multiline
       accessibilityLabel={t("answer")} style={{ minHeight: 110, padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface, color: th.ink, fontFamily: F.serif, fontSize: 22, textAlignVertical: "top" }} />
     <View style={{ flexDirection: "row", gap: 8, justifyContent: "center" }}>
-      {["ê", "î", "û", "ç", "ş"].map((k) => <Pressable key={k} onPress={() => { buzz("select"); setV((x) => x + k); ref.current?.focus(); }} accessibilityRole="button" accessibilityLabel={k} style={{ width: 48, height: 48, borderRadius: 10, borderWidth: 1.5, borderBottomWidth: 4, borderColor: th.line2, backgroundColor: th.surface, alignItems: "center", justifyContent: "center" }}>
+      {(courseId() === "zza" ? ["ê", "î", "û", "ç", "ş", "ı", "ğ"] : ["ê", "î", "û", "ç", "ş"]).map((k) => <Pressable key={k} onPress={() => { buzz("select"); setV((x) => x + k); ref.current?.focus(); }} accessibilityRole="button" accessibilityLabel={k} style={{ width: 48, height: 48, borderRadius: 10, borderWidth: 1.5, borderBottomWidth: 4, borderColor: th.line2, backgroundColor: th.surface, alignItems: "center", justifyContent: "center" }}>
         <Text style={{ fontFamily: F.serif, fontSize: 22, color: th.ink }}>{k}</Text></Pressable>)}
+    </View>
+  </>);
+}
+
+function SpeakEx({ e, locked, judge, skip }: P<"speak">) {
+  const th = useTheme(); const w = e.w;
+  const rec = useAudioRecorder(REC_OPTS);
+  const [st, setSt] = useState<"idle" | "rec" | "busy">("idle");
+  const [msg, setMsg] = useState<string | null>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pulse = useSharedValue(1);
+  const ring = useAnimatedStyle(() => ({ transform: [{ scale: pulse.value }] }));
+  useEffect(() => { const tm = setTimeout(() => speak(w.ku), 300); return () => { clearTimeout(tm); if (timer.current) clearTimeout(timer.current); try { if (rec.isRecording) rec.stop(); } catch {} recMode(false); }; }, []);
+
+  const stop = async () => {
+    if (timer.current) { clearTimeout(timer.current); timer.current = null; }
+    setSt("busy"); pulse.set(withTiming(1));
+    try { await rec.stop(); } catch {}
+    await recMode(false);
+    const uri = rec.uri;
+    if (!uri) { setSt("idle"); setMsg(t("sayErr")); return; }
+    try {
+      const heard = await recognize(uri);
+      const ok = closeness(heard, w.ku) >= PASS;
+      setSt("idle");
+      judge({ ok, said: true, heard, ans: w.ku, ku: e.sent ? undefined : w.ku });
+      if (ok) setTimeout(() => speak(w.ku), 350);
+    } catch (err) {
+      setSt("idle"); setMsg(err instanceof SttError && err.kind === "net" ? t("sayNoNet") : t("sayErr"));
+    }
+  };
+  const start = async () => {
+    if (locked || st === "busy") return;
+    if (st === "rec") return stop();
+    setMsg(null); stopVoice();
+    if (!(await micAllowed())) { setMsg(t("sayNoMic")); return; }
+    try {
+      await recMode(true);
+      await rec.prepareToRecordAsync();
+      rec.record();
+      buzz("select"); setSt("rec");
+      pulse.set(withSequence(withTiming(1.12, { duration: 400 }), withTiming(1, { duration: 400 })));
+      timer.current = setTimeout(stop, e.sent ? 8000 : 4500);
+    } catch { await recMode(false); setSt("idle"); setMsg(t("sayErr")); }
+  };
+  const bg = st === "rec" ? th.sor : th.kesk;
+  return (<>
+    <Kind icon={<Icon.mic size={18} color={th.keskDeep} />} label={e.sent ? t("shadowKind") : t("sayIt")} />
+    <JujiSays text={w.ku} />
+    <Text style={{ fontFamily: F.bodySemi, fontSize: 17, color: th.muted, textAlign: "center" }}>{mean(w)}</Text>
+    <View style={{ alignItems: "center", gap: 12, paddingVertical: 8 }}>
+      <Animated.View style={ring}>
+        <Pressable onPress={start} disabled={locked || st === "busy"} accessibilityRole="button" accessibilityLabel={st === "rec" ? t("sayStop") : t("sayTap")}
+          style={({ pressed }) => ({ width: 112, height: 112, borderRadius: 40, borderTopLeftRadius: 14, alignItems: "center", justifyContent: "center", backgroundColor: bg, borderBottomWidth: pressed ? 0 : 6, borderColor: "rgba(0,0,0,0.22)", marginTop: pressed ? 6 : 0 })}>
+          {st === "busy" ? <ActivityIndicator color="#fff" size="large" /> : <Icon.mic size={54} />}
+        </Pressable>
+      </Animated.View>
+      <Text style={{ fontFamily: F.italicBold, fontSize: TS.md, color: st === "rec" ? th.sorDeep : th.keskDeep }}>{st === "rec" ? t("sayStop") : st === "busy" ? t("sayBusy") : t("sayTap")}</Text>
+      {msg ? <Text style={{ fontFamily: F.body, color: th.sorDeep, textAlign: "center" }}>{msg}</Text> : null}
+    </View>
+  </>);
+}
+
+function TipCard({ unit }: { unit: string }) {
+  const th = useTheme(); const u = UNIT[unit];
+  return (<>
+    <Kind icon={<Icon.book size={18} color={th.zerDeep} />} label={t("tipKind")} color={th.zerDeep} />
+    <Q>{u.ku}</Q>
+    <View style={{ gap: 12, padding: 18, borderRadius: 16, borderTopLeftRadius: 4, borderWidth: 1.5, borderBottomWidth: 4, borderColor: th.line2, backgroundColor: th.surface }}>
+      <KilimRule color={th.zer} accent={th.sor} h={10} seed={u.ku.length * 3} />
+      {(u.tips || []).map(([ku, m], i) => (
+        <View key={i} style={{ gap: 4 }}>
+          <Text style={{ fontFamily: F.serif, fontSize: 22, lineHeight: 28, color: th.ink }}>{ku}</Text>
+          <Text style={{ fontFamily: F.body, fontSize: TS.md, lineHeight: 23, color: th.muted }}>{M(m)}</Text>
+        </View>))}
+    </View>
+  </>);
+}
+
+function SoundEx({ e, locked, verdict, setAnswer }: P<"sound">) {
+  const th = useTheme(); const [sel, setSel] = useState<string | null>(null);
+  useEffect(() => { const tm = setTimeout(() => speak(e.w.ku), 300); return () => clearTimeout(tm); }, []);
+  useEffect(() => { setAnswer({ val: sel, get: () => ({ ok: sel === e.ans, ans: e.letters ? `${e.w.ku} · ${e.ans}` : e.ans, mean: mean(e.w), ku: e.w.ku }) }); }, [sel]);
+  return (<>
+    <Kind icon={<Icon.ear size={18} color={th.keskDeep} />} label={t("soundKind")} />
+    <Q>{e.letters ? t("soundLetterQ", { a: e.opts[0], b: e.opts[1] }) : t("soundPairQ")}</Q>
+    <View style={{ flexDirection: "row", justifyContent: "center", gap: 14, paddingVertical: 6 }}><Spk text={e.w.ku} size={76} /><Spk text={e.w.ku} slow size={56} /></View>
+    <View style={{ flexDirection: "row", gap: 12 }}>
+      {e.opts.map((o) => {
+        const st = verdict ? (o === e.ans ? "right" : o === sel ? "wrong" : "") : o === sel ? "sel" : "";
+        const bc = st === "sel" ? th.sky : st === "right" ? th.kesk : st === "wrong" ? th.sor : th.line2;
+        return (
+          <Pressable key={o} onPress={() => { if (locked) return; sfx("tap"); setSel(o); if (!e.letters) speak(o); }} accessibilityRole="button" accessibilityLabel={o}
+            style={{ flex: 1, minHeight: 96, alignItems: "center", justifyContent: "center", borderRadius: 16, borderTopLeftRadius: 4, borderWidth: st ? 2 : 1.5, borderBottomWidth: 4, borderColor: bc, backgroundColor: st === "sel" ? th.skySoft : st === "right" ? th.keskSoft : st === "wrong" ? th.sorSoft : th.surface }}>
+            <Text style={{ fontFamily: F.display, fontSize: e.letters ? 44 : 30, color: th.ink }}>{o}</Text>
+          </Pressable>);
+      })}
     </View>
   </>);
 }

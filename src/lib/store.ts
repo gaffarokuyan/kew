@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSyncExternalStore } from "react";
-import { NODES, NODE_INDEX, WORD } from "./course";
+import { loadCourse, NODES, NODE_INDEX, WORD, type CourseId } from "./course";
 
 export const MAXH = 5;
 export const HEART_MS = 30 * 60 * 1000;
@@ -17,18 +17,21 @@ export const dayAdd = (s: string, n: number) => {
 };
 
 export type Lang = "tr" | "en" | "de";
+/** Per-course progress, stashed while another course is active. */
+export type Prog = { done: State["done"]; words: State["words"]; mistakes: string[]; msents: string[]; level: number };
 export type State = {
   v: 3; onboard: boolean; lang: Lang | null; level: number; goal: number; xp: number; gems: number;
   hearts: number; heartAt: number; streak: number; last: string | null; freeze: number; best: number;
   done: Record<string, boolean>; words: Record<string, { s: number; t: number; seen: number }>; mistakes: string[];
   xpLog: Record<string, number>; daily: { date: string | null; xp: number; lessons: number; bestCombo: number; claimed: string[] };
   stats: { perfect: number; stories: number; lessons: number; jumps: number };
-  set: { sfx: boolean; voice: boolean; rate: number };
+  set: { sfx: boolean; voice: boolean; rate: number; speak: boolean }; speakPause: number;
+  course: CourseId; saved: Partial<Record<CourseId, Prog>>; msents: string[];
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,
   freeze: 0, best: 0, done: {}, words: {}, mistakes: [], xpLog: {}, daily: { date: null, xp: 0, lessons: 0, bestCombo: 0, claimed: [] },
-  stats: { perfect: 0, stories: 0, lessons: 0, jumps: 0 }, set: { sfx: true, voice: true, rate: 1 },
+  stats: { perfect: 0, stories: 0, lessons: 0, jumps: 0 }, set: { sfx: true, voice: true, rate: 1, speak: true }, speakPause: 0, course: "kmr", saved: {}, msents: [],
 });
 
 let S: State = DEF();
@@ -61,7 +64,19 @@ export async function hydrate() {
       S = { ...d, ...s, set: { ...d.set, ...(s.set || {}) }, daily: { ...d.daily, ...(s.daily || {}) }, stats: { ...d.stats, ...(s.stats || {}) } };
     }
   } catch {}
+  loadCourse(S.course || "kmr");
   return tick();
+}
+/** Switch the course being learnt: stash this course's progress and restore the other one's. */
+export function switchCourse(id: CourseId) {
+  if (S.course === id) return;
+  update((s) => {
+    s.saved[s.course] = { done: s.done, words: s.words, mistakes: s.mistakes, msents: s.msents, level: s.level };
+    const p = s.saved[id];
+    s.done = p?.done ?? {}; s.words = p?.words ?? {}; s.mistakes = p?.mistakes ?? []; s.msents = p?.msents ?? []; s.level = p?.level ?? 0;
+    delete s.saved[id]; s.course = id;
+    loadCourse(id);
+  });
 }
 export async function resetAll() {
   const lang = S.lang;
@@ -103,10 +118,24 @@ export function wordStrength(ku: string, s = S) {
   const age = (Date.now() - w.t) / 864e5;
   return Math.max(0, Math.min(4, w.s - Math.floor(age / 4)));
 }
+/** Review intervals per strength level (spaced repetition): 0 → now, 1 → 1 day, 2 → 3 days, 3 → 7 days, 4 → 16 days. */
+const IV = [0, 1, 3, 7, 16].map((d) => d * 864e5);
+/** How overdue a word is: ≥ 1 means it should be reviewed now; higher = more urgent. */
+export function dueScore(ku: string, s = S) {
+  const w = s.words[ku]; if (!w) return 0;
+  const iv = IV[Math.max(0, Math.min(4, w.s))] || 4 * 36e5;
+  return (Date.now() - w.t) / iv;
+}
 export function markWord(ku: string, ok: boolean) {
   if (!WORD[ku]) return;
   const w = S.words[ku] || { s: 0, t: Date.now(), seen: 0 };
   S.words[ku] = { seen: w.seen + 1, s: ok ? Math.min(4, w.s + 1) : Math.max(0, w.s - 1), t: Date.now() };
+}
+/** Remember a sentence the learner got wrong, for the «my mistakes» mini lesson. */
+export function markSent(ku: string, ok: boolean) {
+  const i = S.msents.indexOf(ku);
+  if (!ok && i < 0) { S.msents.push(ku); if (S.msents.length > 30) S.msents.shift(); }
+  if (ok && i >= 0) S.msents.splice(i, 1);
 }
 export const learned = (s = S) => Object.keys(s.words).filter((k) => WORD[k]);
 export const getVersion = () => version;
