@@ -1,0 +1,1185 @@
+{
+ "version": 1,
+ "episodes": [
+  {
+   "id": "kmr-a1-01",
+   "course": "kmr",
+   "lvl": "A1",
+   "n": 1,
+   "title": "Silav, ez Juji me!",
+   "name": "Merhaba, ben Juji!|Hi, I am Juji!|Hallo, ich bin Juji!",
+   "sub": "Selamlaşma ve tanışma|Greetings and introductions|Begrüßung und Vorstellung",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Silav hevalno! Ez Juji me. Ev podkasta me ye.",
+     "m": "Merhaba arkadaşlar! Ben Juji. Bu bizim podcastimiz.|Hi friends! I am Juji. This is our podcast.|Hallo Freunde! Ich bin Juji. Das ist unser Podcast."
+    },
+    {
+     "s": "Juji",
+     "t": "Îro mêvanê me Rojda ye. Silav Rojda!",
+     "m": "Bugün konuğumuz Rojda. Merhaba Rojda!|Today our guest is Rojda. Hi Rojda!|Heute ist Rojda unser Gast. Hallo Rojda!"
+    },
+    {
+     "s": "Rojda",
+     "t": "Silav Juji! Tu çawa yî?",
+     "m": "Merhaba Juji! Nasılsın?|Hi Juji! How are you?|Hallo Juji! Wie geht es dir?"
+    },
+    {
+     "s": "Juji",
+     "t": "Ez baş im, spas. Tu çawa yî?",
+     "m": "İyiyim, teşekkürler. Sen nasılsın?|I am fine, thanks. How are you?|Mir geht es gut, danke. Und dir?"
+    },
+    {
+     "s": "Rojda",
+     "t": "Ez jî baş im. Ez ji Amedê me.",
+     "m": "Ben de iyiyim. Ben Amedliyim.|I am fine too. I am from Amed.|Mir geht es auch gut. Ich komme aus Amed."
+    },
+    {
+     "s": "Juji",
+     "t": "Tu xwendekar î?",
+     "m": "Öğrenci misin?|Are you a student?|Bist du Studentin?"
+    },
+    {
+     "s": "Rojda",
+     "t": "Erê, ez xwendekar im. Ez li zanîngehê dixwînim.",
+     "m": "Evet, öğrenciyim. Üniversitede okuyorum.|Yes, I am a student. I study at the university.|Ja, ich bin Studentin. Ich studiere an der Universität."
+    },
+    {
+     "s": "Juji",
+     "t": "Tu kîjan zimanan dizanî?",
+     "m": "Hangi dilleri biliyorsun?|Which languages do you know?|Welche Sprachen kannst du?"
+    },
+    {
+     "s": "Rojda",
+     "t": "Ez bi kurdî, tirkî û hinekî îngilîzî dizanim.",
+     "m": "Kürtçe, Türkçe ve biraz İngilizce biliyorum.|I know Kurdish, Turkish and a little English.|Ich kann Kurdisch, Türkisch und ein bisschen Englisch."
+    },
+    {
+     "s": "Juji",
+     "t": "Pir baş! Spas ji bo hatina te, Rojda.",
+     "m": "Çok güzel! Geldiğin için teşekkürler, Rojda.|Very good! Thanks for coming, Rojda.|Sehr gut! Danke, dass du gekommen bist, Rojda."
+    },
+    {
+     "s": "Rojda",
+     "t": "Ez spas dikim. Bi xatirê te!",
+     "m": "Ben teşekkür ederim. Hoşça kal!|Thank you. Goodbye!|Ich danke dir. Tschüss!"
+    },
+    {
+     "s": "Juji",
+     "t": "Oxir be! Heta podkasta din, xatirê we.",
+     "m": "Güle güle! Bir sonraki podcaste kadar hoşça kalın.|Goodbye! Until the next podcast, take care.|Auf Wiedersehen! Bis zum nächsten Podcast."
+    }
+   ],
+   "words": [
+    [
+     "mêvan",
+     "misafir|guest|Gast"
+    ],
+    [
+     "zanîngeh",
+     "üniversite|university|Universität"
+    ],
+    [
+     "ziman",
+     "dil|language|Sprache"
+    ],
+    [
+     "hinekî",
+     "biraz|a little|ein bisschen"
+    ],
+    [
+     "podkast",
+     "podcast|podcast|Podcast"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Rojda nereli?|Where is Rojda from?|Woher kommt Rojda?",
+     "o": [
+      "Amed|Amed|Amed",
+      "Wan|Wan|Wan",
+      "Mêrdîn|Mêrdîn|Mêrdîn"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Rojda ne yapıyor?|What does Rojda do?|Was macht Rojda?",
+     "o": [
+      "Üniversitede okuyor|She studies at university|Sie studiert",
+      "Öğretmen|She is a teacher|Sie ist Lehrerin",
+      "Doktor|She is a doctor|Sie ist Ärztin"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Rojda hangi dilleri biliyor?|Which languages does Rojda know?|Welche Sprachen kann Rojda?",
+     "o": [
+      "Kürtçe, Türkçe, biraz İngilizce|Kurdish, Turkish, a little English|Kurdisch, Türkisch, etwas Englisch",
+      "Sadece Kürtçe|Only Kurdish|Nur Kurdisch",
+      "Almanca ve Kürtçe|German and Kurdish|Deutsch und Kurdisch"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a1-02",
+   "course": "kmr",
+   "lvl": "A1",
+   "n": 2,
+   "title": "Malbata Azad",
+   "name": "Azad'ın ailesi|Azad's family|Azads Familie",
+   "sub": "Aile ve ev|Family and home|Familie und Zuhause",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Silav! Îro Azad bi me re ye. Azad, malbata te çend kes e?",
+     "m": "Merhaba! Bugün Azad bizimle. Azad, ailen kaç kişi?|Hi! Today Azad is with us. Azad, how many people are in your family?|Hallo! Heute ist Azad bei uns. Azad, wie groß ist deine Familie?"
+    },
+    {
+     "s": "Azad",
+     "t": "Malbata min pênc kes e.",
+     "m": "Ailem beş kişi.|My family has five people.|Meine Familie hat fünf Personen."
+    },
+    {
+     "s": "Azad",
+     "t": "Dayika min, bavê min, xwişka min, birayê min û ez.",
+     "m": "Annem, babam, kız kardeşim, erkek kardeşim ve ben.|My mother, my father, my sister, my brother and me.|Meine Mutter, mein Vater, meine Schwester, mein Bruder und ich."
+    },
+    {
+     "s": "Juji",
+     "t": "Navê xwişka te çi ye?",
+     "m": "Kız kardeşinin adı ne?|What is your sister's name?|Wie heißt deine Schwester?"
+    },
+    {
+     "s": "Azad",
+     "t": "Navê wê Berfîn e. Ew deh salî ye.",
+     "m": "Onun adı Berfîn. On yaşında.|Her name is Berfîn. She is ten years old.|Sie heißt Berfîn. Sie ist zehn Jahre alt."
+    },
+    {
+     "s": "Juji",
+     "t": "Birayê te mezin e an biçûk e?",
+     "m": "Erkek kardeşin büyük mü küçük mü?|Is your brother older or younger?|Ist dein Bruder älter oder jünger?"
+    },
+    {
+     "s": "Azad",
+     "t": "Birayê min mezin e. Ew li Hewlêrê dixebite.",
+     "m": "Ağabeyim büyük. Hewlêrde çalışıyor.|My brother is older. He works in Hewlêr.|Mein Bruder ist älter. Er arbeitet in Hewlêr."
+    },
+    {
+     "s": "Juji",
+     "t": "Hûn li ku dijîn?",
+     "m": "Siz nerede yaşıyorsunuz?|Where do you live?|Wo wohnt ihr?"
+    },
+    {
+     "s": "Azad",
+     "t": "Em li Wanê dijîn. Mala me ne mezin e, lê pir xweş e.",
+     "m": "Wanda yaşıyoruz. Evimiz büyük değil ama çok güzel.|We live in Wan. Our house is not big, but it is very nice.|Wir wohnen in Wan. Unser Haus ist nicht groß, aber sehr schön."
+    },
+    {
+     "s": "Juji",
+     "t": "Kalikê te jî bi we re dijî?",
+     "m": "Deden de sizinle mi yaşıyor?|Does your grandfather live with you too?|Wohnt dein Opa auch bei euch?"
+    },
+    {
+     "s": "Azad",
+     "t": "Na, kalikê min li gund dijî. Em havînan diçin cem wî.",
+     "m": "Hayır, dedem köyde yaşıyor. Yazları onun yanına gidiyoruz.|No, my grandfather lives in the village. We visit him in summer.|Nein, mein Opa wohnt im Dorf. Im Sommer besuchen wir ihn."
+    },
+    {
+     "s": "Juji",
+     "t": "Malbateke xweş! Spas Azad.",
+     "m": "Güzel bir aile! Teşekkürler Azad.|A lovely family! Thanks, Azad.|Eine schöne Familie! Danke, Azad."
+    }
+   ],
+   "words": [
+    [
+     "malbat",
+     "aile|family|Familie"
+    ],
+    [
+     "mezin",
+     "büyük|big, older|groß, älter"
+    ],
+    [
+     "biçûk",
+     "küçük|small, younger|klein, jünger"
+    ],
+    [
+     "kalik",
+     "dede|grandfather|Opa"
+    ],
+    [
+     "cem",
+     "yanı|at someone's place|bei"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Azadın ailesi kaç kişi?|How many people are in Azad's family?|Wie viele Personen hat Azads Familie?",
+     "o": [
+      "Beş|Five|Fünf",
+      "Dört|Four|Vier",
+      "Altı|Six|Sechs"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Azadın ağabeyi nerede çalışıyor?|Where does Azad's brother work?|Wo arbeitet Azads Bruder?",
+     "o": [
+      "Hewlêrde|In Hewlêr|In Hewlêr",
+      "Wanda|In Wan|In Wan",
+      "Köyde|In the village|Im Dorf"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Yazları nereye gidiyorlar?|Where do they go in summer?|Wohin fahren sie im Sommer?",
+     "o": [
+      "Dedelerinin köyüne|To grandfather's village|Ins Dorf des Opas",
+      "Denize|To the sea|Ans Meer",
+      "Hewlêre|To Hewlêr|Nach Hewlêr"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a1-03",
+   "course": "kmr",
+   "lvl": "A1",
+   "n": 3,
+   "title": "Li sûkê",
+   "name": "Çarşıda|At the market|Auf dem Markt",
+   "sub": "Alışveriş ve sayılar|Shopping and numbers|Einkaufen und Zahlen",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Îro em li sûka Amedê ne. Dengê sûkê tê!",
+     "m": "Bugün Amed çarşısındayız. Çarşının sesi geliyor!|Today we are at the Amed market. You can hear the market!|Heute sind wir auf dem Markt in Amed. Man hört den Markt!"
+    },
+    {
+     "s": "Firoşkar",
+     "t": "Fêkiyên teze! Sêv, tirî, hinar!",
+     "m": "Taze meyveler! Elma, üzüm, nar!|Fresh fruit! Apples, grapes, pomegranates!|Frisches Obst! Äpfel, Trauben, Granatäpfel!"
+    },
+    {
+     "s": "Rojda",
+     "t": "Silav. Kîloyek sêv bi çiqas e?",
+     "m": "Merhaba. Bir kilo elma ne kadar?|Hello. How much is a kilo of apples?|Hallo. Was kostet ein Kilo Äpfel?"
+    },
+    {
+     "s": "Firoşkar",
+     "t": "Kîloyek bi sî lîre ye.",
+     "m": "Bir kilosu otuz lira.|One kilo is thirty lira.|Ein Kilo kostet dreißig Lira."
+    },
+    {
+     "s": "Rojda",
+     "t": "Ez du kîlo sêv dixwazim. Hinar jî heye?",
+     "m": "İki kilo elma istiyorum. Nar da var mı?|I want two kilos of apples. Are there pomegranates too?|Ich möchte zwei Kilo Äpfel. Gibt es auch Granatäpfel?"
+    },
+    {
+     "s": "Firoşkar",
+     "t": "Belê, hinarên me pir şîrîn in. Kîloyek bi çil lîre ye.",
+     "m": "Evet, narlarımız çok tatlı. Bir kilosu kırk lira.|Yes, our pomegranates are very sweet. A kilo is forty lira.|Ja, unsere Granatäpfel sind sehr süß. Ein Kilo kostet vierzig Lira."
+    },
+    {
+     "s": "Rojda",
+     "t": "Baş e, kîloyek hinar jî bide min.",
+     "m": "Tamam, bir kilo nar da ver.|OK, give me a kilo of pomegranates too.|Gut, gib mir auch ein Kilo Granatäpfel."
+    },
+    {
+     "s": "Firoşkar",
+     "t": "Hemû bi hev re sed lîre ye.",
+     "m": "Hepsi birlikte yüz lira.|All together it is a hundred lira.|Alles zusammen kostet hundert Lira."
+    },
+    {
+     "s": "Rojda",
+     "t": "Fermo, sed lîre. Spas!",
+     "m": "Buyur, yüz lira. Teşekkürler!|Here you are, a hundred lira. Thanks!|Bitte, hundert Lira. Danke!"
+    },
+    {
+     "s": "Firoşkar",
+     "t": "Noşî can be! Dîsa werin.",
+     "m": "Afiyet olsun! Yine gelin.|Enjoy! Come again.|Guten Appetit! Kommt wieder."
+    },
+    {
+     "s": "Juji",
+     "t": "Gotinên vê podkastê: bi çiqas e, kîlo, teze, şîrîn. Hûn dikarin li sûkê bi kar bînin!",
+     "m": "Bu bölümün sözleri: ne kadar, kilo, taze, tatlı. Çarşıda kullanabilirsiniz!|Words of this episode: how much, kilo, fresh, sweet. Use them at the market!|Wörter dieser Folge: wie viel, Kilo, frisch, süß. Benutzt sie auf dem Markt!"
+    }
+   ],
+   "words": [
+    [
+     "sûk",
+     "çarşı|market|Markt"
+    ],
+    [
+     "teze",
+     "taze|fresh|frisch"
+    ],
+    [
+     "bi çiqas e?",
+     "ne kadar?|how much is it?|wie viel kostet es?"
+    ],
+    [
+     "hinar",
+     "nar|pomegranate|Granatapfel"
+    ],
+    [
+     "şîrîn",
+     "tatlı|sweet|süß"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Bir kilo elma kaç lira?|How much is a kilo of apples?|Was kostet ein Kilo Äpfel?",
+     "o": [
+      "Otuz|Thirty|Dreißig",
+      "Kırk|Forty|Vierzig",
+      "Yüz|A hundred|Hundert"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Rojda ne alıyor?|What does Rojda buy?|Was kauft Rojda?",
+     "o": [
+      "İki kilo elma, bir kilo nar|Two kilos of apples, one of pomegranates|Zwei Kilo Äpfel, ein Kilo Granatäpfel",
+      "Üzüm ve elma|Grapes and apples|Trauben und Äpfel",
+      "Sadece nar|Only pomegranates|Nur Granatäpfel"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Hepsi ne kadar tutuyor?|What is the total?|Wie viel kostet alles?",
+     "o": [
+      "Yüz lira|A hundred lira|Hundert Lira",
+      "Yetmiş lira|Seventy lira|Siebzig Lira",
+      "Elli lira|Fifty lira|Fünfzig Lira"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a1-04",
+   "course": "kmr",
+   "lvl": "A1",
+   "n": 4,
+   "title": "Taştê",
+   "name": "Kahvaltı|Breakfast|Frühstück",
+   "sub": "Yemek ve içecek|Food and drink|Essen und Trinken",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Sibe baş! Ez birçî me. Dema taştê ye!",
+     "m": "Günaydın! Acıktım. Kahvaltı zamanı!|Good morning! I am hungry. It is breakfast time!|Guten Morgen! Ich habe Hunger. Zeit fürs Frühstück!"
+    },
+    {
+     "s": "Dayik",
+     "t": "Juji, were! Taştê amade ye.",
+     "m": "Juji, gel! Kahvaltı hazır.|Juji, come! Breakfast is ready.|Juji, komm! Das Frühstück ist fertig."
+    },
+    {
+     "s": "Juji",
+     "t": "Li ser sifrê çi heye?",
+     "m": "Sofrada ne var?|What is on the table?|Was ist auf dem Tisch?"
+    },
+    {
+     "s": "Dayik",
+     "t": "Nanê tenûrê, penîr, hêk, zeytûn û hingiv.",
+     "m": "Tandır ekmeği, peynir, yumurta, zeytin ve bal.|Tandoor bread, cheese, eggs, olives and honey.|Tandoor-Brot, Käse, Eier, Oliven und Honig."
+    },
+    {
+     "s": "Juji",
+     "t": "Ax, hingiv! Ez ji hingiv pir hez dikim.",
+     "m": "Ah, bal! Balı çok severim.|Oh, honey! I love honey.|Oh, Honig! Ich liebe Honig."
+    },
+    {
+     "s": "Dayik",
+     "t": "Tu çay dixwazî an şîr?",
+     "m": "Çay mı istersin süt mü?|Do you want tea or milk?|Möchtest du Tee oder Milch?"
+    },
+    {
+     "s": "Juji",
+     "t": "Çay, ji kerema xwe. Bi şekir.",
+     "m": "Çay lütfen. Şekerli.|Tea, please. With sugar.|Tee, bitte. Mit Zucker."
+    },
+    {
+     "s": "Dayik",
+     "t": "Fermo. Nan hîn germ e.",
+     "m": "Buyur. Ekmek hâlâ sıcak.|Here you are. The bread is still warm.|Bitte. Das Brot ist noch warm."
+    },
+    {
+     "s": "Juji",
+     "t": "Destê te sax be, dayê. Pir xweş e!",
+     "m": "Eline sağlık, anne. Çok güzel!|Bless your hands, mum. It is delicious!|Danke, Mama. Es ist köstlich!"
+    },
+    {
+     "s": "Dayik",
+     "t": "Noşî can be, kurê min.",
+     "m": "Afiyet olsun, oğlum.|Enjoy, my son.|Guten Appetit, mein Sohn."
+    },
+    {
+     "s": "Juji",
+     "t": "Hûn jî bibêjin: destê te sax be! Ev gotin piştî xwarinê tê gotin.",
+     "m": "Siz de söyleyin: eline sağlık! Bu söz yemekten sonra söylenir.|You say it too: destê te sax be! It is said after a meal.|Sagt es auch: destê te sax be! Man sagt es nach dem Essen."
+    }
+   ],
+   "words": [
+    [
+     "taştê",
+     "kahvaltı|breakfast|Frühstück"
+    ],
+    [
+     "birçî",
+     "aç|hungry|hungrig"
+    ],
+    [
+     "hingiv",
+     "bal|honey|Honig"
+    ],
+    [
+     "amade",
+     "hazır|ready|fertig"
+    ],
+    [
+     "destê te sax be",
+     "eline sağlık|thanks for the meal|danke fürs Essen"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Juji ne içiyor?|What does Juji drink?|Was trinkt Juji?",
+     "o": [
+      "Şekerli çay|Tea with sugar|Tee mit Zucker",
+      "Süt|Milk|Milch",
+      "Su|Water|Wasser"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Juji neyi çok seviyor?|What does Juji love?|Was liebt Juji?",
+     "o": [
+      "Balı|Honey|Honig",
+      "Peyniri|Cheese|Käse",
+      "Zeytini|Olives|Oliven"
+     ],
+     "a": 0
+    },
+    {
+     "q": "«Destê te sax be» ne zaman söylenir?|When do you say «destê te sax be»?|Wann sagt man «destê te sax be»?",
+     "o": [
+      "Yemekten sonra|After a meal|Nach dem Essen",
+      "Sabah uyanınca|When waking up|Beim Aufwachen",
+      "Vedalaşırken|When saying goodbye|Beim Abschied"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a1-05",
+   "course": "kmr",
+   "lvl": "A1",
+   "n": 5,
+   "title": "Rojeke min",
+   "name": "Bir günüm|A day of mine|Ein Tag von mir",
+   "sub": "Günlük rutin ve saat|Daily routine and time|Tagesablauf und Uhrzeit",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Berfîn, roja te çawa derbas dibe?",
+     "m": "Berfîn, günün nasıl geçiyor?|Berfîn, how does your day go?|Berfîn, wie verläuft dein Tag?"
+    },
+    {
+     "s": "Berfîn",
+     "t": "Ez saet heftan radibim.",
+     "m": "Saat yedide kalkarım.|I get up at seven.|Ich stehe um sieben auf."
+    },
+    {
+     "s": "Berfîn",
+     "t": "Paşê ez rû û destên xwe dişom û taştê dikim.",
+     "m": "Sonra yüzümü ve ellerimi yıkar, kahvaltı ederim.|Then I wash my face and hands and have breakfast.|Dann wasche ich Gesicht und Hände und frühstücke."
+    },
+    {
+     "s": "Juji",
+     "t": "Tu kengî diçî dibistanê?",
+     "m": "Okula ne zaman gidersin?|When do you go to school?|Wann gehst du zur Schule?"
+    },
+    {
+     "s": "Berfîn",
+     "t": "Saet heşt û nîv. Dibistan nêzîkî mala me ye, ez peyatî diçim.",
+     "m": "Sekiz buçukta. Okul evimize yakın, yürüyerek giderim.|At half past eight. The school is near our house, I walk.|Um halb neun. Die Schule ist nah, ich gehe zu Fuß."
+    },
+    {
+     "s": "Juji",
+     "t": "Piştî dibistanê tu çi dikî?",
+     "m": "Okuldan sonra ne yaparsın?|What do you do after school?|Was machst du nach der Schule?"
+    },
+    {
+     "s": "Berfîn",
+     "t": "Ez wezîfeyên xwe dikim û bi hevalên xwe re dilîzim.",
+     "m": "Ödevlerimi yaparım ve arkadaşlarımla oynarım.|I do my homework and play with my friends.|Ich mache Hausaufgaben und spiele mit Freunden."
+    },
+    {
+     "s": "Juji",
+     "t": "Êvaran jî?",
+     "m": "Akşamları da?|And in the evenings?|Und abends?"
+    },
+    {
+     "s": "Berfîn",
+     "t": "Em bi hev re şîv dixwin. Paşê ez pirtûkê dixwînim.",
+     "m": "Birlikte akşam yemeği yeriz. Sonra kitap okurum.|We eat dinner together. Then I read a book.|Wir essen zusammen zu Abend. Dann lese ich ein Buch."
+    },
+    {
+     "s": "Juji",
+     "t": "Tu saet çendan radizê?",
+     "m": "Saat kaçta yatarsın?|What time do you go to bed?|Um wie viel Uhr gehst du schlafen?"
+    },
+    {
+     "s": "Berfîn",
+     "t": "Saet dehan. Şev baş, Juji!",
+     "m": "Saat onda. İyi geceler, Juji!|At ten. Good night, Juji!|Um zehn. Gute Nacht, Juji!"
+    }
+   ],
+   "words": [
+    [
+     "radibim",
+     "kalkarım|I get up|ich stehe auf"
+    ],
+    [
+     "peyatî",
+     "yürüyerek|on foot|zu Fuß"
+    ],
+    [
+     "wezîfe",
+     "ödev|homework|Hausaufgabe"
+    ],
+    [
+     "şîv",
+     "akşam yemeği|dinner|Abendessen"
+    ],
+    [
+     "radizê",
+     "yatar, uyur|goes to bed|schläft"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Berfîn kaçta kalkıyor?|What time does Berfîn get up?|Wann steht Berfîn auf?",
+     "o": [
+      "Yedide|At seven|Um sieben",
+      "Sekizde|At eight|Um acht",
+      "Onda|At ten|Um zehn"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Berfîn okula nasıl gidiyor?|How does Berfîn go to school?|Wie kommt Berfîn zur Schule?",
+     "o": [
+      "Yürüyerek|On foot|Zu Fuß",
+      "Otobüsle|By bus|Mit dem Bus",
+      "Arabayla|By car|Mit dem Auto"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Akşam yemeğinden sonra ne yapıyor?|What does she do after dinner?|Was macht sie nach dem Abendessen?",
+     "o": [
+      "Kitap okuyor|She reads a book|Sie liest ein Buch",
+      "Televizyon izliyor|She watches TV|Sie sieht fern",
+      "Oyun oynuyor|She plays games|Sie spielt"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a2-01",
+   "course": "kmr",
+   "lvl": "A2",
+   "n": 1,
+   "title": "Bihar û Newroz",
+   "name": "Bahar ve Newroz|Spring and Newroz|Frühling und Newroz",
+   "sub": "Hava, mevsimler ve bayram|Weather, seasons and festival|Wetter, Jahreszeiten und Fest",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Bihar hat! Hewa germ dibe û çiya kesk dibin.",
+     "m": "Bahar geldi! Hava ısınıyor, dağlar yeşilleniyor.|Spring has come! It is getting warm and the mountains turn green.|Der Frühling ist da! Es wird warm und die Berge werden grün."
+    },
+    {
+     "s": "Juji",
+     "t": "Mêvanê me Bapîr e. Bapîr, li gund bihar çawa bû?",
+     "m": "Konuğumuz dede. Dede, köyde bahar nasıldı?|Our guest is Grandpa. Grandpa, what was spring like in the village?|Unser Gast ist Opa. Opa, wie war der Frühling im Dorf?"
+    },
+    {
+     "s": "Bapîr",
+     "t": "Dema ez zarok bûm, berf heta Adarê dima.",
+     "m": "Ben çocukken kar marta kadar kalırdı.|When I was a child, the snow stayed until March.|Als ich ein Kind war, blieb der Schnee bis März."
+    },
+    {
+     "s": "Bapîr",
+     "t": "Paşê kulîlk vedibûn û em diçûn çiyayan.",
+     "m": "Sonra çiçekler açardı ve dağlara giderdik.|Then the flowers opened and we went to the mountains.|Dann blühten die Blumen und wir gingen in die Berge."
+    },
+    {
+     "s": "Juji",
+     "t": "Newroz çawa derbas dibû?",
+     "m": "Newroz nasıl geçerdi?|How was Newroz celebrated?|Wie wurde Newroz gefeiert?"
+    },
+    {
+     "s": "Bapîr",
+     "t": "Êvara berî Newrozê me li ser banan agir vêdixist.",
+     "m": "Newrozdan önceki akşam damlarda ateş yakardık.|On the evening before Newroz we lit fires on the roofs.|Am Abend vor Newroz zündeten wir Feuer auf den Dächern an."
+    },
+    {
+     "s": "Bapîr",
+     "t": "Roja Newrozê hemû gund derdiketin derve, govend dikirin.",
+     "m": "Newroz günü bütün köy dışarı çıkar, halay çekerdi.|On Newroz day the whole village went outside and danced.|Am Newroz-Tag ging das ganze Dorf hinaus und tanzte."
+    },
+    {
+     "s": "Juji",
+     "t": "Îro jî Newroz bi heman coşê tê pîroz kirin.",
+     "m": "Bugün de Newroz aynı coşkuyla kutlanıyor.|Today Newroz is still celebrated with the same joy.|Auch heute wird Newroz mit derselben Freude gefeiert."
+    },
+    {
+     "s": "Bapîr",
+     "t": "Erê. Newroz cejna biharê û azadiyê ye.",
+     "m": "Evet. Newroz baharın ve özgürlüğün bayramıdır.|Yes. Newroz is the festival of spring and freedom.|Ja. Newroz ist das Fest des Frühlings und der Freiheit."
+    },
+    {
+     "s": "Juji",
+     "t": "Newroza we pîroz be!",
+     "m": "Newrozunuz kutlu olsun!|Happy Newroz!|Frohes Newroz!"
+    }
+   ],
+   "words": [
+    [
+     "bihar",
+     "bahar|spring|Frühling"
+    ],
+    [
+     "berf",
+     "kar|snow|Schnee"
+    ],
+    [
+     "kulîlk",
+     "çiçek|flower|Blume"
+    ],
+    [
+     "agir vêxistin",
+     "ateş yakmak|to light a fire|Feuer anzünden"
+    ],
+    [
+     "govend",
+     "halay|folk dance|Reigentanz"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Dede çocukken kar ne zamana kadar kalırdı?|Until when did the snow stay?|Bis wann blieb der Schnee?",
+     "o": [
+      "Marta kadar|Until March|Bis März",
+      "Mayısa kadar|Until May|Bis Mai",
+      "Hiç yağmazdı|It never snowed|Es schneite nie"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Newrozdan önceki akşam ne yaparlardı?|What did they do the evening before Newroz?|Was taten sie am Abend vor Newroz?",
+     "o": [
+      "Damlarda ateş yakarlardı|Lit fires on roofs|Feuer auf Dächern",
+      "Şehre giderlerdi|Went to town|In die Stadt fahren",
+      "Erken yatarlardı|Went to bed early|Früh schlafen"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Dedeye göre Newroz neyin bayramı?|According to Grandpa, Newroz is the festival of…|Laut Opa ist Newroz das Fest…",
+     "o": [
+      "Baharın ve özgürlüğün|Spring and freedom|Frühling und Freiheit",
+      "Hasadın|The harvest|Der Ernte",
+      "Kışın|Winter|Des Winters"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a2-02",
+   "course": "kmr",
+   "lvl": "A2",
+   "n": 2,
+   "title": "Rêwîtiya Wanê",
+   "name": "Wan yolculuğu|A trip to Wan|Eine Reise nach Wan",
+   "sub": "Yolculuk ve geçmiş zaman|Travel and the past tense|Reisen und Vergangenheit",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Azad, tu hefteya borî çûbû Wanê. Rêwîtî çawa bû?",
+     "m": "Azad, geçen hafta Wana gitmiştin. Yolculuk nasıldı?|Azad, you went to Wan last week. How was the trip?|Azad, du warst letzte Woche in Wan. Wie war die Reise?"
+    },
+    {
+     "s": "Azad",
+     "t": "Pir xweş bû! Ez bi otobusê çûm. Rê şeş saetan dom kir.",
+     "m": "Çok güzeldi! Otobüsle gittim. Yol altı saat sürdü.|It was great! I went by bus. The road took six hours.|Sehr schön! Ich fuhr mit dem Bus. Die Fahrt dauerte sechs Stunden."
+    },
+    {
+     "s": "Juji",
+     "t": "Te li Wanê çi dît?",
+     "m": "Wanda ne gördün?|What did you see in Wan?|Was hast du in Wan gesehen?"
+    },
+    {
+     "s": "Azad",
+     "t": "Min Gola Wanê dît. Av şîn bû, mîna asîmanê.",
+     "m": "Wan Gölünü gördüm. Su maviydi, gökyüzü gibi.|I saw Lake Wan. The water was blue, like the sky.|Ich habe den Wansee gesehen. Das Wasser war blau wie der Himmel."
+    },
+    {
+     "s": "Azad",
+     "t": "Em bi keştiyê çûn Girava Axtamarê.",
+     "m": "Tekneyle Ahtamar Adasına gittik.|We went to Akdamar Island by boat.|Wir fuhren mit dem Boot zur Insel Akdamar."
+    },
+    {
+     "s": "Juji",
+     "t": "Te taştêya Wanê xwar?",
+     "m": "Wan kahvaltısını yedin mi?|Did you eat a Wan breakfast?|Hast du ein Wan-Frühstück gegessen?"
+    },
+    {
+     "s": "Azad",
+     "t": "Belê! Min penîrê bi giya û qeymax xwar. Pir xweş bû.",
+     "m": "Evet! Otlu peynir ve kaymak yedim. Çok güzeldi.|Yes! I ate herb cheese and clotted cream. It was delicious.|Ja! Ich habe Kräuterkäse und Rahm gegessen. Sehr lecker."
+    },
+    {
+     "s": "Juji",
+     "t": "Tu li ku mayî?",
+     "m": "Nerede kaldın?|Where did you stay?|Wo hast du übernachtet?"
+    },
+    {
+     "s": "Azad",
+     "t": "Ez li mala hevalekî xwe mam. Ew ji min re bû rêber.",
+     "m": "Bir arkadaşımın evinde kaldım. Bana rehber oldu.|I stayed at a friend's house. He was my guide.|Ich wohnte bei einem Freund. Er war mein Führer."
+    },
+    {
+     "s": "Juji",
+     "t": "Tu dîsa diçî?",
+     "m": "Yine gidecek misin?|Will you go again?|Fährst du wieder hin?"
+    },
+    {
+     "s": "Azad",
+     "t": "Bê guman! Havîna bê ez dixwazim li dora golê bigerim.",
+     "m": "Elbette! Gelecek yaz gölün çevresini gezmek istiyorum.|Of course! Next summer I want to travel around the lake.|Natürlich! Nächsten Sommer möchte ich um den See reisen."
+    }
+   ],
+   "words": [
+    [
+     "hefteya borî",
+     "geçen hafta|last week|letzte Woche"
+    ],
+    [
+     "gol",
+     "göl|lake|See"
+    ],
+    [
+     "keştî",
+     "tekne, gemi|boat|Boot"
+    ],
+    [
+     "girav",
+     "ada|island|Insel"
+    ],
+    [
+     "rêber",
+     "rehber|guide|Führer"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Azad Wana nasıl gitti?|How did Azad travel to Wan?|Wie reiste Azad nach Wan?",
+     "o": [
+      "Otobüsle|By bus|Mit dem Bus",
+      "Uçakla|By plane|Mit dem Flugzeug",
+      "Arabayla|By car|Mit dem Auto"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Adaya nasıl gittiler?|How did they get to the island?|Wie kamen sie zur Insel?",
+     "o": [
+      "Tekneyle|By boat|Mit dem Boot",
+      "Yürüyerek|On foot|Zu Fuß",
+      "Otobüsle|By bus|Mit dem Bus"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Azad nerede kaldı?|Where did Azad stay?|Wo übernachtete Azad?",
+     "o": [
+      "Arkadaşının evinde|At a friend's house|Bei einem Freund",
+      "Otelde|In a hotel|Im Hotel",
+      "Çadırda|In a tent|Im Zelt"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a2-03",
+   "course": "kmr",
+   "lvl": "A2",
+   "n": 3,
+   "title": "Li ba bijîşk",
+   "name": "Doktorda|At the doctor's|Beim Arzt",
+   "sub": "Sağlık ve vücut|Health and the body|Gesundheit und Körper",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Îro em li nexweşxaneyê ne. Rojda nexweş e.",
+     "m": "Bugün hastanedeyiz. Rojda hasta.|Today we are at the hospital. Rojda is ill.|Heute sind wir im Krankenhaus. Rojda ist krank."
+    },
+    {
+     "s": "Bijîşk",
+     "t": "Silav, li ku derê te diêşe?",
+     "m": "Merhaba, neren ağrıyor?|Hello, where does it hurt?|Hallo, wo tut es weh?"
+    },
+    {
+     "s": "Rojda",
+     "t": "Serê min diêşe û qirika min jî diêşe.",
+     "m": "Başım ağrıyor, boğazım da ağrıyor.|My head hurts and my throat hurts too.|Mein Kopf tut weh und mein Hals auch."
+    },
+    {
+     "s": "Bijîşk",
+     "t": "Ji kengê ve?",
+     "m": "Ne zamandan beri?|Since when?|Seit wann?"
+    },
+    {
+     "s": "Rojda",
+     "t": "Ji duhî ve. Min şev baş xew nekir.",
+     "m": "Dünden beri. Gece iyi uyuyamadım.|Since yesterday. I didn't sleep well last night.|Seit gestern. Ich habe nachts schlecht geschlafen."
+    },
+    {
+     "s": "Bijîşk",
+     "t": "Germahiya te heye. Tu sar bûyî.",
+     "m": "Ateşin var. Üşütmüşsün.|You have a fever. You have caught a cold.|Du hast Fieber. Du hast dich erkältet."
+    },
+    {
+     "s": "Bijîşk",
+     "t": "Rojê sê caran vî dermanî bixwe û gelek av vexwe.",
+     "m": "Bu ilacı günde üç kez iç ve çok su iç.|Take this medicine three times a day and drink lots of water.|Nimm dieses Medikament dreimal täglich und trink viel Wasser."
+    },
+    {
+     "s": "Rojda",
+     "t": "Ez dikarim herim kar?",
+     "m": "İşe gidebilir miyim?|Can I go to work?|Kann ich zur Arbeit gehen?"
+    },
+    {
+     "s": "Bijîşk",
+     "t": "Na, du rojan li malê bimîne û bêhna xwe vede.",
+     "m": "Hayır, iki gün evde kal ve dinlen.|No, stay at home for two days and rest.|Nein, bleib zwei Tage zu Hause und ruh dich aus."
+    },
+    {
+     "s": "Rojda",
+     "t": "Baş e, gelek spas, doktor.",
+     "m": "Tamam, çok teşekkürler doktor.|OK, thank you very much, doctor.|Gut, vielen Dank, Frau Doktor."
+    },
+    {
+     "s": "Juji",
+     "t": "Derbas be, Rojda! Gava kesek nexweş be, em dibêjin: derbas be.",
+     "m": "Geçmiş olsun, Rojda! Biri hasta olunca «derbas be» deriz.|Get well, Rojda! When someone is ill, we say «derbas be».|Gute Besserung, Rojda! Wenn jemand krank ist, sagen wir «derbas be»."
+    }
+   ],
+   "words": [
+    [
+     "nexweşxane",
+     "hastane|hospital|Krankenhaus"
+    ],
+    [
+     "diêşe",
+     "ağrıyor|it hurts|tut weh"
+    ],
+    [
+     "qirik",
+     "boğaz|throat|Hals"
+    ],
+    [
+     "germahî",
+     "ateş|fever|Fieber"
+    ],
+    [
+     "derbas be",
+     "geçmiş olsun|get well soon|gute Besserung"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Rojdanın neresi ağrıyor?|What hurts Rojda?|Was tut Rojda weh?",
+     "o": [
+      "Başı ve boğazı|Head and throat|Kopf und Hals",
+      "Midesi|Stomach|Bauch",
+      "Ayağı|Foot|Fuß"
+     ],
+     "a": 0
+    },
+    {
+     "q": "İlacı günde kaç kez içecek?|How often should she take the medicine?|Wie oft soll sie das Medikament nehmen?",
+     "o": [
+      "Üç kez|Three times|Dreimal",
+      "Bir kez|Once|Einmal",
+      "İki kez|Twice|Zweimal"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Doktor ne diyor?|What does the doctor say?|Was sagt die Ärztin?",
+     "o": [
+      "İki gün evde dinlen|Rest at home for two days|Zwei Tage ausruhen",
+      "Hemen işe git|Go to work now|Sofort arbeiten",
+      "Hastanede kal|Stay in hospital|Im Krankenhaus bleiben"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a2-04",
+   "course": "kmr",
+   "lvl": "A2",
+   "n": 4,
+   "title": "Dengbêj",
+   "name": "Dengbêjler|Dengbêj singers|Dengbêj-Sänger",
+   "sub": "Kürt kültürü ve müzik|Kurdish culture and music|Kurdische Kultur und Musik",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Îro mijara me dengbêj in. Bapîr, dengbêj kî ne?",
+     "m": "Bugünün konusu dengbêjler. Dede, dengbêjler kimdir?|Today's topic is dengbêj. Grandpa, who are the dengbêj?|Unser Thema heute: Dengbêj. Opa, wer sind die Dengbêj?"
+    },
+    {
+     "s": "Bapîr",
+     "t": "Dengbêj stranbêj û çîrokbêj in. Ew bê amûr, tenê bi deng distrên.",
+     "m": "Dengbêjler hem şarkıcı hem hikâye anlatıcısıdır. Çalgısız, sadece sesle söylerler.|Dengbêj are singers and storytellers. They sing without instruments, only with their voice.|Dengbêj sind Sänger und Erzähler. Sie singen ohne Instrumente, nur mit der Stimme."
+    },
+    {
+     "s": "Juji",
+     "t": "Stranên wan li ser çi ne?",
+     "m": "Şarkıları ne hakkında?|What are their songs about?|Worüber singen sie?"
+    },
+    {
+     "s": "Bapîr",
+     "t": "Li ser evînê, şer, koçberiyê û jiyana gundan.",
+     "m": "Aşk, savaş, göç ve köy hayatı üzerine.|About love, war, migration and village life.|Über Liebe, Krieg, Auswanderung und das Dorfleben."
+    },
+    {
+     "s": "Bapîr",
+     "t": "Berê, di şevên zivistanê de, mirov li odeyan kom dibûn û guhdariya dengbêjan dikirin.",
+     "m": "Eskiden kış gecelerinde insanlar odalarda toplanır, dengbêjleri dinlerdi.|In the old days, on winter nights people gathered in rooms and listened to the dengbêj.|Früher versammelten sich die Leute in Winternächten und hörten den Dengbêj zu."
+    },
+    {
+     "s": "Juji",
+     "t": "Dengbêj stranan ji ku hîn dibûn?",
+     "m": "Dengbêjler şarkıları nereden öğrenirdi?|Where did dengbêj learn their songs?|Wo lernten die Dengbêj ihre Lieder?"
+    },
+    {
+     "s": "Bapîr",
+     "t": "Ji dengbêjên mezin. Wan stran ji ber dikirin û ji nifşekî derbasî nifşekî din dikirin.",
+     "m": "Büyük dengbêjlerden. Şarkıları ezberler, kuşaktan kuşağa aktarırlardı.|From the great dengbêj. They memorised the songs and passed them from generation to generation.|Von den großen Dengbêj. Sie lernten die Lieder auswendig und gaben sie weiter."
+    },
+    {
+     "s": "Juji",
+     "t": "Îro jî dengbêj hene?",
+     "m": "Bugün de dengbêj var mı?|Are there still dengbêj today?|Gibt es heute noch Dengbêj?"
+    },
+    {
+     "s": "Bapîr",
+     "t": "Belê. Li Amedê Mala Dengbêjan heye. Her roj dengbêj li wir distrên.",
+     "m": "Evet. Amedde Dengbêjler Evi var. Her gün orada dengbêjler söylüyor.|Yes. In Amed there is the House of Dengbêj. Every day dengbêj sing there.|Ja. In Amed gibt es das Haus der Dengbêj. Dort singen jeden Tag Dengbêj."
+    },
+    {
+     "s": "Juji",
+     "t": "Gava hûn biçin Amedê, serdana Mala Dengbêjan bikin!",
+     "m": "Amede giderseniz Dengbêjler Evini ziyaret edin!|If you go to Amed, visit the House of Dengbêj!|Wenn ihr nach Amed fahrt, besucht das Haus der Dengbêj!"
+    }
+   ],
+   "words": [
+    [
+     "dengbêj",
+     "dengbêj, sözlü gelenek şarkıcısı|traditional singer-storyteller|traditioneller Sänger und Erzähler"
+    ],
+    [
+     "stran",
+     "şarkı|song|Lied"
+    ],
+    [
+     "amûr",
+     "çalgı|instrument|Instrument"
+    ],
+    [
+     "koçberî",
+     "göç|migration|Auswanderung"
+    ],
+    [
+     "nifş",
+     "kuşak|generation|Generation"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Dengbêjler nasıl söyler?|How do dengbêj sing?|Wie singen Dengbêj?",
+     "o": [
+      "Çalgısız, sadece sesle|Without instruments, only voice|Ohne Instrumente, nur Stimme",
+      "Saz ile|With a saz|Mit einer Saz",
+      "Davul zurna ile|With drum and zurna|Mit Trommel und Zurna"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Eskiden dengbêjler ne zaman dinlenirdi?|When were dengbêj heard in the old days?|Wann hörte man früher Dengbêj?",
+     "o": [
+      "Kış gecelerinde|On winter nights|In Winternächten",
+      "Yaz sabahlarında|On summer mornings|An Sommermorgen",
+      "Sadece düğünlerde|Only at weddings|Nur bei Hochzeiten"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Dengbêjler Evi nerede?|Where is the House of Dengbêj?|Wo ist das Haus der Dengbêj?",
+     "o": [
+      "Amedde|In Amed|In Amed",
+      "Wanda|In Wan|In Wan",
+      "Hewlêrde|In Hewlêr|In Hewlêr"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  {
+   "id": "kmr-a2-05",
+   "course": "kmr",
+   "lvl": "A2",
+   "n": 5,
+   "title": "Plana havînê",
+   "name": "Yaz planı|Summer plans|Sommerpläne",
+   "sub": "Gelecek planları|Future plans|Zukunftspläne",
+   "audio": null,
+   "lines": [
+    {
+     "s": "Juji",
+     "t": "Havîn nêzîk e! Berfîn, Azad, planên we çi ne?",
+     "m": "Yaz yaklaşıyor! Berfîn, Azad, planlarınız ne?|Summer is near! Berfîn, Azad, what are your plans?|Der Sommer kommt! Berfîn, Azad, was habt ihr vor?"
+    },
+    {
+     "s": "Berfîn",
+     "t": "Ez ê biçim gundê kalikê xwe. Ez ê li wir alîkariya wî bikim.",
+     "m": "Dedemin köyüne gideceğim. Orada ona yardım edeceğim.|I will go to my grandfather's village. I will help him there.|Ich fahre ins Dorf meines Opas. Ich werde ihm dort helfen."
+    },
+    {
+     "s": "Juji",
+     "t": "Tu ê çi bikî li gund?",
+     "m": "Köyde ne yapacaksın?|What will you do in the village?|Was wirst du im Dorf machen?"
+    },
+    {
+     "s": "Berfîn",
+     "t": "Ez ê pez biçêrînim û sêvan berhev bikim.",
+     "m": "Koyunları otlatacak ve elma toplayacağım.|I will graze the sheep and pick apples.|Ich werde die Schafe hüten und Äpfel pflücken."
+    },
+    {
+     "s": "Azad",
+     "t": "Ez ê kursa kurdî bixwînim. Ez dixwazim baştir binivîsim.",
+     "m": "Kürtçe kursuna gideceğim. Daha iyi yazmak istiyorum.|I will take a Kurdish course. I want to write better.|Ich mache einen Kurdischkurs. Ich möchte besser schreiben."
+    },
+    {
+     "s": "Juji",
+     "t": "Pir baş! Hûn ê biçin deryayê jî?",
+     "m": "Çok güzel! Denize de gidecek misiniz?|Great! Will you go to the sea too?|Super! Fahrt ihr auch ans Meer?"
+    },
+    {
+     "s": "Azad",
+     "t": "Belkî. Eger pereyê me hebe, em ê hefteyekê biçin.",
+     "m": "Belki. Paramız olursa bir hafta gideceğiz.|Maybe. If we have money, we will go for a week.|Vielleicht. Wenn wir Geld haben, fahren wir eine Woche."
+    },
+    {
+     "s": "Berfîn",
+     "t": "Lê ez ji germa havînê hez nakim. Ez çiya tercîh dikim.",
+     "m": "Ama ben yaz sıcağını sevmem. Dağı tercih ederim.|But I don't like the summer heat. I prefer the mountains.|Aber ich mag die Sommerhitze nicht. Ich bevorzuge die Berge."
+    },
+    {
+     "s": "Juji",
+     "t": "Ez ê jî her hefte podkasteke nû çêkim. Hûn ê guhdarî bikin?",
+     "m": "Ben de her hafta yeni bir podcast yapacağım. Dinleyecek misiniz?|And I will make a new podcast every week. Will you listen?|Und ich mache jede Woche einen neuen Podcast. Hört ihr zu?"
+    },
+    {
+     "s": "Azad",
+     "t": "Bê guman, Juji!",
+     "m": "Elbette, Juji!|Of course, Juji!|Natürlich, Juji!"
+    },
+    {
+     "s": "Juji",
+     "t": "Havîneke xweş ji we re! Bi xatirê we.",
+     "m": "Size güzel bir yaz! Hoşça kalın.|Have a nice summer! Goodbye.|Einen schönen Sommer! Tschüss."
+    }
+   ],
+   "words": [
+    [
+     "ez ê … bikim",
+     "yapacağım|I will do|ich werde … tun"
+    ],
+    [
+     "pez",
+     "koyun sürüsü|sheep, flock|Schafe, Herde"
+    ],
+    [
+     "berhev kirin",
+     "toplamak|to pick, to gather|sammeln"
+    ],
+    [
+     "belkî",
+     "belki|maybe|vielleicht"
+    ],
+    [
+     "tercîh kirin",
+     "tercih etmek|to prefer|bevorzugen"
+    ]
+   ],
+   "quiz": [
+    {
+     "q": "Berfîn yazın nereye gidecek?|Where will Berfîn go in summer?|Wohin fährt Berfîn im Sommer?",
+     "o": [
+      "Dedesinin köyüne|To her grandfather's village|Ins Dorf ihres Opas",
+      "Denize|To the sea|Ans Meer",
+      "Hewlêre|To Hewlêr|Nach Hewlêr"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Azad ne yapacak?|What will Azad do?|Was macht Azad?",
+     "o": [
+      "Kürtçe kursuna gidecek|Take a Kurdish course|Einen Kurdischkurs",
+      "Çalışacak|Work|Arbeiten",
+      "Yüzecek|Swim|Schwimmen"
+     ],
+     "a": 0
+    },
+    {
+     "q": "Berfîn neyi sevmiyor?|What doesn't Berfîn like?|Was mag Berfîn nicht?",
+     "o": [
+      "Yaz sıcağını|The summer heat|Die Sommerhitze",
+      "Dağları|Mountains|Berge",
+      "Elmaları|Apples|Äpfel"
+     ],
+     "a": 0
+    }
+   ]
+  }
+ ]
+}
