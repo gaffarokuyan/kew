@@ -29,7 +29,7 @@ export default function Practice() {
   const th = useTheme(); const s = useS(); const lw = learned(s); const weak = lw.filter((k) => wordStrength(k, s) < 3); const due = lw.filter((k) => dueScore(k, s) >= 1).length;
   const readable = UNITS.filter((u) => u.words.some((w) => s.words[w[0]])).length; const soundsOk = s.set.voice && lw.length >= 4 && courseId() === "kmr";
   usePodsVersion(); useEffect(() => { loadPods(); }, []); const pods = episodesFor(s.course).length;
-  const d = s.daily; const say = SAYINGS[Math.floor(new Date(day() + "T12:00").getTime() / 864e5) % SAYINGS.length];
+  const d = s.daily; const say = SAYINGS.length ? SAYINGS[Math.floor(new Date(day() + "T12:00").getTime() / 864e5) % SAYINGS.length] : null;
   const quests = [
     { id: "xp", tx: t("qXp", { n: s.goal }), v: d.xp, max: s.goal, g: 10, ic: <Icon.bolt size={26} color={th.zer} /> },
     { id: "les", tx: t("qLessons"), v: d.lessons, max: 2, g: 15, ic: <Icon.target size={26} color={th.sor} /> },
@@ -49,7 +49,7 @@ export default function Practice() {
       <PageHead title={t("practice")} lead={t("practiceLead")} />
 
       {/* Saying of the day: the one dark, woven panel on this screen. */}
-      <Pressable onPress={() => speak(say[0])} accessibilityRole="button" accessibilityLabel={`${t("saying")}: ${say[0]}`}
+      {say ? <Pressable onPress={() => speak(say[0])} accessibilityRole="button" accessibilityLabel={`${t("saying")}: ${say[0]}`}
         style={({ pressed }) => ({ borderRadius: 16, borderTopLeftRadius: 4, backgroundColor: th.panel, overflow: "hidden", opacity: pressed ? 0.92 : 1 })}>
         <KilimRule color={th.zer} accent={th.sor} h={12} seed={say[0].length} style={{ marginTop: 12, marginHorizontal: 12, width: undefined }} />
         <View style={{ padding: 18, paddingTop: 14, gap: 6 }}>
@@ -57,7 +57,7 @@ export default function Practice() {
           <Text style={{ fontFamily: F.italicBold, fontSize: 25, lineHeight: 31, color: th.panelInk }}>{say[0]}</Text>
           <Text style={{ fontFamily: F.bodySemi, fontSize: TS.sm, lineHeight: 21, color: "rgba(246,240,228,0.82)" }}>{M(say[1])}</Text>
         </View>
-      </Pressable>
+      </Pressable> : null}
 
       <View style={{ flexDirection: "row", alignItems: "center", gap: 16 }}>
         <Ring p={d.xp / s.goal} />

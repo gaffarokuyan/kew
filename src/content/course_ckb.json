@@ -2801,7 +2801,20 @@
   }
  ],
  "CHARS": {},
- "SAYINGS": [],
+ "SAYINGS": [
+  [
+   "دڵۆپ دڵۆپ دەبێتە لافاو",
+   "Damlaya damlaya sel olur.|Drop by drop becomes a flood.|Tropfen für Tropfen wird zur Flut."
+  ],
+  [
+   "میوان میوانی خوایە",
+   "Misafir Tanrı misafiridir.|A guest is God's guest.|Der Gast ist Gottes Gast."
+  ],
+  [
+   "کورد جگە لە شاخەکان هیچ دۆستێکی نییە",
+   "Kürtlerin dağlardan başka dostu yoktur.|The Kurds have no friends but the mountains.|Die Kurden haben keine Freunde außer den Bergen."
+  ]
+ ],
  "LAT": {
   "سڵاو": "sillaw",
   "چۆنی": "çonî",
@@ -3393,6 +3406,9 @@
   "هەوڵم دا قایلی بکەم، بەڵام ئەو لەسەر بۆچوونی خۆی مایەوە.": "Hewllim da qaylî bikem, bellam ew leser boçûnî xoy mayewe.",
   "ئەوە مافی خۆتە بڕیار بدەیت، بەڵام با پێکەوە گفتوگۆی لەسەر بکەین.": "Ewe mafî xote birryar bideyt, bellam ba pêkewe giftugoy leser bikeyn.",
   "بە بۆچوونی من · وابزانم · لەگەڵ تۆ ڕازیم": "Be boçûnî min · wabzanim · legell to razîm",
-  "لە لایەکەوە … لە لایەکی ترەوە …": "Le layekewe … le layekî tirewe …"
+  "لە لایەکەوە … لە لایەکی ترەوە …": "Le layekewe … le layekî tirewe …",
+  "دڵۆپ دڵۆپ دەبێتە لافاو": "Dillop dillop debête lafaw",
+  "میوان میوانی خوایە": "Mîwan mîwanî xwaye",
+  "کورد جگە لە شاخەکان هیچ دۆستێکی نییە": "Kurd cige le şaxekan hîç dostêkî nîye"
  }
 }
