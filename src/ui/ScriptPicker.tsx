@@ -7,8 +7,8 @@ import { F, TS, useTheme } from "@/ui/theme";
 
 const OPTS: { v: Script; ar?: string; lat?: string }[] = [
   { v: "ar", ar: "سڵاو، چۆنی؟" },
-  { v: "lat", lat: "Silaw, çonî?" },
-  { v: "both", ar: "سڵاو، چۆنی؟", lat: "Silaw, çonî?" },
+  { v: "lat", lat: "Sillaw, çonî?" },
+  { v: "both", ar: "سڵاو، چۆنی؟", lat: "Sillaw, çonî?" },
 ];
 
 /** Asks which alphabet the learner wants for Soranî: Arabic-based Kurdish, Latin, or both. */

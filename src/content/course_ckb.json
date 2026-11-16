@@ -1,1 +1,3398 @@
-{"SECTIONS":[],"CHARS":{},"SAYINGS":[],"LAT":{}}
+{
+ "SECTIONS": [
+  {
+   "lvl": "A1",
+   "name": "Başlangıç|Beginning|Anfang",
+   "sub": "Selamlaşma, tanışma, aile, sayılar, yiyecek, renkler, ev ve şehir, günlük hayat|Greetings, introductions, family, numbers, food, colours, home and city, daily life|Begrüßung, Vorstellung, Familie, Zahlen, Essen, Farben, Zuhause und Stadt, Alltag",
+   "units": [
+    {
+     "id": "ckb_a1_silaw",
+     "ku": "سڵاو",
+     "col": "#1f7a4a",
+     "name": "Selamlaşma|Greetings|Begrüßung",
+     "words": [
+      [
+       "سڵاو",
+       "merhaba|hello|hallo",
+       "👋"
+      ],
+      [
+       "چۆنی",
+       "nasılsın|how are you|wie geht es dir"
+      ],
+      [
+       "باشم",
+       "iyiyim|I am fine|mir geht es gut"
+      ],
+      [
+       "باش",
+       "iyi|good|gut"
+      ],
+      [
+       "سوپاس",
+       "teşekkürler|thank you|danke",
+       "🙏"
+      ],
+      [
+       "زۆر",
+       "çok|very, a lot|sehr, viel"
+      ],
+      [
+       "بەڵێ",
+       "evet|yes|ja",
+       "✅"
+      ],
+      [
+       "نەخێر",
+       "hayır|no|nein",
+       "❌"
+      ],
+      [
+       "بەیانی",
+       "sabah|morning|Morgen",
+       "🌅"
+      ],
+      [
+       "ئێوارە",
+       "akşam|evening|Abend"
+      ],
+      [
+       "شەو",
+       "gece|night|Nacht",
+       "🌙"
+      ],
+      [
+       "ماڵئاوا",
+       "hoşça kal|goodbye|auf Wiedersehen"
+      ]
+     ],
+     "sents": [
+      [
+       "سڵاو ئازاد، تۆ چۆنی؟",
+       "Merhaba Azad, nasılsın?|Hello Azad, how are you?|Hallo Azad, wie geht es dir?"
+      ],
+      [
+       "من باشم، سوپاس.",
+       "İyiyim, teşekkürler.|I am fine, thank you.|Mir geht es gut, danke."
+      ],
+      [
+       "بەیانیت باش، مامۆستا!",
+       "Günaydın, öğretmenim!|Good morning, teacher!|Guten Morgen, Lehrerin!"
+      ],
+      [
+       "ئێوارەت باش، ئازاد!",
+       "İyi akşamlar, Azad!|Good evening, Azad!|Guten Abend, Azad!"
+      ],
+      [
+       "بەڵێ، من زۆر باشم.",
+       "Evet, çok iyiyim.|Yes, I am very well.|Ja, mir geht es sehr gut."
+      ],
+      [
+       "شەوت باش، دایکە!",
+       "İyi geceler, anneciğim!|Good night, Mum!|Gute Nacht, Mama!"
+      ],
+      [
+       "زۆر سوپاس، ماڵئاوا!",
+       "Çok teşekkürler, hoşça kal!|Thanks a lot, goodbye!|Vielen Dank, auf Wiedersehen!"
+      ]
+     ],
+     "tips": [
+      [
+       "بەیانیت باش",
+       "«-ت» senin demektir: بەیانیت باش = sabahın iyi olsun, yani günaydın. Aynı kalıp: ئێوارەت باش، شەوت باش.|«-ت» means «your»: بەیانیت باش = (may) your morning (be) good. Same pattern: ئێوارەت باش، شەوت باش.|«-ت» heißt «dein»: بەیانیت باش = dein Morgen (sei) gut. Ebenso: ئێوارەت باش، شەوت باش."
+      ],
+      [
+       "چۆنی؟ / چۆنن؟",
+       "Bir kişiye «چۆنی؟», birden çok kişiye ya da saygıyla «چۆنن؟» denir.|To one person «چۆنی؟», to several people or politely «چۆنن؟».|Zu einer Person «چۆنی؟», zu mehreren oder höflich «چۆنن؟»."
+      ]
+     ],
+     "note": "Soranî sağdan sola yazılır. «ە» açık e (ev), «ێ» kapalı e, «ۆ» o, «وو» uzun u, «ڵ» kalın l, «ڕ» titrek r sesidir.|Soranî is written right to left. «ە» is a short e (as in «bed»), «ێ» a long ê (as in «they»), «ۆ» is o, «وو» a long u, «ڵ» a dark l and «ڕ» a rolled r.|Soranî wird von rechts nach links geschrieben. «ە» ist ein kurzes e (wie in «Bett»), «ێ» ein langes e (wie in «See»), «ۆ» ist o, «وو» ein langes u, «ڵ» ein dunkles l und «ڕ» ein gerolltes r."
+    },
+    {
+     "id": "ckb_a1_nasandin",
+     "ku": "ناساندن",
+     "col": "#1c6f9c",
+     "name": "Tanışma|Introductions|Sich vorstellen",
+     "words": [
+      [
+       "ناو",
+       "isim, ad|name|Name",
+       "🪪"
+      ],
+      [
+       "چی",
+       "ne|what|was"
+      ],
+      [
+       "کوێ",
+       "nere|where|wo"
+      ],
+      [
+       "خەڵکی",
+       "…li (bir yerden olan)|from (a place)|aus (einem Ort)"
+      ],
+      [
+       "من",
+       "ben|I|ich"
+      ],
+      [
+       "تۆ",
+       "sen|you|du"
+      ],
+      [
+       "ئەو",
+       "o|he, she|er, sie"
+      ],
+      [
+       "خوێندکار",
+       "öğrenci|student|Student, Schüler",
+       "🎒"
+      ],
+      [
+       "مامۆستا",
+       "öğretmen|teacher|Lehrer, Lehrerin"
+      ],
+      [
+       "هاوڕێ",
+       "arkadaş|friend|Freund, Freundin"
+      ],
+      [
+       "کوردی",
+       "Kürtçe|Kurdish (language)|Kurdisch"
+      ],
+      [
+       "خۆشحاڵ",
+       "memnun, mutlu|glad, happy|froh, glücklich"
+      ]
+     ],
+     "sents": [
+      [
+       "سڵاو، ناوت چییە؟",
+       "Merhaba, adın ne?|Hello, what is your name?|Hallo, wie heißt du?"
+      ],
+      [
+       "سڵاو، ناوم ئازادە.",
+       "Merhaba, benim adım Azad.|Hello, my name is Azad.|Hallo, ich heiße Azad."
+      ],
+      [
+       "تۆ خەڵکی کوێیت؟",
+       "Nerelisin?|Where are you from?|Woher kommst du?"
+      ],
+      [
+       "من خەڵکی سلێمانیم.",
+       "Ben Silêmanîliyim.|I am from Silêmanî.|Ich komme aus Silêmanî."
+      ],
+      [
+       "من خوێندکارم و ئەو مامۆستایە.",
+       "Ben öğrenciyim, o da öğretmen.|I am a student and he is a teacher.|Ich bin Student und er ist Lehrer."
+      ],
+      [
+       "ڕۆژدا هاوڕێی منە.",
+       "Rojda benim arkadaşım.|Rojda is my friend.|Rojda ist meine Freundin."
+      ],
+      [
+       "خۆشحاڵم بە ناسینت.",
+       "Tanıştığıma memnun oldum.|Nice to meet you.|Freut mich, dich kennenzulernen."
+      ]
+     ],
+     "tips": [
+      [
+       "من خوێندکارم / تۆ خوێندکاریت / ئەو خوێندکارە",
+       "«olmak» isme ek olarak gelir: -م (ben), -یت (sen), -ە (o). Ünlüden sonra -یە: مامۆستایە.|«To be» is a suffix on the word: -م (I), -یت (you), -ە (he/she). After a vowel -یە: مامۆستایە.|«Sein» ist eine Endung am Wort: -م (ich), -یت (du), -ە (er/sie). Nach Vokal -یە: مامۆستایە."
+      ],
+      [
+       "ناوم / ناوت",
+       "Kısa iyelik ekleri: ناوم = adım, ناوت = adın. Uzun biçim: ناوی من، ناوی تۆ.|Short possessive endings: ناوم = my name, ناوت = your name. Long form: ناوی من، ناوی تۆ.|Kurze Possessivendungen: ناوم = mein Name, ناوت = dein Name. Lange Form: ناوی من، ناوی تۆ."
+      ]
+     ],
+     "story": {
+      "title": "هاوڕێیەکی نوێ",
+      "lines": [
+       [
+        "Rojda",
+        "سڵاو! ناوت چییە؟",
+        "Merhaba! Adın ne?|Hi! What is your name?|Hallo! Wie heißt du?"
+       ],
+       [
+        "Berfîn",
+        "ناوم بەرفینە. ناوی تۆ چییە؟",
+        "Benim adım Berfîn. Senin adın ne?|My name is Berfîn. What is your name?|Ich heiße Berfîn. Wie heißt du?"
+       ],
+       [
+        "Rojda",
+        "ناوم ڕۆژدایە. تۆ خەڵکی کوێیت؟",
+        "Benim adım Rojda. Nerelisin?|My name is Rojda. Where are you from?|Ich heiße Rojda. Woher kommst du?"
+       ],
+       [
+        "Berfîn",
+        "من خەڵکی هەولێرم.",
+        "Ben Hewlêrliyim.|I am from Hewlêr.|Ich komme aus Hewlêr.",
+        {
+         "q": "Berfîn nereli olduğunu söylüyor:|Berfîn says where she is from:|Berfîn sagt, woher sie kommt:",
+         "options": [
+          "من خەڵکی هەولێرم.",
+          "من باشم، سوپاس.",
+          "ناوم ڕۆژدایە."
+         ]
+        }
+       ],
+       [
+        "Rojda",
+        "من خەڵکی مەهابادم. تۆ خوێندکاریت؟",
+        "Ben Mehabadlıyım. Öğrenci misin?|I am from Mehabad. Are you a student?|Ich komme aus Mehabad. Bist du Studentin?"
+       ],
+       [
+        "Berfîn",
+        "بەڵێ، من خوێندکارم.",
+        "Evet, öğrenciyim.|Yes, I am a student.|Ja, ich bin Studentin.",
+        {
+         "q": "Berfîn öğrenci olduğunu söylüyor:|Berfîn says she is a student:|Berfîn sagt, dass sie Studentin ist:",
+         "options": [
+          "بەڵێ، من خوێندکارم.",
+          "نەخێر، ئەو مامۆستایە.",
+          "شەوت باش!"
+         ]
+        }
+       ],
+       [
+        "Rojda",
+        "خۆشحاڵم بە ناسینت، بەرفین!",
+        "Tanıştığıma memnun oldum, Berfîn!|Nice to meet you, Berfîn!|Freut mich, Berfîn!"
+       ],
+       [
+        "Berfîn",
+        "منیش خۆشحاڵم!",
+        "Ben de memnun oldum!|Nice to meet you too!|Mich auch!"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "ckb_a1_xezan",
+     "ku": "خێزان",
+     "col": "#a8325e",
+     "name": "Aile|Family|Familie",
+     "words": [
+      [
+       "دایک",
+       "anne|mother|Mutter"
+      ],
+      [
+       "باوک",
+       "baba|father|Vater"
+      ],
+      [
+       "برا",
+       "erkek kardeş|brother|Bruder"
+      ],
+      [
+       "خوشک",
+       "kız kardeş|sister|Schwester"
+      ],
+      [
+       "کوڕ",
+       "oğul; oğlan|son; boy|Sohn; Junge",
+       "👦"
+      ],
+      [
+       "کچ",
+       "kız (evlat); kız çocuk|daughter; girl|Tochter; Mädchen",
+       "👧"
+      ],
+      [
+       "منداڵ",
+       "çocuk|child|Kind",
+       "🧒"
+      ],
+      [
+       "داپیر",
+       "büyükanne|grandmother|Großmutter",
+       "👵"
+      ],
+      [
+       "باپیر",
+       "büyükbaba|grandfather|Großvater",
+       "👴"
+      ],
+      [
+       "خێزان",
+       "aile|family|Familie"
+      ],
+      [
+       "مام",
+       "amca|uncle (father's side)|Onkel (väterlicherseits)"
+      ],
+      [
+       "خاڵ",
+       "dayı|uncle (mother's side)|Onkel (mütterlicherseits)"
+      ]
+     ],
+     "sents": [
+      [
+       "ئەمە دایکی منە.",
+       "Bu benim annem.|This is my mother.|Das ist meine Mutter."
+      ],
+      [
+       "ئەمە باوکمە، ناوی کاوەیە.",
+       "Bu babam, adı Kawe.|This is my father, his name is Kawe.|Das ist mein Vater, er heißt Kawe."
+      ],
+      [
+       "خوشکم لە دهۆک مامۆستایە.",
+       "Kız kardeşim Duhokta öğretmen.|My sister is a teacher in Duhok.|Meine Schwester ist Lehrerin in Duhok."
+      ],
+      [
+       "من دوو برام هەیە.",
+       "İki erkek kardeşim var.|I have two brothers.|Ich habe zwei Brüder."
+      ],
+      [
+       "مامم لە هەولێرە.",
+       "Amcam Hewlêrde.|My uncle is in Hewlêr.|Mein Onkel ist in Hewlêr."
+      ],
+      [
+       "خێزانەکەمان زۆر گەورەیە.",
+       "Ailemiz çok büyük.|Our family is very big.|Unsere Familie ist sehr groß."
+      ],
+      [
+       "باپیرم و داپیرم لە کەرکووکن.",
+       "Dedem ve ninem Kerkûkta.|My grandfather and grandmother are in Kerkûk.|Mein Großvater und meine Großmutter sind in Kerkûk."
+      ]
+     ],
+     "tips": [
+      [
+       "دایکی من = دایکم",
+       "İki yol: isim + ی + zamir (دایکی من) ya da isim + kısa ek (دایکم). -م benim, -ت senin, -ی onun, -مان bizim, -تان sizin, -یان onların.|Two ways: noun + ی + pronoun (دایکی من) or noun + short ending (دایکم). -م my, -ت your, -ی his/her, -مان our, -تان your (pl.), -یان their.|Zwei Wege: Nomen + ی + Pronomen (دایکی من) oder Nomen + kurze Endung (دایکم). -م mein, -ت dein, -ی sein/ihr, -مان unser, -تان euer, -یان ihr."
+      ],
+      [
+       "برام هەیە",
+       "«sahip olmak» = iyelik eki + هەیە: برام هەیە = erkek kardeşim var. Sayıdan sonra isim tekil kalır: دوو برا.|«To have» = possessive ending + هەیە: برام هەیە = I have a brother. After a number the noun stays singular: دوو برا.|«Haben» = Possessivendung + هەیە: برام هەیە = ich habe einen Bruder. Nach Zahlen bleibt das Nomen im Singular: دوو برا."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a1_jimare",
+     "ku": "ژمارە",
+     "col": "#b5651d",
+     "name": "Sayılar ve yaş|Numbers and age|Zahlen und Alter",
+     "words": [
+      [
+       "یەک",
+       "bir|one|eins"
+      ],
+      [
+       "دوو",
+       "iki|two|zwei"
+      ],
+      [
+       "سێ",
+       "üç|three|drei"
+      ],
+      [
+       "چوار",
+       "dört|four|vier"
+      ],
+      [
+       "پێنج",
+       "beş|five|fünf",
+       "🖐️"
+      ],
+      [
+       "شەش",
+       "altı|six|sechs"
+      ],
+      [
+       "حەوت",
+       "yedi|seven|sieben"
+      ],
+      [
+       "هەشت",
+       "sekiz|eight|acht"
+      ],
+      [
+       "نۆ",
+       "dokuz|nine|neun"
+      ],
+      [
+       "دە",
+       "on|ten|zehn",
+       "🔟"
+      ],
+      [
+       "تەمەن",
+       "yaş|age|Alter"
+      ],
+      [
+       "ساڵ",
+       "yıl|year|Jahr",
+       "📅"
+      ]
+     ],
+     "sents": [
+      [
+       "ئازاد، تەمەنت چەندە؟",
+       "Azad, kaç yaşındasın?|Azad, how old are you?|Azad, wie alt bist du?"
+      ],
+      [
+       "تەمەنم بیست ساڵە.",
+       "Yirmi yaşındayım.|I am twenty years old.|Ich bin zwanzig Jahre alt."
+      ],
+      [
+       "براکەم تەمەنی دە ساڵە.",
+       "Erkek kardeşim on yaşında.|My brother is ten years old.|Mein Bruder ist zehn Jahre alt."
+      ],
+      [
+       "خوشکەکەم پازدە ساڵە.",
+       "Kız kardeşim on beş yaşında.|My sister is fifteen.|Meine Schwester ist fünfzehn."
+      ],
+      [
+       "من سێ خوشکم هەیە.",
+       "Üç kız kardeşim var.|I have three sisters.|Ich habe drei Schwestern."
+      ],
+      [
+       "پێنج و پێنج دەکاتە دە.",
+       "Beş artı beş on eder.|Five and five make ten.|Fünf und fünf macht zehn."
+      ],
+      [
+       "لە پۆلەکەماندا هەژدە خوێندکار هەیە.",
+       "Sınıfımızda on sekiz öğrenci var.|There are eighteen students in our class.|In unserer Klasse gibt es achtzehn Schüler."
+      ]
+     ],
+     "tips": [
+      [
+       "یازدە، دوازدە، سێزدە، چواردە، پازدە، شازدە، حەڤدە، هەژدە، نۆزدە، بیست",
+       "11–19 sayıları «-دە» ile biter; 20 = بیست.|The numbers 11–19 end in «-دە»; 20 = بیست.|Die Zahlen 11–19 enden auf «-دە»; 20 = بیست."
+      ],
+      [
+       "تەمەنم … ساڵە",
+       "Yaş söylerken: تەمەنم بیست ساڵە = yaşım yirmi yıl, yani yirmi yaşındayım. Kısaca: بیست ساڵم.|To say your age: تەمەنم بیست ساڵە = my age is twenty years. Short: بیست ساڵم.|Alter angeben: تەمەنم بیست ساڵە = mein Alter ist zwanzig Jahre. Kurz: بیست ساڵم."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a1_xwardin",
+     "ku": "خواردن و خواردنەوە",
+     "col": "#127a6f",
+     "name": "Yiyecek ve içecek|Food and drink|Essen und Trinken",
+     "words": [
+      [
+       "نان",
+       "ekmek|bread|Brot",
+       "🍞"
+      ],
+      [
+       "ئاو",
+       "su|water|Wasser",
+       "💧"
+      ],
+      [
+       "چا",
+       "çay|tea|Tee",
+       "🍵"
+      ],
+      [
+       "شیر",
+       "süt|milk|Milch",
+       "🥛"
+      ],
+      [
+       "برنج",
+       "pirinç, pilav|rice|Reis",
+       "🍚"
+      ],
+      [
+       "گۆشت",
+       "et|meat|Fleisch"
+      ],
+      [
+       "سێو",
+       "elma|apple|Apfel",
+       "🍎"
+      ],
+      [
+       "پەنیر",
+       "peynir|cheese|Käse"
+      ],
+      [
+       "خواردن",
+       "yemek|food; to eat|Essen; essen"
+      ],
+      [
+       "برسی",
+       "aç|hungry|hungrig"
+      ],
+      [
+       "تینوو",
+       "susamış|thirsty|durstig"
+      ],
+      [
+       "خۆش",
+       "lezzetli, güzel|tasty, nice|lecker, schön"
+      ]
+     ],
+     "sents": [
+      [
+       "من نان دەخۆم.",
+       "Ekmek yiyorum.|I am eating bread.|Ich esse Brot."
+      ],
+      [
+       "تۆ چا دەخۆیتەوە؟",
+       "Çay içer misin?|Do you drink tea?|Trinkst du Tee?"
+      ],
+      [
+       "ئەو ئاو دەخواتەوە.",
+       "O su içiyor.|She is drinking water.|Sie trinkt Wasser."
+      ],
+      [
+       "من زۆر برسیمە.",
+       "Çok acıktım.|I am very hungry.|Ich habe großen Hunger."
+      ],
+      [
+       "ئێمە برنج و گۆشت دەخۆین.",
+       "Pilav ve et yiyoruz.|We are eating rice and meat.|Wir essen Reis und Fleisch."
+      ],
+      [
+       "ئەم نانە زۆر خۆشە.",
+       "Bu ekmek çok lezzetli.|This bread is very tasty.|Dieses Brot ist sehr lecker."
+      ],
+      [
+       "من شیر ناخۆمەوە.",
+       "Süt içmem.|I do not drink milk.|Ich trinke keine Milch."
+      ]
+     ],
+     "tips": [
+      [
+       "دەخۆم، دەخۆیت، دەخوات، دەخۆین، دەخۆن",
+       "Geniş/şimdiki zaman: دە + kök + kişi eki. Olumsuz: دە yerine نا: ناخۆم = yemiyorum.|Present tense: دە + stem + person ending. Negative: نا instead of دە: ناخۆم = I don't eat.|Präsens: دە + Stamm + Personalendung. Verneinung: نا statt دە: ناخۆم = ich esse nicht."
+      ],
+      [
+       "دەخۆمەوە",
+       "«içmek» = خواردنەوە: aynı fiil, sonuna «-ەوە» eklenir: دەخۆمەوە = içiyorum.|«To drink» = خواردنەوە: the same verb plus «-ەوە»: دەخۆمەوە = I drink.|«Trinken» = خواردنەوە: dasselbe Verb plus «-ەوە»: دەخۆمەوە = ich trinke."
+      ]
+     ],
+     "story": {
+      "title": "لە چێشتخانە",
+      "lines": [
+       [
+        "Garson",
+        "سڵاو، فەرموو!",
+        "Merhaba, buyurun!|Hello, welcome!|Hallo, bitte schön!"
+       ],
+       [
+        "Azad",
+        "سڵاو. من زۆر برسیمە.",
+        "Merhaba. Çok acıktım.|Hello. I am very hungry.|Hallo. Ich habe großen Hunger."
+       ],
+       [
+        "Garson",
+        "چی دەخۆیت؟",
+        "Ne yersin?|What will you eat?|Was isst du?"
+       ],
+       [
+        "Azad",
+        "برنج و گۆشت دەخۆم.",
+        "Pilav ve et yerim.|I will have rice and meat.|Ich esse Reis und Fleisch.",
+        {
+         "q": "Azad ne yiyeceğini söylüyor:|Azad says what he will eat:|Azad sagt, was er isst:",
+         "options": [
+          "برنج و گۆشت دەخۆم.",
+          "من شیر ناخۆمەوە.",
+          "ئەمە باوکمە."
+         ]
+        }
+       ],
+       [
+        "Garson",
+        "چی دەخۆیتەوە؟ چا یان ئاو؟",
+        "Ne içersin? Çay mı su mu?|What will you drink? Tea or water?|Was trinkst du? Tee oder Wasser?"
+       ],
+       [
+        "Azad",
+        "ئاو دەخۆمەوە، سوپاس.",
+        "Su içerim, teşekkürler.|I will drink water, thanks.|Ich trinke Wasser, danke.",
+        {
+         "q": "Azad su istiyor:|Azad asks for water:|Azad möchte Wasser:",
+         "options": [
+          "ئاو دەخۆمەوە، سوپاس.",
+          "چا دەخۆمەوە، سوپاس.",
+          "من زۆر برسیمە."
+         ]
+        }
+       ],
+       [
+        "Garson",
+        "فەرموو، نۆشی گیان بێت!",
+        "Buyurun, afiyet olsun!|Here you are, enjoy your meal!|Bitte schön, guten Appetit!"
+       ],
+       [
+        "Azad",
+        "زۆر خۆشە، سوپاس!",
+        "Çok lezzetli, teşekkürler!|It is very tasty, thanks!|Sehr lecker, danke!"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "ckb_a1_reng",
+     "ku": "ڕەنگەکان",
+     "col": "#6a3d9a",
+     "name": "Renkler ve eşyalar|Colours and things|Farben und Dinge",
+     "words": [
+      [
+       "ڕەنگ",
+       "renk|colour|Farbe",
+       "🎨"
+      ],
+      [
+       "سوور",
+       "kırmızı|red|rot",
+       "🔴"
+      ],
+      [
+       "سەوز",
+       "yeşil|green|grün",
+       "🟢"
+      ],
+      [
+       "شین",
+       "mavi|blue|blau",
+       "🔵"
+      ],
+      [
+       "زەرد",
+       "sarı|yellow|gelb"
+      ],
+      [
+       "ڕەش",
+       "siyah|black|schwarz"
+      ],
+      [
+       "سپی",
+       "beyaz|white|weiß"
+      ],
+      [
+       "ئەمە",
+       "bu|this|das (hier)"
+      ],
+      [
+       "ئەوە",
+       "şu, o|that|das (dort)"
+      ],
+      [
+       "کتێب",
+       "kitap|book|Buch",
+       "📖"
+      ],
+      [
+       "قەڵەم",
+       "kalem|pen|Stift",
+       "✏️"
+      ],
+      [
+       "جانتا",
+       "çanta|bag|Tasche"
+      ]
+     ],
+     "sents": [
+      [
+       "بەڵێ، ئەمە کتێبێکە.",
+       "Evet, bu bir kitap.|Yes, this is a book.|Ja, das ist ein Buch."
+      ],
+      [
+       "ئەوە چییە، ئازاد؟",
+       "O ne, Azad?|What is that, Azad?|Was ist das, Azad?"
+      ],
+      [
+       "ئەوە قەڵەمێکی سوورە.",
+       "O kırmızı bir kalem.|That is a red pen.|Das ist ein roter Stift."
+      ],
+      [
+       "جانتاکەم ڕەش و سپییە.",
+       "Çantam siyah beyaz.|My bag is black and white.|Meine Tasche ist schwarz-weiß."
+      ],
+      [
+       "ئاسمان شینە و گیا سەوزە.",
+       "Gökyüzü mavi, çimen yeşil.|The sky is blue and the grass is green.|Der Himmel ist blau und das Gras ist grün."
+      ],
+      [
+       "کتێبە سەوزەکە هی منە.",
+       "Yeşil kitap benim.|The green book is mine.|Das grüne Buch gehört mir."
+      ],
+      [
+       "ئەم سێوە سوور نییە، زەردە.",
+       "Bu elma kırmızı değil, sarı.|This apple is not red, it is yellow.|Dieser Apfel ist nicht rot, er ist gelb."
+      ]
+     ],
+     "tips": [
+      [
+       "قەڵەمی سوور / قەڵەمێکی سوور",
+       "Sıfat ismin arkasına gelir, araya «ی» girer (izafe): قەڵەمی سوور = kırmızı kalem. «-ێک» = bir: قەڵەمێکی سوور.|The adjective follows the noun, linked by «ی» (ezafe): قەڵەمی سوور = red pen. «-ێک» = a: قەڵەمێکی سوور.|Das Adjektiv folgt dem Nomen, verbunden mit «ی» (Ezafe): قەڵەمی سوور = roter Stift. «-ێک» = ein: قەڵەمێکی سوور."
+      ],
+      [
+       "کتێبەکە → کتێبە سەوزەکە",
+       "Belirli eki «-ەکە» en sona, sıfata gelir.|The definite ending «-ەکە» moves to the end, onto the adjective.|Die bestimmte Endung «-ەکە» rückt ans Ende, an das Adjektiv."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a1_mal",
+     "ku": "ماڵ و شار",
+     "col": "#8a5a2b",
+     "name": "Ev ve şehir|Home and city|Zuhause und Stadt",
+     "words": [
+      [
+       "ماڵ",
+       "ev|house, home|Haus, Zuhause",
+       "🏠"
+      ],
+      [
+       "ژوور",
+       "oda|room|Zimmer"
+      ],
+      [
+       "دەرگا",
+       "kapı|door|Tür",
+       "🚪"
+      ],
+      [
+       "پەنجەرە",
+       "pencere|window|Fenster",
+       "🪟"
+      ],
+      [
+       "شار",
+       "şehir|city|Stadt",
+       "🏙️"
+      ],
+      [
+       "گوند",
+       "köy|village|Dorf"
+      ],
+      [
+       "قوتابخانە",
+       "okul|school|Schule",
+       "🏫"
+      ],
+      [
+       "بازاڕ",
+       "çarşı, pazar|market|Markt"
+      ],
+      [
+       "چێشتخانە",
+       "lokanta|restaurant|Restaurant"
+      ],
+      [
+       "جوان",
+       "güzel|beautiful|schön"
+      ],
+      [
+       "لە",
+       "-de, -den|in, at, from|in, an, aus"
+      ],
+      [
+       "بۆ",
+       "-e, için|to, for|nach, für"
+      ]
+     ],
+     "sents": [
+      [
+       "من لە ماڵەوەم.",
+       "Evdeyim.|I am at home.|Ich bin zu Hause."
+      ],
+      [
+       "ماڵەکەمان لە هەولێرە.",
+       "Evimiz Hewlêrde.|Our house is in Hewlêr.|Unser Haus ist in Hewlêr."
+      ],
+      [
+       "کتێبەکە لە ژوورەکەدایە.",
+       "Kitap odada.|The book is in the room.|Das Buch ist im Zimmer."
+      ],
+      [
+       "ژوورەکەم دوو پەنجەرەی هەیە.",
+       "Odamın iki penceresi var.|My room has two windows.|Mein Zimmer hat zwei Fenster."
+      ],
+      [
+       "ئەو دەچێتە قوتابخانە.",
+       "O okula gidiyor.|He goes to school.|Er geht zur Schule."
+      ],
+      [
+       "ئێمە دەچین بۆ بازاڕ.",
+       "Çarşıya gidiyoruz.|We are going to the market.|Wir gehen zum Markt."
+      ],
+      [
+       "سلێمانی شارێکی جوانە.",
+       "Silêmanî güzel bir şehir.|Silêmanî is a beautiful city.|Silêmanî ist eine schöne Stadt."
+      ]
+     ],
+     "tips": [
+      [
+       "لە ژوورەکەدا",
+       "«içinde» için: لە + isim + دا. «olmak» eki sona gelir: لە ژوورەکەدایە = odadadır. Evde: لە ماڵەوە.|«In» = لە + noun + دا. The «to be» ending comes last: لە ژوورەکەدایە = it is in the room. At home: لە ماڵەوە.|«In» = لە + Nomen + دا. Die Kopula kommt ans Ende: لە ژوورەکەدایە = es ist im Zimmer. Zu Hause: لە ماڵەوە."
+      ],
+      [
+       "دەچمە بازاڕ = دەچم بۆ بازاڕ",
+       "Bir yere gitmek: fiile «-ە» eklenir ya da «بۆ» kullanılır. İkisi de doğru.|Going somewhere: add «-ە» to the verb or use «بۆ». Both are correct.|Irgendwohin gehen: «-ە» ans Verb hängen oder «بۆ» benutzen. Beides ist richtig."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a1_rojane",
+     "ku": "ڕۆژ و کات",
+     "col": "#2c4f7c",
+     "name": "Günler ve zaman|Days and time|Tage und Zeit",
+     "words": [
+      [
+       "ڕۆژ",
+       "gün|day|Tag",
+       "☀️"
+      ],
+      [
+       "هەفتە",
+       "hafta|week|Woche"
+      ],
+      [
+       "ئەمڕۆ",
+       "bugün|today|heute"
+      ],
+      [
+       "سبەینێ",
+       "yarın|tomorrow|morgen"
+      ],
+      [
+       "دوێنێ",
+       "dün|yesterday|gestern"
+      ],
+      [
+       "کاتژمێر",
+       "saat|hour, o'clock; clock|Stunde, Uhr",
+       "⏰"
+      ],
+      [
+       "هەڵدەستم",
+       "kalkıyorum|I get up|ich stehe auf"
+      ],
+      [
+       "دەخەوم",
+       "uyuyorum|I sleep|ich schlafe",
+       "😴"
+      ],
+      [
+       "دەچم",
+       "gidiyorum|I go|ich gehe"
+      ],
+      [
+       "کار",
+       "iş|work|Arbeit",
+       "💼"
+      ],
+      [
+       "هەینی",
+       "cuma|Friday|Freitag"
+      ],
+      [
+       "شەممە",
+       "cumartesi|Saturday|Samstag"
+      ]
+     ],
+     "sents": [
+      [
+       "ئەمڕۆ شەممەیە و سبەینێ یەکشەممەیە.",
+       "Bugün cumartesi, yarın pazar.|Today is Saturday and tomorrow is Sunday.|Heute ist Samstag und morgen ist Sonntag."
+      ],
+      [
+       "دوێنێ هەینی بوو.",
+       "Dün cumaydı.|Yesterday was Friday.|Gestern war Freitag."
+      ],
+      [
+       "من کاتژمێر حەوت هەڵدەستم.",
+       "Saat yedide kalkıyorum.|I get up at seven o'clock.|Ich stehe um sieben Uhr auf."
+      ],
+      [
+       "بەیانیان چا دەخۆمەوە.",
+       "Sabahları çay içerim.|In the mornings I drink tea.|Morgens trinke ich Tee."
+      ],
+      [
+       "ئەو کاتژمێر هەشت دەچێتە سەر کار.",
+       "O saat sekizde işe gider.|She goes to work at eight o'clock.|Sie geht um acht Uhr zur Arbeit."
+      ],
+      [
+       "هەینی ناچم بۆ قوتابخانە.",
+       "Cuma günü okula gitmem.|On Friday I don't go to school.|Freitags gehe ich nicht zur Schule."
+      ],
+      [
+       "شەوان کاتژمێر یازدە دەخەوم.",
+       "Geceleri saat on birde yatarım.|At night I go to sleep at eleven.|Abends schlafe ich um elf Uhr."
+      ]
+     ],
+     "tips": [
+      [
+       "شەممە، یەکشەممە، دووشەممە، سێشەممە، چوارشەممە، پێنجشەممە، هەینی",
+       "Günler «شەممە» (cumartesi) üzerine sayılarla kurulur: یەکشەممە pazar, دووشەممە pazartesi … پێنجشەممە perşembe; cuma هەینی.|The days are built on «شەممە» (Saturday) with numbers: یەکشەممە Sunday, دووشەممە Monday … پێنجشەممە Thursday; Friday is هەینی.|Die Tage werden mit Zahlen auf «شەممە» (Samstag) gebildet: یەکشەممە Sonntag, دووشەممە Montag … پێنجشەممە Donnerstag; Freitag ist هەینی."
+      ],
+      [
+       "هەڵدەستم → هەڵناستم",
+       "«هەڵ-» ön eki fiilin başında kalır; دە / نا ondan sonra gelir: هەڵدەستم kalkıyorum, هەڵناستم kalkmıyorum.|The prefix «هەڵ-» stays in front; دە / نا come after it: هەڵدەستم I get up, هەڵناستم I don't get up.|Die Vorsilbe «هەڵ-» bleibt vorn; دە / نا folgen danach: هەڵدەستم ich stehe auf, هەڵناستم ich stehe nicht auf."
+      ]
+     ],
+     "note": "Tebrikler, A1 tamam! Kısa özet: «olmak» ek olarak gelir (خوێندکارم), iyelik kısa eklerle (دایکم), şimdiki zaman دە + kök + ek (دەچم), olumsuzu نا (ناچم).|Well done, A1 complete! In short: «to be» is an ending (خوێندکارم), possession uses short endings (دایکم), the present is دە + stem + ending (دەچم), its negative takes نا (ناچم).|Glückwunsch, A1 geschafft! Kurz gesagt: «sein» ist eine Endung (خوێندکارم), Besitz zeigen kurze Endungen (دایکم), das Präsens ist دە + Stamm + Endung (دەچم), verneint mit نا (ناچم)."
+    }
+   ]
+  },
+  {
+   "lvl": "A2",
+   "name": "Günlük hayat|Daily life|Alltag",
+   "sub": "Alışveriş, hava, sağlık, yolculuk, geçmiş zaman, iş ve okul, boş zaman|Shopping, weather, health, travel, the past tense, work and school, free time|Einkaufen, Wetter, Gesundheit, Reisen, Vergangenheit, Arbeit und Schule, Freizeit",
+   "units": [
+    {
+     "id": "ckb_a2_bazar",
+     "ku": "بازاڕ",
+     "col": "#8a4b2a",
+     "name": "Alışveriş ve çarşı|Shopping and market|Einkaufen und Markt",
+     "words": [
+      [
+       "بازاڕ",
+       "çarşı, pazar|market|Markt",
+       "🏪"
+      ],
+      [
+       "دووکان",
+       "dükkân|shop|Laden"
+      ],
+      [
+       "فرۆشیار",
+       "satıcı|seller|Verkäufer"
+      ],
+      [
+       "نرخ",
+       "fiyat|price|Preis",
+       "🏷️"
+      ],
+      [
+       "پارە",
+       "para|money|Geld",
+       "💵"
+      ],
+      [
+       "هەرزان",
+       "ucuz|cheap|billig"
+      ],
+      [
+       "گران",
+       "pahalı|expensive|teuer"
+      ],
+      [
+       "کڕین",
+       "satın almak|to buy|kaufen"
+      ],
+      [
+       "فرۆشتن",
+       "satmak|to sell|verkaufen"
+      ],
+      [
+       "کیلۆ",
+       "kilo|kilo|Kilo",
+       "⚖️"
+      ],
+      [
+       "تەماتە",
+       "domates|tomato|Tomate",
+       "🍅"
+      ],
+      [
+       "کراس",
+       "gömlek|shirt|Hemd",
+       "👕"
+      ]
+     ],
+     "sents": [
+      [
+       "ببورە، ئەم کراسە شینە بە چەندە؟",
+       "Affedersiniz, bu mavi gömlek kaç para?|Excuse me, how much is this blue shirt?|Entschuldigung, was kostet dieses blaue Hemd?"
+      ],
+      [
+       "کیلۆیەک تەماتە بە هەزار دینارە.",
+       "Bir kilo domates bin dinar.|A kilo of tomatoes is a thousand dinars.|Ein Kilo Tomaten kostet tausend Dinar."
+      ],
+      [
+       "ئەمە زۆر گرانە، هەرزانتر هەیە؟",
+       "Bu çok pahalı, daha ucuzu var mı?|This is very expensive, is there anything cheaper?|Das ist sehr teuer, gibt es etwas Billigeres?"
+      ],
+      [
+       "من دەمەوێت دوو کیلۆ سێو بکڕم.",
+       "İki kilo elma almak istiyorum.|I want to buy two kilos of apples.|Ich möchte zwei Kilo Äpfel kaufen."
+      ],
+      [
+       "فرۆشیارەکە دەڵێت نرخەکە زۆر هەرزانە.",
+       "Satıcı fiyatın çok ucuz olduğunu söylüyor.|The seller says the price is very cheap.|Der Verkäufer sagt, der Preis ist sehr billig."
+      ],
+      [
+       "بازاڕی سلێمانی هەموو ڕۆژێک قەرەباڵغە.",
+       "Silêmanî çarşısı her gün kalabalıktır.|The Silêmanî market is crowded every day.|Der Markt von Silêmanî ist jeden Tag voll."
+      ],
+      [
+       "ئەم دووکانە شتی هەرزان دەفرۆشێت.",
+       "Bu dükkân ucuz şeyler satıyor.|This shop sells cheap things.|Dieser Laden verkauft billige Sachen."
+      ]
+     ],
+     "tips": [
+      [
+       "… بە چەندە؟",
+       "Fiyat sormak: «ئەمە بە چەندە؟» = Bu kaç para?|Asking the price: «ئەمە بە چەندە؟» = How much is this?|Nach dem Preis fragen: «ئەمە بە چەندە؟» = Was kostet das?"
+      ],
+      [
+       "هەرزان ← هەرزانتر",
+       "«-تر» sıfatı karşılaştırma yapar: هەرزانتر = daha ucuz, گرانتر = daha pahalı.|«-تر» makes the comparative: هەرزانتر = cheaper, گرانتر = more expensive.|«-تر» bildet den Komparativ: هەرزانتر = billiger, گرانتر = teurer."
+      ]
+     ],
+     "story": {
+      "title": "لە بازاڕ",
+      "lines": [
+       [
+        "Firoşkar",
+        "بەخێربێیت! چیت دەوێت؟",
+        "Hoş geldin! Ne istiyorsun?|Welcome! What would you like?|Willkommen! Was möchtest du?"
+       ],
+       [
+        "Rojda",
+        "سڵاو، کیلۆیەک تەماتە بە چەندە؟",
+        "Merhaba, bir kilo domates kaç para?|Hello, how much is a kilo of tomatoes?|Hallo, was kostet ein Kilo Tomaten?"
+       ],
+       [
+        "Firoşkar",
+        "کیلۆیەک بە هەزار دینارە.",
+        "Kilosu bin dinar.|A kilo is a thousand dinars.|Ein Kilo kostet tausend Dinar.",
+        {
+         "q": "Bir kilo domates kaç para?|How much is a kilo of tomatoes?|Was kostet ein Kilo Tomaten?",
+         "options": [
+          "کیلۆیەک بە هەزار دینارە.",
+          "کیلۆیەک بە پێنج هەزار دینارە.",
+          "تەماتە نییە."
+         ]
+        }
+       ],
+       [
+        "Rojda",
+        "ئەی سێو؟ سێوەکانت زۆر جوانن.",
+        "Ya elma? Elmaların çok güzel.|And apples? Your apples look lovely.|Und Äpfel? Deine Äpfel sind sehr schön."
+       ],
+       [
+        "Firoşkar",
+        "کیلۆی سێو دوو هەزار دینارە.",
+        "Elmanın kilosu iki bin dinar.|Apples are two thousand dinars a kilo.|Ein Kilo Äpfel kostet zweitausend Dinar."
+       ],
+       [
+        "Rojda",
+        "زۆر گرانە! هەرزانتر نییە؟",
+        "Çok pahalı! Daha ucuzu yok mu?|That's very expensive! Isn't there anything cheaper?|Sehr teuer! Gibt es nichts Billigeres?",
+        {
+         "q": "Rojda fiyat hakkında ne diyor?|What does Rojda say about the price?|Was sagt Rojda zum Preis?",
+         "options": [
+          "زۆر گرانە! هەرزانتر نییە؟",
+          "زۆر هەرزانە! سوپاس.",
+          "سێوم ناوێت."
+         ]
+        }
+       ],
+       [
+        "Firoşkar",
+        "باشە، بۆ تۆ هەزار و پێنج سەد.",
+        "Peki, sana bin beş yüz.|Okay, for you one thousand five hundred.|Gut, für dich tausendfünfhundert."
+       ],
+       [
+        "Rojda",
+        "زۆر سوپاس، دوو کیلۆ دەکڕم.",
+        "Çok teşekkürler, iki kilo alıyorum.|Thanks a lot, I'll take two kilos.|Vielen Dank, ich nehme zwei Kilo."
+       ]
+      ]
+     }
+    },
+    {
+     "id": "ckb_a2_keshuhewa",
+     "ku": "کەش و هەوا",
+     "col": "#2f6f8f",
+     "name": "Hava ve mevsimler|Weather and seasons|Wetter und Jahreszeiten",
+     "words": [
+      [
+       "بەهار",
+       "ilkbahar|spring|Frühling",
+       "🌸"
+      ],
+      [
+       "هاوین",
+       "yaz|summer|Sommer"
+      ],
+      [
+       "پایز",
+       "sonbahar|autumn|Herbst",
+       "🍂"
+      ],
+      [
+       "زستان",
+       "kış|winter|Winter"
+      ],
+      [
+       "باران",
+       "yağmur|rain|Regen",
+       "🌧️"
+      ],
+      [
+       "بەفر",
+       "kar|snow|Schnee",
+       "❄️"
+      ],
+      [
+       "با",
+       "rüzgâr|wind|Wind"
+      ],
+      [
+       "هەور",
+       "bulut|cloud|Wolke"
+      ],
+      [
+       "خۆر",
+       "güneş|sun|Sonne",
+       "☀️"
+      ],
+      [
+       "گەرم",
+       "sıcak|hot|heiß"
+      ],
+      [
+       "سارد",
+       "soğuk|cold|kalt"
+      ],
+      [
+       "نەورۆز",
+       "Newroz|Newroz|Newroz"
+      ]
+     ],
+     "sents": [
+      [
+       "ئەمڕۆ کەش و هەوا زۆر ساردە.",
+       "Bugün hava çok soğuk.|The weather is very cold today.|Heute ist das Wetter sehr kalt."
+      ],
+      [
+       "لە زستاندا بەفر لەسەر چیاکان دەبارێت.",
+       "Kışın dağlara kar yağar.|In winter it snows on the mountains.|Im Winter schneit es auf den Bergen."
+      ],
+      [
+       "جەژنی نەورۆز یەکەم ڕۆژی بەهارە.",
+       "Newroz bayramı baharın ilk günüdür.|Newroz is the first day of spring.|Newroz ist der erste Frühlingstag."
+      ],
+      [
+       "ئایا سبەینێ لە هەولێر باران دەبارێت؟",
+       "Yarın Hewlêrde yağmur yağacak mı?|Will it rain in Hewlêr tomorrow?|Regnet es morgen in Hewlêr?"
+      ],
+      [
+       "لە هاویندا هەولێر زۆر گەرم دەبێت.",
+       "Yazın Hewlêr çok sıcak olur.|In summer Hewlêr gets very hot.|Im Sommer wird es in Hewlêr sehr heiß."
+      ],
+      [
+       "من حەز لە پایز دەکەم، چونکە فێنکە.",
+       "Sonbaharı severim, çünkü serindir.|I like autumn because it is cool.|Ich mag den Herbst, weil es kühl ist."
+      ],
+      [
+       "ئەمڕۆ ئاسمان هەوراوییە و با دێت.",
+       "Bugün gökyüzü bulutlu ve rüzgâr esiyor.|Today the sky is cloudy and it is windy.|Heute ist der Himmel bewölkt und es ist windig."
+      ]
+     ],
+     "tips": [
+      [
+       "باران دەبارێت / بەفر دەبارێت",
+       "«بارین» (yağmak) hem yağmur hem kar için kullanılır.|«بارین» (to fall) is used for both rain and snow.|«بارین» (fallen) gilt für Regen und Schnee."
+      ],
+      [
+       "لە زستاندا",
+       "«لە … دا» = -de/-da: لە زستاندا = kışın, لە هاویندا = yazın.|«لە … دا» = in: لە زستاندا = in winter, لە هاویندا = in summer.|«لە … دا» = in: لە زستاندا = im Winter, لە هاویندا = im Sommer."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a2_tenduristi",
+     "ku": "لەش و تەندروستی",
+     "col": "#9b2f3f",
+     "name": "Vücut ve sağlık|Body and health|Körper und Gesundheit",
+     "words": [
+      [
+       "سەر",
+       "baş|head|Kopf"
+      ],
+      [
+       "دەست",
+       "el|hand|Hand"
+      ],
+      [
+       "قاچ",
+       "bacak, ayak|leg, foot|Bein, Fuß"
+      ],
+      [
+       "چاو",
+       "göz|eye|Auge"
+      ],
+      [
+       "ددان",
+       "diş|tooth|Zahn",
+       "🦷"
+      ],
+      [
+       "سک",
+       "karın|stomach|Bauch"
+      ],
+      [
+       "پزیشک",
+       "doktor|doctor|Arzt",
+       "🩺"
+      ],
+      [
+       "نەخۆش",
+       "hasta|ill|krank"
+      ],
+      [
+       "دەرمان",
+       "ilaç|medicine|Medikament",
+       "💊"
+      ],
+      [
+       "ئازار",
+       "ağrı|pain|Schmerz"
+      ],
+      [
+       "تا",
+       "ateş|fever|Fieber",
+       "🤒"
+      ],
+      [
+       "نەخۆشخانە",
+       "hastane|hospital|Krankenhaus",
+       "🏥"
+      ]
+     ],
+     "sents": [
+      [
+       "سەرم زۆر دێشێت، دەبێت بچم بۆ لای پزیشک.",
+       "Başım çok ağrıyor, doktora gitmem lazım.|I have a bad headache, I need to go to the doctor.|Mein Kopf tut sehr weh, ich muss zum Arzt."
+      ],
+      [
+       "منداڵەکەم تای هەیە و نەخۆشە.",
+       "Çocuğumun ateşi var ve hasta.|My child has a fever and is ill.|Mein Kind hat Fieber und ist krank."
+      ],
+      [
+       "ئەم دەرمانە ڕۆژی سێ جار بخۆ.",
+       "Bu ilacı günde üç kez al.|Take this medicine three times a day.|Nimm dieses Medikament dreimal am Tag."
+      ],
+      [
+       "قاچم دێشێت و ناتوانم بڕۆم.",
+       "Ayağım ağrıyor ve yürüyemiyorum.|My leg hurts and I can't walk.|Mein Bein tut weh und ich kann nicht gehen."
+      ],
+      [
+       "نەخۆشخانەکە لە نزیک ماڵی ئێمەیە.",
+       "Hastane evimizin yakınında.|The hospital is near our house.|Das Krankenhaus ist in der Nähe unseres Hauses."
+      ],
+      [
+       "ئاو زۆر بخۆرەوە و پشوو بدە.",
+       "Bol su iç ve dinlen.|Drink plenty of water and rest.|Trink viel Wasser und ruh dich aus."
+      ],
+      [
+       "ئێستا باشترم، زۆر سوپاس دکتۆر.",
+       "Şimdi daha iyiyim, çok teşekkürler doktor.|I'm better now, thank you very much, doctor.|Jetzt geht es mir besser, vielen Dank, Herr Doktor."
+      ]
+     ],
+     "tips": [
+      [
+       "سەرم دێشێت",
+       "Ağrıyan yer + iyelik eki + «دێشێت»: سەرم دێشێت = başım ağrıyor, ددانم دێشێت = dişim ağrıyor.|Body part + possessive clitic + «دێشێت»: سەرم دێشێت = my head hurts, ددانم دێشێت = my tooth hurts.|Körperteil + Possessivendung + «دێشێت»: سەرم دێشێت = mein Kopf tut weh."
+      ],
+      [
+       "چیتە؟ / دەردت چییە؟",
+       "Doktorun sorusu: Neyin var? Cevap: «ئازارم هەیە» = ağrım var.|The doctor asks: What's wrong? Answer: «ئازارم هەیە» = I'm in pain.|Der Arzt fragt: Was fehlt dir? Antwort: «ئازارم هەیە» = Ich habe Schmerzen."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a2_rega",
+     "ku": "ڕێگا و گەشت",
+     "col": "#4a6b2a",
+     "name": "Yolculuk ve yön|Travel and directions|Reisen und Wegbeschreibung",
+     "words": [
+      [
+       "پاس",
+       "otobüs|bus|Bus",
+       "🚌"
+      ],
+      [
+       "تەکسی",
+       "taksi|taxi|Taxi",
+       "🚕"
+      ],
+      [
+       "فڕۆکەخانە",
+       "havalimanı|airport|Flughafen",
+       "✈️"
+      ],
+      [
+       "بلیت",
+       "bilet|ticket|Fahrkarte",
+       "🎫"
+      ],
+      [
+       "وێستگە",
+       "durak, istasyon|stop, station|Haltestelle"
+      ],
+      [
+       "ڕێگا",
+       "yol|road|Straße, Weg"
+      ],
+      [
+       "شەقام",
+       "cadde|street|Straße"
+      ],
+      [
+       "ڕاست",
+       "sağ|right|rechts"
+      ],
+      [
+       "چەپ",
+       "sol|left|links"
+      ],
+      [
+       "ڕاستەوخۆ",
+       "dümdüz|straight on|geradeaus"
+      ],
+      [
+       "نزیک",
+       "yakın|near|nah"
+      ],
+      [
+       "دوور",
+       "uzak|far|weit"
+      ]
+     ],
+     "sents": [
+      [
+       "ببورە، وێستگەی پاس لە کوێیە؟",
+       "Affedersiniz, otobüs durağı nerede?|Excuse me, where is the bus stop?|Entschuldigung, wo ist die Bushaltestelle?"
+      ],
+      [
+       "ڕاستەوخۆ بڕۆ، پاشان بۆ لای چەپ لابدە.",
+       "Düz git, sonra sola dön.|Go straight on, then turn left.|Geh geradeaus, dann bieg links ab."
+      ],
+      [
+       "فڕۆکەخانەی هەولێر لە شارەوە زۆر دوور نییە.",
+       "Hewlêr havalimanı şehirden çok uzak değil.|Hewlêr airport is not very far from the city.|Der Flughafen Hewlêr ist nicht weit von der Stadt."
+      ],
+      [
+       "بلیتێک بۆ سلێمانی بە چەندە؟",
+       "Silêmanîye bir bilet kaç para?|How much is a ticket to Silêmanî?|Was kostet eine Fahrkarte nach Silêmanî?"
+      ],
+      [
+       "تەکسییەک بگرە، پاسەکە درەنگ دێت.",
+       "Bir taksi tut, otobüs geç geliyor.|Take a taxi, the bus is late.|Nimm ein Taxi, der Bus kommt spät."
+      ],
+      [
+       "تکایە لێرە بوەستە، ماڵەکەم نزیکە.",
+       "Lütfen burada dur, evim yakın.|Please stop here, my house is close.|Bitte halten Sie hier, mein Haus ist nah."
+      ],
+      [
+       "ئەم ڕێگایە دەچێت بۆ دهۆک.",
+       "Bu yol Duhoka gider.|This road goes to Duhok.|Diese Straße führt nach Duhok."
+      ]
+     ],
+     "tips": [
+      [
+       "بڕۆ! وەرە! بوەستە!",
+       "Emir kipi: ب + şimdiki kök: بڕۆ (git), بگرە (tut), بوەستە (dur). «وەرە» (gel) düzensizdir. Dönmek: لابدە.|Imperative: ب + present stem: بڕۆ (go), بگرە (take), بوەستە (stop). «وەرە» (come) is irregular.|Imperativ: ب + Präsensstamm: بڕۆ (geh), بگرە (nimm), بوەستە (halt). «وەرە» (komm) ist unregelmäßig."
+      ],
+      [
+       "بۆ لای ڕاست / بۆ لای چەپ",
+       "sağa / sola|to the right / to the left|nach rechts / nach links"
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a2_chuwm",
+     "ku": "چووم و هاتم",
+     "col": "#6b4a8a",
+     "name": "Geçmiş zaman I: gittim, geldim|Past tense I: I went, I came|Vergangenheit I: ich ging, ich kam",
+     "words": [
+      [
+       "دوێنێ",
+       "dün|yesterday|gestern"
+      ],
+      [
+       "پار",
+       "geçen yıl|last year|letztes Jahr"
+      ],
+      [
+       "هەفتەی ڕابردوو",
+       "geçen hafta|last week|letzte Woche"
+      ],
+      [
+       "چوون",
+       "gitmek|to go|gehen"
+      ],
+      [
+       "هاتن",
+       "gelmek|to come|kommen"
+      ],
+      [
+       "بوون",
+       "olmak|to be|sein"
+      ],
+      [
+       "گەیشتن",
+       "varmak|to arrive|ankommen"
+      ],
+      [
+       "گەڕانەوە",
+       "geri dönmek|to return|zurückkehren",
+       "🔙"
+      ],
+      [
+       "هەستان",
+       "kalkmak|to get up|aufstehen",
+       "⏰"
+      ],
+      [
+       "نووستن",
+       "uyumak|to sleep|schlafen",
+       "😴"
+      ],
+      [
+       "دانیشتن",
+       "oturmak|to sit|sitzen",
+       "🪑"
+      ],
+      [
+       "ماندوو",
+       "yorgun|tired|müde"
+      ]
+     ],
+     "sents": [
+      [
+       "دوێنێ لەگەڵ هاوڕێکانم چووم بۆ بازاڕ.",
+       "Dün arkadaşlarımla çarşıya gittim.|Yesterday I went to the market with my friends.|Gestern bin ich mit meinen Freunden auf den Markt gegangen."
+      ],
+      [
+       "ئێمە هەفتەی ڕابردوو لە کەرکووکەوە هاتین.",
+       "Geçen hafta Kerkûkten geldik.|We came from Kerkûk last week.|Wir sind letzte Woche aus Kerkûk gekommen."
+      ],
+      [
+       "دوێنێ ئێوارە من لە ماڵەوە بووم.",
+       "Dün akşam evdeydim.|Yesterday evening I was at home.|Gestern Abend war ich zu Hause."
+      ],
+      [
+       "بەیانی زوو هەستام و چووم بۆ قوتابخانە.",
+       "Sabah erken kalktım ve okula gittim.|I got up early and went to school.|Ich bin früh aufgestanden und zur Schule gegangen."
+      ],
+      [
+       "من دوێنێ نەچووم بۆ کار، نەخۆش بووم.",
+       "Dün işe gitmedim, hastaydım.|I didn't go to work yesterday, I was ill.|Gestern bin ich nicht zur Arbeit gegangen, ich war krank."
+      ],
+      [
+       "دایک و باوکت کەی گەیشتنە هەولێر؟",
+       "Annenle baban Hewlêre ne zaman vardı?|When did your parents arrive in Hewlêr?|Wann sind deine Eltern in Hewlêr angekommen?"
+      ],
+      [
+       "ئایا تۆ پار چوویت بۆ مەهاباد؟",
+       "Geçen yıl Mehabada gittin mi?|Did you go to Mehabad last year?|Bist du letztes Jahr nach Mehabad gefahren?"
+      ]
+     ],
+     "tips": [
+      [
+       "چووم، چوویت، چوو، چووین، چوون",
+       "Geçişsiz fiillerde geçmiş zaman: geçmiş kök + şahıs eki (gittim, gittin, gitti, gittik, gittiniz/gittiler). Aynı şekilde: هاتم، هاتین.|Intransitive past: past stem + person ending (I went, you went, he went, we went, you/they went). Likewise: هاتم، هاتین.|Intransitive Vergangenheit: Vergangenheitsstamm + Personalendung (ich ging … sie gingen). Ebenso: هاتم، هاتین."
+      ],
+      [
+       "نەچووم",
+       "Olumsuz geçmiş «نە-» ile yapılır: نەچووم = gitmedim, نەهات = gelmedi.|Negative past takes «نە-»: نەچووم = I didn't go, نەهات = he didn't come.|Verneinung mit «نە-»: نەچووم = ich ging nicht, نەهات = er kam nicht."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a2_nanmxward",
+     "ku": "نانم خوارد",
+     "col": "#b5652a",
+     "name": "Geçmiş zaman II: yedim, gördüm|Past tense II: I ate, I saw|Vergangenheit II: ich aß, ich sah",
+     "words": [
+      [
+       "خواردن",
+       "yemek|to eat|essen"
+      ],
+      [
+       "خواردنەوە",
+       "içmek|to drink|trinken",
+       "🥤"
+      ],
+      [
+       "بینین",
+       "görmek|to see|sehen"
+      ],
+      [
+       "نووسین",
+       "yazmak|to write|schreiben",
+       "✍️"
+      ],
+      [
+       "خوێندنەوە",
+       "okumak|to read|lesen"
+      ],
+      [
+       "گوتن",
+       "söylemek|to say|sagen"
+      ],
+      [
+       "کردن",
+       "yapmak|to do|machen"
+      ],
+      [
+       "ناردن",
+       "göndermek|to send|schicken"
+      ],
+      [
+       "نامە",
+       "mektup|letter|Brief",
+       "✉️"
+      ],
+      [
+       "فیلم",
+       "film|film|Film",
+       "🎬"
+      ],
+      [
+       "نانی ئێوارە",
+       "akşam yemeği|dinner|Abendessen",
+       "🍽️"
+      ],
+      [
+       "دوێنێ شەو",
+       "dün gece|last night|gestern Abend"
+      ]
+     ],
+     "sents": [
+      [
+       "ئەمڕۆ بەیانی نانم خوارد و چام خواردەوە.",
+       "Bu sabah ekmek yedim ve çay içtim.|This morning I ate bread and drank tea.|Heute Morgen habe ich Brot gegessen und Tee getrunken."
+      ],
+      [
+       "دوێنێ شەو فیلمێکی کوردیم بینی، زۆر خۆش بوو.",
+       "Dün gece Kürtçe bir film izledim, çok güzeldi.|Last night I watched a Kurdish film, it was great.|Gestern Abend habe ich einen kurdischen Film gesehen, er war toll."
+      ],
+      [
+       "تۆ بۆ نانی ئێوارە چیت خوارد؟",
+       "Akşam yemeğinde ne yedin?|What did you eat for dinner?|Was hast du zu Abend gegessen?"
+      ],
+      [
+       "ئازاد نامەیەکی بۆ داپیرەی نارد.",
+       "Azad büyükannesine bir mektup gönderdi.|Azad sent a letter to his grandmother.|Azad hat seiner Großmutter einen Brief geschickt."
+      ],
+      [
+       "ئێمە ئەم کتێبەمان پێکەوە خوێندەوە.",
+       "Bu kitabı birlikte okuduk.|We read this book together.|Wir haben dieses Buch zusammen gelesen."
+      ],
+      [
+       "ببورە، من ئەو فیلمەم نەبینی.",
+       "Kusura bakma, o filmi görmedim.|Sorry, I didn't see that film.|Tut mir leid, ich habe den Film nicht gesehen."
+      ],
+      [
+       "مامۆستاکە وشەیەکی نوێی لەسەر تەختە نووسی.",
+       "Öğretmen tahtaya yeni bir kelime yazdı.|The teacher wrote a new word on the board.|Die Lehrerin schrieb ein neues Wort an die Tafel."
+      ]
+     ],
+     "tips": [
+      [
+       "نانم خوارد / نانت خوارد / نانی خوارد",
+       "Geçişli fiillerde geçmişte özne eki fiile değil, nesneye gelir: نانم خوارد = ekmek yedim, نانمان خوارد = ekmek yedik. Nesne yoksa fiile gelir: خواردم.|In the transitive past the agent clitic goes on the object, not the verb: نانم خوارد = I ate bread, نانمان خوارد = we ate bread. With no object it goes on the verb: خواردم.|Im transitiven Präteritum hängt die Personalendung am Objekt: نانم خوارد = ich aß Brot, نانمان خوارد = wir aßen Brot. Ohne Objekt am Verb: خواردم."
+      ],
+      [
+       "فیلمەکەم نەبینی",
+       "Olumsuzda «نە-» fiile gelir, ek yine nesnede kalır.|In the negative «نە-» goes on the verb; the clitic stays on the object.|Bei Verneinung steht «نە-» am Verb, die Endung bleibt am Objekt."
+      ]
+     ],
+     "story": {
+      "title": "دوێنێ چیت کرد؟",
+      "lines": [
+       [
+        "Berfîn",
+        "سڵاو ئازاد! دوێنێ چیت کرد؟",
+        "Selam Azad! Dün ne yaptın?|Hi Azad! What did you do yesterday?|Hallo Azad! Was hast du gestern gemacht?"
+       ],
+       [
+        "Azad",
+        "لەگەڵ هاوڕێکانم چووم بۆ سینەما.",
+        "Arkadaşlarımla sinemaya gittim.|I went to the cinema with my friends.|Ich war mit meinen Freunden im Kino."
+       ],
+       [
+        "Berfîn",
+        "چ فیلمێکتان بینی؟",
+        "Hangi filmi izlediniz?|Which film did you see?|Welchen Film habt ihr gesehen?"
+       ],
+       [
+        "Azad",
+        "فیلمێکی کوردیمان بینی، زۆر جوان بوو.",
+        "Kürtçe bir film izledik, çok güzeldi.|We watched a Kurdish film, it was very good.|Wir haben einen kurdischen Film gesehen, er war sehr schön.",
+        {
+         "q": "Hangi filmi izlediler?|What film did they watch?|Welchen Film haben sie gesehen?",
+         "options": [
+          "فیلمێکی کوردیمان بینی، زۆر جوان بوو.",
+          "هیچ فیلمێکمان نەبینی.",
+          "فیلمێکی کۆنمان بینی، خۆش نەبوو."
+         ]
+        }
+       ],
+       [
+        "Berfîn",
+        "پاشان چیتان خوارد؟",
+        "Sonra ne yediniz?|What did you eat afterwards?|Was habt ihr danach gegessen?"
+       ],
+       [
+        "Azad",
+        "کەبابمان خوارد و دۆمان خواردەوە.",
+        "Kebap yedik ve ayran içtik.|We ate kebab and drank ayran.|Wir haben Kebab gegessen und Ayran getrunken.",
+        {
+         "q": "Ne yediler ve ne içtiler?|What did they eat and drink?|Was haben sie gegessen und getrunken?",
+         "options": [
+          "کەبابمان خوارد و دۆمان خواردەوە.",
+          "دۆڵمەمان خوارد و چامان خواردەوە.",
+          "هیچمان نەخوارد."
+         ]
+        }
+       ],
+       [
+        "Berfîn",
+        "ئای! منیش دەمەوێت بێم.",
+        "Ah! Ben de gelmek istiyorum.|Oh! I want to come too.|Oh! Ich will auch mitkommen."
+       ],
+       [
+        "Azad",
+        "باشە، هەینی پێکەوە دەچین.",
+        "Tamam, cuma günü birlikte gideriz.|Okay, we'll go together on Friday.|Gut, am Freitag gehen wir zusammen."
+       ]
+      ]
+     }
+    },
+    {
+     "id": "ckb_a2_karukhwendin",
+     "ku": "کار و خوێندن",
+     "col": "#2a5a6b",
+     "name": "İş ve okul|Work and school|Arbeit und Schule",
+     "words": [
+      [
+       "پیشە",
+       "meslek|profession|Beruf"
+      ],
+      [
+       "ئەندازیار",
+       "mühendis|engineer|Ingenieur",
+       "👷"
+      ],
+      [
+       "شۆفێر",
+       "şoför|driver|Fahrer"
+      ],
+      [
+       "پەرستار",
+       "hemşire|nurse|Krankenpfleger(in)"
+      ],
+      [
+       "جووتیار",
+       "çiftçi|farmer|Bauer",
+       "🧑‍🌾"
+      ],
+      [
+       "نانەوا",
+       "fırıncı|baker|Bäcker",
+       "🍞"
+      ],
+      [
+       "قوتابخانە",
+       "okul|school|Schule",
+       "🏫"
+      ],
+      [
+       "زانکۆ",
+       "üniversite|university|Universität",
+       "🎓"
+      ],
+      [
+       "قوتابی",
+       "öğrenci|pupil|Schüler(in)"
+      ],
+      [
+       "نووسینگە",
+       "ofis|office|Büro"
+      ],
+      [
+       "مووچە",
+       "maaş|salary|Gehalt"
+      ],
+      [
+       "ماندووکەر",
+       "yorucu|tiring|anstrengend"
+      ]
+     ],
+     "sents": [
+      [
+       "باوکم ئەندازیارە و لە نووسینگەیەک کار دەکات.",
+       "Babam mühendis ve bir ofiste çalışıyor.|My father is an engineer and works in an office.|Mein Vater ist Ingenieur und arbeitet in einem Büro."
+      ],
+      [
+       "کاتێک گەورە بووم، دەمەوێت ببم بە پزیشک.",
+       "Büyüyünce doktor olmak istiyorum.|When I grow up, I want to become a doctor.|Wenn ich groß bin, will ich Arzt werden."
+      ],
+      [
+       "خوشکم لە زانکۆی سلێمانی دەخوێنێت.",
+       "Kız kardeşim Silêmanî Üniversitesinde okuyor.|My sister studies at the University of Silêmanî.|Meine Schwester studiert an der Universität Silêmanî."
+      ],
+      [
+       "دایکم پەرستارە و شەوان کار دەکات.",
+       "Annem hemşire ve geceleri çalışıyor.|My mother is a nurse and works at night.|Meine Mutter ist Krankenschwester und arbeitet nachts."
+      ],
+      [
+       "قوتابییەکان هەموو ڕۆژێک دەچنە قوتابخانە.",
+       "Öğrenciler her gün okula gider.|The pupils go to school every day.|Die Schüler gehen jeden Tag zur Schule."
+      ],
+      [
+       "ئەم کارە ماندووکەرە، بەڵام مووچەکەی باشە.",
+       "Bu iş yorucu, ama maaşı iyi.|This job is tiring, but the salary is good.|Diese Arbeit ist anstrengend, aber das Gehalt ist gut."
+      ],
+      [
+       "مامم جووتیارە و گەنم دەچێنێت.",
+       "Amcam çiftçi ve buğday ekiyor.|My uncle is a farmer and grows wheat.|Mein Onkel ist Bauer und baut Weizen an."
+      ]
+     ],
+     "tips": [
+      [
+       "دەمەوێت ببم بە …",
+       "… olmak istiyorum: دەمەوێت ببم بە مامۆستا = öğretmen olmak istiyorum.|I want to become …: دەمەوێت ببم بە مامۆستا = I want to become a teacher.|Ich will … werden: دەمەوێت ببم بە مامۆستا = ich will Lehrer werden."
+      ],
+      [
+       "کار دەکەم / دەخوێنم",
+       "کار کردن = çalışmak, خوێندن = okumak (okulda/üniversitede).|کار کردن = to work, خوێندن = to study (at school/university).|کار کردن = arbeiten, خوێندن = studieren, lernen."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_a2_katibetal",
+     "ku": "کاتی بەتاڵ",
+     "col": "#7a3b5a",
+     "name": "Boş zaman ve internet|Free time and the internet|Freizeit und Internet",
+     "words": [
+      [
+       "کاتی بەتاڵ",
+       "boş zaman|free time|Freizeit"
+      ],
+      [
+       "مۆبایل",
+       "cep telefonu|mobile phone|Handy",
+       "📱"
+      ],
+      [
+       "ئینتەرنێت",
+       "internet|internet|Internet"
+      ],
+      [
+       "پەیام",
+       "mesaj|message|Nachricht",
+       "💬"
+      ],
+      [
+       "وێنە",
+       "fotoğraf, resim|photo, picture|Foto, Bild",
+       "📷"
+      ],
+      [
+       "گۆرانی",
+       "şarkı|song|Lied",
+       "🎵"
+      ],
+      [
+       "یاری",
+       "oyun|game|Spiel"
+      ],
+      [
+       "تۆپی پێ",
+       "futbol|football|Fußball",
+       "⚽"
+      ],
+      [
+       "مەلەوانی",
+       "yüzme|swimming|Schwimmen",
+       "🏊"
+      ],
+      [
+       "پیاسە",
+       "yürüyüş, gezinti|walk|Spaziergang"
+      ],
+      [
+       "کۆتایی هەفتە",
+       "hafta sonu|weekend|Wochenende"
+      ],
+      [
+       "حەز کردن",
+       "sevmek, hoşlanmak|to like|mögen"
+      ]
+     ],
+     "sents": [
+      [
+       "لە کاتی بەتاڵدا گوێ لە گۆرانی دەگرم.",
+       "Boş zamanımda şarkı dinlerim.|In my free time I listen to songs.|In meiner Freizeit höre ich Lieder."
+      ],
+      [
+       "هەینیان لەگەڵ هاوڕێکانم تۆپی پێ دەکەین.",
+       "Cuma günleri arkadaşlarımla futbol oynarız.|On Fridays my friends and I play football.|Freitags spiele ich mit meinen Freunden Fußball."
+      ],
+      [
+       "پەیامێکم بۆ ڕۆژدا نارد، بەڵام وەڵامی نەدایەوە.",
+       "Rojdaya mesaj gönderdim, ama cevap vermedi.|I sent Rojda a message, but she didn't reply.|Ich habe Rojda eine Nachricht geschickt, aber sie hat nicht geantwortet."
+      ],
+      [
+       "ئینتەرنێتی ماڵەوە ئەمڕۆ زۆر خاوە.",
+       "Evdeki internet bugün çok yavaş.|The internet at home is very slow today.|Das Internet zu Hause ist heute sehr langsam."
+      ],
+      [
+       "کۆتایی هەفتە دەچینە چیا بۆ پیاسە.",
+       "Hafta sonu yürüyüş için dağa gidiyoruz.|At the weekend we go to the mountains for a walk.|Am Wochenende gehen wir in die Berge wandern."
+      ],
+      [
+       "ئەم وێنەیەت بە مۆبایل گرت؟ زۆر جوانە!",
+       "Bu fotoğrafı telefonla mı çektin? Çok güzel!|Did you take this photo with your phone? It's beautiful!|Hast du dieses Foto mit dem Handy gemacht? Sehr schön!"
+      ],
+      [
+       "تۆ لە کاتی بەتاڵدا حەز لە چی دەکەیت؟",
+       "Boş zamanında neyi seversin?|What do you like doing in your free time?|Was machst du gern in deiner Freizeit?"
+      ]
+     ],
+     "tips": [
+      [
+       "حەز لە … دەکەم",
+       "… severim: حەز لە مەلەوانی دەکەم = yüzmeyi severim.|I like …: حەز لە مەلەوانی دەکەم = I like swimming.|Ich mag …: حەز لە مەلەوانی دەکەم = ich schwimme gern."
+      ],
+      [
+       "گوێ لە … دەگرم",
+       "… dinlerim: گوێ لە گۆرانی دەگرم = şarkı dinlerim.|I listen to …: گوێ لە گۆرانی دەگرم = I listen to songs.|Ich höre … zu: گوێ لە گۆرانی دەگرم = ich höre Lieder."
+      ]
+     ],
+     "note": "A2 bitti! Artık alışveriş yapabilir, yol sorabilir, doktora derdini anlatabilir ve geçmişi anlatabilirsin: «چووم» (gittim) ama «نانم خوارد» (ekmek yedim).|A2 complete! You can now shop, ask the way, tell a doctor what hurts and talk about the past: «چووم» (I went) but «نانم خوارد» (I ate bread).|A2 geschafft! Du kannst jetzt einkaufen, nach dem Weg fragen, dem Arzt sagen, was wehtut, und von der Vergangenheit erzählen: «چووم» (ich ging), aber «نانم خوارد» (ich aß Brot)."
+    }
+   ]
+  },
+  {
+   "lvl": "B1",
+   "name": "Hikâyeler ve fikirler|Stories and opinions|Geschichten und Meinungen",
+   "sub": "Geçmişi anlatmak, deneyimler, planlar, koşullar, edilgen ve haberler, kültür, doğa, tartışma|Telling the past, experiences, plans, conditions, the passive and news, culture, nature, discussion|Vergangenes erzählen, Erfahrungen, Pläne, Bedingungen, Passiv und Nachrichten, Kultur, Natur, Diskussion",
+   "units": [
+    {
+     "id": "ckb_b1_beserhat",
+     "ku": "بەسەرهات",
+     "col": "#8c4a2f",
+     "name": "Olay anlatmak|Telling what happened|Erzählen, was passiert ist",
+     "words": [
+      [
+       "لەناکاو",
+       "birden|suddenly|plötzlich"
+      ],
+      [
+       "پاشان",
+       "sonra|then, afterwards|dann, danach"
+      ],
+      [
+       "سەرەتا",
+       "önce, başta|at first|zuerst"
+      ],
+      [
+       "لە کۆتاییدا",
+       "sonunda|in the end|am Ende"
+      ],
+      [
+       "کاتێک",
+       "-dığı zaman, iken|when (conjunction)|als, während"
+      ],
+      [
+       "ڕووداو",
+       "olay|event, incident|Ereignis"
+      ],
+      [
+       "بەسەرهات",
+       "başından geçen olay, anı|personal story, anecdote|Erlebnis"
+      ],
+      [
+       "دەچووم",
+       "gidiyordum, giderdim|I was going, I used to go|ich ging (gerade, immer)"
+      ],
+      [
+       "دەمخوێندەوە",
+       "okuyordum|I was reading (it)|ich las (es) gerade"
+      ],
+      [
+       "کارەبا",
+       "elektrik|electricity|Strom",
+       "💡"
+      ],
+      [
+       "مۆم",
+       "mum|candle|Kerze",
+       "🕯️"
+      ],
+      [
+       "دراوسێ",
+       "komşu|neighbour|Nachbar"
+      ]
+     ],
+     "sents": [
+      [
+       "کاتێک بەرەو ماڵەوە دەڕۆیشتم، لەناکاو باران دەستی پێکرد.",
+       "Eve doğru yürürken birden yağmur başladı.|As I was walking home, it suddenly started to rain.|Als ich nach Hause ging, fing es plötzlich an zu regnen."
+      ],
+      [
+       "کاتێک کارەبا بڕا، ئێمە نانی ئێوارەمان دەخوارد.",
+       "Elektrik kesildiğinde akşam yemeği yiyorduk.|When the electricity went off, we were having dinner.|Als der Strom ausfiel, aßen wir gerade zu Abend."
+      ],
+      [
+       "سەرەتا هیچمان نەدەبینی، پاشان دایکم مۆمێکی داگیرساند.",
+       "Önce hiçbir şey göremiyorduk, sonra annem bir mum yaktı.|At first we could not see anything, then my mother lit a candle.|Zuerst sahen wir nichts, dann zündete meine Mutter eine Kerze an."
+      ],
+      [
+       "منداڵەکان لە حەوشەکەدا یارییان دەکرد و پێدەکەنین.",
+       "Çocuklar avluda oynuyor ve gülüyorlardı.|The children were playing in the yard and laughing.|Die Kinder spielten im Hof und lachten."
+      ],
+      [
+       "لەناکاو گوێمان لە دەنگێکی سەیر بوو لە دەرەوە.",
+       "Birden dışarıdan garip bir ses duyduk.|Suddenly we heard a strange noise outside.|Plötzlich hörten wir draußen ein seltsames Geräusch."
+      ],
+      [
+       "باوکم چووە دەرەوە و بینی پشیلەی دراوسێکەمان بوو.",
+       "Babam dışarı çıktı ve komşumuzun kedisi olduğunu gördü.|My father went outside and saw it was our neighbour's cat.|Mein Vater ging hinaus und sah, dass es die Katze unseres Nachbarn war."
+      ],
+      [
+       "لە کۆتاییدا هەموومان پێکەنین و ئەو شەوە چیرۆکمان بۆ یەکتر گێڕایەوە.",
+       "Sonunda hepimiz güldük ve o gece birbirimize hikâyeler anlattık.|In the end we all laughed and told each other stories that night.|Am Ende lachten wir alle und erzählten uns in dieser Nacht Geschichten."
+      ]
+     ],
+     "tips": [
+      [
+       "دەچووم · دەڕۆیشتین · نەدەبینی",
+       "دە- + geçmiş kök: geçmişte süren ya da alışkanlık olan eylem (gidiyordum, giderdim). Olumsuzu نەدە-.|دە- + past stem: an ongoing or habitual past action (I was going, I used to go). Negative: نەدە-.|دە- + Vergangenheitsstamm: andauernde oder gewohnheitsmäßige Handlung (ich ging gerade, ich ging immer). Verneinung: نەدە-."
+      ],
+      [
+       "نانمان دەخوارد · دەمخوێندەوە",
+       "Geçişli fiilde geçmişte kişi eki (-م، -ت، -ی، -مان، -تان، -یان) fiilden önceki ilk öğeye eklenir: nesne varsa nesneye, yoksa دە- ekine.|In the transitive past the person clitic (-م، -ت، -ی، -مان، -تان، -یان) attaches to the first element before the verb: the object if there is one, otherwise to دە-.|Im transitiven Präteritum hängt das Personalklitikon am ersten Element vor dem Verb: am Objekt, sonst an دە-."
+      ]
+     ],
+     "story": {
+      "title": "شەوی بێ کارەبا",
+      "lines": [
+       [
+        "Rojda",
+        "ئازاد، دوێنێ شەو چیت دەکرد کاتێک کارەبا بڕا؟",
+        "Azad, dün gece elektrik kesildiğinde ne yapıyordun?|Azad, what were you doing last night when the power went off?|Azad, was hast du gestern Abend gemacht, als der Strom ausfiel?"
+       ],
+       [
+        "Azad",
+        "لە ژوورەکەم بووم و کتێبێکم دەخوێندەوە.",
+        "Odamdaydım ve bir kitap okuyordum.|I was in my room, reading a book.|Ich war in meinem Zimmer und las ein Buch.",
+        {
+         "q": "Elektrik kesildiğinde Azad ne yapıyordu?|What was Azad doing when the power went off?|Was machte Azad, als der Strom ausfiel?",
+         "options": [
+          "لە ژوورەکەم بووم و کتێبێکم دەخوێندەوە.",
+          "لە بازاڕ بووم و نانم دەکڕی.",
+          "لە حەوشەکە بووم و یاریم دەکرد."
+         ]
+        }
+       ],
+       [
+        "Rojda",
+        "پاشان چیت کرد؟ ترسایت؟",
+        "Sonra ne yaptın? Korktun mu?|What did you do then? Were you scared?|Was hast du dann gemacht? Hattest du Angst?"
+       ],
+       [
+        "Azad",
+        "نەخێر، بەڵام لەناکاو دەنگێکی سەیرم لە حەوشەکە بیست.",
+        "Hayır, ama birden avludan garip bir ses duydum.|No, but suddenly I heard a strange noise in the yard.|Nein, aber plötzlich hörte ich ein seltsames Geräusch im Hof."
+       ],
+       [
+        "Rojda",
+        "ئای! دەنگی چی بوو؟",
+        "Aa! Ne sesiydi?|Oh! What was the noise?|Oh! Was war das für ein Geräusch?"
+       ],
+       [
+        "Azad",
+        "سەرەتا هیچم نەدەبینی، پاشان مۆمێکم داگیرساند و چوومە دەرەوە.",
+        "Önce hiçbir şey göremiyordum, sonra bir mum yaktım ve dışarı çıktım.|At first I could not see anything, then I lit a candle and went outside.|Zuerst sah ich nichts, dann zündete ich eine Kerze an und ging hinaus.",
+        {
+         "q": "Azad görebilmek için ne yaptı?|What did Azad do so he could see?|Was tat Azad, um etwas zu sehen?",
+         "options": [
+          "سەرەتا هیچم نەدەبینی، پاشان مۆمێکم داگیرساند و چوومە دەرەوە.",
+          "سەرەتا تەلەفۆنم بۆ باوکم کرد و لە ژوورەکەم مامەوە.",
+          "پاشان دایکم هات و کارەباکەی چاک کرد."
+         ]
+        }
+       ],
+       [
+        "Azad",
+        "لە کۆتاییدا بینیم پشیلەی دراوسێکەمان بوو!",
+        "Sonunda komşumuzun kedisi olduğunu gördüm!|In the end I saw it was our neighbour's cat!|Am Ende sah ich, dass es die Katze unseres Nachbarn war!"
+       ],
+       [
+        "Rojda",
+        "هاها! کەواتە پاڵەوانی ئەو شەوە پشیلەکە بوو.",
+        "Haha! Demek o gecenin kahramanı kediymiş.|Haha! So the hero of that night was the cat.|Haha! Dann war die Katze die Heldin dieser Nacht."
+       ]
+      ]
+     }
+    },
+    {
+     "id": "ckb_b1_ezmun",
+     "ku": "ئەزموونەکانم",
+     "col": "#2f5d7c",
+     "name": "Deneyimler|Experiences|Erfahrungen",
+     "words": [
+      [
+       "ئەزموون",
+       "deneyim|experience|Erfahrung"
+      ],
+      [
+       "هەرگیز",
+       "asla; hiç (soruda)|never; ever (in questions)|nie; jemals (in Fragen)"
+      ],
+      [
+       "تا ئێستا",
+       "şimdiye kadar|so far, until now|bis jetzt"
+      ],
+      [
+       "هێشتا",
+       "henüz, hâlâ|still, yet|noch"
+      ],
+      [
+       "یەکەم جار",
+       "ilk kez|for the first time|zum ersten Mal"
+      ],
+      [
+       "چەند جار",
+       "birkaç kez|several times|mehrmals"
+      ],
+      [
+       "سەردان کردن",
+       "ziyaret etmek|to visit|besuchen"
+      ],
+      [
+       "بینیومە",
+       "gördüm (hayatımda)|I have seen|ich habe gesehen"
+      ],
+      [
+       "چووە",
+       "gitti (hâlâ orada)|has gone|ist gegangen"
+      ],
+      [
+       "فڕۆکە",
+       "uçak|aeroplane|Flugzeug",
+       "✈️"
+      ],
+      [
+       "دەریا",
+       "deniz|sea|Meer",
+       "🌊"
+      ],
+      [
+       "ئەشکەوت",
+       "mağara|cave|Höhle"
+      ]
+     ],
+     "sents": [
+      [
+       "تا ئێستا سێ جار سەردانی شاری هەڵەبجەم کردووە.",
+       "Şimdiye kadar Helebce şehrini üç kez ziyaret ettim.|So far I have visited the city of Helebce three times.|Bis jetzt habe ich die Stadt Helebce dreimal besucht."
+      ],
+      [
+       "تۆ هەرگیز بە فڕۆکە گەشتت کردووە بۆ شوێنێکی دوور؟",
+       "Hiç uçakla uzak bir yere yolculuk ettin mi?|Have you ever travelled by plane to a faraway place?|Bist du jemals mit dem Flugzeug an einen fernen Ort gereist?"
+      ],
+      [
+       "نەخێر، من هەرگیز دەریام نەبینیوە، بەڵام زۆر حەز دەکەم بیبینم.",
+       "Hayır, hiç deniz görmedim ama görmeyi çok istiyorum.|No, I have never seen the sea, but I would love to.|Nein, ich habe noch nie das Meer gesehen, aber ich würde es sehr gern."
+      ],
+      [
+       "براکەم بۆ کار چووە بۆ سلێمانی و هێشتا نەگەڕاوەتەوە.",
+       "Ağabeyim iş için Silêmanîye gitti ve henüz dönmedi.|My brother has gone to Silêmanî for work and has not come back yet.|Mein Bruder ist zum Arbeiten nach Silêmanî gefahren und noch nicht zurückgekommen."
+      ],
+      [
+       "ئایا تا ئێستا ئەشکەوتی شانەدەرت لە نزیکەوە بینیوە؟",
+       "Şimdiye kadar Şanidar Mağarasını yakından gördün mü?|Have you ever seen Shanidar Cave up close?|Hast du die Shanidar-Höhle schon einmal aus der Nähe gesehen?"
+      ],
+      [
+       "ئەم کتێبەم دوو جار خوێندووەتەوە، چونکە زۆر سەرنجڕاکێشە.",
+       "Bu kitabı iki kez okudum, çünkü çok ilginç.|I have read this book twice because it is very interesting.|Ich habe dieses Buch zweimal gelesen, weil es sehr spannend ist."
+      ],
+      [
+       "باپیرم دەڵێت لە ژیانیدا زۆر شتی سەیری بینیوە.",
+       "Dedem hayatında çok tuhaf şeyler gördüğünü söylüyor.|My grandfather says he has seen many strange things in his life.|Mein Opa sagt, er habe in seinem Leben viele seltsame Dinge gesehen."
+      ]
+     ],
+     "tips": [
+      [
+       "هاتووم · چووە · بینیومە · کردووە",
+       "Present perfect: geçmiş kök + (و)و + bugünkü şahıs eki. Deneyimler ve etkisi bugüne uzanan olaylar için. Geçişli fiilde kişi eki yine fiilden önceki öğeye gelir: «سەردانی هەڵەبجەم کردووە».|Present perfect: past stem + (و)و + present person ending. Used for experiences and events that still matter now. With transitive verbs the clitic again goes before the verb: «سەردانی هەڵەبجەم کردووە».|Perfekt: Vergangenheitsstamm + (و)و + Personalendung. Für Erfahrungen und Ereignisse mit Bezug zur Gegenwart. Bei transitiven Verben steht das Klitikon wieder vor dem Verb: «سەردانی هەڵەبجەم کردووە»."
+      ],
+      [
+       "هەرگیز … نەبینیوە",
+       "هەرگیز olumsuz fiille «asla, hiç» demektir; soruda «hiç» anlamına gelir: «هەرگیز گەشتت کردووە؟»|هەرگیز with a negative verb means «never»; in a question it means «ever»: «هەرگیز گەشتت کردووە؟»|هەرگیز mit verneintem Verb heißt «nie»; in Fragen «jemals»: «هەرگیز گەشتت کردووە؟»"
+      ]
+     ]
+    },
+    {
+     "id": "ckb_b1_niyaz",
+     "ku": "پلان و ئاوات",
+     "col": "#5b6b2e",
+     "name": "Planlar ve dilekler|Plans and wishes|Pläne und Wünsche",
+     "words": [
+      [
+       "بەنیازم",
+       "niyetindeyim|I intend to|ich habe vor"
+      ],
+      [
+       "هیوادارم",
+       "umarım|I hope|ich hoffe"
+      ],
+      [
+       "ئاوات",
+       "dilek, arzu|wish|Wunsch"
+      ],
+      [
+       "خەون",
+       "rüya, hayal|dream|Traum"
+      ],
+      [
+       "ئامانج",
+       "hedef|goal|Ziel",
+       "🎯"
+      ],
+      [
+       "داهاتوو",
+       "gelecek|future; next|Zukunft; nächste"
+      ],
+      [
+       "ساڵی داهاتوو",
+       "gelecek yıl|next year|nächstes Jahr"
+      ],
+      [
+       "بڕیار دان",
+       "karar vermek|to decide|entscheiden"
+      ],
+      [
+       "پاشەکەوت کردن",
+       "biriktirmek|to save (money)|sparen",
+       "💰"
+      ],
+      [
+       "گەشت",
+       "gezi, yolculuk|trip, journey|Reise",
+       "🧳"
+      ],
+      [
+       "دەبێت",
+       "-meli, gerek|must, have to|müssen"
+      ],
+      [
+       "بتوانم",
+       "yapabilmem (için)|(that) I can|(dass) ich kann"
+      ]
+     ],
+     "sents": [
+      [
+       "بەنیازم هاوینی داهاتوو لەگەڵ هاوڕێکانم سەردانی ئامەد بکەم.",
+       "Gelecek yaz arkadaşlarımla Amedi ziyaret etmeyi düşünüyorum.|I intend to visit Amed with my friends next summer.|Ich habe vor, nächsten Sommer mit meinen Freunden Amed zu besuchen."
+      ],
+      [
+       "هیوادارم بتوانم ساڵی داهاتوو لە زانکۆی سلێمانی بخوێنم.",
+       "Umarım gelecek yıl Silêmanî Üniversitesinde okuyabilirim.|I hope I can study at the University of Silêmanî next year.|Ich hoffe, dass ich nächstes Jahr an der Universität Silêmanî studieren kann."
+      ],
+      [
+       "خوشکەکەم بڕیاری داوە فێری زمانی ئەڵمانی ببێت.",
+       "Kız kardeşim Almanca öğrenmeye karar verdi.|My sister has decided to learn German.|Meine Schwester hat beschlossen, Deutsch zu lernen."
+      ],
+      [
+       "دەبێت پارە پاشەکەوت بکەین تا بتوانین ماڵێکی نوێ بکڕین.",
+       "Yeni bir ev alabilmek için para biriktirmeliyiz.|We have to save money so that we can buy a new house.|Wir müssen Geld sparen, damit wir ein neues Haus kaufen können."
+      ],
+      [
+       "ئاواتی من ئەوەیە ڕۆژێک کتێبێک بە کوردی بنووسم.",
+       "Dileğim bir gün Kürtçe bir kitap yazmak.|My wish is to write a book in Kurdish one day.|Mein Wunsch ist es, eines Tages ein Buch auf Kurdisch zu schreiben."
+      ],
+      [
+       "با پێش ئەوەی بڕیار بدەین، لەگەڵ دایک و باوکمان قسە بکەین.",
+       "Karar vermeden önce annemiz ve babamızla konuşalım.|Before we decide, let us talk to our parents.|Bevor wir entscheiden, lass uns mit unseren Eltern sprechen."
+      ],
+      [
+       "هیوادارم هەفتەی داهاتوو بێیت بۆ ماڵمان و پێکەوە نان بخۆین.",
+       "Umarım gelecek hafta bize gelirsin ve birlikte yemek yeriz.|I hope you come to our house next week and we eat together.|Ich hoffe, du kommst nächste Woche zu uns und wir essen zusammen."
+      ]
+     ],
+     "tips": [
+      [
+       "بەنیازم بچم · هیوادارم بتوانم",
+       "Niyet, dilek ve zorunluluk sözlerinden (دەمەوێت، بەنیازم، هیوادارم، دەبێت) sonra fiil dilek kipine girer: دە- yerine ب-: بچم، بخوێنم، بکەم.|After words of intention, hope and necessity (دەمەوێت، بەنیازم، هیوادارم، دەبێت) the verb goes into the subjunctive: ب- instead of دە-: بچم، بخوێنم، بکەم.|Nach Ausdrücken von Absicht, Hoffnung und Pflicht (دەمەوێت، بەنیازم، هیوادارم، دەبێت) steht der Konjunktiv: ب- statt دە-: بچم، بخوێنم، بکەم."
+      ],
+      [
+       "بێم، بێیت، بێت، بێین، بێن",
+       "هاتن fiilinin dilek kipi düzensizdir: «هیوادارم بێیت» (umarım gelirsin). Bileşik fiillerde ب- ikinci parçaya gelir: سەردان بکەم، فێر ببێت.|The subjunctive of هاتن is irregular: «هیوادارم بێیت» (I hope you come). In compound verbs ب- goes on the verb part: سەردان بکەم، فێر ببێت.|Der Konjunktiv von هاتن ist unregelmäßig: «هیوادارم بێیت» (ich hoffe, du kommst). Bei zusammengesetzten Verben steht ب- am Verbteil: سەردان بکەم، فێر ببێت."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_b1_eger",
+     "ku": "ئەگەر و مەرج",
+     "col": "#6a3d6e",
+     "name": "Koşul cümleleri|If-clauses|Bedingungssätze",
+     "words": [
+      [
+       "ئەگەر",
+       "eğer|if|wenn, falls"
+      ],
+      [
+       "ئەگەرنا",
+       "yoksa|otherwise|sonst"
+      ],
+      [
+       "بە مەرجێک",
+       "şartıyla|on condition that|unter der Bedingung, dass"
+      ],
+      [
+       "دەرفەت",
+       "fırsat|opportunity, chance|Gelegenheit"
+      ],
+      [
+       "چەتر",
+       "şemsiye|umbrella|Regenschirm",
+       "☂️"
+      ],
+      [
+       "ون بوون",
+       "kaybolmak|to get lost|sich verirren"
+      ],
+      [
+       "دواکەوتن",
+       "gecikmek|to be late|sich verspäten",
+       "⏰"
+      ],
+      [
+       "تاکسی",
+       "taksi|taxi|Taxi",
+       "🚕"
+      ],
+      [
+       "ئاگادار بە",
+       "dikkat et|be careful|pass auf",
+       "⚠️"
+      ],
+      [
+       "لە جێی تۆ",
+       "senin yerinde|in your place|an deiner Stelle"
+      ],
+      [
+       "هەبوایە",
+       "olsaydı|if there were, if … had|wenn es … gäbe, hätte"
+      ],
+      [
+       "بمزانیایە",
+       "bilseydim|if I had known|wenn ich gewusst hätte"
+      ]
+     ],
+     "sents": [
+      [
+       "ئەگەر سبەی باران ببارێت، لە ماڵەوە دەمێنینەوە و فیلم دەبینین.",
+       "Yarın yağmur yağarsa evde kalıp film izleriz.|If it rains tomorrow, we will stay at home and watch a film.|Wenn es morgen regnet, bleiben wir zu Hause und schauen einen Film."
+      ],
+      [
+       "ئەگەر ئێستا نەڕۆیت، دوادەکەویت و پاسەکە لەدەست دەدەیت.",
+       "Şimdi gitmezsen gecikirsin ve otobüsü kaçırırsın.|If you do not leave now, you will be late and miss the bus.|Wenn du jetzt nicht gehst, kommst du zu spät und verpasst den Bus."
+      ],
+      [
+       "چەترەکەت لەگەڵ خۆت ببە، ئەگەرنا تەڕ دەبیت.",
+       "Şemsiyeni yanına al, yoksa ıslanırsın.|Take your umbrella with you, otherwise you will get wet.|Nimm deinen Regenschirm mit, sonst wirst du nass."
+      ],
+      [
+       "ئەگەر کاتم هەبوایە، هەموو ڕۆژێک وەرزشم دەکرد.",
+       "Vaktim olsaydı her gün spor yapardım.|If I had time, I would do sport every day.|Wenn ich Zeit hätte, würde ich jeden Tag Sport machen."
+      ],
+      [
+       "ئەگەر لە جێی تۆ بوومایە، ئەو کارەم وەردەگرت.",
+       "Senin yerinde olsaydım o işi kabul ederdim.|If I were you, I would take that job.|An deiner Stelle würde ich diese Stelle annehmen."
+      ],
+      [
+       "ئەگەر بمزانیایە تۆ نەخۆشیت، بێگومان دەهاتم بۆ سەردانت.",
+       "Hasta olduğunu bilseydim mutlaka seni ziyarete gelirdim.|If I had known you were ill, I would certainly have come to visit you.|Hätte ich gewusst, dass du krank bist, wäre ich bestimmt zu Besuch gekommen."
+      ],
+      [
+       "دەتوانیت ئۆتۆمبێلەکەم ببەیت، بە مەرجێک بە هێواشی لێی بخوڕیت.",
+       "Arabamı alabilirsin, yavaş sürmen şartıyla.|You can take my car on condition that you drive slowly.|Du kannst mein Auto nehmen, unter der Bedingung, dass du langsam fährst."
+      ]
+     ],
+     "tips": [
+      [
+       "ئەگەر باران ببارێت، دەمێنینەوە.",
+       "Gerçek koşul: ئەگەر cümlesinde dilek kipi (ب-), ana cümlede دە- ile şimdiki/gelecek zaman.|Real condition: subjunctive (ب-) in the if-clause, present/future with دە- in the main clause.|Realer Bedingungssatz: Konjunktiv (ب-) im ئەگەر-Satz, Präsens/Futur mit دە- im Hauptsatz."
+      ],
+      [
+       "ئەگەر کاتم هەبوایە، وەرزشم دەکرد.",
+       "Gerçek dışı koşul: ئەگەر cümlesinde geçmiş kök + ‎-ایە (هەبوایە، بمزانیایە، بوومایە), ana cümlede دە- + geçmiş kök (دەکرد، دەهاتم).|Unreal condition: past stem + ‎-ایە in the if-clause (هەبوایە، بمزانیایە، بوومایە), دە- + past stem in the main clause (دەکرد، دەهاتم).|Irrealer Bedingungssatz: Vergangenheitsstamm + ‎-ایە im ئەگەر-Satz (هەبوایە، بمزانیایە، بوومایە), دە- + Vergangenheitsstamm im Hauptsatz (دەکرد، دەهاتم)."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_b1_hewal",
+     "ku": "هەواڵ",
+     "col": "#3d4f5c",
+     "name": "Haberler ve edilgen|News and the passive|Nachrichten und Passiv",
+     "words": [
+      [
+       "هەواڵ",
+       "haber|news|Nachricht"
+      ],
+      [
+       "ڕۆژنامە",
+       "gazete|newspaper|Zeitung",
+       "📰"
+      ],
+      [
+       "ڕۆژنامەنووس",
+       "gazeteci|journalist|Journalist(in)"
+      ],
+      [
+       "ڕاپۆرت",
+       "rapor|report|Bericht"
+      ],
+      [
+       "بەپێی",
+       "göre|according to|laut"
+      ],
+      [
+       "نووسرا",
+       "yazıldı|was written|wurde geschrieben"
+      ],
+      [
+       "بڵاوکرایەوە",
+       "yayımlandı|was published|wurde veröffentlicht"
+      ],
+      [
+       "دەفرۆشرێت",
+       "satılır|is sold|wird verkauft"
+      ],
+      [
+       "دروستکرا",
+       "yapıldı, inşa edildi|was built|wurde gebaut",
+       "🏗️"
+      ],
+      [
+       "کرایەوە",
+       "açıldı|was opened|wurde eröffnet"
+      ],
+      [
+       "پێشانگا",
+       "sergi, fuar|exhibition, fair|Ausstellung, Messe"
+      ],
+      [
+       "کتێبخانە",
+       "kütüphane|library|Bibliothek",
+       "📚"
+      ]
+     ],
+     "sents": [
+      [
+       "ئەم هەواڵە دوێنێ لە ماڵپەڕی ڕۆژنامەکەدا بڵاوکرایەوە.",
+       "Bu haber dün gazetenin internet sitesinde yayımlandı.|This news was published yesterday on the newspaper's website.|Diese Nachricht wurde gestern auf der Website der Zeitung veröffentlicht."
+      ],
+      [
+       "کتێبخانەیەکی نوێ لە ناوەندی شاری هەولێر کرایەوە.",
+       "Hewlêr şehir merkezinde yeni bir kütüphane açıldı.|A new library was opened in the centre of Hewlêr.|Im Zentrum von Hewlêr wurde eine neue Bibliothek eröffnet."
+      ],
+      [
+       "بەپێی ڕاپۆرتێکی نوێ، ساڵی ڕابردوو زیاتر لە هەزار دار لە شارەکەدا چێنرا.",
+       "Yeni bir rapora göre geçen yıl şehirde binden fazla ağaç dikildi.|According to a new report, more than a thousand trees were planted in the city last year.|Laut einem neuen Bericht wurden letztes Jahr mehr als tausend Bäume in der Stadt gepflanzt."
+      ],
+      [
+       "ئەم پردە کۆنە زیاتر لە پەنجا ساڵ لەمەوبەر دروستکرا.",
+       "Bu eski köprü elli yıldan fazla önce yapıldı.|This old bridge was built more than fifty years ago.|Diese alte Brücke wurde vor mehr als fünfzig Jahren gebaut."
+      ],
+      [
+       "لە پێشانگای کتێبی هەولێردا هەزاران کتێب دەفرۆشرێن.",
+       "Hewlêr Kitap Fuarında binlerce kitap satılır.|Thousands of books are sold at the Hewlêr Book Fair.|Auf der Buchmesse von Hewlêr werden Tausende Bücher verkauft."
+      ],
+      [
+       "ئەم چیرۆکە بە کوردی نووسراوە و بۆ چەند زمانێک وەرگێڕدراوە.",
+       "Bu hikâye Kürtçe yazılmış ve birkaç dile çevrilmiş.|This story was written in Kurdish and has been translated into several languages.|Diese Geschichte wurde auf Kurdisch geschrieben und in mehrere Sprachen übersetzt."
+      ],
+      [
+       "فێستیڤاڵی شیعر هەموو ساڵێک لە شاری سلێمانی ڕێکدەخرێت.",
+       "Şiir festivali her yıl Silêmanî şehrinde düzenlenir.|The poetry festival is organised every year in Silêmanî.|Das Poesiefestival wird jedes Jahr in Silêmanî veranstaltet."
+      ]
+     ],
+     "tips": [
+      [
+       "نووسرا · دەنووسرێت",
+       "Edilgen: şimdiki kök + ‎-را (geçmiş) / دە- … ‎-رێ (şimdiki): نووس ← نووسرا، دەنووسرێت. Bazı fiiller ‎-درا alır: وەرگێڕدرا.|Passive: present stem + ‎-را (past) / دە- … ‎-رێ (present): نووس ← نووسرا، دەنووسرێت. Some verbs take ‎-درا: وەرگێڕدرا.|Passiv: Präsensstamm + ‎-را (Vergangenheit) / دە- … ‎-رێ (Präsens): نووس ← نووسرا، دەنووسرێت. Manche Verben nehmen ‎-درا: وەرگێڕدرا."
+      ],
+      [
+       "نووسراوە · وەرگێڕدراوە",
+       "Edilgen + ‎-وە: «yazılmış, yazılı» (sonucu bugün de geçerli). Haber dilinde çok sık.|Passive + ‎-وە: «has been written, is written» (the result still holds). Very common in news.|Passiv + ‎-وە: «ist geschrieben worden» (das Ergebnis gilt noch). In Nachrichten sehr häufig."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_b1_newroz",
+     "ku": "نەورۆز و گۆرانی",
+     "col": "#a63d2a",
+     "name": "Newroz ve müzik|Newroz and music|Newroz und Musik",
+     "words": [
+      [
+       "ئاگری نەورۆز",
+       "Newroz ateşi|Newroz fire|Newroz-Feuer",
+       "🔥"
+      ],
+      [
+       "هەڵپەڕکێ",
+       "halay|Kurdish round dance|kurdischer Reigentanz"
+      ],
+      [
+       "گۆرانیبێژ",
+       "şarkıcı|singer|Sänger(in)",
+       "🎤"
+      ],
+      [
+       "گۆرانی",
+       "şarkı|song|Lied",
+       "🎵"
+      ],
+      [
+       "دەهۆڵ و زوڕنا",
+       "davul zurna|drum and shawm|Trommel und Schalmei",
+       "🥁"
+      ],
+      [
+       "جلی کوردی",
+       "Kürt kıyafeti|Kurdish clothes|kurdische Tracht"
+      ],
+      [
+       "پەندی پێشینان",
+       "atasözü|proverb|Sprichwort"
+      ],
+      [
+       "داب و نەریت",
+       "gelenek görenek|customs and traditions|Sitten und Bräuche"
+      ],
+      [
+       "دۆڵمە",
+       "dolma|dolma (stuffed vegetables)|Dolma (gefülltes Gemüse)"
+      ],
+      [
+       "سەیران",
+       "piknik, kır gezisi|picnic outing|Ausflug ins Grüne"
+      ],
+      [
+       "کاوەی ئاسنگەر",
+       "Demirci Kawa|Kawa the blacksmith|Kawa der Schmied"
+      ],
+      [
+       "میوانداری",
+       "misafirperverlik|hospitality|Gastfreundschaft"
+      ]
+     ],
+     "sents": [
+      [
+       "لە شەوی نەورۆزدا خەڵک لەسەر شاخەکان ئاگر دەکەنەوە.",
+       "Newroz gecesi insanlar dağların üstünde ateş yakar.|On Newroz night people light fires on the mountains.|In der Newroz-Nacht zünden die Menschen auf den Bergen Feuer an."
+      ],
+      [
+       "چیرۆکی کاوەی ئاسنگەر لە نەورۆزدا بۆ منداڵان دەگێڕدرێتەوە.",
+       "Newrozda çocuklara Demirci Kawanın hikâyesi anlatılır.|At Newroz the story of Kawa the blacksmith is told to children.|An Newroz wird den Kindern die Geschichte von Kawa dem Schmied erzählt."
+      ],
+      [
+       "ژن و پیاو بە جلی کوردییەوە دەستی یەکتر دەگرن و هەڵدەپەڕن.",
+       "Kadınlar ve erkekler Kürt kıyafetleriyle el ele tutuşup halay çeker.|Women and men in Kurdish clothes hold hands and dance.|Frauen und Männer in kurdischer Tracht fassen sich an den Händen und tanzen."
+      ],
+      [
+       "لە سەیرانی نەورۆزدا خێزانەکان دۆڵمە و کولێرە لەگەڵ خۆیان دەبەن.",
+       "Newroz pikniğine aileler yanlarında dolma ve çörek götürür.|For the Newroz picnic families take dolma and flatbread pastries with them.|Zum Newroz-Picknick nehmen die Familien Dolma und Gebäck mit."
+      ],
+      [
+       "گۆرانییەکانی حەسەن زیرەک هێشتا لە زۆربەی ماڵەکاندا دەبیسترێن.",
+       "Hesen Zîrekin şarkıları hâlâ çoğu evde dinlenir.|Hesen Zîrek's songs are still heard in most homes.|Die Lieder von Hesen Zîrek hört man noch immer in den meisten Häusern."
+      ],
+      [
+       "کوردەکان دەڵێن «میوان میوانی خوایە»، بۆیە میوانداری زۆر گرنگە.",
+       "Kürtler «misafir Tanrının misafiridir» der, bu yüzden misafirperverlik çok önemlidir.|Kurds say «a guest is God's guest», so hospitality is very important.|Kurden sagen «Der Gast ist Gottes Gast», darum ist Gastfreundschaft sehr wichtig."
+      ],
+      [
+       "بێ دەهۆڵ و زوڕنا، هیچ ئاهەنگێکی کوردی تەواو نابێت.",
+       "Davul zurna olmadan hiçbir Kürt düğünü ya da şenliği tamamlanmaz.|Without drum and shawm, no Kurdish celebration is complete.|Ohne Trommel und Schalmei ist kein kurdisches Fest vollständig."
+      ]
+     ],
+     "tips": [
+      [
+       "پەندی پێشینان",
+       "İzafe zinciri: پەند + ی + پێشینان «öncekilerin sözü» = atasözü. Atasözleri genelde «پێشینان دەڵێن…» ile başlar.|Ezafe chain: پەند + ی + پێشینان «saying of the forebears» = proverb. Proverbs are often introduced with «پێشینان دەڵێن…».|Ezafe-Kette: پەند + ی + پێشینان «Spruch der Vorfahren» = Sprichwort. Oft eingeleitet mit «پێشینان دەڵێن…»."
+      ],
+      [
+       "بە جلی کوردییەوە",
+       "بە … ـەوە: «ile, giymiş olarak»: بە جلی کوردییەوە = Kürt kıyafetiyle.|بە … ـەوە: «with, wearing»: بە جلی کوردییەوە = in Kurdish clothes.|بە … ـەوە: «mit, gekleidet in»: بە جلی کوردییەوە = in kurdischer Tracht."
+      ]
+     ],
+     "story": {
+      "title": "نەورۆزی جاران",
+      "lines": [
+       [
+        "Berfîn",
+        "باپیرە، کاتێک تۆ منداڵ بوویت، نەورۆزتان چۆن دەگێڕا؟",
+        "Dede, sen çocukken Newrozu nasıl kutlardınız?|Grandpa, when you were a child, how did you celebrate Newroz?|Opa, als du ein Kind warst, wie habt ihr Newroz gefeiert?"
+       ],
+       [
+        "Bapîr",
+        "ئێوارە هەموو خەڵکی گوند لەسەر گردەکە ئاگریان دەکردەوە.",
+        "Akşam bütün köy halkı tepenin üstünde ateş yakardı.|In the evening all the villagers lit a fire on the hill.|Am Abend zündeten alle Dorfbewohner auf dem Hügel ein Feuer an.",
+        {
+         "q": "Newroz akşamı köylüler ne yapardı?|What did the villagers do on Newroz evening?|Was machten die Dorfbewohner am Newroz-Abend?",
+         "options": [
+          "ئێوارە هەموو خەڵکی گوند لەسەر گردەکە ئاگریان دەکردەوە.",
+          "ئێوارە هەموو خەڵکی گوند زوو دەخەوتن.",
+          "ئێوارە هەموو خەڵکی گوند دەچوونە شار بۆ بازاڕ."
+         ]
+        }
+       ],
+       [
+        "Berfîn",
+        "ئایا گۆرانیتان دەگوت و هەڵدەپەڕین؟",
+        "Şarkı söyleyip halay çeker miydiniz?|Did you sing and dance?|Habt ihr gesungen und getanzt?"
+       ],
+       [
+        "Bapîr",
+        "بەڵێ، دەهۆڵ و زوڕنا لێدەدرا و تا نیوەشەو هەڵدەپەڕین.",
+        "Evet, davul zurna çalınırdı ve gece yarısına kadar halay çekerdik.|Yes, the drum and shawm were played and we danced until midnight.|Ja, Trommel und Schalmei wurden gespielt und wir tanzten bis Mitternacht."
+       ],
+       [
+        "Berfîn",
+        "ئەی خواردنتان چی بوو؟",
+        "Peki yemeğiniz ne idi?|And what did you eat?|Und was gab es zu essen?"
+       ],
+       [
+        "Bapîr",
+        "داپیرەت بەیانی زوو دۆڵمەی دروست دەکرد و دەیبرد بۆ سەیران.",
+        "Büyükannen sabah erkenden dolma yapar ve pikniğe götürürdü.|Your grandmother made dolma early in the morning and took it to the picnic.|Deine Oma machte frühmorgens Dolma und nahm sie zum Picknick mit.",
+        {
+         "q": "Büyükanne Newrozda ne yapardı?|What did grandmother do at Newroz?|Was machte die Oma an Newroz?",
+         "options": [
+          "داپیرەت بەیانی زوو دۆڵمەی دروست دەکرد و دەیبرد بۆ سەیران.",
+          "داپیرەت هەموو ڕۆژێک نانی لە بازاڕ دەکڕی.",
+          "داپیرەت لە ماڵەوە دەمایەوە و هیچی دروست نەدەکرد."
+         ]
+        }
+       ],
+       [
+        "Berfîn",
+        "ئەمساڵ دەمەوێت منیش جلی کوردی لەبەر بکەم و لە هەڵپەڕکێدا بەشدار بم.",
+        "Bu yıl ben de Kürt kıyafeti giyip halaya katılmak istiyorum.|This year I want to wear Kurdish clothes and join the dance too.|Dieses Jahr will ich auch kurdische Tracht anziehen und beim Reigentanz mitmachen."
+       ],
+       [
+        "Bapîr",
+        "زۆر باشە، کچم! نەورۆزت پیرۆز بێت.",
+        "Çok güzel, kızım! Newrozun kutlu olsun.|Very good, my girl! Happy Newroz.|Sehr schön, mein Mädchen! Frohes Newroz."
+       ]
+      ]
+     }
+    },
+    {
+     "id": "ckb_b1_srust",
+     "ku": "سروشت و ژینگە",
+     "col": "#2e6b3f",
+     "name": "Doğa ve çevre|Nature and environment|Natur und Umwelt",
+     "words": [
+      [
+       "سروشت",
+       "doğa|nature|Natur",
+       "🌿"
+      ],
+      [
+       "ژینگە",
+       "çevre|environment|Umwelt"
+      ],
+      [
+       "چیا",
+       "dağ|mountain|Berg",
+       "⛰️"
+      ],
+      [
+       "دۆڵ",
+       "vadi|valley|Tal"
+      ],
+      [
+       "کانی",
+       "pınar|spring (water)|Quelle",
+       "💧"
+      ],
+      [
+       "ڕووبار",
+       "nehir|river|Fluss"
+      ],
+      [
+       "دارستان",
+       "orman|forest|Wald",
+       "🌲"
+      ],
+      [
+       "گوندنشین",
+       "köylü|villager|Dorfbewohner"
+      ],
+      [
+       "پیس بوون",
+       "kirlenmek|to become polluted|verschmutzt werden"
+      ],
+      [
+       "پاراستن",
+       "korumak|to protect|schützen"
+      ],
+      [
+       "زبڵ",
+       "çöp|rubbish|Müll",
+       "🗑️"
+      ],
+      [
+       "وشکەساڵی",
+       "kuraklık|drought|Dürre"
+      ]
+     ],
+     "sents": [
+      [
+       "ئاوی ئەم کانییە لە چیاکانەوە دێت و زۆر سارد و پاکە.",
+       "Bu pınarın suyu dağlardan gelir ve çok soğuk ve temizdir.|The water of this spring comes from the mountains and is very cold and clean.|Das Wasser dieser Quelle kommt aus den Bergen und ist sehr kalt und sauber."
+      ],
+      [
+       "بە داخەوە، زۆر لە ڕووبارەکان بە هۆی زبڵەوە پیس بوون.",
+       "Ne yazık ki nehirlerin çoğu çöp yüzünden kirlendi.|Unfortunately, many of the rivers have become polluted because of rubbish.|Leider sind viele der Flüsse durch Müll verschmutzt worden."
+      ],
+      [
+       "ئەگەر دارستانەکان نەپارێزین، ئاژەڵ و باڵندەکان شوێنیان نامێنێت.",
+       "Ormanları korumazsak hayvanların ve kuşların yeri kalmaz.|If we do not protect the forests, the animals and birds will have nowhere to live.|Wenn wir die Wälder nicht schützen, haben Tiere und Vögel keinen Platz mehr."
+      ],
+      [
+       "لە هاویندا گوندنشینەکان مەڕەکانیان دەبەنە سەر چیاکان.",
+       "Yazın köylüler koyunlarını dağlara çıkarır.|In summer the villagers take their sheep up into the mountains.|Im Sommer bringen die Dorfbewohner ihre Schafe hinauf in die Berge."
+      ],
+      [
+       "ساڵانی ڕابردوو وشکەساڵی زیانێکی زۆری بە کشتوکاڵ گەیاند.",
+       "Geçen yıllarda kuraklık tarıma büyük zarar verdi.|In recent years drought did great damage to farming.|In den letzten Jahren hat die Dürre der Landwirtschaft großen Schaden zugefügt."
+      ],
+      [
+       "پێویستە هەموومان زبڵەکانمان لە سروشتدا بەجێ نەهێڵین.",
+       "Hepimiz çöplerimizi doğada bırakmamalıyız.|We all need to make sure we do not leave our rubbish in nature.|Wir alle sollten unseren Müll nicht in der Natur zurücklassen."
+      ],
+      [
+       "گوندەکەی باپیرم لە دۆڵێکی سەوزدا بوو، لە نزیک هەورامان.",
+       "Dedemin köyü Hewraman yakınında yeşil bir vadideydi.|My grandfather's village was in a green valley near Hewraman.|Das Dorf meines Opas lag in einem grünen Tal nahe Hewraman."
+      ]
+     ],
+     "tips": [
+      [
+       "پێویستە بیپارێزین · نەپارێزین",
+       "پێویستە / دەبێت + dilek kipi: «korumalıyız». Dilek kipinin olumsuzunda ب- yerine نە- gelir: نەپارێزین، بەجێ نەهێڵین.|پێویستە / دەبێت + subjunctive: «we must protect». In the negative subjunctive نە- replaces ب-: نەپارێزین، بەجێ نەهێڵین.|پێویستە / دەبێت + Konjunktiv: «wir müssen schützen». Im verneinten Konjunktiv ersetzt نە- das ب-: نەپارێزین، بەجێ نەهێڵین."
+      ],
+      [
+       "لە چیاکانەوە",
+       "لە … ـەوە = -den, -dan (bir yerden): لە چیاکانەوە دێت «dağlardan gelir».|لە … ـەوە = from (a place): لە چیاکانەوە دێت «comes from the mountains».|لە … ـەوە = von, aus (einem Ort): لە چیاکانەوە دێت «kommt aus den Bergen»."
+      ]
+     ]
+    },
+    {
+     "id": "ckb_b1_raman",
+     "ku": "بۆچوون و گفتوگۆ",
+     "col": "#7a5a1e",
+     "name": "Görüşler ve tartışma|Opinions and discussion|Meinungen und Diskussion",
+     "words": [
+      [
+       "بە بۆچوونی من",
+       "bence|in my opinion|meiner Meinung nach"
+      ],
+      [
+       "ڕازیم",
+       "katılıyorum, razıyım|I agree|ich bin einverstanden",
+       "👍"
+      ],
+      [
+       "ناڕازیم",
+       "katılmıyorum|I disagree|ich bin nicht einverstanden",
+       "👎"
+      ],
+      [
+       "گفتوگۆ",
+       "tartışma, konuşma|discussion|Diskussion",
+       "💬"
+      ],
+      [
+       "بیرۆکە",
+       "fikir|idea|Idee",
+       "💡"
+      ],
+      [
+       "لایەنی باش",
+       "iyi yanı|advantage, good side|Vorteil"
+      ],
+      [
+       "لایەنی خراپ",
+       "kötü yanı|disadvantage|Nachteil"
+      ],
+      [
+       "لە لایەکەوە",
+       "bir yandan|on the one hand|einerseits"
+      ],
+      [
+       "لە لایەکی ترەوە",
+       "öte yandan|on the other hand|andererseits"
+      ],
+      [
+       "وابزانم",
+       "sanırım|I think, I guess|ich glaube"
+      ],
+      [
+       "مافی خۆتە",
+       "senin hakkın|it is your right|das ist dein Recht"
+      ],
+      [
+       "قایل کردن",
+       "ikna etmek|to convince|überzeugen"
+      ]
+     ],
+     "sents": [
+      [
+       "بە بۆچوونی من، فێربوونی زمانی دایک زۆر گرنگە بۆ منداڵان.",
+       "Bence ana dili öğrenmek çocuklar için çok önemli.|In my opinion, learning their mother tongue is very important for children.|Meiner Meinung nach ist es für Kinder sehr wichtig, ihre Muttersprache zu lernen."
+      ],
+      [
+       "من لەگەڵ تۆ ڕازیم، بەڵام دەبێت بیر لە لایەنە خراپەکانیش بکەینەوە.",
+       "Sana katılıyorum ama kötü yanlarını da düşünmeliyiz.|I agree with you, but we must also think about the downsides.|Ich stimme dir zu, aber wir müssen auch an die Nachteile denken."
+      ],
+      [
+       "لە لایەکەوە مۆبایل سوودی هەیە، لە لایەکی ترەوە کاتمان دەبات.",
+       "Bir yandan cep telefonunun faydası var, öte yandan vaktimizi alıyor.|On the one hand the mobile phone is useful, on the other hand it takes up our time.|Einerseits ist das Handy nützlich, andererseits kostet es uns Zeit."
+      ],
+      [
+       "وابزانم ژیان لە گوند ئارامترە، بەڵام کار لە شار زیاترە.",
+       "Sanırım köyde hayat daha sakin ama şehirde iş daha çok.|I think life in the village is calmer, but there is more work in the city.|Ich glaube, das Leben im Dorf ist ruhiger, aber in der Stadt gibt es mehr Arbeit."
+      ],
+      [
+       "ببورە، من بەم بیرۆکەیە ڕازی نیم و بۆچوونێکی ترم هەیە.",
+       "Kusura bakma, bu fikre katılmıyorum ve başka bir görüşüm var.|Sorry, I do not agree with this idea and I have a different view.|Entschuldige, ich bin mit dieser Idee nicht einverstanden und habe eine andere Meinung."
+      ],
+      [
+       "هەوڵم دا قایلی بکەم، بەڵام ئەو لەسەر بۆچوونی خۆی مایەوە.",
+       "Onu ikna etmeye çalıştım ama o kendi görüşünde kaldı.|I tried to convince him, but he stuck to his own opinion.|Ich habe versucht, ihn zu überzeugen, aber er blieb bei seiner Meinung."
+      ],
+      [
+       "ئەوە مافی خۆتە بڕیار بدەیت، بەڵام با پێکەوە گفتوگۆی لەسەر بکەین.",
+       "Karar vermek senin hakkın ama gel bunu birlikte konuşalım.|It is your right to decide, but let us discuss it together.|Es ist dein Recht zu entscheiden, aber lass uns gemeinsam darüber sprechen."
+      ]
+     ],
+     "tips": [
+      [
+       "بە بۆچوونی من · وابزانم · لەگەڵ تۆ ڕازیم",
+       "Görüş bildirmek: «بە بۆچوونی من» (bence), «وابزانم» (sanırım). Katılmak: «لەگەڵ تۆ ڕازیم»; katılmamak: «ڕازی نیم» ya da «ناڕازیم».|Giving an opinion: «بە بۆچوونی من» (in my opinion), «وابزانم» (I think). Agreeing: «لەگەڵ تۆ ڕازیم»; disagreeing: «ڕازی نیم» or «ناڕازیم».|Meinung äußern: «بە بۆچوونی من» (meiner Meinung nach), «وابزانم» (ich glaube). Zustimmen: «لەگەڵ تۆ ڕازیم»; widersprechen: «ڕازی نیم» oder «ناڕازیم»."
+      ],
+      [
+       "لە لایەکەوە … لە لایەکی ترەوە …",
+       "Artıları ve eksileri tartmak için: «bir yandan … öte yandan …».|To weigh pros and cons: «on the one hand … on the other hand …».|Um Vor- und Nachteile abzuwägen: «einerseits … andererseits …»."
+      ]
+     ],
+     "note": "Tebrikler! B1 seviyesini bitirdin: artık Soranîde geçmişi anlatabilir, deneyimlerini, planlarını ve görüşlerini paylaşabilir, haberleri anlayabilirsin. Bir dahaki çay sohbetinde sen de fikrini söyle! 🎉|Congratulations! You have finished B1: you can now tell stories about the past in Soranî, share your experiences, plans and opinions, and follow the news. At the next tea-time chat, say what you think! 🎉|Glückwunsch! Du hast B1 abgeschlossen: Jetzt kannst du auf Soranî von der Vergangenheit erzählen, Erfahrungen, Pläne und Meinungen teilen und Nachrichten verstehen. Beim nächsten Teegespräch sag deine Meinung! 🎉"
+    }
+   ]
+  }
+ ],
+ "CHARS": {},
+ "SAYINGS": [],
+ "LAT": {
+  "سڵاو": "sillaw",
+  "چۆنی": "çonî",
+  "باشم": "başim",
+  "باش": "baş",
+  "سوپاس": "supas",
+  "زۆر": "zor",
+  "بەڵێ": "bellê",
+  "نەخێر": "nexêr",
+  "بەیانی": "beyanî",
+  "ئێوارە": "êware",
+  "شەو": "şew",
+  "ماڵئاوا": "mallawa",
+  "سڵاو ئازاد، تۆ چۆنی؟": "Sillaw Azad, to çonî?",
+  "من باشم، سوپاس.": "Min başim, supas.",
+  "بەیانیت باش، مامۆستا!": "Beyanît baş, mamosta!",
+  "ئێوارەت باش، ئازاد!": "Êwaret baş, Azad!",
+  "بەڵێ، من زۆر باشم.": "Bellê, min zor başim.",
+  "شەوت باش، دایکە!": "Şewt baş, dayke!",
+  "زۆر سوپاس، ماڵئاوا!": "Zor supas, mallawa!",
+  "بەیانیت باش": "Beyanît baş",
+  "چۆنی؟ / چۆنن؟": "Çonî? / çonin?",
+  "ناساندن": "nasandin",
+  "ناو": "naw",
+  "چی": "çî",
+  "کوێ": "kwê",
+  "خەڵکی": "xellkî",
+  "من": "min",
+  "تۆ": "to",
+  "ئەو": "ew",
+  "خوێندکار": "xwêndkar",
+  "مامۆستا": "mamosta",
+  "هاوڕێ": "hawrrê",
+  "کوردی": "Kurdî",
+  "خۆشحاڵ": "xoşhall",
+  "سڵاو، ناوت چییە؟": "Sillaw, nawt çîye?",
+  "سڵاو، ناوم ئازادە.": "Sillaw, nawim azade.",
+  "تۆ خەڵکی کوێیت؟": "To xellkî kwêyit?",
+  "من خەڵکی سلێمانیم.": "Min xellkî Silêmanîm.",
+  "من خوێندکارم و ئەو مامۆستایە.": "Min xwêndikarm û ew mamostaye.",
+  "ڕۆژدا هاوڕێی منە.": "Rojda hawrrêy mine.",
+  "خۆشحاڵم بە ناسینت.": "Xoşhallim be nasînt.",
+  "من خوێندکارم / تۆ خوێندکاریت / ئەو خوێندکارە": "Min xwêndikarm / to xwêndikarît / ew xwêndikare",
+  "ناوم / ناوت": "Nawim / nawt",
+  "هاوڕێیەکی نوێ": "Hawrrêyekî nwê",
+  "سڵاو! ناوت چییە؟": "Sillaw! nawt çîye?",
+  "ناوم بەرفینە. ناوی تۆ چییە؟": "Nawim Berfîne. nawî to çîye?",
+  "ناوم ڕۆژدایە. تۆ خەڵکی کوێیت؟": "Nawim Rojdaye. to xellkî kwêyit?",
+  "من خەڵکی هەولێرم.": "Min xellkî Hewlêrm.",
+  "ناوم ڕۆژدایە.": "Nawim Rojdaye.",
+  "من خەڵکی مەهابادم. تۆ خوێندکاریت؟": "Min xellkî Mehabadim. to xwêndikarît?",
+  "بەڵێ، من خوێندکارم.": "Bellê, min xwêndikarm.",
+  "نەخێر، ئەو مامۆستایە.": "Nexêr, ew mamostaye.",
+  "شەوت باش!": "Şewt baş!",
+  "خۆشحاڵم بە ناسینت، بەرفین!": "Xoşhallim be nasînt, Berfîn!",
+  "منیش خۆشحاڵم!": "Minîş xoşhallim!",
+  "خێزان": "xêzan",
+  "دایک": "dayk",
+  "باوک": "bawk",
+  "برا": "bira",
+  "خوشک": "xuşk",
+  "کوڕ": "kurr",
+  "کچ": "kiç",
+  "منداڵ": "mindall",
+  "داپیر": "dapîr",
+  "باپیر": "bapîr",
+  "مام": "mam",
+  "خاڵ": "xall",
+  "ئەمە دایکی منە.": "Eme daykî mine.",
+  "ئەمە باوکمە، ناوی کاوەیە.": "Eme bawkime, nawî kaweye.",
+  "خوشکم لە دهۆک مامۆستایە.": "Xuşkim le Dihok mamostaye.",
+  "من دوو برام هەیە.": "Min dû biram heye.",
+  "مامم لە هەولێرە.": "Mamim le Hewlêre.",
+  "خێزانەکەمان زۆر گەورەیە.": "Xêzanekeman zor gewreye.",
+  "باپیرم و داپیرم لە کەرکووکن.": "Bapîrm û dapîrm le Kerkûkin.",
+  "دایکی من = دایکم": "Daykî min = daykim",
+  "برام هەیە": "Biram heye",
+  "ژمارە": "jimare",
+  "یەک": "yek",
+  "دوو": "dû",
+  "سێ": "sê",
+  "چوار": "çwar",
+  "پێنج": "pênc",
+  "شەش": "şeş",
+  "حەوت": "hewt",
+  "هەشت": "heşt",
+  "نۆ": "no",
+  "دە": "de",
+  "تەمەن": "temen",
+  "ساڵ": "sall",
+  "ئازاد، تەمەنت چەندە؟": "Azad, tement çende?",
+  "تەمەنم بیست ساڵە.": "Temenim bîst salle.",
+  "براکەم تەمەنی دە ساڵە.": "Birakem temenî de salle.",
+  "خوشکەکەم پازدە ساڵە.": "Xuşkekem pazde salle.",
+  "من سێ خوشکم هەیە.": "Min sê xuşkim heye.",
+  "پێنج و پێنج دەکاتە دە.": "Pênc û pênc dekate de.",
+  "لە پۆلەکەماندا هەژدە خوێندکار هەیە.": "Le polekemanda hejde xwêndkar heye.",
+  "یازدە، دوازدە، سێزدە، چواردە، پازدە، شازدە، حەڤدە، هەژدە، نۆزدە، بیست": "Yazde, dwazde, sêzde, çwarde, pazde, şazde, hevde, hejde, nozde, bîst",
+  "تەمەنم … ساڵە": "Temenim … salle",
+  "خواردن و خواردنەوە": "Xwardin û xwardinewe",
+  "نان": "nan",
+  "ئاو": "aw",
+  "چا": "ça",
+  "شیر": "şîr",
+  "برنج": "birinc",
+  "گۆشت": "goşt",
+  "سێو": "sêw",
+  "پەنیر": "penîr",
+  "خواردن": "xwardin",
+  "برسی": "birsî",
+  "تینوو": "tînû",
+  "خۆش": "xoş",
+  "من نان دەخۆم.": "Min nan dexom.",
+  "تۆ چا دەخۆیتەوە؟": "To ça dexoytewe?",
+  "ئەو ئاو دەخواتەوە.": "Ew aw dexwatewe.",
+  "من زۆر برسیمە.": "Min zor birsîme.",
+  "ئێمە برنج و گۆشت دەخۆین.": "Ême birinc û goşt dexoyn.",
+  "ئەم نانە زۆر خۆشە.": "Em nane zor xoşe.",
+  "من شیر ناخۆمەوە.": "Min şîr naxomewe.",
+  "دەخۆم، دەخۆیت، دەخوات، دەخۆین، دەخۆن": "Dexom, dexoyit, dexwat, dexoyn, dexon",
+  "دەخۆمەوە": "dexomewe",
+  "لە چێشتخانە": "Le çêştixane",
+  "سڵاو، فەرموو!": "Sillaw, fermû!",
+  "سڵاو. من زۆر برسیمە.": "Sillaw. min zor birsîme.",
+  "چی دەخۆیت؟": "Çî dexoyit?",
+  "برنج و گۆشت دەخۆم.": "Birinc û goşt dexom.",
+  "ئەمە باوکمە.": "Eme bawkime.",
+  "چی دەخۆیتەوە؟ چا یان ئاو؟": "Çî dexoytewe? ça yan aw?",
+  "ئاو دەخۆمەوە، سوپاس.": "Aw dexomewe, supas.",
+  "چا دەخۆمەوە، سوپاس.": "Ça dexomewe, supas.",
+  "فەرموو، نۆشی گیان بێت!": "Fermû, noşî gyan bêt!",
+  "زۆر خۆشە، سوپاس!": "Zor xoşe, supas!",
+  "ڕەنگەکان": "rengekan",
+  "ڕەنگ": "reng",
+  "سوور": "sûr",
+  "سەوز": "sewz",
+  "شین": "şîn",
+  "زەرد": "zerd",
+  "ڕەش": "reş",
+  "سپی": "sipî",
+  "ئەمە": "eme",
+  "ئەوە": "ewe",
+  "کتێب": "kitêb",
+  "قەڵەم": "qellem",
+  "جانتا": "canta",
+  "بەڵێ، ئەمە کتێبێکە.": "Bellê, eme kitêbêke.",
+  "ئەوە چییە، ئازاد؟": "Ewe çîye, Azad?",
+  "ئەوە قەڵەمێکی سوورە.": "Ewe qellemêkî sûre.",
+  "جانتاکەم ڕەش و سپییە.": "Cantakem reş û sipîye.",
+  "ئاسمان شینە و گیا سەوزە.": "Asman şîne û gya sewze.",
+  "کتێبە سەوزەکە هی منە.": "Kitêbe sewzeke hî mine.",
+  "ئەم سێوە سوور نییە، زەردە.": "Em sêwe sûr nîye, zerde.",
+  "قەڵەمی سوور / قەڵەمێکی سوور": "Qellemî sûr / qellemêkî sûr",
+  "کتێبەکە → کتێبە سەوزەکە": "Kitêbeke → kitêbe sewzeke",
+  "ماڵ و شار": "Mall û şar",
+  "ماڵ": "mall",
+  "ژوور": "jûr",
+  "دەرگا": "derga",
+  "پەنجەرە": "pencere",
+  "شار": "şar",
+  "گوند": "gund",
+  "قوتابخانە": "qutabxane",
+  "بازاڕ": "bazarr",
+  "چێشتخانە": "çêştixane",
+  "جوان": "cwan",
+  "لە": "le",
+  "بۆ": "bo",
+  "من لە ماڵەوەم.": "Min le mallewem.",
+  "ماڵەکەمان لە هەولێرە.": "Mallekeman le Hewlêre.",
+  "کتێبەکە لە ژوورەکەدایە.": "Kitêbeke le jûrekedaye.",
+  "ژوورەکەم دوو پەنجەرەی هەیە.": "Jûrekem dû pencerey heye.",
+  "ئەو دەچێتە قوتابخانە.": "Ew deçête qutabxane.",
+  "ئێمە دەچین بۆ بازاڕ.": "Ême deçîn bo bazarr.",
+  "سلێمانی شارێکی جوانە.": "Silêmanî şarêkî cwane.",
+  "لە ژوورەکەدا": "Le jûrekeda",
+  "دەچمە بازاڕ = دەچم بۆ بازاڕ": "Deçme bazarr = deçim bo bazarr",
+  "ڕۆژ و کات": "Roj û kat",
+  "ڕۆژ": "roj",
+  "هەفتە": "hefte",
+  "ئەمڕۆ": "emrro",
+  "سبەینێ": "sibeynê",
+  "دوێنێ": "dwênê",
+  "کاتژمێر": "katjimêr",
+  "هەڵدەستم": "helldestim",
+  "دەخەوم": "dexewim",
+  "دەچم": "deçim",
+  "کار": "kar",
+  "هەینی": "heynî",
+  "شەممە": "şemme",
+  "ئەمڕۆ شەممەیە و سبەینێ یەکشەممەیە.": "Emrro şemmeye û sibeynê yekşemmeye.",
+  "دوێنێ هەینی بوو.": "Dwênê heynî bû.",
+  "من کاتژمێر حەوت هەڵدەستم.": "Min katjimêr hewt helldestim.",
+  "بەیانیان چا دەخۆمەوە.": "Beyanyan ça dexomewe.",
+  "ئەو کاتژمێر هەشت دەچێتە سەر کار.": "Ew katjimêr heşt deçête ser kar.",
+  "هەینی ناچم بۆ قوتابخانە.": "Heynî naçim bo qutabxane.",
+  "شەوان کاتژمێر یازدە دەخەوم.": "Şewan katjimêr yazde dexewim.",
+  "شەممە، یەکشەممە، دووشەممە، سێشەممە، چوارشەممە، پێنجشەممە، هەینی": "Şemme, yekşemme, dûşemme, sêşemme, çwarşemme, pêncşemme, heynî",
+  "هەڵدەستم → هەڵناستم": "Helldestim → hellnastim",
+  "دووکان": "dûkan",
+  "فرۆشیار": "firoşyar",
+  "نرخ": "nirx",
+  "پارە": "pare",
+  "هەرزان": "herzan",
+  "گران": "giran",
+  "کڕین": "kirrîn",
+  "فرۆشتن": "firoştin",
+  "کیلۆ": "kîlo",
+  "تەماتە": "temate",
+  "کراس": "kiras",
+  "ببورە، ئەم کراسە شینە بە چەندە؟": "Bibure, em kirase şîne be çende?",
+  "کیلۆیەک تەماتە بە هەزار دینارە.": "Kîloyek temate be hezar dînare.",
+  "ئەمە زۆر گرانە، هەرزانتر هەیە؟": "Eme zor girane, herzantir heye?",
+  "من دەمەوێت دوو کیلۆ سێو بکڕم.": "Min demewêt dû kîlo sêw bikirrim.",
+  "فرۆشیارەکە دەڵێت نرخەکە زۆر هەرزانە.": "Firoşyareke dellêt nirxeke zor herzane.",
+  "بازاڕی سلێمانی هەموو ڕۆژێک قەرەباڵغە.": "Bazarrî Silêmanî hemû rojêk qereballxe.",
+  "ئەم دووکانە شتی هەرزان دەفرۆشێت.": "Em dûkane şitî herzan defroşêt.",
+  "… بە چەندە؟": "… be çende?",
+  "هەرزان ← هەرزانتر": "Herzan ← herzantir",
+  "لە بازاڕ": "Le bazarr",
+  "بەخێربێیت! چیت دەوێت؟": "Bexêrbêyit! çît dewêt?",
+  "سڵاو، کیلۆیەک تەماتە بە چەندە؟": "Sillaw, kîloyek temate be çende?",
+  "کیلۆیەک بە هەزار دینارە.": "Kîloyek be hezar dînare.",
+  "کیلۆیەک بە پێنج هەزار دینارە.": "Kîloyek be pênc hezar dînare.",
+  "تەماتە نییە.": "Temate nîye.",
+  "ئەی سێو؟ سێوەکانت زۆر جوانن.": "Ey sêw? sêwekant zor cwanin.",
+  "کیلۆی سێو دوو هەزار دینارە.": "Kîloy sêw dû hezar dînare.",
+  "زۆر گرانە! هەرزانتر نییە؟": "Zor girane! herzantir nîye?",
+  "زۆر هەرزانە! سوپاس.": "Zor herzane! supas.",
+  "سێوم ناوێت.": "Sêwim nawêt.",
+  "باشە، بۆ تۆ هەزار و پێنج سەد.": "Başe, bo to hezar û pênc sed.",
+  "زۆر سوپاس، دوو کیلۆ دەکڕم.": "Zor supas, dû kîlo dekirrim.",
+  "کەش و هەوا": "Keş û hewa",
+  "بەهار": "behar",
+  "هاوین": "hawîn",
+  "پایز": "payz",
+  "زستان": "zistan",
+  "باران": "baran",
+  "بەفر": "befir",
+  "با": "ba",
+  "هەور": "hewir",
+  "خۆر": "xor",
+  "گەرم": "germ",
+  "سارد": "sard",
+  "نەورۆز": "Newroz",
+  "ئەمڕۆ کەش و هەوا زۆر ساردە.": "Emrro keş û hewa zor sarde.",
+  "لە زستاندا بەفر لەسەر چیاکان دەبارێت.": "Le zistanda befir leser çyakan debarêt.",
+  "جەژنی نەورۆز یەکەم ڕۆژی بەهارە.": "Cejnî Newroz yekem rojî behare.",
+  "ئایا سبەینێ لە هەولێر باران دەبارێت؟": "Aya sibeynê le Hewlêr baran debarêt?",
+  "لە هاویندا هەولێر زۆر گەرم دەبێت.": "Le hawînda Hewlêr zor germ debêt.",
+  "من حەز لە پایز دەکەم، چونکە فێنکە.": "Min hez le payz dekem, çunke fênke.",
+  "ئەمڕۆ ئاسمان هەوراوییە و با دێت.": "Emrro asman hewrawîye û ba dêt.",
+  "باران دەبارێت / بەفر دەبارێت": "Baran debarêt / befir debarêt",
+  "لە زستاندا": "Le zistanda",
+  "لەش و تەندروستی": "Leş û tendirustî",
+  "سەر": "ser",
+  "دەست": "dest",
+  "قاچ": "qaç",
+  "چاو": "çaw",
+  "ددان": "didan",
+  "سک": "sik",
+  "پزیشک": "pizîşk",
+  "نەخۆش": "nexoş",
+  "دەرمان": "derman",
+  "ئازار": "azar",
+  "تا": "ta",
+  "نەخۆشخانە": "nexoşxane",
+  "سەرم زۆر دێشێت، دەبێت بچم بۆ لای پزیشک.": "Serim zor dêşêt, debêt biçim bo lay pizîşk.",
+  "منداڵەکەم تای هەیە و نەخۆشە.": "Mindallekem tay heye û nexoşe.",
+  "ئەم دەرمانە ڕۆژی سێ جار بخۆ.": "Em dermane rojî sê car bixo.",
+  "قاچم دێشێت و ناتوانم بڕۆم.": "Qaçim dêşêt û natwanim birrom.",
+  "نەخۆشخانەکە لە نزیک ماڵی ئێمەیە.": "Nexoşxaneke le nizîk mallî êmeye.",
+  "ئاو زۆر بخۆرەوە و پشوو بدە.": "Aw zor bixorewe û pişû bide.",
+  "ئێستا باشترم، زۆر سوپاس دکتۆر.": "Êsta baştirm, zor supas diktor.",
+  "سەرم دێشێت": "Serim dêşêt",
+  "چیتە؟ / دەردت چییە؟": "Çîte? / derdit çîye?",
+  "ڕێگا و گەشت": "Rêga û geşt",
+  "پاس": "pas",
+  "تەکسی": "teksî",
+  "فڕۆکەخانە": "firrokexane",
+  "بلیت": "bilît",
+  "وێستگە": "wêstge",
+  "ڕێگا": "rêga",
+  "شەقام": "şeqam",
+  "ڕاست": "rast",
+  "چەپ": "çep",
+  "ڕاستەوخۆ": "rastewxo",
+  "نزیک": "nizîk",
+  "دوور": "dûr",
+  "ببورە، وێستگەی پاس لە کوێیە؟": "Bibure, wêstgey pas le kwêye?",
+  "ڕاستەوخۆ بڕۆ، پاشان بۆ لای چەپ لابدە.": "Rastewxo birro, paşan bo lay çep labde.",
+  "فڕۆکەخانەی هەولێر لە شارەوە زۆر دوور نییە.": "Firrokexaney Hewlêr le şarewe zor dûr nîye.",
+  "بلیتێک بۆ سلێمانی بە چەندە؟": "Bilîtêk bo Silêmanî be çende?",
+  "تەکسییەک بگرە، پاسەکە درەنگ دێت.": "Teksîyek bigre, paseke dreng dêt.",
+  "تکایە لێرە بوەستە، ماڵەکەم نزیکە.": "Tikaye lêre bweste, mallekem nizîke.",
+  "ئەم ڕێگایە دەچێت بۆ دهۆک.": "Em rêgaye deçêt bo Dihok.",
+  "بڕۆ! وەرە! بوەستە!": "Birro! were! bweste!",
+  "بۆ لای ڕاست / بۆ لای چەپ": "Bo lay rast / bo lay çep",
+  "چووم و هاتم": "Çûm û hatim",
+  "پار": "par",
+  "هەفتەی ڕابردوو": "Heftey rabirdû",
+  "چوون": "çûn",
+  "هاتن": "hatin",
+  "بوون": "bûn",
+  "گەیشتن": "geyştin",
+  "گەڕانەوە": "gerranewe",
+  "هەستان": "hestan",
+  "نووستن": "nûstin",
+  "دانیشتن": "danîştin",
+  "ماندوو": "mandû",
+  "دوێنێ لەگەڵ هاوڕێکانم چووم بۆ بازاڕ.": "Dwênê legell hawrrêkanim çûm bo bazarr.",
+  "ئێمە هەفتەی ڕابردوو لە کەرکووکەوە هاتین.": "Ême heftey rabirdû le Kerkûkewe hatîn.",
+  "دوێنێ ئێوارە من لە ماڵەوە بووم.": "Dwênê êware min le mallewe bûm.",
+  "بەیانی زوو هەستام و چووم بۆ قوتابخانە.": "Beyanî zû hestam û çûm bo qutabxane.",
+  "من دوێنێ نەچووم بۆ کار، نەخۆش بووم.": "Min dwênê neçûm bo kar, nexoş bûm.",
+  "دایک و باوکت کەی گەیشتنە هەولێر؟": "Dayk û bawkit key geyştne Hewlêr?",
+  "ئایا تۆ پار چوویت بۆ مەهاباد؟": "Aya to par çûyt bo Mehabad?",
+  "چووم، چوویت، چوو، چووین، چوون": "Çûm, çûyt, çû, çûyn, çûn",
+  "نەچووم": "neçûm",
+  "نانم خوارد": "Nanim xward",
+  "خواردنەوە": "xwardinewe",
+  "بینین": "bînîn",
+  "نووسین": "nûsîn",
+  "خوێندنەوە": "xwêndinewe",
+  "گوتن": "gutin",
+  "کردن": "kirdin",
+  "ناردن": "nardin",
+  "نامە": "name",
+  "فیلم": "fîlm",
+  "نانی ئێوارە": "Nanî êware",
+  "دوێنێ شەو": "Dwênê şew",
+  "ئەمڕۆ بەیانی نانم خوارد و چام خواردەوە.": "Emrro beyanî nanim xward û çam xwardewe.",
+  "دوێنێ شەو فیلمێکی کوردیم بینی، زۆر خۆش بوو.": "Dwênê şew fîlmêkî Kurdîm bînî, zor xoş bû.",
+  "تۆ بۆ نانی ئێوارە چیت خوارد؟": "To bo nanî êware çît xward?",
+  "ئازاد نامەیەکی بۆ داپیرەی نارد.": "Azad nameyekî bo dapîrey nard.",
+  "ئێمە ئەم کتێبەمان پێکەوە خوێندەوە.": "Ême em kitêbeman pêkewe xwêndewe.",
+  "ببورە، من ئەو فیلمەم نەبینی.": "Bibure, min ew fîlmem nebînî.",
+  "مامۆستاکە وشەیەکی نوێی لەسەر تەختە نووسی.": "Mamostake wişeyekî nwêy leser texte nûsî.",
+  "نانم خوارد / نانت خوارد / نانی خوارد": "Nanim xward / nant xward / nanî xward",
+  "فیلمەکەم نەبینی": "Fîlmekem nebînî",
+  "دوێنێ چیت کرد؟": "Dwênê çît kird?",
+  "سڵاو ئازاد! دوێنێ چیت کرد؟": "Sillaw Azad! dwênê çît kird?",
+  "لەگەڵ هاوڕێکانم چووم بۆ سینەما.": "Legell hawrrêkanim çûm bo sînema.",
+  "چ فیلمێکتان بینی؟": "Çi fîlmêktan bînî?",
+  "فیلمێکی کوردیمان بینی، زۆر جوان بوو.": "Fîlmêkî Kurdîman bînî, zor cwan bû.",
+  "هیچ فیلمێکمان نەبینی.": "Hîç fîlmêkman nebînî.",
+  "فیلمێکی کۆنمان بینی، خۆش نەبوو.": "Fîlmêkî konman bînî, xoş nebû.",
+  "پاشان چیتان خوارد؟": "Paşan çîtan xward?",
+  "کەبابمان خوارد و دۆمان خواردەوە.": "Kebabman xward û doman xwardewe.",
+  "دۆڵمەمان خوارد و چامان خواردەوە.": "Dollmeman xward û çaman xwardewe.",
+  "هیچمان نەخوارد.": "Hîçman nexward.",
+  "ئای! منیش دەمەوێت بێم.": "Ay! minîş demewêt bêm.",
+  "باشە، هەینی پێکەوە دەچین.": "Başe, heynî pêkewe deçîn.",
+  "کار و خوێندن": "Kar û xwêndin",
+  "پیشە": "pîşe",
+  "ئەندازیار": "endazyar",
+  "شۆفێر": "şofêr",
+  "پەرستار": "perstar",
+  "جووتیار": "cûtyar",
+  "نانەوا": "nanewa",
+  "زانکۆ": "zanko",
+  "قوتابی": "qutabî",
+  "نووسینگە": "nûsînge",
+  "مووچە": "mûçe",
+  "ماندووکەر": "mandûker",
+  "باوکم ئەندازیارە و لە نووسینگەیەک کار دەکات.": "Bawkim endazyare û le nûsîngeyek kar dekat.",
+  "کاتێک گەورە بووم، دەمەوێت ببم بە پزیشک.": "Katêk gewre bûm, demewêt bibim be pizîşk.",
+  "خوشکم لە زانکۆی سلێمانی دەخوێنێت.": "Xuşkim le zankoy Silêmanî dexwênêt.",
+  "دایکم پەرستارە و شەوان کار دەکات.": "Daykim perstare û şewan kar dekat.",
+  "قوتابییەکان هەموو ڕۆژێک دەچنە قوتابخانە.": "Qutabîyekan hemû rojêk deçne qutabxane.",
+  "ئەم کارە ماندووکەرە، بەڵام مووچەکەی باشە.": "Em kare mandûkere, bellam mûçekey başe.",
+  "مامم جووتیارە و گەنم دەچێنێت.": "Mamim cûtyare û genim deçênêt.",
+  "دەمەوێت ببم بە …": "Demewêt bibim be …",
+  "کار دەکەم / دەخوێنم": "Kar dekem / dexwênim",
+  "کاتی بەتاڵ": "Katî betall",
+  "مۆبایل": "mobayl",
+  "ئینتەرنێت": "înternêt",
+  "پەیام": "peyam",
+  "وێنە": "wêne",
+  "گۆرانی": "goranî",
+  "یاری": "yarî",
+  "تۆپی پێ": "Topî pê",
+  "مەلەوانی": "melewanî",
+  "پیاسە": "pyase",
+  "کۆتایی هەفتە": "Kotayî hefte",
+  "حەز کردن": "Hez kirdin",
+  "لە کاتی بەتاڵدا گوێ لە گۆرانی دەگرم.": "Le katî betallda gwê le goranî degrim.",
+  "هەینیان لەگەڵ هاوڕێکانم تۆپی پێ دەکەین.": "Heynyan legell hawrrêkanim topî pê dekeyn.",
+  "پەیامێکم بۆ ڕۆژدا نارد، بەڵام وەڵامی نەدایەوە.": "Peyamêkim bo Rojda nard, bellam wellamî nedayewe.",
+  "ئینتەرنێتی ماڵەوە ئەمڕۆ زۆر خاوە.": "Înternêtî mallewe emrro zor xawe.",
+  "کۆتایی هەفتە دەچینە چیا بۆ پیاسە.": "Kotayî hefte deçîne çiya bo pyase.",
+  "ئەم وێنەیەت بە مۆبایل گرت؟ زۆر جوانە!": "Em wêneyet be mobayl girt? zor cwane!",
+  "تۆ لە کاتی بەتاڵدا حەز لە چی دەکەیت؟": "To le katî betallda hez le çî dekeyt?",
+  "حەز لە … دەکەم": "Hez le … dekem",
+  "گوێ لە … دەگرم": "Gwê le … degrim",
+  "بەسەرهات": "beserhat",
+  "لەناکاو": "lenakaw",
+  "پاشان": "paşan",
+  "سەرەتا": "sereta",
+  "لە کۆتاییدا": "Le kotayîda",
+  "کاتێک": "katêk",
+  "ڕووداو": "rûdaw",
+  "دەچووم": "deçûm",
+  "دەمخوێندەوە": "demxwêndewe",
+  "کارەبا": "kareba",
+  "مۆم": "mom",
+  "دراوسێ": "drawsê",
+  "کاتێک بەرەو ماڵەوە دەڕۆیشتم، لەناکاو باران دەستی پێکرد.": "Katêk berew mallewe derroyştim, lenakaw baran destî pêkird.",
+  "کاتێک کارەبا بڕا، ئێمە نانی ئێوارەمان دەخوارد.": "Katêk kareba birra, ême nanî êwareman dexward.",
+  "سەرەتا هیچمان نەدەبینی، پاشان دایکم مۆمێکی داگیرساند.": "Sereta hîçman nedebînî, paşan daykim momêkî dagîrsand.",
+  "منداڵەکان لە حەوشەکەدا یارییان دەکرد و پێدەکەنین.": "Mindallekan le hewşekeda yarîyan dekird û pêdekenîn.",
+  "لەناکاو گوێمان لە دەنگێکی سەیر بوو لە دەرەوە.": "Lenakaw gwêman le dengêkî seyr bû le derewe.",
+  "باوکم چووە دەرەوە و بینی پشیلەی دراوسێکەمان بوو.": "Bawkim çuwe derewe û bînî pişîley drawsêkeman bû.",
+  "لە کۆتاییدا هەموومان پێکەنین و ئەو شەوە چیرۆکمان بۆ یەکتر گێڕایەوە.": "Le kotayîda hemûman pêkenîn û ew şewe çîrokman bo yektir gêrrayewe.",
+  "دەچووم · دەڕۆیشتین · نەدەبینی": "Deçûm · derroyştîn · nedebînî",
+  "نانمان دەخوارد · دەمخوێندەوە": "Nanman dexward · demxwêndewe",
+  "شەوی بێ کارەبا": "Şewî bê kareba",
+  "ئازاد، دوێنێ شەو چیت دەکرد کاتێک کارەبا بڕا؟": "Azad, dwênê şew çît dekird katêk kareba birra?",
+  "لە ژوورەکەم بووم و کتێبێکم دەخوێندەوە.": "Le jûrekem bûm û kitêbêkim dexwêndewe.",
+  "لە بازاڕ بووم و نانم دەکڕی.": "Le bazarr bûm û nanim dekirrî.",
+  "لە حەوشەکە بووم و یاریم دەکرد.": "Le hewşeke bûm û yarîm dekird.",
+  "پاشان چیت کرد؟ ترسایت؟": "Paşan çît kird? tirsayt?",
+  "نەخێر، بەڵام لەناکاو دەنگێکی سەیرم لە حەوشەکە بیست.": "Nexêr, bellam lenakaw dengêkî seyrim le hewşeke bîst.",
+  "ئای! دەنگی چی بوو؟": "Ay! dengî çî bû?",
+  "سەرەتا هیچم نەدەبینی، پاشان مۆمێکم داگیرساند و چوومە دەرەوە.": "Sereta hîçim nedebînî, paşan momêkim dagîrsand û çûme derewe.",
+  "سەرەتا تەلەفۆنم بۆ باوکم کرد و لە ژوورەکەم مامەوە.": "Sereta telefonim bo bawkim kird û le jûrekem mamewe.",
+  "پاشان دایکم هات و کارەباکەی چاک کرد.": "Paşan daykim hat û karebakey çak kird.",
+  "لە کۆتاییدا بینیم پشیلەی دراوسێکەمان بوو!": "Le kotayîda bînîm pişîley drawsêkeman bû!",
+  "هاها! کەواتە پاڵەوانی ئەو شەوە پشیلەکە بوو.": "Haha! kewate pallewanî ew şewe pişîleke bû.",
+  "ئەزموونەکانم": "ezmûnekanim",
+  "ئەزموون": "ezmûn",
+  "هەرگیز": "hergîz",
+  "تا ئێستا": "Ta êsta",
+  "هێشتا": "hêşta",
+  "یەکەم جار": "Yekem car",
+  "چەند جار": "Çend car",
+  "سەردان کردن": "Serdan kirdin",
+  "بینیومە": "bînîwme",
+  "چووە": "çuwe",
+  "فڕۆکە": "firroke",
+  "دەریا": "derya",
+  "ئەشکەوت": "eşkewt",
+  "تا ئێستا سێ جار سەردانی شاری هەڵەبجەم کردووە.": "Ta êsta sê car serdanî şarî Hellebcem kirduwe.",
+  "تۆ هەرگیز بە فڕۆکە گەشتت کردووە بۆ شوێنێکی دوور؟": "To hergîz be firroke geştit kirduwe bo şwênêkî dûr?",
+  "نەخێر، من هەرگیز دەریام نەبینیوە، بەڵام زۆر حەز دەکەم بیبینم.": "Nexêr, min hergîz deryam nebînîwe, bellam zor hez dekem bîbînim.",
+  "براکەم بۆ کار چووە بۆ سلێمانی و هێشتا نەگەڕاوەتەوە.": "Birakem bo kar çuwe bo Silêmanî û hêşta negerrawetewe.",
+  "ئایا تا ئێستا ئەشکەوتی شانەدەرت لە نزیکەوە بینیوە؟": "Aya ta êsta eşkewtî Şanedert le nizîkewe bînîwe?",
+  "ئەم کتێبەم دوو جار خوێندووەتەوە، چونکە زۆر سەرنجڕاکێشە.": "Em kitêbem dû car xwêndûwetewe, çunke zor sernicrrakêşe.",
+  "باپیرم دەڵێت لە ژیانیدا زۆر شتی سەیری بینیوە.": "Bapîrm dellêt le jyanîda zor şitî seyrî bînîwe.",
+  "هاتووم · چووە · بینیومە · کردووە": "Hatûm · çuwe · bînîwme · kirduwe",
+  "هەرگیز … نەبینیوە": "Hergîz … nebînîwe",
+  "پلان و ئاوات": "Pilan û awat",
+  "بەنیازم": "benyazim",
+  "هیوادارم": "hîwadarim",
+  "ئاوات": "awat",
+  "خەون": "xewn",
+  "ئامانج": "amanc",
+  "داهاتوو": "dahatû",
+  "ساڵی داهاتوو": "Sallî dahatû",
+  "بڕیار دان": "Birryar dan",
+  "پاشەکەوت کردن": "Paşekewt kirdin",
+  "گەشت": "geşt",
+  "دەبێت": "debêt",
+  "بتوانم": "bitwanim",
+  "بەنیازم هاوینی داهاتوو لەگەڵ هاوڕێکانم سەردانی ئامەد بکەم.": "Benyazim hawînî dahatû legell hawrrêkanim serdanî Amed bikem.",
+  "هیوادارم بتوانم ساڵی داهاتوو لە زانکۆی سلێمانی بخوێنم.": "Hîwadarim bitwanim sallî dahatû le zankoy Silêmanî bixwênim.",
+  "خوشکەکەم بڕیاری داوە فێری زمانی ئەڵمانی ببێت.": "Xuşkekem birryarî dawe fêrî zimanî ellmanî bibêt.",
+  "دەبێت پارە پاشەکەوت بکەین تا بتوانین ماڵێکی نوێ بکڕین.": "Debêt pare paşekewt bikeyn ta bitwanîn mallêkî nwê bikirrîn.",
+  "ئاواتی من ئەوەیە ڕۆژێک کتێبێک بە کوردی بنووسم.": "Awatî min eweye rojêk kitêbêk be Kurdî binûsim.",
+  "با پێش ئەوەی بڕیار بدەین، لەگەڵ دایک و باوکمان قسە بکەین.": "Ba pêş ewey birryar bideyn, legell dayk û bawkiman qise bikeyn.",
+  "هیوادارم هەفتەی داهاتوو بێیت بۆ ماڵمان و پێکەوە نان بخۆین.": "Hîwadarim heftey dahatû bêyt bo mallman û pêkewe nan bixoyn.",
+  "بەنیازم بچم · هیوادارم بتوانم": "Benyazim biçim · hîwadarim bitwanim",
+  "بێم، بێیت، بێت، بێین، بێن": "Bêm, bêyt, bêt, bêyn, bên",
+  "ئەگەر و مەرج": "Eger û merc",
+  "ئەگەر": "eger",
+  "ئەگەرنا": "egerna",
+  "بە مەرجێک": "Be mercêk",
+  "دەرفەت": "derfet",
+  "چەتر": "çetir",
+  "ون بوون": "Win bûn",
+  "دواکەوتن": "dwakewtin",
+  "تاکسی": "taksî",
+  "ئاگادار بە": "Agadar be",
+  "لە جێی تۆ": "Le cêy to",
+  "هەبوایە": "hebwaye",
+  "بمزانیایە": "bimzanyaye",
+  "ئەگەر سبەی باران ببارێت، لە ماڵەوە دەمێنینەوە و فیلم دەبینین.": "Eger sibey baran bibarêt, le mallewe demênînewe û fîlm debînîn.",
+  "ئەگەر ئێستا نەڕۆیت، دوادەکەویت و پاسەکە لەدەست دەدەیت.": "Eger êsta nerroyt, dwadekewît û paseke ledest dedeyt.",
+  "چەترەکەت لەگەڵ خۆت ببە، ئەگەرنا تەڕ دەبیت.": "Çetreket legell xot bibe, egerna terr debît.",
+  "ئەگەر کاتم هەبوایە، هەموو ڕۆژێک وەرزشم دەکرد.": "Eger katim hebwaye, hemû rojêk werzişim dekird.",
+  "ئەگەر لە جێی تۆ بوومایە، ئەو کارەم وەردەگرت.": "Eger le cêy to bûmaye, ew karem werdegirt.",
+  "ئەگەر بمزانیایە تۆ نەخۆشیت، بێگومان دەهاتم بۆ سەردانت.": "Eger bimzanyaye to nexoşît, bêguman dehatim bo serdant.",
+  "دەتوانیت ئۆتۆمبێلەکەم ببەیت، بە مەرجێک بە هێواشی لێی بخوڕیت.": "Detwanît otombêlekem bibeyt, be mercêk be hêwaşî lêy bixurrît.",
+  "ئەگەر باران ببارێت، دەمێنینەوە.": "Eger baran bibarêt, demênînewe.",
+  "ئەگەر کاتم هەبوایە، وەرزشم دەکرد.": "Eger katim hebwaye, werzişim dekird.",
+  "هەواڵ": "hewall",
+  "ڕۆژنامە": "rojname",
+  "ڕۆژنامەنووس": "rojnamenûs",
+  "ڕاپۆرت": "raport",
+  "بەپێی": "bepêy",
+  "نووسرا": "nûsra",
+  "بڵاوکرایەوە": "bllawkrayewe",
+  "دەفرۆشرێت": "defroşrêt",
+  "دروستکرا": "drustkra",
+  "کرایەوە": "krayewe",
+  "پێشانگا": "pêşanga",
+  "کتێبخانە": "kitêbxane",
+  "ئەم هەواڵە دوێنێ لە ماڵپەڕی ڕۆژنامەکەدا بڵاوکرایەوە.": "Em hewalle dwênê le mallperrî rojnamekeda bllawkrayewe.",
+  "کتێبخانەیەکی نوێ لە ناوەندی شاری هەولێر کرایەوە.": "Kitêbxaneyekî nwê le nawendî şarî Hewlêr krayewe.",
+  "بەپێی ڕاپۆرتێکی نوێ، ساڵی ڕابردوو زیاتر لە هەزار دار لە شارەکەدا چێنرا.": "Bepêy raportêkî nwê, sallî rabirdû zyatir le hezar dar le şarekeda çênra.",
+  "ئەم پردە کۆنە زیاتر لە پەنجا ساڵ لەمەوبەر دروستکرا.": "Em pirde kone zyatir le penca sall lemewber drustkra.",
+  "لە پێشانگای کتێبی هەولێردا هەزاران کتێب دەفرۆشرێن.": "Le pêşangay kitêbî Hewlêrda hezaran kitêb defroşrên.",
+  "ئەم چیرۆکە بە کوردی نووسراوە و بۆ چەند زمانێک وەرگێڕدراوە.": "Em çîroke be Kurdî nûsrawe û bo çend zimanêk wergêrrdrawe.",
+  "فێستیڤاڵی شیعر هەموو ساڵێک لە شاری سلێمانی ڕێکدەخرێت.": "Fêstîvallî şî'r hemû sallêk le şarî Silêmanî rêkdexrêt.",
+  "نووسرا · دەنووسرێت": "Nûsra · denûsrêt",
+  "نووسراوە · وەرگێڕدراوە": "Nûsrawe · wergêrrdrawe",
+  "نەورۆز و گۆرانی": "Newroz û goranî",
+  "ئاگری نەورۆز": "Agrî Newroz",
+  "هەڵپەڕکێ": "hellperrkê",
+  "گۆرانیبێژ": "goranîbêj",
+  "دەهۆڵ و زوڕنا": "Deholl û zurrna",
+  "جلی کوردی": "Cilî Kurdî",
+  "پەندی پێشینان": "Pendî pêşînan",
+  "داب و نەریت": "Dab û nerît",
+  "دۆڵمە": "dollme",
+  "سەیران": "seyran",
+  "کاوەی ئاسنگەر": "Kawey asinger",
+  "میوانداری": "mîwandarî",
+  "لە شەوی نەورۆزدا خەڵک لەسەر شاخەکان ئاگر دەکەنەوە.": "Le şewî Newrozda xellk leser şaxekan agir dekenewe.",
+  "چیرۆکی کاوەی ئاسنگەر لە نەورۆزدا بۆ منداڵان دەگێڕدرێتەوە.": "Çîrokî kawey asinger le Newrozda bo mindallan degêrrdrêtewe.",
+  "ژن و پیاو بە جلی کوردییەوە دەستی یەکتر دەگرن و هەڵدەپەڕن.": "Jin û pyaw be cilî Kurdîyewe destî yektir degrin û helldeperrin.",
+  "لە سەیرانی نەورۆزدا خێزانەکان دۆڵمە و کولێرە لەگەڵ خۆیان دەبەن.": "Le seyranî Newrozda xêzanekan dollme û kulêre legell xoyan deben.",
+  "گۆرانییەکانی حەسەن زیرەک هێشتا لە زۆربەی ماڵەکاندا دەبیسترێن.": "Goranîyekanî Hesen Zîrek hêşta le zorbey mallekanda debîstrên.",
+  "کوردەکان دەڵێن «میوان میوانی خوایە»، بۆیە میوانداری زۆر گرنگە.": "Kurdekan dellên «mîwan mîwanî xwaye», boye mîwandarî zor giringe.",
+  "بێ دەهۆڵ و زوڕنا، هیچ ئاهەنگێکی کوردی تەواو نابێت.": "Bê deholl û zurrna, hîç ahengêkî Kurdî tewaw nabêt.",
+  "بە جلی کوردییەوە": "Be cilî Kurdîyewe",
+  "نەورۆزی جاران": "Newrozî caran",
+  "باپیرە، کاتێک تۆ منداڵ بوویت، نەورۆزتان چۆن دەگێڕا؟": "Bapîre, katêk to mindall bûyt, Newroztan çon degêrra?",
+  "ئێوارە هەموو خەڵکی گوند لەسەر گردەکە ئاگریان دەکردەوە.": "Êware hemû xellkî gund leser girdeke agryan dekirdewe.",
+  "ئێوارە هەموو خەڵکی گوند زوو دەخەوتن.": "Êware hemû xellkî gund zû dexewtin.",
+  "ئێوارە هەموو خەڵکی گوند دەچوونە شار بۆ بازاڕ.": "Êware hemû xellkî gund deçûne şar bo bazarr.",
+  "ئایا گۆرانیتان دەگوت و هەڵدەپەڕین؟": "Aya goranîtan degut û helldeperrîn?",
+  "بەڵێ، دەهۆڵ و زوڕنا لێدەدرا و تا نیوەشەو هەڵدەپەڕین.": "Bellê, deholl û zurrna lêdedra û ta nîweşew helldeperrîn.",
+  "ئەی خواردنتان چی بوو؟": "Ey xwardintan çî bû?",
+  "داپیرەت بەیانی زوو دۆڵمەی دروست دەکرد و دەیبرد بۆ سەیران.": "Dapîret beyanî zû dollmey drust dekird û deybird bo seyran.",
+  "داپیرەت هەموو ڕۆژێک نانی لە بازاڕ دەکڕی.": "Dapîret hemû rojêk nanî le bazarr dekirrî.",
+  "داپیرەت لە ماڵەوە دەمایەوە و هیچی دروست نەدەکرد.": "Dapîret le mallewe demayewe û hîçî drust nedekird.",
+  "ئەمساڵ دەمەوێت منیش جلی کوردی لەبەر بکەم و لە هەڵپەڕکێدا بەشدار بم.": "Emsall demewêt minîş cilî Kurdî leber bikem û le hellperrkêda beşdar bim.",
+  "زۆر باشە، کچم! نەورۆزت پیرۆز بێت.": "Zor başe, kiçim! Newrozit pîroz bêt.",
+  "سروشت و ژینگە": "Siruşt û jînge",
+  "سروشت": "siruşt",
+  "ژینگە": "jînge",
+  "چیا": "çiya",
+  "دۆڵ": "doll",
+  "کانی": "kanî",
+  "ڕووبار": "rûbar",
+  "دارستان": "daristan",
+  "گوندنشین": "gundnişîn",
+  "پیس بوون": "Pîs bûn",
+  "پاراستن": "parastin",
+  "زبڵ": "zibill",
+  "وشکەساڵی": "wişkesallî",
+  "ئاوی ئەم کانییە لە چیاکانەوە دێت و زۆر سارد و پاکە.": "Awî em kanîye le çiyakanewe dêt û zor sard û pake.",
+  "بە داخەوە، زۆر لە ڕووبارەکان بە هۆی زبڵەوە پیس بوون.": "Be daxewe, zor le rûbarekan be hoy zibillewe pîs bûn.",
+  "ئەگەر دارستانەکان نەپارێزین، ئاژەڵ و باڵندەکان شوێنیان نامێنێت.": "Eger daristanekan neparêzîn, ajell û ballindekan şwênyan namênêt.",
+  "لە هاویندا گوندنشینەکان مەڕەکانیان دەبەنە سەر چیاکان.": "Le hawînda gundnişînekan merrekanyan debene ser çiyakan.",
+  "ساڵانی ڕابردوو وشکەساڵی زیانێکی زۆری بە کشتوکاڵ گەیاند.": "Sallanî rabirdû wişkesallî zyanêkî zorî be kiştukall geyand.",
+  "پێویستە هەموومان زبڵەکانمان لە سروشتدا بەجێ نەهێڵین.": "Pêwîste hemûman zibillekanman le siruştda becê nehêllîn.",
+  "گوندەکەی باپیرم لە دۆڵێکی سەوزدا بوو، لە نزیک هەورامان.": "Gundekey bapîrm le dollêkî sewzda bû, le nizîk Hewraman.",
+  "پێویستە بیپارێزین · نەپارێزین": "Pêwîste bîparêzîn · neparêzîn",
+  "لە چیاکانەوە": "Le çiyakanewe",
+  "بۆچوون و گفتوگۆ": "Boçûn û giftugo",
+  "بە بۆچوونی من": "Be boçûnî min",
+  "ڕازیم": "razîm",
+  "ناڕازیم": "narrazîm",
+  "گفتوگۆ": "giftugo",
+  "بیرۆکە": "bîroke",
+  "لایەنی باش": "Layenî baş",
+  "لایەنی خراپ": "Layenî xirap",
+  "لە لایەکەوە": "Le layekewe",
+  "لە لایەکی ترەوە": "Le layekî tirewe",
+  "وابزانم": "wabzanim",
+  "مافی خۆتە": "Mafî xote",
+  "قایل کردن": "Qayl kirdin",
+  "بە بۆچوونی من، فێربوونی زمانی دایک زۆر گرنگە بۆ منداڵان.": "Be boçûnî min, fêrbûnî zimanî dayk zor giringe bo mindallan.",
+  "من لەگەڵ تۆ ڕازیم، بەڵام دەبێت بیر لە لایەنە خراپەکانیش بکەینەوە.": "Min legell to razîm, bellam debêt bîr le layene xirapekanîş bikeynewe.",
+  "لە لایەکەوە مۆبایل سوودی هەیە، لە لایەکی ترەوە کاتمان دەبات.": "Le layekewe mobayl sûdî heye, le layekî tirewe katman debat.",
+  "وابزانم ژیان لە گوند ئارامترە، بەڵام کار لە شار زیاترە.": "Wabzanim jyan le gund aramtire, bellam kar le şar zyatire.",
+  "ببورە، من بەم بیرۆکەیە ڕازی نیم و بۆچوونێکی ترم هەیە.": "Bibure, min bem bîrokeye razî nîm û boçûnêkî tirim heye.",
+  "هەوڵم دا قایلی بکەم، بەڵام ئەو لەسەر بۆچوونی خۆی مایەوە.": "Hewllim da qaylî bikem, bellam ew leser boçûnî xoy mayewe.",
+  "ئەوە مافی خۆتە بڕیار بدەیت، بەڵام با پێکەوە گفتوگۆی لەسەر بکەین.": "Ewe mafî xote birryar bideyt, bellam ba pêkewe giftugoy leser bikeyn.",
+  "بە بۆچوونی من · وابزانم · لەگەڵ تۆ ڕازیم": "Be boçûnî min · wabzanim · legell to razîm",
+  "لە لایەکەوە … لە لایەکی ترەوە …": "Le layekewe … le layekî tirewe …"
+ }
+}
