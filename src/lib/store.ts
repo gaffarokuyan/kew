@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useSyncExternalStore } from "react";
-import { loadCourse, NODES, NODE_INDEX, WORD, type CourseId } from "./course";
+import { ARB, LAT, loadCourse, NODES, NODE_INDEX, WORD, type CourseId, type Script } from "./course";
 
 export const MAXH = 5;
 export const HEART_MS = 30 * 60 * 1000;
@@ -27,11 +27,13 @@ export type State = {
   stats: { perfect: number; stories: number; lessons: number; jumps: number };
   set: { sfx: boolean; voice: boolean; rate: number; speak: boolean }; speakPause: number;
   course: CourseId; saved: Partial<Record<CourseId, Prog>>; msents: string[];
+  /** Soranî alphabet the learner picked; null until asked. */
+  ckbScript: Script | null;
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,
   freeze: 0, best: 0, done: {}, words: {}, mistakes: [], xpLog: {}, daily: { date: null, xp: 0, lessons: 0, bestCombo: 0, claimed: [] },
-  stats: { perfect: 0, stories: 0, lessons: 0, jumps: 0 }, set: { sfx: true, voice: true, rate: 1, speak: true }, speakPause: 0, course: "kmr", saved: {}, msents: [],
+  stats: { perfect: 0, stories: 0, lessons: 0, jumps: 0 }, set: { sfx: true, voice: true, rate: 1, speak: true }, speakPause: 0, course: "kmr", saved: {}, msents: [], ckbScript: null,
 });
 
 let S: State = DEF();
@@ -64,8 +66,22 @@ export async function hydrate() {
       S = { ...d, ...s, set: { ...d.set, ...(s.set || {}) }, daily: { ...d.daily, ...(s.daily || {}) }, stats: { ...d.stats, ...(s.stats || {}) } };
     }
   } catch {}
-  loadCourse(S.course || "kmr");
+  loadCourse(S.course || "kmr", S.ckbScript || "both");
   return tick();
+}
+/** Change the Soranî alphabet. Progress is keyed by the shown text, so re-key it between Arabic and Latin. */
+export function setCkbScript(m: Script) {
+  update((s) => {
+    const was = s.ckbScript || "both"; s.ckbScript = m;
+    if (s.course !== "ckb") return;
+    const toLat = m === "lat" && was !== "lat", toAr = m !== "lat" && was === "lat";
+    if (toLat || toAr) {
+      const f = (k: string) => (toLat ? LAT[k] : ARB[k]) ?? k;
+      s.words = Object.fromEntries(Object.entries(s.words).map(([k, v]) => [f(k), v]));
+      s.mistakes = s.mistakes.map(f); s.msents = s.msents.map(f);
+    }
+    loadCourse("ckb", m);
+  });
 }
 /** Switch the course being learnt: stash this course's progress and restore the other one's. */
 export function switchCourse(id: CourseId) {
@@ -75,7 +91,7 @@ export function switchCourse(id: CourseId) {
     const p = s.saved[id];
     s.done = p?.done ?? {}; s.words = p?.words ?? {}; s.mistakes = p?.mistakes ?? []; s.msents = p?.msents ?? []; s.level = p?.level ?? 0;
     delete s.saved[id]; s.course = id;
-    loadCourse(id);
+    loadCourse(id, s.ckbScript || "both");
   });
 }
 export async function resetAll() {

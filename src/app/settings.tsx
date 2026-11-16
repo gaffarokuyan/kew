@@ -4,8 +4,9 @@ import { Pressable, ScrollView, Switch, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { speak } from "@/lib/audio";
 import { LANGS, M, t, tArr } from "@/lib/i18n";
-import { type Lang, resetAll, switchCourse, update, useS } from "@/lib/store";
-import { COURSES, type CourseId } from "@/lib/course";
+import { type Lang, resetAll, setCkbScript, switchCourse, update, useS } from "@/lib/store";
+import { COURSES, type CourseId, type Script } from "@/lib/course";
+import { ScriptPicker } from "@/ui/ScriptPicker";
 import { Icon } from "@/ui/icons";
 import { Btn } from "@/ui/kit";
 import { F, TS, useTheme } from "@/ui/theme";
@@ -25,7 +26,7 @@ function Seg<T extends string | number>({ items, value, onPick }: { items: { v: 
 function L({ children }: { children: string }) { const th = useTheme(); return <Text style={{ fontFamily: F.serif, color: th.ink, fontSize: TS.lg }}>{children}</Text>; }
 
 export default function Settings() {
-  const th = useTheme(); const s = useS(); const [armed, setArmed] = useState(false);
+  const th = useTheme(); const s = useS(); const [armed, setArmed] = useState(false); const [scr, setScr] = useState(false);
   const row = { flexDirection: "row", alignItems: "center", justifyContent: "space-between", minHeight: 52, borderTopWidth: 1, borderBottomWidth: 1, borderColor: th.line } as const;
   return (
     <SafeAreaView edges={["top", "bottom"]} style={{ flex: 1, backgroundColor: th.bg }}>
@@ -35,8 +36,10 @@ export default function Settings() {
       </View>
       <ScrollView contentContainerStyle={{ padding: 18, paddingTop: 6, gap: 22, maxWidth: 560, width: "100%", alignSelf: "center" }}>
         <View style={{ gap: 8 }}><L>{t("course")}</L>
-          <Seg items={COURSES.map((c) => ({ v: c.id, l: c.name, sub: c.beta ? t("courseBeta") : M(c.sub) }))} value={s.course} onPick={(v) => switchCourse(v as CourseId)} />
+          <Seg items={COURSES.map((c) => ({ v: c.id, l: c.name, sub: c.beta ? t("courseBeta") : M(c.sub) }))} value={s.course} onPick={(v) => { switchCourse(v as CourseId); if (v === "ckb" && !s.ckbScript) setScr(true); }} />
           {s.course === "zza" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteZza")}</Text> : null}
+          {s.course === "ckb" ? <><L>{t("scriptSet")}</L>
+            <Seg items={[{ v: "ar", l: t("scriptAr") }, { v: "lat", l: t("scriptLat") }, { v: "both", l: t("scriptBoth") }]} value={s.ckbScript || "both"} onPick={(v) => setCkbScript(v as Script)} /></> : null}
         </View>
         <View style={{ gap: 8 }}><L>{t("baseLang")}</L><Seg items={LANGS.map(([c, n]) => ({ v: c, l: n }))} value={s.lang || "tr"} onPick={(v) => update((x) => { x.lang = v as Lang; })} /></View>
         <View style={{ gap: 0 }}>
@@ -57,6 +60,7 @@ export default function Settings() {
           <Text style={{ fontFamily: F.bodyHeavy, color: th.sorDeep }}>{armed ? t("resetSure") : t("reset")}</Text>
         </Pressable>
       </ScrollView>
+    <ScriptPicker visible={scr} onClose={() => setScr(false)} />
     </SafeAreaView>
   );
 }

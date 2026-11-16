@@ -30,8 +30,9 @@ export class SttError extends Error { constructor(public kind: "net" | "server" 
 /** Send the recording and get back what the recogniser heard.
  *  Uses XMLHttpRequest: React Native's XHR uploads `{ uri, name, type }` form parts from disk,
  *  which the global (expo) fetch does not support. */
-export async function recognize(uri: string): Promise<string> {
+export async function recognize(uri: string, dialect: "kurmanji" | "sorani" = "kurmanji"): Promise<string> {
   const fd = new FormData();
+  fd.append("dialect", dialect);
   if (Platform.OS === "web") {
     // in the browser the recording is a blob: URL (webm/opus)
     let blob: Blob;
@@ -59,7 +60,7 @@ export async function recognize(uri: string): Promise<string> {
 /* ---------- comparing what was said with the target ---------- */
 const FOLD: Record<string, string> = { ê: "e", î: "i", û: "u", ç: "c", ş: "s", â: "a", é: "e", ı: "i", ğ: "g", ö: "o", ü: "u" };
 export const fold = (s: string) =>
-  s.normalize("NFC").toLocaleLowerCase("en-US").replace(/[.,!?¿;:'’"«»…\-–—()]/g, " ").replace(/[êîûçşâéığöü]/g, (c) => FOLD[c] ?? c).replace(/\s+/g, " ").trim();
+  s.normalize("NFC").toLocaleLowerCase("en-US").replace(/ي/g, "ی").replace(/ك/g, "ک").replace(/ة/g, "ە").replace(/[\u064B-\u0652\u200C\u200D\u0640]/g, "").replace(/[،؟؛]/g, " ").replace(/[.,!?¿;:'’"«»…\-–—()]/g, " ").replace(/[êîûçşâéığöü]/g, (c) => FOLD[c] ?? c).replace(/\s+/g, " ").trim();
 function lev(a: string, b: string) {
   const m = a.length, n = b.length; if (!m) return n; if (!n) return m;
   let prev = Array.from({ length: n + 1 }, (_, j) => j);

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import Animated, { FadeInUp } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import { latSub } from "@/lib/script";
 import { hasAudio, speak, sfx, stopVoice } from "@/lib/audio";
 import { NODE, UNIT } from "@/lib/course";
 import { shuffle } from "@/lib/exercises";
@@ -69,7 +70,8 @@ export default function Story() {
             <Avatar name={l[0]} size={42} />
             <Pressable onPress={() => speak(l[1])} accessibilityRole="button" accessibilityLabel={`${l[0]}: ${l[1]}`} style={{ flexShrink: 1, padding: 12, borderRadius: 16, borderTopLeftRadius: mine ? 16 : 4, borderTopRightRadius: mine ? 4 : 16, borderWidth: 1.5, borderColor: mine ? th.sky : th.line2, backgroundColor: mine ? th.skySoft : th.surface, gap: 3 }}>
               <Text style={{ fontFamily: F.italic, fontSize: TS.sm, color: th.muted, textAlign: mine ? "right" : "left" }}>{l[0]}</Text>
-              <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>{hasAudio(l[1]) ? <Icon.spk size={16} color={mine ? th.skyDeep : th.sky} /> : null}<Text style={{ flexShrink: 1, fontFamily: F.serif, fontSize: 21, lineHeight: 26, color: th.ink }}>{l[1]}</Text></View>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>{hasAudio(l[1]) ? <Icon.spk size={16} color={mine ? th.skyDeep : th.sky} /> : null}<Text style={{ flexShrink: 1, fontFamily: F.serif, fontSize: 21, lineHeight: 30, color: th.ink }}>{l[1]}</Text></View>
+              {latSub(l[1]) ? <Text style={{ fontFamily: F.italic, fontSize: 14, color: th.muted }}>{latSub(l[1])}</Text> : null}
               <Text style={{ fontFamily: F.body, color: th.muted }}>{M(l[2])}</Text>
             </Pressable>
           </Animated.View>); })}

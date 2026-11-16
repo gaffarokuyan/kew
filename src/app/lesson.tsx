@@ -4,6 +4,7 @@ import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollVie
 import Animated, { FadeIn, FadeInDown, SlideInDown, useAnimatedStyle, useSharedValue, withSequence, withTiming } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { hasAudio, speak, sfx, stopVoice } from "@/lib/audio";
+import { altForms, arOf, CKB_KEYS, isRtl, latSub } from "@/lib/script";
 import { closeness, micAllowed, PASS, pauseSpeak, recMode, recognize, REC_OPTS, SttError } from "@/lib/speech";
 import { useAudioRecorder } from "expo-audio";
 import { courseId, NODE, NODES, UNIT, UNITS, WORD } from "@/lib/course";
@@ -228,7 +229,10 @@ function JujiSays({ text, voice = true }: { text: string; voice?: boolean }) {
       <View style={{ flex: 1, marginBottom: 24 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10, padding: 14, borderRadius: 16, borderBottomLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface }}>
           {voice && hasAudio(text) ? <Spk text={text} size={40} /> : null}
-          <Text style={{ flex: 1, fontFamily: voice ? F.serif : F.bodyHeavy, fontSize: voice ? 22 : 19, lineHeight: voice ? 27 : 25, color: th.ink }}>{text}</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontFamily: voice ? F.serif : F.bodyHeavy, fontSize: voice ? 22 : 19, lineHeight: voice ? 30 : 25, color: th.ink }}>{text}</Text>
+            {latSub(text) ? <Text style={{ fontFamily: F.italic, fontSize: 15, color: th.muted }}>{latSub(text)}</Text> : null}
+          </View>
         </View>
         {/* speech-bubble tail pointing at Juji */}
         <View style={{ position: "absolute", left: -6, bottom: 10, width: 12, height: 12, backgroundColor: th.surface, borderLeftWidth: 1.5, borderBottomWidth: 1.5, borderColor: th.line2, transform: [{ rotate: "45deg" }] }} />
@@ -275,7 +279,8 @@ function NewWord({ w }: { w: W }) {
     <Animated.View entering={FadeInDown.duration(300)} style={{ alignItems: "center", gap: 12, padding: 24, paddingTop: 18, borderRadius: 18, borderTopLeftRadius: 4, borderWidth: 1.5, borderBottomWidth: 5, borderColor: th.line2, backgroundColor: th.surface }}>
       <KilimRule color={th.zer} accent={th.sor} h={10} seed={w.ku.length * 7} style={{ marginBottom: 6 }} />
       <Pic p={w.pic} size={84} />
-      <Text style={{ fontFamily: F.display, fontSize: 46, lineHeight: 52, color: th.ink, textAlign: "center" }}>{w.ku}</Text>
+      <Text style={{ fontFamily: F.display, fontSize: 46, lineHeight: 60, color: th.ink, textAlign: "center" }}>{w.ku}</Text>
+      {latSub(w.ku) ? <Text style={{ fontFamily: F.italic, fontSize: 20, color: th.skyDeep, textAlign: "center" }}>{latSub(w.ku)}</Text> : null}
       <Text style={{ fontFamily: F.bodySemi, fontSize: 19, color: th.muted, textAlign: "center" }}>{mean(w)}</Text>
       {hasAudio(w.ku) ? <View style={{ flexDirection: "row", gap: 12 }}><Spk text={w.ku} size={52} /><Spk text={w.ku} slow size={52} /></View> : null}
     </Animated.View>
@@ -375,7 +380,7 @@ function Build({ e, locked, setAnswer }: P<"build">) {
   return (<>
     <Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={e.rev ? t("toBase") : t("toKu")} />
     <JujiSays text={e.prompt} voice={!!e.rev} />
-    <View style={{ minHeight: 120, flexDirection: "row", flexWrap: "wrap", alignContent: "flex-start", gap: 8, paddingVertical: 10, backgroundColor: "transparent" }}>
+    <View style={{ minHeight: 120, flexDirection: !e.rev && isRtl() ? "row-reverse" : "row", flexWrap: "wrap", alignContent: "flex-start", gap: 8, paddingVertical: 10, backgroundColor: "transparent" }}>
       <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: 62, height: 1.5, backgroundColor: th.line2 }} />
       <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, bottom: 2, height: 1.5, backgroundColor: th.line2 }} />
       {picked.map((i) => <Chip key={i} i={i} onPress={() => setPicked((p) => p.filter((x) => x !== i))} />)}
@@ -407,15 +412,15 @@ function TypeEx({ e, locked, setAnswer }: P<"type" | "recall">) {
   const th = useTheme(); const w = e.w; const [v, setV] = useState(""); const recall = e.t === "recall";
   const ref = useRef<React.ComponentRef<typeof TextInput>>(null);
   useEffect(() => { if (recall) return; const tm = setTimeout(() => speak(w.ku), 300); return () => clearTimeout(tm); }, []);
-  useEffect(() => { setAnswer({ val: v.trim() ? v : null, get: () => { const a = norm(v), b = norm(w.ku), d = lev(a, b), ok = d === 0 || (d === 1 && b.length > 4); return { ok, ans: w.ku, mean: mean(w), ku: w.ku, typo: ok && d === 1 }; } }); }, [v]);
+  useEffect(() => { setAnswer({ val: v.trim() ? v : null, get: () => { const a = norm(v); const d = Math.min(...[w.ku, ...altForms(w.ku)].map((x) => lev(a, norm(x)))); const ok = d === 0 || (d === 1 && norm(w.ku).length > 4); return { ok, ans: w.ku, mean: mean(w), ku: w.ku, typo: ok && d === 1 }; } }); }, [v]);
   return (<>
     {recall ? <><Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("recallKind")} /><Q>{t("recallQ", { w: mean(w) })}</Q></>
       : <><Kind icon={<Icon.ear size={18} color={th.keskDeep} />} label={t("hearType")} />
         <View style={{ flexDirection: "row", justifyContent: "center", gap: 14, paddingVertical: 6 }}><Spk text={w.ku} size={76} /><Spk text={w.ku} slow size={56} /></View></>}
     <TextInput ref={ref} value={v} onChangeText={setV} editable={!locked} placeholder={t("typePh")} placeholderTextColor={th.faint} autoCapitalize="none" autoCorrect={false} spellCheck={false} multiline
-      accessibilityLabel={t("answer")} style={{ minHeight: 110, padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface, color: th.ink, fontFamily: F.serif, fontSize: 22, textAlignVertical: "top" }} />
-    <View style={{ flexDirection: "row", gap: 8, justifyContent: "center" }}>
-      {(courseId() === "zza" ? ["ê", "î", "û", "ç", "ş", "ı", "ğ"] : ["ê", "î", "û", "ç", "ş"]).map((k) => <Pressable key={k} onPress={() => { buzz("select"); setV((x) => x + k); ref.current?.focus(); }} accessibilityRole="button" accessibilityLabel={k} style={{ width: 48, height: 48, borderRadius: 10, borderWidth: 1.5, borderBottomWidth: 4, borderColor: th.line2, backgroundColor: th.surface, alignItems: "center", justifyContent: "center" }}>
+      accessibilityLabel={t("answer")} style={{ writingDirection: isRtl() ? "rtl" : "ltr", textAlign: isRtl() ? "right" : "left", minHeight: 110, padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface, color: th.ink, fontFamily: F.serif, fontSize: 22, textAlignVertical: "top" }} />
+    <View style={{ flexDirection: isRtl() ? "row-reverse" : "row", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
+      {(isRtl() ? CKB_KEYS : courseId() === "zza" ? ["ê", "î", "û", "ç", "ş", "ı", "ğ"] : ["ê", "î", "û", "ç", "ş"]).map((k) => <Pressable key={k} onPress={() => { buzz("select"); setV((x) => x + k); ref.current?.focus(); }} accessibilityRole="button" accessibilityLabel={k} style={{ width: isRtl() ? 40 : 48, height: isRtl() ? 42 : 48, borderRadius: 10, borderWidth: 1.5, borderBottomWidth: 4, borderColor: th.line2, backgroundColor: th.surface, alignItems: "center", justifyContent: "center" }}>
         <Text style={{ fontFamily: F.serif, fontSize: 22, color: th.ink }}>{k}</Text></Pressable>)}
     </View>
   </>);
@@ -439,8 +444,9 @@ function SpeakEx({ e, locked, judge, skip }: P<"speak">) {
     const uri = rec.uri;
     if (!uri) { setSt("idle"); setMsg(t("sayErr")); return; }
     try {
-      const heard = await recognize(uri);
-      const ok = closeness(heard, w.ku) >= PASS;
+      const ckb = courseId() === "ckb";
+      const heard = await recognize(uri, ckb ? "sorani" : "kurmanji");
+      const ok = closeness(heard, ckb ? arOf(w.ku) : w.ku) >= PASS;
       setSt("idle");
       judge({ ok, said: true, heard, ans: w.ku, ku: e.sent ? undefined : w.ku });
       if (ok) setTimeout(() => speak(w.ku), 350);

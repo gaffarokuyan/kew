@@ -20,7 +20,10 @@ export type Ex =
 export const shuffle = <T,>(a: T[]): T[] => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 export const pick = <T,>(a: T[], n: number) => shuffle(a).slice(0, n);
 export const norm = (s: string) =>
-  String(s).toLocaleLowerCase(locale() === "tr" ? "tr" : "en").replace(/[.,!?¿;:'’"«»…-]/g, " ").replace(/\s+/g, " ").trim();
+  String(s).normalize("NFC").toLocaleLowerCase(locale() === "tr" ? "tr" : "en")
+    // Arabic-script Kurdish: unify Arabic/Persian letter variants and drop marks
+    .replace(/ي/g, "ی").replace(/ك/g, "ک").replace(/ة/g, "ە").replace(/ه‍/g, "ە").replace(/[\u064B-\u0652\u200C\u200D\u0640]/g, "")
+    .replace(/[.,!?¿;:'’"«»…\-،؟؛]/g, " ").replace(/\s+/g, " ").trim();
 export function lev(a: string, b: string) {
   const m = a.length, n = b.length;
   const d = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
@@ -57,7 +60,7 @@ export function buildEx(s: SentRow, u: Unit, rev = false): Ex {
 }
 
 /** Speaking exercises run on A1 for now (short words and sentences the recogniser handles well). */
-const canSpeak = (u: Unit) => courseId() === "kmr" && ["A1", "A2"].includes(SECTIONS[u.si]?.lvl) && speakOn();
+const canSpeak = (u: Unit) => (courseId() === "kmr" || courseId() === "ckb") && ["A1", "A2"].includes(SECTIONS[u.si]?.lvl) && speakOn();
 /** Recall: produce the word from its meaning (stronger memory than picking from options). */
 const recallEx = (w: W): Ex => ({ t: "recall", w });
 

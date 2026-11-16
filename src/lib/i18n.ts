@@ -13,7 +13,8 @@ export function t(k: string, v: Record<string, string | number> = {}): string {
   let s = (row[LI()] ?? row[0]) as string;
   if (typeof s !== "string") return k;
   for (const [a, b] of Object.entries(v)) s = s.split(`{${a}}`).join(String(b));
-  return courseId() === "zza" ? toZza(s) : s;
+  const c = courseId();
+  return c === "zza" ? toZza(s) : c === "ckb" ? toCkb(s) : s;
 }
 export const tArr = (k: string): string[] => { const row = T[k]; return (row?.[LI()] ?? row?.[0] ?? []) as string[]; };
 export const t2 = (k: string) => t(k).split("|");
@@ -27,4 +28,8 @@ export const kuUp = (s: string) => s.toLocaleUpperCase("en-US");
 /** Interface strings name the course language; for the Zazaki course swap Kurmancî/Kurmanji for Kirmanckî/Zazaki. */
 function toZza(s: string) {
   return s.replace(/Kurmancî/g, "Kirmanckî").replace(/Kurmanji/g, "Zazaki").replace(/Kürtçe \(Kirmanckî\)/g, "Zazaca (Kirmanckî)");
+}
+/** Interface strings for the Soranî course. */
+function toCkb(s: string) {
+  return s.replace(/Kurmancî/g, "Soranî").replace(/Kurmanji/g, "Sorani");
 }

@@ -1,5 +1,6 @@
 import data from "@/content/course.json";
 import zza from "@/content/course_zza.json";
+import ckb from "@/content/course_ckb.json";
 
 export type Meaning = string; // "tr|en|de"
 export type WordRow = [string, Meaning, string?];
@@ -15,14 +16,23 @@ export type Char = { c: string; hair: string; g: "m" | "f"; scarf?: string; mous
 export type NodeT = { id: string; unit: string; ui: number; type: "learn" | "sent" | "story" | "chest"; range?: [number, number]; k?: number };
 export type Word = { ku: string; m: Meaning; pic: string | null; unit: string };
 
-export type CourseId = "kmr" | "zza";
-const DATA: Record<CourseId, typeof data> = { kmr: data, zza: zza as unknown as typeof data };
+export type CourseId = "kmr" | "zza" | "ckb";
+/** How Soranî is written: Arabic-based Kurdish alphabet, Latin, or both (Arabic large, Latin underneath). */
+export type Script = "ar" | "lat" | "both";
+const DATA: Record<CourseId, typeof data> = { kmr: data, zza: zza as unknown as typeof data, ckb: ckb as unknown as typeof data };
 /** Courses offered; `beta` courses are new and still being checked by native speakers. */
-export const COURSES: { id: CourseId; name: string; sub: Meaning; beta?: boolean }[] = [
+const ALL_COURSES: { id: CourseId; name: string; sub: Meaning; beta?: boolean }[] = [
   { id: "kmr", name: "Kurmancî", sub: "Kürtçe (Kurmancî)|Kurdish (Kurmanji)|Kurdisch (Kurmancî)" },
   { id: "zza", name: "Kirmanckî", sub: "Zazaca (Kirmanckî)|Zazaki (Kirmanckî)|Zazaki (Kirmanckî)", beta: true },
+  { id: "ckb", name: "Soranî", sub: "Kürtçe (Soranî)|Kurdish (Sorani)|Kurdisch (Soranî)", beta: true },
 ];
-let COURSE: CourseId = "kmr";
+/** Courses that have content. */
+export const COURSES = ALL_COURSES.filter((c) => (DATA[c.id]?.SECTIONS?.length ?? 0) > 0);
+let COURSE: CourseId = "kmr"; let SCRIPT: Script = "both";
+export const scriptOf = () => (COURSE === "ckb" ? SCRIPT : null);
+/** Soranî: Arabic-script text → Latin, and Latin → Arabic (for the active course only). */
+export const LAT: Record<string, string> = {};
+export const ARB: Record<string, string> = {};
 export const courseId = () => COURSE;
 
 /* All course tables are mutated in place by loadCourse(), so every importer always sees the active course. */
@@ -41,8 +51,21 @@ export const LEVELS: Level[] = [];
 export const META = { unique: 0, rev: 0 };
 const clear = (o: Record<string, unknown>) => Object.keys(o).forEach((k) => delete o[k]);
 
-export function loadCourse(id: CourseId) {
-  const d = DATA[id] ?? DATA.kmr; COURSE = DATA[id] ? id : "kmr";
+/** Deep copy of course data with every Soranî string swapped for its Latin form. */
+function toLatin<T>(x: T, m: Record<string, string>): T {
+  if (typeof x === "string") return (m[x] ?? x) as T;
+  if (Array.isArray(x)) return x.map((y) => toLatin(y, m)) as T;
+  if (x && typeof x === "object") return Object.fromEntries(Object.entries(x).map(([k, v]) => [k, toLatin(v, m)])) as T;
+  return x;
+}
+export function loadCourse(id: CourseId, script: Script = "both") {
+  let d = DATA[id] ?? DATA.kmr; COURSE = DATA[id] ? id : "kmr"; SCRIPT = script;
+  clear(LAT); clear(ARB);
+  const lat = (d as unknown as { LAT?: Record<string, string> }).LAT;
+  if (COURSE === "ckb" && lat) {
+    Object.assign(LAT, lat); Object.entries(lat).forEach(([a, l]) => { ARB[l] = a; });
+    if (script === "lat") d = toLatin(d, lat);
+  }
   SECTIONS.splice(0, SECTIONS.length, ...(d.SECTIONS as unknown as Section[]));
   clear(CHARS); Object.assign(CHARS, DATA.kmr.CHARS, d.CHARS || {});
   SAYINGS.splice(0, SAYINGS.length, ...((d.SAYINGS as unknown as SentRow[]) || []));
