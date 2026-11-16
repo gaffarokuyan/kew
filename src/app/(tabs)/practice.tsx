@@ -1,9 +1,11 @@
 import { router } from "expo-router";
+import { useEffect } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Circle, Text as SvgText } from "react-native-svg";
 import { speak, sfx } from "@/lib/audio";
 import { SAYINGS } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
+import { episodesFor, loadPods, usePodsVersion } from "@/lib/podcast";
 import { day, dueScore, learned, update, useS, wordStrength } from "@/lib/store";
 import { courseId, UNITS } from "@/lib/course";
 import { Icon } from "@/ui/icons";
@@ -26,6 +28,7 @@ function Ring({ p }: { p: number }) {
 export default function Practice() {
   const th = useTheme(); const s = useS(); const lw = learned(s); const weak = lw.filter((k) => wordStrength(k, s) < 3); const due = lw.filter((k) => dueScore(k, s) >= 1).length;
   const readable = UNITS.filter((u) => u.words.some((w) => s.words[w[0]])).length; const soundsOk = s.set.voice && lw.length >= 4 && courseId() === "kmr";
+  usePodsVersion(); useEffect(() => { loadPods(); }, []); const pods = episodesFor(s.course).length;
   const d = s.daily; const say = SAYINGS[Math.floor(new Date(day() + "T12:00").getTime() / 864e5) % SAYINGS.length];
   const quests = [
     { id: "xp", tx: t("qXp", { n: s.goal }), v: d.xp, max: s.goal, g: 10, ic: <Icon.bolt size={26} color={th.zer} /> },
@@ -39,6 +42,7 @@ export default function Practice() {
     { k: "sprint", c: th.plum, ic: <Icon.bolt size={26} color="#fff" />, ti: t("pSprint"), su: t("pSprintSub"), dis: lw.length < 6 },
     { k: "sounds", c: th.zer, ic: <Icon.ear size={26} color="#2E1F00" />, ti: t("pSounds"), su: s.set.voice ? t("pSoundsSub") : t("voiceOff"), dis: !soundsOk },
     { k: "read", c: th.kesk, ic: <Icon.book size={26} />, ti: t("pRead"), su: t("pReadSub"), dis: readable < 1 },
+    { k: "pod", c: th.plum, ic: <Icon.pod size={26} />, ti: t("pPod"), su: pods ? t("pPodSub") + ` · ${pods}` : t("podSoon"), dis: false },
   ];
   return (
     <ScrollView style={{ backgroundColor: th.bg }} contentContainerStyle={{ padding: 18, paddingBottom: 32, gap: 22, maxWidth: 560, width: "100%", alignSelf: "center" }}>
@@ -74,7 +78,7 @@ export default function Practice() {
 
       <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", rowGap: 12 }}>
         {modes.map((m) => (
-          <Pressable key={m.k} disabled={m.dis} onPress={() => { sfx("tap"); buzz("tap"); if (m.k === "read") router.push("/read"); else router.push({ pathname: "/lesson", params: { practice: m.k } }); }} accessibilityRole="button" accessibilityLabel={`${m.ti}. ${m.su}`} accessibilityState={{ disabled: m.dis }}
+          <Pressable key={m.k} disabled={m.dis} onPress={() => { sfx("tap"); buzz("tap"); if (m.k === "read") router.push("/read"); else if (m.k === "pod") router.push("/podcasts"); else router.push({ pathname: "/lesson", params: { practice: m.k } }); }} accessibilityRole="button" accessibilityLabel={`${m.ti}. ${m.su}`} accessibilityState={{ disabled: m.dis }}
             style={({ pressed }) => ({ width: "48.5%", minHeight: 132, padding: 14, gap: 6, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: th.line2, backgroundColor: th.surface, opacity: m.dis ? 0.55 : 1 })}>
             <View style={{ width: 42, height: 42, borderRadius: 10, borderTopLeftRadius: 3, backgroundColor: m.c, alignItems: "center", justifyContent: "center" }}>{m.ic}</View>
             <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{m.ti}</Text>

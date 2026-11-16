@@ -48,6 +48,8 @@ export default function RootLayout() {
           <Stack.Screen name="lesson" options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
           <Stack.Screen name="story" options={{ animation: "slide_from_bottom", gestureEnabled: false }} />
           <Stack.Screen name="read" options={{ animation: "slide_from_bottom" }} />
+          <Stack.Screen name="podcasts" options={{ animation: "slide_from_right" }} />
+          <Stack.Screen name="episode" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="settings" options={{ presentation: "modal" }} />
         </Stack>
         <ConfettiHost />

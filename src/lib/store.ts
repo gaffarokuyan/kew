@@ -29,11 +29,13 @@ export type State = {
   course: CourseId; saved: Partial<Record<CourseId, Prog>>; msents: string[];
   /** Soranî alphabet the learner picked; null until asked. */
   ckbScript: Script | null;
+  /** Podcast episodes finished: id -> time. Ids carry the course, so this is shared across courses. */
+  pods: Record<string, number>;
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,
   freeze: 0, best: 0, done: {}, words: {}, mistakes: [], xpLog: {}, daily: { date: null, xp: 0, lessons: 0, bestCombo: 0, claimed: [] },
-  stats: { perfect: 0, stories: 0, lessons: 0, jumps: 0 }, set: { sfx: true, voice: true, rate: 1, speak: true }, speakPause: 0, course: "kmr", saved: {}, msents: [], ckbScript: null,
+  stats: { perfect: 0, stories: 0, lessons: 0, jumps: 0 }, set: { sfx: true, voice: true, rate: 1, speak: true }, speakPause: 0, course: "kmr", saved: {}, msents: [], ckbScript: null, pods: {},
 });
 
 let S: State = DEF();
