@@ -10,7 +10,9 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { initAudio } from "@/lib/audio";
 import { t } from "@/lib/i18n";
-import { hydrate, tick } from "@/lib/store";
+import { hydrate, switchCourse, tick } from "@/lib/store";
+import type { ErrorBoundaryProps } from "expo-router";
+import { Pressable, ScrollView, Text } from "react-native";
 import { ConfettiHost, toast, ToastHost } from "@/ui/kit";
 import { useTheme } from "@/ui/theme";
 
@@ -52,5 +54,22 @@ export default function RootLayout() {
         <ToastHost />
       </SafeAreaProvider>
     </GestureHandlerRootView>
+  );
+}
+
+/** Instead of closing, show what went wrong and offer a way back to the Kurmancî course. */
+export function ErrorBoundary({ error, retry }: ErrorBoundaryProps) {
+  return (
+    <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center", padding: 24, gap: 14, backgroundColor: "#FBF6EC" }}>
+      <Text style={{ fontSize: 22, fontWeight: "800", color: "#2A1F14" }}>Juji bir hatayla karşılaştı</Text>
+      <Text selectable style={{ fontSize: 13, color: "#6B5A47" }}>{String(error?.message || error)}</Text>
+      <Text selectable style={{ fontSize: 11, color: "#9A8A77" }}>{String(error?.stack || "").split("\n").slice(0, 6).join("\n")}</Text>
+      <Pressable onPress={() => { try { switchCourse("kmr"); } catch {} retry(); }} style={{ padding: 14, borderRadius: 12, backgroundColor: "#3F7A4F" }}>
+        <Text style={{ color: "#fff", fontWeight: "800", textAlign: "center" }}>Kurmancî kursuna dön</Text>
+      </Pressable>
+      <Pressable onPress={retry} style={{ padding: 14, borderRadius: 12, borderWidth: 1.5, borderColor: "#C9B99F" }}>
+        <Text style={{ color: "#2A1F14", fontWeight: "700", textAlign: "center" }}>Tekrar dene</Text>
+      </Pressable>
+    </ScrollView>
   );
 }
