@@ -2,8 +2,26 @@
   python3 tts.py kmr|ckb [episode-id ...]   -> audio/<id>.mp3 + audio/<id>.json {dur, at[]}"""
 import json, hashlib, os, subprocess, sys
 D = "/home/claude/kew_pod/"; KEY = open("/home/claude/.ktts3").read().strip()
-V = {"kmr": {"Juji": ("kurmanji_233", "v4"), "F": ("kurmanji_12", "v3"), "M": ("kurmanji_6", "v3")},
-     "ckb": {"Juji": ("sorani_1", "v4"), "F": ("sorani_214", "v3"), "M": ("sorani_85", "v3")}}
+# Pronunciation comes from Kurdish TTS v4; the timbre is then converted with ElevenLabs speech-to-speech
+# (women -> Ülgen, Juji and men -> Yunus C), the same way as the Demsal lesson video.
+V = {"kmr": {"Juji": ("kurmanji_233", "v4"), "F": ("kurmanji_236", "v4"), "M": ("kurmanji_236", "v4")},
+     "ckb": {"Juji": ("sorani_1", "v4"), "F": ("sorani_986", "v4"), "M": ("sorani_986", "v4")}}
+EL = {"F": "9UoAU5im7Rl44J2IvBHU", "M": "aB3kjBYXGX3jTKxg1bsE", "Juji": "aB3kjBYXGX3jTKxg1bsE"}
+ELKEY = open("/home/claude/.k3").read().strip()
+def sts(src, voice):
+    out = f"{D}cache/el_{voice[:6]}_{os.path.basename(src)[:-4]}.wav"
+    if os.path.exists(out): return out
+    for attempt in range(3):
+        r = subprocess.run(["curl", "-sS", "--max-time", "180", "-w", "%{http_code}", "-X", "POST", f"https://api.elevenlabs.io/v1/speech-to-speech/{voice}?output_format=mp3_44100_128", "-H", "xi-api-key: " + ELKEY,
+                            "-F", "audio=@" + src, "-F", "model_id=eleven_multilingual_sts_v2", "-F", "remove_background_noise=false", "-o", out + ".mp3"], capture_output=True, text=True)
+        if r.stdout.strip() == "200" and os.path.getsize(out + ".mp3") > 3000:
+            subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-i", out + ".mp3", "-af", "loudnorm=I=-18:TP=-2", "-ac", "1", "-ar", "24000", out], check=True, timeout=60); os.remove(out + ".mp3")
+            if abs(dur(out) - dur(src)) < 1.0: return out
+            os.remove(out)
+        else:
+            print("  EL FAIL", r.stdout.strip(), open(out + ".mp3", "rb").read(200), flush=True)
+            if r.stdout.strip() in ("401", "402", "403"): sys.exit(1)
+    sys.exit("EL gave up: " + src)
 FEM = {"Rojda", "Berfîn", "Dayik", "Bijîşk"}
 GAP = 0.45
 def dur(p): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True).stdout)
@@ -31,8 +49,9 @@ for e in json.load(open(D + c + ".json"))["episodes"]:
     if only and e["id"] not in only: continue
     at, t, parts = [], 0.6, []
     for l in e["lines"]:
-        spk, mv = V[c]["Juji" if l["s"] == "Juji" else "F" if l["s"] in FEM else "M"]
-        p = clip(l["t"], spk, mv); at.append(round(t, 2)); parts.append(p); t += dur(p) + GAP
+        role = "Juji" if l["s"] == "Juji" else "F" if l["s"] in FEM else "M"
+        spk, mv = V[c][role]
+        p = sts(clip(l["t"], spk, mv), EL[role]); at.append(round(t, 2)); parts.append(p); t += dur(p) + GAP
     lst = D + "cache/list.txt"; sil = D + "cache/sil.wav"; lead = D + "cache/lead.wav"
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", str(GAP), sil], check=True)
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", "0.6", lead], check=True)
