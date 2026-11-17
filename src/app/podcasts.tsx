@@ -6,7 +6,7 @@ import { sfx } from "@/lib/audio";
 import { scriptOf } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
 import { episodesFor, loadPods, titleOf, usePodsVersion, type Episode } from "@/lib/podcast";
-import { useStore } from "@/lib/store";
+import { update, useStore } from "@/lib/store";
 import { Avatar, KilimRule } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
@@ -17,10 +17,14 @@ import { F, TS, useTheme } from "@/ui/theme";
 export default function Podcasts() {
   const th = useTheme();
   usePodsVersion();
-  const course = useStore((s) => s.course); const pods = useStore((s) => s.pods);
+  const course = useStore((s) => s.course); const pods = useStore((s) => s.pods); const picked = useStore((s) => s.podLvl?.[s.course]);
   useEffect(() => { loadPods(); }, []);
   const eps = episodesFor(course); const sc = course === "ckb" ? scriptOf() : null;
   const groups = eps.reduce<Record<string, Episode[]>>((g, e) => { (g[e.lvl] ||= []).push(e); return g; }, {});
+  const levels = Object.keys(groups);
+  // default: the first level that still has an unheard episode
+  const lvl = picked && groups[picked] ? picked : levels.find((l) => groups[l].some((e) => !pods[e.id])) ?? levels[0];
+  const pick = (l: string) => { sfx("tap"); buzz("tap"); update((s) => { s.podLvl = { ...s.podLvl, [s.course]: l }; }); };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: th.bg }}>
@@ -34,9 +38,22 @@ export default function Podcasts() {
           <Text style={{ flex: 1, fontFamily: F.bodySemi, fontSize: TS.sm, lineHeight: 21, color: th.panelInk }}>{t("podLead")}</Text>
         </View>
         {!eps.length ? <Text style={{ fontFamily: F.italic, fontSize: TS.md, color: th.muted, textAlign: "center", paddingVertical: 30 }}>{t("podEmpty")}</Text> : null}
-        {Object.entries(groups).map(([lvl, list]) => (
-          <View key={lvl} style={{ gap: 10 }}>
-            <H2>{lvl}</H2>
+        {levels.length ? (
+          <View accessibilityRole="tablist" style={{ flexDirection: "row", gap: 10 }}>
+            {levels.map((l) => {
+              const on = l === lvl, n = groups[l].length, d = groups[l].filter((e) => pods[e.id]).length;
+              return (
+                <Pressable key={l} onPress={() => pick(l)} accessibilityRole="tab" accessibilityState={{ selected: on }} accessibilityLabel={`${l}, ${d}/${n}`}
+                  style={{ flex: 1, minHeight: 64, alignItems: "center", justifyContent: "center", gap: 2, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 2, borderBottomWidth: on ? 2 : 4,
+                    borderColor: on ? th.plum : th.line2, backgroundColor: on ? th.plum : th.surface }}>
+                  <Text style={{ fontFamily: F.display, fontSize: TS.xl, color: on ? "#fff" : th.ink }}>{l}</Text>
+                  <Text style={{ fontFamily: F.bodySemi, fontSize: TS.xs, color: on ? "#fff" : th.muted }}>{d}/{n}</Text>
+                </Pressable>);
+            })}
+          </View>) : null}
+        {lvl ? [[lvl, groups[lvl]] as const].map(([lv, list]) => (
+          <View key={lv} style={{ gap: 10 }}>
+            <H2>{lv}</H2>
             {list.map((e) => {
               const done = !!pods[e.id];
               return (
@@ -54,7 +71,7 @@ export default function Podcasts() {
                   {!e.audio ? <Text style={{ fontFamily: F.bodyHeavy, fontSize: 11, color: th.muted, borderWidth: 1, borderColor: th.line2, borderRadius: 8, paddingHorizontal: 6, paddingVertical: 2 }}>{t("podSoon")}</Text> : null}
                 </Pressable>);
             })}
-          </View>))}
+          </View>)) : null}
         <KilimRule color={th.zer} accent={th.sor} h={10} seed={7} />
       </ScrollView>
     </SafeAreaView>
