@@ -1,5 +1,5 @@
 {
- "version": 2,
+ "version": 3,
  "episodes": [
   {
    "id": "kmr-a1-01",
@@ -1189,79 +1189,91 @@
    "title": "سڵاو، من ژوژیم!",
    "name": "Merhaba, ben Juji!|Hi, I am Juji!|Hallo, ich bin Juji!",
    "sub": "Selamlaşma ve tanışma|Greetings and introductions|Begrüßung und Vorstellung",
-   "audio": null,
+   "audio": "https://gaffarokuyan.github.io/kew/pod/ckb-a1-01.mp3",
    "lines": [
     {
      "s": "Juji",
      "t": "سڵاو هاوڕێیان! من ژوژیم. ئەمە پۆدکاستەکەمانە.",
      "m": "Merhaba arkadaşlar! Ben Juji. Bu bizim podcastimiz.|Hi friends! I am Juji. This is our podcast.|Hallo Freunde! Ich bin Juji. Das ist unser Podcast.",
-     "lat": "Sillaw hawrrêyan! Min Jujim. Eme podkastekemane."
+     "lat": "Sillaw hawrrêyan! Min Jujim. Eme podkastekemane.",
+     "at": 0.6
     },
     {
      "s": "Juji",
      "t": "ئەمڕۆ میوانەکەمان ڕۆژدایە. سڵاو ڕۆژدا!",
      "m": "Bugün konuğumuz Rojda. Merhaba Rojda!|Today our guest is Rojda. Hi Rojda!|Heute ist Rojda unser Gast. Hallo Rojda!",
-     "lat": "Emrro mîwanekeman Rojdaye. Sillaw Rojda!"
+     "lat": "Emrro mîwanekeman Rojdaye. Sillaw Rojda!",
+     "at": 6.95
     },
     {
      "s": "Rojda",
      "t": "سڵاو ژوژی! چۆنی؟",
      "m": "Merhaba Juji! Nasılsın?|Hi Juji! How are you?|Hallo Juji! Wie geht es dir?",
-     "lat": "Sillaw Juji! Çonî?"
+     "lat": "Sillaw Juji! Çonî?",
+     "at": 10.3
     },
     {
      "s": "Juji",
      "t": "من باشم، سوپاس. تۆ چۆنی؟",
      "m": "İyiyim, teşekkürler. Sen nasılsın?|I am fine, thanks. How are you?|Mir geht es gut, danke. Und dir?",
-     "lat": "Min başim, supas. To çonî?"
+     "lat": "Min başim, supas. To çonî?",
+     "at": 13.66
     },
     {
      "s": "Rojda",
      "t": "منیش باشم. من خەڵکی هەولێرم.",
      "m": "Ben de iyiyim. Ben Hewlêrliyim.|I am fine too. I am from Hewlêr.|Mir geht es auch gut. Ich komme aus Hewlêr.",
-     "lat": "Minîş başim. Min xellkî Hewlêrm."
+     "lat": "Minîş başim. Min xellkî Hewlêrm.",
+     "at": 16.88
     },
     {
      "s": "Juji",
      "t": "تۆ خوێندکاریت؟",
      "m": "Öğrenci misin?|Are you a student?|Bist du Studentin?",
-     "lat": "To xwêndikarît?"
+     "lat": "To xwêndikarît?",
+     "at": 19.44
     },
     {
      "s": "Rojda",
      "t": "بەڵێ، من خوێندکارم. لە زانکۆ دەخوێنم.",
      "m": "Evet, öğrenciyim. Üniversitede okuyorum.|Yes, I am a student. I study at the university.|Ja, ich bin Studentin. Ich studiere an der Universität.",
-     "lat": "Bellê, min xwêndikarm. Le zanko dexwênim."
+     "lat": "Bellê, min xwêndikarm. Le zanko dexwênim.",
+     "at": 20.96
     },
     {
      "s": "Juji",
      "t": "چ زمانێک دەزانیت؟",
      "m": "Hangi dilleri biliyorsun?|Which languages do you know?|Welche Sprachen kannst du?",
-     "lat": "Çi zimanêk dezanît?"
+     "lat": "Çi zimanêk dezanît?",
+     "at": 24.94
     },
     {
      "s": "Rojda",
      "t": "کوردی، عەرەبی و کەمێک ئینگلیزی دەزانم.",
      "m": "Kürtçe, Arapça ve biraz İngilizce biliyorum.|I know Kurdish, Arabic and a little English.|Ich kann Kurdisch, Arabisch und ein bisschen Englisch.",
-     "lat": "Kurdî, Erebî û kemêk îngilîzî dezanim."
+     "lat": "Kurdî, Erebî û kemêk îngilîzî dezanim.",
+     "at": 27.26
     },
     {
      "s": "Juji",
      "t": "زۆر باشە! سوپاس بۆ هاتنت، ڕۆژدا.",
      "m": "Çok güzel! Geldiğin için teşekkürler, Rojda.|Very good! Thanks for coming, Rojda.|Sehr gut! Danke, dass du gekommen bist, Rojda.",
-     "lat": "Zor başe! Supas bo hatnit, Rojda."
+     "lat": "Zor başe! Supas bo hatnit, Rojda.",
+     "at": 30.36
     },
     {
      "s": "Rojda",
      "t": "سوپاس بۆ تۆ. خوات لەگەڵ!",
      "m": "Ben teşekkür ederim. Hoşça kal!|Thank you. Goodbye!|Ich danke dir. Tschüss!",
-     "lat": "Supas bo to. Xwat legell!"
+     "lat": "Supas bo to. Xwat legell!",
+     "at": 35.17
     },
     {
      "s": "Juji",
      "t": "خوات لەگەڵ! تا پۆدکاستی داهاتوو، ماڵئاوا.",
      "m": "Güle güle! Bir sonraki podcaste kadar hoşça kalın.|Goodbye! Until the next podcast, take care.|Auf Wiedersehen! Bis zum nächsten Podcast.",
-     "lat": "Xwat legell! Ta podkastî dahatû, mallawa."
+     "lat": "Xwat legell! Ta podkastî dahatû, mallawa.",
+     "at": 37.25
     }
    ],
    "words": [
@@ -1320,7 +1332,8 @@
      "a": 0
     }
    ],
-   "titleLat": "Sillaw, min Jujim!"
+   "titleLat": "Sillaw, min Jujim!",
+   "dur": 42.7
   },
   {
    "id": "ckb-a1-02",
@@ -1330,79 +1343,91 @@
    "title": "خێزانەکەی ئازاد",
    "name": "Azad'ın ailesi|Azad's family|Azads Familie",
    "sub": "Aile ve ev|Family and home|Familie und Zuhause",
-   "audio": null,
+   "audio": "https://gaffarokuyan.github.io/kew/pod/ckb-a1-02.mp3",
    "lines": [
     {
      "s": "Juji",
      "t": "سڵاو! ئەمڕۆ ئازاد لەگەڵمانە. ئازاد، خێزانەکەتان چەند کەسن؟",
      "m": "Merhaba! Bugün Azad bizimle. Azad, aileniz kaç kişi?|Hi! Today Azad is with us. Azad, how many people are in your family?|Hallo! Heute ist Azad bei uns. Azad, wie groß ist eure Familie?",
-     "lat": "Sillaw! Emrro Azad legellmane. Azad, xêzaneketan çend kesin?"
+     "lat": "Sillaw! Emrro Azad legellmane. Azad, xêzaneketan çend kesin?",
+     "at": 0.6
     },
     {
      "s": "Azad",
      "t": "ئێمە پێنج کەسین.",
      "m": "Biz beş kişiyiz.|We are five people.|Wir sind fünf Personen.",
-     "lat": "Ême pênc kesîn."
+     "lat": "Ême pênc kesîn.",
+     "at": 7.31
     },
     {
      "s": "Azad",
      "t": "دایکم، باوکم، خوشکێکم، برایەکم و من.",
      "m": "Annem, babam, bir kız kardeşim, bir erkek kardeşim ve ben.|My mother, my father, a sister, a brother and me.|Meine Mutter, mein Vater, eine Schwester, ein Bruder und ich.",
-     "lat": "Daykim, bawkim, xuşkêkim, birayekim û min."
+     "lat": "Daykim, bawkim, xuşkêkim, birayekim û min.",
+     "at": 8.79
     },
     {
      "s": "Juji",
      "t": "ناوی خوشکەکەت چییە؟",
      "m": "Kız kardeşinin adı ne?|What is your sister's name?|Wie heißt deine Schwester?",
-     "lat": "Nawî xuşkeket çîye?"
+     "lat": "Nawî xuşkeket çîye?",
+     "at": 14.35
     },
     {
      "s": "Azad",
      "t": "ناوی بەرفینە. تەمەنی دە ساڵە.",
      "m": "Adı Berfîn. On yaşında.|Her name is Berfîn. She is ten years old.|Sie heißt Berfîn. Sie ist zehn Jahre alt.",
-     "lat": "Nawî Berfîne. Temenî de salle."
+     "lat": "Nawî Berfîne. Temenî de salle.",
+     "at": 16.82
     },
     {
      "s": "Juji",
      "t": "براکەت گەورەیە یان بچووکە؟",
      "m": "Erkek kardeşin büyük mü küçük mü?|Is your brother older or younger?|Ist dein Bruder älter oder jünger?",
-     "lat": "Biraket gewreye yan biçûke?"
+     "lat": "Biraket gewreye yan biçûke?",
+     "at": 19.73
     },
     {
      "s": "Azad",
      "t": "براکەم لە من گەورەترە. لە سلێمانی کار دەکات.",
      "m": "Ağabeyim benden büyük. Silêmanîde çalışıyor.|My brother is older than me. He works in Silêmanî.|Mein Bruder ist älter als ich. Er arbeitet in Silêmanî.",
-     "lat": "Birakem le min gewretre. Le Silêmanî kar dekat."
+     "lat": "Birakem le min gewretre. Le Silêmanî kar dekat.",
+     "at": 22.32
     },
     {
      "s": "Juji",
      "t": "ئێوە لە کوێ دەژین؟",
      "m": "Siz nerede yaşıyorsunuz?|Where do you live?|Wo wohnt ihr?",
-     "lat": "Êwe le kwê dejîn?"
+     "lat": "Êwe le kwê dejîn?",
+     "at": 26.22
     },
     {
      "s": "Azad",
      "t": "ئێمە لە هەولێر دەژین. ماڵەکەمان گەورە نییە، بەڵام زۆر خۆشە.",
      "m": "Hewlêrde yaşıyoruz. Evimiz büyük değil ama çok güzel.|We live in Hewlêr. Our house is not big, but it is very nice.|Wir wohnen in Hewlêr. Unser Haus ist nicht groß, aber sehr schön.",
-     "lat": "Ême le Hewlêr dejîn. Mallekeman gewre nîye, bellam zor xoşe."
+     "lat": "Ême le Hewlêr dejîn. Mallekeman gewre nîye, bellam zor xoşe.",
+     "at": 30.18
     },
     {
      "s": "Juji",
      "t": "باپیرت لەگەڵتان دەژی؟",
      "m": "Deden sizinle mi yaşıyor?|Does your grandfather live with you?|Wohnt dein Opa bei euch?",
-     "lat": "Bapîrt legelltan dejî?"
+     "lat": "Bapîrt legelltan dejî?",
+     "at": 34.58
     },
     {
      "s": "Azad",
      "t": "نەخێر، باپیرم لە گوند دەژی. هاوینان دەچین بۆ لای.",
      "m": "Hayır, dedem köyde yaşıyor. Yazları onun yanına gidiyoruz.|No, my grandfather lives in the village. We visit him in summer.|Nein, mein Opa wohnt im Dorf. Im Sommer besuchen wir ihn.",
-     "lat": "Nexêr, bapîrm le gund dejî. Hawînan deçîn bo lay."
+     "lat": "Nexêr, bapîrm le gund dejî. Hawînan deçîn bo lay.",
+     "at": 37.21
     },
     {
      "s": "Juji",
      "t": "خێزانێکی خۆشە! سوپاس ئازاد.",
      "m": "Güzel bir aile! Teşekkürler Azad.|A lovely family! Thanks, Azad.|Eine schöne Familie! Danke, Azad.",
-     "lat": "Xêzanêkî xoşe! Supas Azad."
+     "lat": "Xêzanêkî xoşe! Supas Azad.",
+     "at": 41.3
     }
    ],
    "words": [
@@ -1461,7 +1486,8 @@
      "a": 0
     }
    ],
-   "titleLat": "Xêzanekey Azad"
+   "titleLat": "Xêzanekey Azad",
+   "dur": 45.9
   },
   {
    "id": "ckb-a1-03",
@@ -1471,79 +1497,91 @@
    "title": "لە بازاڕ",
    "name": "Çarşıda|At the market|Auf dem Markt",
    "sub": "Alışveriş ve sayılar|Shopping and numbers|Einkaufen und Zahlen",
-   "audio": null,
+   "audio": "https://gaffarokuyan.github.io/kew/pod/ckb-a1-03.mp3",
    "lines": [
     {
      "s": "Juji",
      "t": "ئەمڕۆ لە بازاڕی هەولێرین. بازاڕ زۆر قەرەباڵغە!",
      "m": "Bugün Hewlêr çarşısındayız. Çarşı çok kalabalık!|Today we are at the Hewlêr market. It is very crowded!|Heute sind wir auf dem Markt in Hewlêr. Es ist sehr voll!",
-     "lat": "Emrro le bazarrî Hewlêrîn. Bazarr zor qereballxe!"
+     "lat": "Emrro le bazarrî Hewlêrîn. Bazarr zor qereballxe!",
+     "at": 0.6
     },
     {
      "s": "Firoşkar",
      "t": "فەرموون! میوەی تازە! سێو، ترێ، هەنار!",
      "m": "Buyurun! Taze meyve! Elma, üzüm, nar!|Welcome! Fresh fruit! Apples, grapes, pomegranates!|Bitte schön! Frisches Obst! Äpfel, Trauben, Granatäpfel!",
-     "lat": "Fermûn! Mîwey taze! Sêw, tirê, henar!"
+     "lat": "Fermûn! Mîwey taze! Sêw, tirê, henar!",
+     "at": 4.93
     },
     {
      "s": "Rojda",
      "t": "سڵاو. کیلۆیەک سێو بە چەندە؟",
      "m": "Merhaba. Bir kilo elma ne kadar?|Hello. How much is a kilo of apples?|Hallo. Was kostet ein Kilo Äpfel?",
-     "lat": "Sillaw. Kîloyek sêw be çende?"
+     "lat": "Sillaw. Kîloyek sêw be çende?",
+     "at": 10.5
     },
     {
      "s": "Firoşkar",
      "t": "کیلۆیەک بە هەزار دینارە.",
      "m": "Bir kilosu bin dinar.|One kilo is a thousand dinars.|Ein Kilo kostet tausend Dinar.",
-     "lat": "Kîloyek be hezar dînare."
+     "lat": "Kîloyek be hezar dînare.",
+     "at": 16.19
     },
     {
      "s": "Rojda",
      "t": "دوو کیلۆ سێوم دەوێت. هەنارت هەیە؟",
      "m": "İki kilo elma istiyorum. Narın var mı?|I want two kilos of apples. Do you have pomegranates?|Ich möchte zwei Kilo Äpfel. Hast du Granatäpfel?",
-     "lat": "Dû kîlo sêwim dewêt. Henart heye?"
+     "lat": "Dû kîlo sêwim dewêt. Henart heye?",
+     "at": 18.46
     },
     {
      "s": "Firoşkar",
      "t": "بەڵێ، هەنارەکانمان زۆر شیرینن. کیلۆیەک بە دوو هەزار دینارە.",
      "m": "Evet, narlarımız çok tatlı. Bir kilosu iki bin dinar.|Yes, our pomegranates are very sweet. A kilo is two thousand dinars.|Ja, unsere Granatäpfel sind sehr süß. Ein Kilo kostet zweitausend Dinar.",
-     "lat": "Bellê, henarekanman zor şîrînin. Kîloyek be dû hezar dînare."
+     "lat": "Bellê, henarekanman zor şîrînin. Kîloyek be dû hezar dînare.",
+     "at": 22.2
     },
     {
      "s": "Rojda",
      "t": "زۆر گرانە! هەرزانتر نییە؟",
      "m": "Çok pahalı! Daha ucuzu yok mu?|That is very expensive! Is there nothing cheaper?|Das ist sehr teuer! Gibt es nichts Billigeres?",
-     "lat": "Zor girane! Herzantir nîye?"
+     "lat": "Zor girane! Herzantir nîye?",
+     "at": 27.42
     },
     {
      "s": "Firoşkar",
      "t": "باشە، بۆ تۆ بە هەزار و پێنج سەد.",
      "m": "Tamam, sana bin beş yüze.|All right, for you one thousand five hundred.|Gut, für dich tausendfünfhundert.",
-     "lat": "Başe, bo to be hezar û pênc sed."
+     "lat": "Başe, bo to be hezar û pênc sed.",
+     "at": 31.85
     },
     {
      "s": "Rojda",
      "t": "باشە، کیلۆیەک هەناریشم بدەرێ.",
      "m": "Tamam, bir kilo nar da ver.|OK, give me a kilo of pomegranates too.|Gut, gib mir auch ein Kilo Granatäpfel.",
-     "lat": "Başe, kîloyek henarîşim biderê."
+     "lat": "Başe, kîloyek henarîşim biderê.",
+     "at": 34.47
     },
     {
      "s": "Firoşkar",
      "t": "هەمووی دەکاتە سێ هەزار و پێنج سەد دینار.",
      "m": "Hepsi üç bin beş yüz dinar ediyor.|All together that makes three thousand five hundred dinars.|Zusammen macht das dreitausendfünfhundert Dinar.",
-     "lat": "Hemûy dekate sê hezar û pênc sed dînar."
+     "lat": "Hemûy dekate sê hezar û pênc sed dînar.",
+     "at": 40.02
     },
     {
      "s": "Rojda",
      "t": "فەرموو. زۆر سوپاس!",
      "m": "Buyur. Çok teşekkürler!|Here you are. Thank you very much!|Bitte. Vielen Dank!",
-     "lat": "Fermû. Zor supas!"
+     "lat": "Fermû. Zor supas!",
+     "at": 43.44
     },
     {
      "s": "Firoşkar",
      "t": "نۆشی گیان بێت! دووبارە وەرەوە.",
      "m": "Afiyet olsun! Yine gel.|Enjoy! Come again.|Guten Appetit! Komm wieder.",
-     "lat": "Noşî gyan bêt! Dûbare werewe."
+     "lat": "Noşî gyan bêt! Dûbare werewe.",
+     "at": 45.56
     }
    ],
    "words": [
@@ -1602,7 +1640,8 @@
      "a": 0
     }
    ],
-   "titleLat": "Le bazarr"
+   "titleLat": "Le bazarr",
+   "dur": 49.1
   },
   {
    "id": "ckb-a2-01",
@@ -1612,79 +1651,91 @@
    "title": "نەورۆزی جاران",
    "name": "Eski Newrozlar|Newroz in the old days|Newroz von früher",
    "sub": "Bayram ve gelenekler|Festival and traditions|Fest und Bräuche",
-   "audio": null,
+   "audio": "https://gaffarokuyan.github.io/kew/pod/ckb-a2-01.mp3",
    "lines": [
     {
      "s": "Juji",
      "t": "بەهار هات! هەوا گەرم دەبێت و چیاکان سەوز دەبن.",
      "m": "Bahar geldi! Hava ısınıyor, dağlar yeşilleniyor.|Spring has come! It is getting warm and the mountains turn green.|Der Frühling ist da! Es wird warm und die Berge werden grün.",
-     "lat": "Behar hat! Hewa germ debêt û çyakan sewz debin."
+     "lat": "Behar hat! Hewa germ debêt û çyakan sewz debin.",
+     "at": 0.6
     },
     {
      "s": "Juji",
      "t": "میوانەکەمان باپیرەیە. باپیرە، کاتێک تۆ منداڵ بوویت، نەورۆز چۆن بوو؟",
      "m": "Konuğumuz dede. Dede, sen çocukken Newroz nasıldı?|Our guest is Grandpa. Grandpa, what was Newroz like when you were a child?|Unser Gast ist Opa. Opa, wie war Newroz, als du ein Kind warst?",
-     "lat": "Mîwanekeman bapîreye. Bapîre, katêk to mindall bûyt, Newroz çon bû?"
+     "lat": "Mîwanekeman bapîreye. Bapîre, katêk to mindall bûyt, Newroz çon bû?",
+     "at": 6.38
     },
     {
      "s": "Bapîr",
      "t": "شەوی نەورۆز هەموو خەڵکی گوند لەسەر گردەکە ئاگریان دەکردەوە.",
      "m": "Newroz gecesi bütün köy halkı tepede ateş yakardı.|On Newroz night the whole village lit fires on the hill.|In der Newroz-Nacht zündete das ganze Dorf Feuer auf dem Hügel an.",
-     "lat": "Şewî Newroz hemû xellkî gund leser girdeke agryan dekirdewe."
+     "lat": "Şewî Newroz hemû xellkî gund leser girdeke agryan dekirdewe.",
+     "at": 12.74
     },
     {
      "s": "Bapîr",
      "t": "ڕۆژی دواتر دەچووین بۆ سەیران.",
      "m": "Ertesi gün pikniğe giderdik.|The next day we went on a picnic.|Am nächsten Tag machten wir ein Picknick.",
-     "lat": "Rojî dwatir deçûyn bo seyran."
+     "lat": "Rojî dwatir deçûyn bo seyran.",
+     "at": 17.88
     },
     {
      "s": "Juji",
      "t": "چیتان لەگەڵ خۆتان دەبرد؟",
      "m": "Yanınızda ne götürürdünüz?|What did you take with you?|Was habt ihr mitgenommen?",
-     "lat": "Çîtan legell xotan debird?"
+     "lat": "Çîtan legell xotan debird?",
+     "at": 20.27
     },
     {
      "s": "Bapîr",
      "t": "دایکم بەیانی زوو دۆڵمەی دروست دەکرد.",
      "m": "Annem sabah erkenden dolma yapardı.|My mother made dolma early in the morning.|Meine Mutter machte früh am Morgen Dolma.",
-     "lat": "Daykim beyanî zû dollmey drust dekird."
+     "lat": "Daykim beyanî zû dollmey drust dekird.",
+     "at": 22.85
     },
     {
      "s": "Juji",
      "t": "گۆرانیتان دەگوت و هەڵدەپەڕین؟",
      "m": "Şarkı söyleyip halay çeker miydiniz?|Did you sing and dance?|Habt ihr gesungen und getanzt?",
-     "lat": "Goranîtan degut û helldeperrîn?"
+     "lat": "Goranîtan degut û helldeperrîn?",
+     "at": 26.01
     },
     {
      "s": "Bapîr",
      "t": "بەڵێ! دەهۆڵ و زوڕنا لێدەدرا و تا ئێوارە هەڵدەپەڕین.",
      "m": "Evet! Davul zurna çalınır, akşama kadar halay çekerdik.|Yes! Drum and zurna were played and we danced until evening.|Ja! Trommel und Zurna spielten und wir tanzten bis zum Abend.",
-     "lat": "Bellê! Deholl û zurrna lêdedra û ta êware helldeperrîn."
+     "lat": "Bellê! Deholl û zurrna lêdedra û ta êware helldeperrîn.",
+     "at": 29.05
     },
     {
      "s": "Juji",
      "t": "ئەمڕۆش نەورۆز هەر وایە؟",
      "m": "Bugün de Newroz böyle mi?|Is Newroz still like that today?|Ist Newroz heute noch so?",
-     "lat": "Emrroş Newroz her waye?"
+     "lat": "Emrroş Newroz her waye?",
+     "at": 33.92
     },
     {
      "s": "Bapîr",
      "t": "بەڵێ. هەموو ساڵێک جلی کوردی لەبەر دەکەین و دەچینە دەرەوە.",
      "m": "Evet. Her yıl Kürt kıyafetlerimizi giyip dışarı çıkıyoruz.|Yes. Every year we put on Kurdish clothes and go outside.|Ja. Jedes Jahr ziehen wir kurdische Kleidung an und gehen hinaus.",
-     "lat": "Bellê. Hemû sallêk cilî Kurdî leber dekeyn û deçîne derewe."
+     "lat": "Bellê. Hemû sallêk cilî Kurdî leber dekeyn û deçîne derewe.",
+     "at": 36.33
     },
     {
      "s": "Bapîr",
      "t": "نەورۆز جەژنی بەهار و ئازادییە.",
      "m": "Newroz baharın ve özgürlüğün bayramıdır.|Newroz is the festival of spring and freedom.|Newroz ist das Fest des Frühlings und der Freiheit.",
-     "lat": "Newroz cejnî behar û azadîye."
+     "lat": "Newroz cejnî behar û azadîye.",
+     "at": 41.2
     },
     {
      "s": "Juji",
      "t": "نەورۆزتان پیرۆز بێت!",
      "m": "Newrozunuz kutlu olsun!|Happy Newroz!|Frohes Newroz!",
-     "lat": "Newroztan pîroz bêt!"
+     "lat": "Newroztan pîroz bêt!",
+     "at": 43.82
     }
    ],
    "words": [
@@ -1743,7 +1794,8 @@
      "a": 0
     }
    ],
-   "titleLat": "Newrozî caran"
+   "titleLat": "Newrozî caran",
+   "dur": 46.6
   },
   {
    "id": "ckb-a2-02",
@@ -1753,73 +1805,84 @@
    "title": "گەشتێک بۆ سلێمانی",
    "name": "Silêmanî yolculuğu|A trip to Silêmanî|Eine Reise nach Silêmanî",
    "sub": "Yolculuk ve geçmiş zaman|Travel and the past tense|Reisen und Vergangenheit",
-   "audio": null,
+   "audio": "https://gaffarokuyan.github.io/kew/pod/ckb-a2-02.mp3",
    "lines": [
     {
      "s": "Juji",
      "t": "ئازاد، هەفتەی ڕابردوو چوویت بۆ سلێمانی. گەشتەکە چۆن بوو؟",
      "m": "Azad, geçen hafta Silêmanîye gittin. Yolculuk nasıldı?|Azad, you went to Silêmanî last week. How was the trip?|Azad, du warst letzte Woche in Silêmanî. Wie war die Reise?",
-     "lat": "Azad, heftey rabirdû çûyt bo Silêmanî. Geşteke çon bû?"
+     "lat": "Azad, heftey rabirdû çûyt bo Silêmanî. Geşteke çon bû?",
+     "at": 0.6
     },
     {
      "s": "Azad",
      "t": "زۆر خۆش بوو! بە پاس چووم. ڕێگاکە سێ کاتژمێری خایاند.",
      "m": "Çok güzeldi! Otobüsle gittim. Yol üç saat sürdü.|It was great! I went by bus. The road took three hours.|Sehr schön! Ich fuhr mit dem Bus. Die Fahrt dauerte drei Stunden.",
-     "lat": "Zor xoş bû! Be pas çûm. Rêgake sê katjimêrî xayand."
+     "lat": "Zor xoş bû! Be pas çûm. Rêgake sê katjimêrî xayand.",
+     "at": 6.37
     },
     {
      "s": "Juji",
      "t": "لە سلێمانی چیت بینی؟",
      "m": "Silêmanîde ne gördün?|What did you see in Silêmanî?|Was hast du in Silêmanî gesehen?",
-     "lat": "Le Silêmanî çît bînî?"
+     "lat": "Le Silêmanî çît bînî?",
+     "at": 12.41
     },
     {
      "s": "Azad",
      "t": "چووم بۆ بازاڕە کۆنەکە و پارکی ئازادی.",
      "m": "Eski çarşıya ve Azadî Parkına gittim.|I went to the old bazaar and Azadî Park.|Ich war auf dem alten Basar und im Azadî-Park.",
-     "lat": "Çûm bo bazarre koneke û parkî Azadî."
+     "lat": "Çûm bo bazarre koneke û parkî Azadî.",
+     "at": 14.93
     },
     {
      "s": "Azad",
      "t": "ئێوارە چووینە سەر چیای گۆیژە. شارەکە لە سەرەوە زۆر جوان بوو.",
      "m": "Akşam Goyje Dağına çıktık. Şehir yukarıdan çok güzeldi.|In the evening we went up Mount Goyje. The city looked beautiful from above.|Am Abend fuhren wir auf den Berg Goyje. Die Stadt war von oben wunderschön.",
-     "lat": "Êware çûyne ser çyay Goyje. Şareke le serewe zor cwan bû."
+     "lat": "Êware çûyne ser çyay Goyje. Şareke le serewe zor cwan bû.",
+     "at": 18.17
     },
     {
      "s": "Juji",
      "t": "چیت خوارد؟",
      "m": "Ne yedin?|What did you eat?|Was hast du gegessen?",
-     "lat": "Çît xward?"
+     "lat": "Çît xward?",
+     "at": 22.66
     },
     {
      "s": "Azad",
      "t": "کەبابم خوارد و دۆم خواردەوە. زۆر بەتام بوو.",
      "m": "Kebap yedim, ayran içtim. Çok lezzetliydi.|I ate kebab and drank ayran. It was delicious.|Ich habe Kebab gegessen und Ayran getrunken. Sehr lecker.",
-     "lat": "Kebabim xward û dom xwardewe. Zor betam bû."
+     "lat": "Kebabim xward û dom xwardewe. Zor betam bû.",
+     "at": 24.5
     },
     {
      "s": "Juji",
      "t": "لە کوێ مایتەوە؟",
      "m": "Nerede kaldın?|Where did you stay?|Wo hast du übernachtet?",
-     "lat": "Le kwê maytewe?"
+     "lat": "Le kwê maytewe?",
+     "at": 27.98
     },
     {
      "s": "Azad",
      "t": "لە ماڵی هاوڕێیەکم مامەوە. ئەو شارەکەی پیشان دام.",
      "m": "Bir arkadaşımın evinde kaldım. Bana şehri o gezdirdi.|I stayed at a friend's house. He showed me the city.|Ich wohnte bei einem Freund. Er hat mir die Stadt gezeigt.",
-     "lat": "Le mallî hawrrêyekim mamewe. Ew şarekey pîşan dam."
+     "lat": "Le mallî hawrrêyekim mamewe. Ew şarekey pîşan dam.",
+     "at": 30.02
     },
     {
      "s": "Juji",
      "t": "دووبارە دەچیتەوە؟",
      "m": "Yine gidecek misin?|Will you go again?|Fährst du wieder hin?",
-     "lat": "Dûbare deçîtewe?"
+     "lat": "Dûbare deçîtewe?",
+     "at": 33.93
     },
     {
      "s": "Azad",
      "t": "بێگومان! بەهاری داهاتوو دەمەوێت بچم بۆ هەورامان.",
      "m": "Elbette! Gelecek bahar Hewramana gitmek istiyorum.|Of course! Next spring I want to go to Hewraman.|Natürlich! Nächsten Frühling möchte ich nach Hewraman fahren.",
-     "lat": "Bêguman! Beharî dahatû demewêt biçim bo Hewraman."
+     "lat": "Bêguman! Beharî dahatû demewêt biçim bo Hewraman.",
+     "at": 35.76
     }
    ],
    "words": [
@@ -1878,7 +1941,8 @@
      "a": 0
     }
    ],
-   "titleLat": "Geştêk bo Silêmanî"
+   "titleLat": "Geştêk bo Silêmanî",
+   "dur": 40.8
   },
   {
    "id": "ckb-a2-03",
@@ -1888,73 +1952,84 @@
    "title": "لە لای پزیشک",
    "name": "Doktorda|At the doctor's|Beim Arzt",
    "sub": "Sağlık ve vücut|Health and the body|Gesundheit und Körper",
-   "audio": null,
+   "audio": "https://gaffarokuyan.github.io/kew/pod/ckb-a2-03.mp3",
    "lines": [
     {
      "s": "Juji",
      "t": "ئەمڕۆ لە نەخۆشخانەین. ڕۆژدا نەخۆشە.",
      "m": "Bugün hastanedeyiz. Rojda hasta.|Today we are at the hospital. Rojda is ill.|Heute sind wir im Krankenhaus. Rojda ist krank.",
-     "lat": "Emrro le nexoşxaneyn. Rojda nexoşe."
+     "lat": "Emrro le nexoşxaneyn. Rojda nexoşe.",
+     "at": 0.6
     },
     {
      "s": "Bijîşk",
      "t": "سڵاو، چیتە؟ کوێت دێشێت؟",
      "m": "Merhaba, neyin var? Neren ağrıyor?|Hello, what is wrong? Where does it hurt?|Hallo, was fehlt dir? Wo tut es weh?",
-     "lat": "Sillaw, çîte? Kwêt dêşêt?"
+     "lat": "Sillaw, çîte? Kwêt dêşêt?",
+     "at": 4.05
     },
     {
      "s": "Rojda",
      "t": "سەرم دێشێت و قوڕگیشم دێشێت.",
      "m": "Başım ağrıyor, boğazım da ağrıyor.|My head hurts and my throat hurts too.|Mein Kopf tut weh und mein Hals auch.",
-     "lat": "Serim dêşêt û qurrgîşim dêşêt."
+     "lat": "Serim dêşêt û qurrgîşim dêşêt.",
+     "at": 8.01
     },
     {
      "s": "Bijîşk",
      "t": "لە کەیەوە؟",
      "m": "Ne zamandan beri?|Since when?|Seit wann?",
-     "lat": "Le keyewe?"
+     "lat": "Le keyewe?",
+     "at": 10.5
     },
     {
      "s": "Rojda",
      "t": "لە دوێنێوە. شەو باش نەخەوتم.",
      "m": "Dünden beri. Gece iyi uyuyamadım.|Since yesterday. I did not sleep well last night.|Seit gestern. Ich habe nachts schlecht geschlafen.",
-     "lat": "Le dwênêwe. Şew baş nexewtim."
+     "lat": "Le dwênêwe. Şew baş nexewtim.",
+     "at": 12.88
     },
     {
      "s": "Bijîşk",
      "t": "تات هەیە. سەرمات بووە.",
      "m": "Ateşin var. Üşütmüşsün.|You have a fever. You have caught a cold.|Du hast Fieber. Du hast dich erkältet.",
-     "lat": "Tat heye. Sermat buwe."
+     "lat": "Tat heye. Sermat buwe.",
+     "at": 18.42
     },
     {
      "s": "Bijîşk",
      "t": "ئەم دەرمانە ڕۆژی سێ جار بخۆ و ئاو زۆر بخۆرەوە.",
      "m": "Bu ilacı günde üç kez iç ve çok su iç.|Take this medicine three times a day and drink lots of water.|Nimm dieses Medikament dreimal täglich und trink viel Wasser.",
-     "lat": "Em dermane rojî sê car bixo û aw zor bixorewe."
+     "lat": "Em dermane rojî sê car bixo û aw zor bixorewe.",
+     "at": 20.54
     },
     {
      "s": "Rojda",
      "t": "دەتوانم بچم بۆ کار؟",
      "m": "İşe gidebilir miyim?|Can I go to work?|Kann ich zur Arbeit gehen?",
-     "lat": "Detwanim biçim bo kar?"
+     "lat": "Detwanim biçim bo kar?",
+     "at": 26.65
     },
     {
      "s": "Bijîşk",
      "t": "نەخێر، دوو ڕۆژ لە ماڵەوە بمێنەوە و پشوو بدە.",
      "m": "Hayır, iki gün evde kal ve dinlen.|No, stay at home for two days and rest.|Nein, bleib zwei Tage zu Hause und ruh dich aus.",
-     "lat": "Nexêr, dû roj le mallewe bimênewe û pişû bide."
+     "lat": "Nexêr, dû roj le mallewe bimênewe û pişû bide.",
+     "at": 29.02
     },
     {
      "s": "Rojda",
      "t": "باشە، زۆر سوپاس دکتۆر.",
      "m": "Tamam, çok teşekkürler doktor.|OK, thank you very much, doctor.|Gut, vielen Dank, Frau Doktor.",
-     "lat": "Başe, zor supas diktor."
+     "lat": "Başe, zor supas diktor.",
+     "at": 32.47
     },
     {
      "s": "Juji",
      "t": "سەلامەت بیت، ڕۆژدا! کاتێک کەسێک نەخۆشە، دەڵێین: سەلامەت بیت.",
      "m": "Geçmiş olsun, Rojda! Biri hasta olunca «selamet bît» deriz.|Get well, Rojda! When someone is ill, we say «selamet bît».|Gute Besserung, Rojda! Wenn jemand krank ist, sagen wir «selamet bît».",
-     "lat": "Selamet bît, Rojda! Katêk kesêk nexoşe, dellêyn: selamet bît."
+     "lat": "Selamet bît, Rojda! Katêk kesêk nexoşe, dellêyn: selamet bît.",
+     "at": 34.44
     }
    ],
    "words": [
@@ -2013,7 +2088,8 @@
      "a": 0
     }
    ],
-   "titleLat": "Le lay pizîşk"
+   "titleLat": "Le lay pizîşk",
+   "dur": 41.0
   }
  ]
 }
