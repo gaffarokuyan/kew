@@ -6,7 +6,7 @@ the line is retried in Arabic-script Kurmancî and the better take is kept.
 import concurrent.futures as cf, difflib, json, os, re, subprocess, sys, unicodedata
 
 D = "/home/claude/kew_pod/"; OUT = D + "audio_el/"; C = D + "cache_el/"
-KEY = open("/home/claude/.k3").read().strip()
+KEY = open("/home/claude/.k4").read().strip()  # .k3 ran out of credits
 # one ElevenLabs voice per character
 VOICE = {"Juji": "oPC5I9GKjMReiaM29gjY",      # Gökçe Deniz: young, fun, energetic
          "Rojda": "9UoAU5im7Rl44J2IvBHU",     # Ülgen
