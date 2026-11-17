@@ -59,7 +59,10 @@ TAGS = {
 }
 SAY = {"Juji": "Jûjî", "ژوژی": "ژووژی"}  # how names should be read
 # per-line reading hints for words the model gets wrong (episode, line index) -> text actually sent
-FIX = {("kmr-a1-02", 3): "Navê xwiş-ka te çi ye?", ("kmr-a1-02", 10): "Na! Kalikê min li gund dijî. Em havînan diçin cem wî."}
+FIX = {("kmr-a1-02", 3): "Navê xwiş-ka te çi ye?", ("kmr-a1-02", 10): "Na! Kalikê min li gund dijî. Em havînan diçin cem wî.",
+       ("kmr-a1-03", 1): "Fê-ki-yên teze! Sêv! Ti-rî! Hi-nar!", ("kmr-a1-03", 6): "Baş e, kîloyek hinar jî bi-de min.",
+       ("kmr-a1-03", 7): "Hemû bi hev re sed lî-re ye.", ("kmr-a1-04", 2): "Li ser sif-rê çi heye?",
+       ("kmr-a1-05", 7): "Ê-va-ran jî?", ("kmr-a2-02", 2): "Te li Wa-nê çi dît?", ("kmr-a2-04", 7): "Îro jî deng-bêj he-ne?"}
 
 def to_arabic(s):
     """Latin Kurmancî -> Arabic-script Kurmancî (Badînî style), word by word."""
@@ -104,7 +107,11 @@ def stt(p, ckb=False):
         open(js, "w").write(r.stdout)
     return json.load(open(js)).get("text", "")
 
+PICK = json.load(open(D + "pick.json")) if os.path.exists(D + "pick.json") else {}
+
 def take(eid, i, line, role):
+    k = f"{eid}_{i:02d}"
+    if k in PICK: p = PICK[k]; said = stt(p, eid.startswith("ckb")); return (score(said, line["t"]), p, said, "pick")
     want = line["t"]; spoken = want
     for a, b in SAY.items(): spoken = spoken.replace(a, b)
     spoken = FIX.get((eid, i), spoken)
