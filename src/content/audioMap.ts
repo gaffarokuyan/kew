@@ -1,4 +1,4 @@
-/* generated: Kurmancî text -> bundled recording */
+/* generated: Kurmancî text -> bundled recording (ElevenLabs eleven_v4, Ülgen) */
 export const AUDIO: Record<string, number> = {
   "Silav": require("../../assets/audio/c9001b1a86.mp3"),
   "Rojbaş": require("../../assets/audio/083d9a1a31.mp3"),
@@ -1650,4 +1650,5 @@ export const AUDIO: Record<string, number> = {
   "divê + bi-": require("../../assets/audio/a8cd47d125.mp3"),
   "Ev hefteyek e …": require("../../assets/audio/f57247ed76.mp3"),
   "Fermo, rûne. Nîşaneyên te çi ne?": require("../../assets/audio/27861521a1.mp3"),
+  "Rûbarên Dîcle û Firatê ji çiyayên Bakur diherikin.": require("../../assets/audio/0083df0a13.mp3"),
 };
