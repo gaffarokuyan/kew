@@ -7,7 +7,7 @@ import { sfx, speak, stopVoice } from "@/lib/audio";
 import { scriptOf } from "@/lib/course";
 import { shuffle } from "@/lib/exercises";
 import { M, t } from "@/lib/i18n";
-import { episode, episodesFor, fmt, lineAt, loadPods, usePodsVersion, type PodLine } from "@/lib/podcast";
+import { episode, episodesFor, fmt, lineAt, titleOf, loadPods, usePodsVersion, type PodLine } from "@/lib/podcast";
 import { addXP, getS, update } from "@/lib/store";
 import { Avatar, KilimRule } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
@@ -71,7 +71,8 @@ export default function EpisodeScreen() {
       {phase === "listen" ? (<>
         <ScrollView ref={scroll} contentContainerStyle={{ padding: 18, paddingTop: 0, gap: 14, maxWidth: 560, width: "100%", alignSelf: "center" }}>
           <View style={{ gap: 4 }}>
-            <Text style={{ fontFamily: F.display, fontSize: 30, lineHeight: 36, color: th.ink, textAlign: rtl ? "right" : "left" }}>{sc === "lat" && e.titleLat ? e.titleLat : e.title}</Text>
+            <Text style={{ fontFamily: F.display, fontSize: 30, lineHeight: 36, color: th.ink, textAlign: rtl ? "right" : "left" }}>{titleOf(e, sc)}</Text>
+            {sc === "both" && e.titleLat ? <Text style={{ fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>{e.titleLat}</Text> : null}
             <Text style={{ fontFamily: F.bodySemi, fontSize: TS.md, color: th.muted }}>{M(e.name)} · {M(e.sub)}</Text>
           </View>
           {!e.audio ? <Text style={{ fontFamily: F.italic, fontSize: TS.sm, lineHeight: 20, color: th.muted }}>{t("podReadMode")}</Text> : <Text style={{ fontFamily: F.italic, fontSize: TS.sm, color: th.muted }}>{t("podHint")}</Text>}
@@ -98,9 +99,10 @@ export default function EpisodeScreen() {
           <View style={{ gap: 8, padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface }}>
             <Text style={{ fontFamily: F.bodyHeavy, color: th.ink }}>{t("podWords")}</Text>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-              {e.words.map(([w, m]) => (
+              {e.words.map(([w, m, wl]) => (
                 <View key={w} style={{ paddingHorizontal: 10, paddingVertical: 6, borderRadius: 10, backgroundColor: th.bg, borderWidth: 1, borderColor: th.line2 }}>
-                  <Text style={{ fontFamily: F.serif, fontSize: TS.md, color: th.ink }}>{w}</Text>
+                  <Text style={{ fontFamily: F.serif, fontSize: TS.md, color: th.ink }}>{sc === "lat" && wl ? wl : w}</Text>
+                  {sc === "both" && wl ? <Text style={{ fontFamily: F.italic, fontSize: TS.xs, color: th.muted }}>{wl}</Text> : null}
                   <Text style={{ fontFamily: F.body, fontSize: TS.xs, color: th.muted }}>{M(m)}</Text>
                 </View>))}
             </View>
@@ -143,7 +145,7 @@ export default function EpisodeScreen() {
           <View style={{ alignItems: "center", paddingTop: 20 }}><Avatar name="Juji" size={96} /></View>
           <Text style={{ fontFamily: F.display, fontSize: 30, color: th.ink, textAlign: "center" }}>{t("podDone")}</Text>
           <Text style={{ fontFamily: F.bodySemi, fontSize: TS.lg, color: th.muted, textAlign: "center" }}>{right} / {quiz.length}</Text>
-          {next ? <Btn title={`${t("podNext")}: ${next.title}`} kind="sky" upper={false} onPress={() => router.replace({ pathname: "/episode", params: { id: next.id } })} /> : null}
+          {next ? <Btn title={`${t("podNext")}: ${titleOf(next, sc)}`} kind="sky" upper={false} onPress={() => router.replace({ pathname: "/episode", params: { id: next.id } })} /> : null}
           <Btn title={t("contOn")} onPress={close} />
         </ScrollView>
       )}

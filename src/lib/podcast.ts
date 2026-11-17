@@ -15,7 +15,7 @@ import type { CourseId, Level, Meaning } from "./course";
 export type PodLine = { s: string; t: string; m: Meaning; lat?: string; at?: number };
 export type Episode = {
   id: string; course: CourseId; lvl: Level; n: number; title: string; titleLat?: string; name: Meaning; sub: Meaning;
-  audio: string | null; dur?: number; lines: PodLine[]; words: [string, Meaning][];
+  audio: string | null; dur?: number; lines: PodLine[]; words: [string, Meaning, string?][];
   quiz: { q: Meaning; o: Meaning[]; a: number }[];
 };
 type Manifest = { version: number; episodes: Episode[] };
@@ -44,4 +44,6 @@ export const episodesFor = (c: CourseId) => M.episodes.filter((e) => e.course ==
 export const episode = (id: string) => M.episodes.find((e) => e.id === id);
 /** Line being spoken at second `sec` (needs `at` timings). */
 export const lineAt = (e: Episode, sec: number) => { let k = -1; e.lines.forEach((l, i) => { if (l.at != null && l.at <= sec) k = i; }); return k; };
+/** Episode title in the script the learner chose (Soranî has Arabic and Latin). */
+export const titleOf = (e: Episode, sc: string | null) => (sc === "lat" && e.titleLat ? e.titleLat : e.title);
 export const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;

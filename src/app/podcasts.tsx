@@ -3,8 +3,9 @@ import { useEffect } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
+import { scriptOf } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
-import { episodesFor, loadPods, usePodsVersion, type Episode } from "@/lib/podcast";
+import { episodesFor, loadPods, titleOf, usePodsVersion, type Episode } from "@/lib/podcast";
 import { useStore } from "@/lib/store";
 import { Avatar, KilimRule } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
@@ -18,7 +19,7 @@ export default function Podcasts() {
   usePodsVersion();
   const course = useStore((s) => s.course); const pods = useStore((s) => s.pods);
   useEffect(() => { loadPods(); }, []);
-  const eps = episodesFor(course);
+  const eps = episodesFor(course); const sc = course === "ckb" ? scriptOf() : null;
   const groups = eps.reduce<Record<string, Episode[]>>((g, e) => { (g[e.lvl] ||= []).push(e); return g; }, {});
 
   return (
@@ -40,14 +41,14 @@ export default function Podcasts() {
               const done = !!pods[e.id];
               return (
                 <Pressable key={e.id} onPress={() => { sfx("tap"); buzz("tap"); router.push({ pathname: "/episode", params: { id: e.id } }); }} accessibilityRole="button"
-                  accessibilityLabel={`${t("podEp", { n: e.n })}. ${e.title}. ${M(e.name)}${done ? ". " + t("podDoneTag") : ""}`}
+                  accessibilityLabel={`${t("podEp", { n: e.n })}. ${titleOf(e, sc)}. ${M(e.name)}${done ? ". " + t("podDoneTag") : ""}`}
                   style={({ pressed }) => ({ flexDirection: "row", gap: 14, alignItems: "center", padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: th.line2, backgroundColor: th.surface })}>
                   <View style={{ width: 48, height: 48, borderRadius: 12, borderTopLeftRadius: 3, backgroundColor: done ? th.kesk : th.plum, alignItems: "center", justifyContent: "center" }}>
                     {done ? <Icon.check size={24} /> : <Icon.pod size={26} />}
                   </View>
                   <View style={{ flex: 1, gap: 2 }}>
                     <Text style={{ fontFamily: F.body, fontSize: TS.xs, color: th.muted }}>{t("podEp", { n: e.n })} · {M(e.sub)}</Text>
-                    <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{e.title}</Text>
+                    <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{titleOf(e, sc)}</Text>
                     <Text style={{ fontFamily: F.body, fontSize: TS.sm, color: th.muted }}>{M(e.name)}</Text>
                   </View>
                   {!e.audio ? <Text style={{ fontFamily: F.bodyHeavy, fontSize: 11, color: th.muted, borderWidth: 1, borderColor: th.line2, borderRadius: 8, paddingHorizontal: 6, paddingVertical: 2 }}>{t("podSoon")}</Text> : null}
