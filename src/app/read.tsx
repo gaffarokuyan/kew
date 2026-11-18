@@ -59,7 +59,7 @@ export default function Read() {
           <Text style={{ fontFamily: F.display, fontSize: 26, lineHeight: 32, color: th.ink }}>{t("readQ", { s: qs[qi].ku })}</Text>
           {qs[qi].opts.map((o) => {
             const st = sel ? (o === qs[qi].ans ? th.kesk : o === sel ? th.sor : th.line2) : th.line2;
-            return <Pressable key={o} disabled={!!sel} onPress={() => { setSel(o); const ok = o === qs[qi].ans; sfx(ok ? "ok" : "bad"); buzz(ok ? "ok" : "bad"); if (ok) setRight((r) => r + 1); }} accessibilityRole="button"
+            return <Pressable key={o} disabled={!!sel} onPress={() => { setSel(o); const ok = o === qs[qi].ans; sfx(ok ? "ok" : "bad"); buzz(ok ? "ok" : "bad"); if (ok) setRight((r) => r + 1); speak(qs[qi].ku); }} accessibilityRole="button"
               style={{ minHeight: 56, justifyContent: "center", padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 2, borderBottomWidth: 4, borderColor: st, backgroundColor: th.surface }}>
               <Text style={{ fontFamily: F.bodySemi, fontSize: 17, color: th.ink }}>{o}</Text></Pressable>;
           })}
