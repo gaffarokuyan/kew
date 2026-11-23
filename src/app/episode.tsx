@@ -8,6 +8,7 @@ import { scriptOf } from "@/lib/course";
 import { shuffle } from "@/lib/exercises";
 import { M, t } from "@/lib/i18n";
 import { episode, episodesFor, fmt, lineAt, titleOf, loadPods, usePodsVersion, type PodLine } from "@/lib/podcast";
+import { canOffline, download, localAudio } from "@/lib/offline";
 import { addXP, getS, update } from "@/lib/store";
 import { Avatar, KilimRule } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
@@ -25,7 +26,10 @@ export default function EpisodeScreen() {
   const e = episode(String(id));
   useEffect(() => { loadPods(); }, []);
 
-  const player = useAudioPlayer(e?.audio ? { uri: e.audio } : null, { updateInterval: 250 });
+  // A downloaded copy (native only) wins over the network URL, so saved episodes play offline.
+  const src = useMemo(() => (e?.audio ? localAudio(e) ?? e.audio : null), [e]);
+  const player = useAudioPlayer(src ? { uri: src } : null, { updateInterval: 250 });
+  const [dl, setDl] = useState<"no" | "busy" | "yes" | "err">(() => (e && localAudio(e) ? "yes" : "no"));
   const st = useAudioPlayerStatus(player);
   const [speed, setSpeed] = useState(1);
   const [open, setOpen] = useState<Set<number>>(new Set());
@@ -44,6 +48,10 @@ export default function EpisodeScreen() {
   const main = (l: PodLine) => (sc === "lat" && l.lat ? l.lat : l.t);
   const sub = (l: PodLine) => (sc === "both" && l.lat ? l.lat : null);
   const rtl = /[\u0600-\u06FF]/.test(main(e.lines[0]));
+  const save = async () => {
+    if (dl === "busy" || dl === "yes") return;
+    setDl("busy"); const ok = await download(e); setDl(ok ? "yes" : "err"); buzz(ok ? "ok" : "bad");
+  };
   const close = () => { try { player.pause(); } catch {} stopVoice(); router.back(); };
   const toggle = () => { if (st.playing) player.pause(); else { if (st.didJustFinish || (st.duration && st.currentTime >= st.duration - 0.3)) player.seekTo(0); player.play(); } };
   const seek = (d: number) => player.seekTo(Math.max(0, Math.min((st.duration || 0) - 0.2, st.currentTime + d)));
@@ -65,6 +73,12 @@ export default function EpisodeScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: th.bg }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 8, paddingHorizontal: 18, height: 60 }}>
         <Text numberOfLines={1} accessibilityRole="header" style={{ flex: 1, fontFamily: F.display, fontSize: TS.lg, color: th.ink }}>{e.lvl} · {t("podEp", { n: e.n })}</Text>
+        {canOffline && e.audio ? (
+          <Pressable onPress={save} disabled={dl === "busy" || dl === "yes"} accessibilityRole="button" accessibilityLabel={dl === "yes" ? t("podSaved") : t("podDl")} accessibilityHint={t("podDlHint")}
+            style={{ flexDirection: "row", alignItems: "center", gap: 6, height: 36, paddingHorizontal: 12, borderRadius: 18, borderWidth: 1.5, borderColor: dl === "yes" ? th.kesk : th.line2, backgroundColor: th.surface }}>
+            {dl === "yes" ? <Icon.saved size={16} color={th.kesk} /> : <Icon.dl size={16} color={dl === "err" ? th.sor : th.ink} />}
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: TS.xs, color: dl === "yes" ? th.kesk : dl === "err" ? th.sor : th.ink }}>{dl === "busy" ? t("podDling") : dl === "yes" ? t("podSaved") : dl === "err" ? t("podDlErr").split(".")[0] : t("podDl")}</Text>
+          </Pressable>) : null}
         <Pressable onPress={close} accessibilityRole="button" accessibilityLabel={t("close")} style={{ width: 44, height: 44, alignItems: "center", justifyContent: "center" }}><Icon.x size={24} color={th.muted} /></Pressable>
       </View>
 

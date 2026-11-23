@@ -38,5 +38,7 @@ export const Icon = {
   play: ({ size, color = "#fff" }: P) => <S size={size}><Path fill={color} d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.8l-12-7.5A1 1 0 0 0 7 4.5Z" /></S>,
   pause: ({ size, color = "#fff" }: P) => <S size={size}><Path fill={color} d="M6 4h4v16H6zm8 0h4v16h-4z" /></S>,
   back10: ({ size, color = "#fff" }: P) => <S size={size}><Path fill="none" stroke={color} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" d="M4 12a8 8 0 1 0 2.4-5.7M4 3.5V8h4.5" /></S>,
+  dl: ({ size, color = "#fff" }: P) => <S size={size}><Path fill="none" stroke={color} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14" /></S>,
+  saved: ({ size, color = "#fff" }: P) => <S size={size}><Path fill="none" stroke={color} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" d="M5 12.5l4.5 4.5L19 7.5" /></S>,
   fwd10: ({ size, color = "#fff" }: P) => <S size={size}><Path fill="none" stroke={color} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" d="M20 12a8 8 0 1 1-2.4-5.7M20 3.5V8h-4.5" /></S>,
 };

@@ -6,6 +6,7 @@ import { sfx } from "@/lib/audio";
 import { scriptOf } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
 import { episodesFor, loadPods, titleOf, usePodsVersion, type Episode } from "@/lib/podcast";
+import { localAudio } from "@/lib/offline";
 import { update, useStore } from "@/lib/store";
 import { Avatar, KilimRule } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
@@ -68,6 +69,7 @@ export default function Podcasts() {
                     <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{titleOf(e, sc)}</Text>
                     <Text style={{ fontFamily: F.body, fontSize: TS.sm, color: th.muted }}>{M(e.name)}</Text>
                   </View>
+                  {e.audio && localAudio(e) ? <View accessibilityLabel={t("podSaved")} style={{ flexDirection: "row", alignItems: "center", gap: 4 }}><Icon.dl size={16} color={th.kesk} /></View> : null}
                   {!e.audio ? <Text style={{ fontFamily: F.bodyHeavy, fontSize: 11, color: th.muted, borderWidth: 1, borderColor: th.line2, borderRadius: 8, paddingHorizontal: 6, paddingVertical: 2 }}>{t("podSoon")}</Text> : null}
                 </Pressable>);
             })}
