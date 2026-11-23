@@ -77,6 +77,7 @@ export default function Lesson() {
   const loseLife = () => {
     if (init.practice) return;
     if (isJump) { setLives((l) => { const n = l - 1; return n; }); return; }
+    if ((getS().infUntil ?? 0) > Date.now()) return; // unlimited hearts from the shop
     update((x) => { x.hearts = Math.max(0, x.hearts - 1); if (x.hearts === MAXH - 1) x.heartAt = Date.now(); });
   };
 
@@ -156,7 +157,8 @@ export default function Lesson() {
 
   const pct = Math.max(4, Math.round((done / total) * 100));
   const locked = !!verdict;
-  const heartLabel = init.practice ? "∞" : isJump ? String(lives) : String(s.hearts);
+  const inf = init.practice || ((s.infUntil ?? 0) > Date.now() && !isJump);
+  const heartLabel = inf ? "∞" : isJump ? String(lives) : String(s.hearts);
 
   return (
     <SafeAreaView edges={["top"]} style={{ flex: 1, backgroundColor: th.bg }}>
@@ -167,7 +169,7 @@ export default function Lesson() {
             {combo >= 2 ? <Animated.Text key={combo} entering={ZoomIn.springify().damping(10)} style={{ position: "absolute", top: -17, left: 4, fontFamily: F.bodyHeavy, fontSize: 11, letterSpacing: 0.8, color: combo >= 3 ? th.zerDeep : th.keskDeep }}>{t("comboTag", { n: combo })}</Animated.Text> : null}
             <LessonBar pct={pct} hot={combo >= 3} />
           </View>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }} accessible accessibilityLabel={init.practice ? "∞" : t("heartsAria", { n: heartLabel })}><Icon.heart size={22} color={init.practice ? th.sky : th.sor} /><Text style={{ fontFamily: F.bodyHeavy, fontSize: 17, color: init.practice ? th.skyDeep : th.sorDeep }}>{heartLabel}</Text></View>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }} accessible accessibilityLabel={inf ? "∞" : t("heartsAria", { n: heartLabel })}><Icon.heart size={22} color={inf ? th.sky : th.sor} /><Text style={{ fontFamily: F.bodyHeavy, fontSize: 17, color: inf ? th.skyDeep : th.sorDeep }}>{heartLabel}</Text></View>
         </View>
         <ScrollView contentContainerStyle={{ padding: 18, gap: 18, flexGrow: 1, maxWidth: 560, width: "100%", alignSelf: "center" }} keyboardShouldPersistTaps="handled">
           <Animated.View key={step} entering={SlideInRight.duration(260).easing(Easing.out(Easing.cubic))} style={{ gap: 18 }}>

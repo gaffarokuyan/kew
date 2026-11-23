@@ -38,6 +38,7 @@ src/app/            Ekranlar (Expo Router). (tabs)/ = Öğren, Pratik, Kelimeler
   story.tsx read.tsx  Hikâye ve "Oku ve dinle"
   podcasts.tsx      Podcast listesi (üstte seviye seçici A1/A2, seçim store.podLvl'de)
   episode.tsx       Podcast oynatıcı (oynat/duraklat, ±10 sn, hız, satır takibi, sonda 3 soru)
+  shop.tsx          Mağaza (yalnızca elmas, gerçek para yok): çift XP 15 dk, sınırsız can 60 dk, can doldur, seri dondurma, Juji atkıları (art.tsx SCARVES), promosyon kodları (PROMO)
   settings.tsx onboarding.tsx _layout.tsx (ErrorBoundary burada)
 src/lib/
   course.ts         Kurs yükleme: loadCourse(id, script) tabloları yerinde değiştirir; Soranî Latin dönüşümü (LAT)

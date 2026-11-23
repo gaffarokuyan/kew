@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Svg, { Circle, Ellipse, G, Path, Polygon, Rect } from "react-native-svg";
 import { Text, View, type StyleProp, type ViewStyle } from "react-native";
 import { CHARS } from "@/lib/course";
+import { useStore } from "@/lib/store";
 import { jujiNodes, type JNode } from "./jujiArt";
 import { useTheme } from "./theme";
 
@@ -29,10 +30,33 @@ function jNode(n: JNode, k: number): React.ReactElement {
 }
 
 /** Juji, the app's hedgehog mascot ("jûjî" in Kurmancî). Artwork lives in jujiArt.ts. */
-export function Juji({ size = 120, sad = false }: { size?: number; sad?: boolean }) {
+/** Juji's kilim scarf colours, bought in the shop: [band, shadow, lozenges]. */
+export const SCARVES: Record<string, { c: [string, string, string]; cost: number; ku: string; m: string }> = {
+  nar: { c: ["#B83440", "#8C2230", "#E3A72F"], cost: 0, ku: "Hinar", m: "Nar kırmızısı|Pomegranate|Granatapfel" },
+  zeytin: { c: ["#2F7A4F", "#1F5537", "#E3A72F"], cost: 300, ku: "Zeytûn", m: "Zeytin yeşili|Olive|Olive" },
+  gol: { c: ["#2E5DA8", "#1E3F75", "#F2C14E"], cost: 300, ku: "Gol", m: "Göl mavisi|Lake blue|Seeblau" },
+  binefş: { c: ["#7A3FA0", "#55296F", "#E3A72F"], cost: 300, ku: "Binefş", m: "Menekşe|Violet|Veilchen" },
+  zer: { c: ["#D9A21B", "#A87A0E", "#B83440"], cost: 500, ku: "Zêr", m: "Altın|Gold|Gold" },
+  newroz: { c: ["#C0392B", "#2F7A4F", "#F2C14E"], cost: 800, ku: "Newroz", m: "Newroz ateşi|Newroz fire|Newroz-Feuer" },
+};
+const SCARF_SRC = ["#B83440", "#8C2230", "#E3A72F"];
+
+export function Juji({ size = 120, sad = false, scarf }: { size?: number; sad?: boolean; scarf?: string }) {
+  const mine = useStore((s) => s.outfit);
+  const key = scarf ?? mine ?? "nar";
+  const nodes = useMemo(() => {
+    const base = sad ? JUJI.sad : JUJI.happy;
+    const to = SCARVES[key]?.c; if (!to || key === "nar") return base;
+    const swap = (n: JNode): JNode => {
+      const p = { ...n.p } as Record<string, unknown>;
+      const i = SCARF_SRC.indexOf(String(p.fill)); if (i >= 0) p.fill = to[i];
+      return { ...n, p: p as JNode["p"], c: n.c?.map(swap) };
+    };
+    return base.map(swap);
+  }, [sad, key]);
   return (
     <Svg width={size} height={size} viewBox="0 0 120 120" accessibilityLabel="Juji" importantForAccessibility="no-hide-descendants">
-      {(sad ? JUJI.sad : JUJI.happy).map(jNode)}
+      {nodes.map(jNode)}
     </Svg>
   );
 }

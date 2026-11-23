@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -43,7 +44,7 @@ export function TopBar() {
           </Pressable>
         </View>
         <Stat onPress={() => setStreak(true)} label={t("streakAria", { n: s.streak })}><Icon.fire size={22} color={s.last === day() ? th.fire : th.faint} />{num(s.streak, s.last === day() ? th.fire : th.muted)}</Stat>
-        <Stat onPress={() => setShop(true)} label={t("gemsAria", { n: s.gems })}><Icon.gem size={21} color={th.sky} />{num(s.gems, th.skyDeep)}</Stat>
+        <Stat onPress={() => router.push("/shop")} label={t("gemsAria", { n: s.gems })}><Icon.gem size={21} color={th.sky} />{num(s.gems, th.skyDeep)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("heartsAria", { n: s.hearts })}><Icon.heart size={22} color={th.sor} />{num(s.hearts, th.sorDeep)}</Stat>
       </View>
 
@@ -60,6 +61,7 @@ export function TopBar() {
           </View>
         ))}
         <Text style={{ fontFamily: F.body, color: th.muted, fontSize: 13 }}>{t("shopNote")}</Text>
+        <Btn title={t("shopAll")} kind="sky" onPress={() => { setShop(false); router.push("/shop"); }} />
         <Btn title={t("close")} kind="ghost" onPress={() => setShop(false)} />
       </Sheet>
 

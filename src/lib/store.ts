@@ -46,6 +46,8 @@ export type State = {
   lgCache?: LeagueState;
   /** One-time hints already shown (e.g. "tap a word to see its meaning"). */
   tips?: Record<string, boolean>;
+  /** Shop: Juji's scarf, scarves owned, double-XP and unlimited-hearts end times, promo codes used. */
+  outfit?: string; owned?: string[]; boostUntil?: number; infUntil?: number; promo?: string[];
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,
@@ -140,6 +142,7 @@ export function addXP(n: number): boolean {
   let up = false;
   update((s) => {
     const td = day();
+    if ((s.boostUntil ?? 0) > Date.now()) n *= 2; // double-XP potion from the shop
     s.xp += n; s.daily.xp += n; s.xpLog[td] = (s.xpLog[td] || 0) + n;
     if (s.last !== td) { s.streak = s.last === dayAdd(td, -1) ? s.streak + 1 : 1; s.last = td; s.best = Math.max(s.best, s.streak); up = true; }
   });
