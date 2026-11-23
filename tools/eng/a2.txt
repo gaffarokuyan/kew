@@ -1,0 +1,431 @@
+// English A2 — for Turkish speakers
+# A2 | Geçmiş ve planlar | Geçmiş zaman, seyahat, restoran, gelecek planları
+
+## was | I was at home | «was / were» | #34488F
+w: was = idi (I, he, she, it)
+w: were = idi (you, we, they)
+w: last night = dün gece
+w: last week = geçen hafta
+w: ago = önce
+w: born = doğmuş
+w: at home = evde
+w: at work = işte
+w: late = geç | ⌛
+w: early = erken
+w: hungry = aç
+w: bored = canı sıkkın
+s: I was at home last night. = Dün gece evdeydim.
+s: Where were you yesterday? = Dün neredeydin?
+s: She was at work. = O işteydi.
+s: We were very tired. = Çok yorgunduk.
+s: I was born in 2001. = 2001'de doğdum.
+s: The film was not good. = Film iyi değildi.
+s: Were they late? = Onlar geç mi kaldı?
+t: was / were = «be»nin geçmişi: I/he/she/it was, you/we/they were. Olumsuz: wasn't, weren't.
+t: I was born = «Doğdum» İngilizcede «was born» ile söylenir: I was born in Diyarbakır.
+t: two days ago = «önce» kelimesi sona gelir: two days ago (iki gün önce).
+
+## past | I watched a film | Geçmiş zaman (düzenli) | #B83440
+w: watched = izledi
+w: played = oynadı
+w: visited = ziyaret etti
+w: cooked = pişirdi
+w: walked = yürüdü
+w: worked = çalıştı
+w: stayed = kaldı
+w: called = aradı (telefonla) | 📞
+w: cleaned = temizledi | 🧹
+w: started = başladı
+w: finished = bitirdi
+w: did = yaptı
+s: I watched a film last night. = Dün gece film izledim.
+s: We visited our grandmother on Sunday. = Pazar günü büyükannemizi ziyaret ettik.
+s: She cooked dinner for us. = Bize akşam yemeği pişirdi.
+s: Did you call your mother? = Anneni aradın mı?
+s: I did not finish my homework. = Ödevimi bitirmedim.
+s: The lesson started at nine. = Ders dokuzda başladı.
+s: They stayed at a hotel. = Bir otelde kaldılar.
+t: -ed = Düzenli fiillerde geçmiş zaman -ed ile yapılır ve her özne için aynıdır: I played, she played.
+t: Did you…? = Geçmişte soru: Did + özne + yalın fiil: Did you watch? (Did you watched değil.)
+t: did not = Olumsuz: did not (didn't) + yalın fiil: I didn't finish.
+
+## irr | I went to Istanbul | Geçmiş zaman (düzensiz) | #855700
+w: went = gitti
+w: came = geldi
+w: saw = gördü
+w: ate = yedi
+w: drank = içti
+w: had = sahipti, yedi (yemek)
+w: made = yaptı
+w: bought = satın aldı
+w: took = aldı, götürdü
+w: gave = verdi
+w: met = tanıştı, buluştu
+w: wrote = yazdı
+s: I went to Istanbul last summer. = Geçen yaz İstanbul'a gittim.
+s: We saw the sea. = Denizi gördük.
+s: She bought a new dress. = Yeni bir elbise aldı.
+s: I met my friends at the café. = Arkadaşlarımla kafede buluştum.
+s: He ate a sandwich and drank a coffee. = Bir sandviç yedi ve bir kahve içti.
+s: My father gave me a book. = Babam bana bir kitap verdi.
+s: What did you do at the weekend? = Hafta sonu ne yaptın?
+t: go → went = Düzensiz fiillerin geçmişi ezberlenir: go → went, see → saw, eat → ate, buy → bought.
+t: Did you go? = Soru ve olumsuzda yine yalın fiil: Did you go? I didn't go. (Did you went değil.)
+story: The weekend
+> Tom: What did you do at the weekend, Rojda? = Hafta sonu ne yaptın, Rojda?
+> Rojda: I went to the sea with my family. = Ailemle denize gittim.
+> Tom: Did you swim? = Yüzdün mü?
+> Rojda: Yes, and we ate fish. It was great! = Evet, bir de balık yedik. Harikaydı! ? Rojda hafta sonu ne yaptı? = Yes, and we ate fish. It was great! / No, I stayed at home. / I bought a new phone.
+> Tom: I stayed at home and watched films. = Ben evde kaldım ve film izledim.
+
+## travel | A ticket, please | Yolculuk | #8A4FBF
+w: ticket = bilet | 🎫
+w: train = tren | 🚆
+w: bus = otobüs | 🚌
+w: plane = uçak | ✈️
+w: airport = havalimanı | 🛫
+w: passport = pasaport | 🛂
+w: suitcase = bavul | 🧳
+w: trip = gezi, yolculuk
+w: arrive = varmak
+w: leave = ayrılmak, kalkmak
+w: return = dönüş, geri dönmek
+w: single = tek yön
+s: A return ticket to London, please. = Londra'ya gidiş dönüş bir bilet, lütfen.
+s: What time does the train leave? = Tren kaçta kalkıyor?
+s: The plane arrives at six. = Uçak altıda varıyor.
+s: I go to work by bus. = İşe otobüsle giderim.
+s: Don't forget your passport! = Pasaportunu unutma!
+s: How was your trip? = Yolculuğun nasıldı?
+t: by bus / by train / on foot = Ulaşım aracı «by» ile: by car, by plane. Yürüyerek: on foot.
+t: Don't forget! = Olumsuz emir: Don't + fiil: Don't forget, don't be late.
+story: At the station
+> Azad: A ticket to Oxford, please. = Oxford'a bir bilet, lütfen.
+> Mr Brown: Single or return? = Tek yön mü, gidiş dönüş mü?
+> Azad: Return, please. What time does the train leave? = Gidiş dönüş, lütfen. Tren kaçta kalkıyor?
+> Mr Brown: At ten fifteen, from platform two. = On onbeşte, ikinci perondan. ? Tren kaçta kalkıyor? = At ten fifteen, from platform two. / At two o'clock, from platform ten. / It arrives at six.
+> Azad: Thank you. Can I pay by card? = Teşekkürler. Kartla ödeyebilir miyim?
+> Mr Brown: Yes, of course. = Evet, tabii.
+
+## rest | I'd like a soup | Restoranda | #1C8FC7
+w: menu = menü | 📋
+w: soup = çorba | 🍲
+w: salad = salata | 🥗
+w: chicken = tavuk | 🍗
+w: fish = balık | 🐟
+w: dessert = tatlı | 🍰
+w: bill = hesap | 🧾
+w: table = masa
+w: order = sipariş vermek
+w: would like = isterim (kibar)
+w: delicious = lezzetli | 😋
+w: vegetarian = vejetaryen | 🥦
+s: A table for two, please. = İki kişilik bir masa, lütfen.
+s: Can I see the menu, please? = Menüyü görebilir miyim, lütfen?
+s: I would like the chicken soup. = Tavuk çorbası istiyorum.
+s: Would you like a dessert? = Tatlı ister misiniz?
+s: The fish was delicious. = Balık çok lezzetliydi.
+s: Can we have the bill, please? = Hesabı alabilir miyiz, lütfen?
+s: I am vegetarian. = Ben vejetaryenim.
+t: I would like = «I want»ın kibar hâli: I would like (I'd like) a coffee. Soru: Would you like…? (… ister misiniz?)
+t: Can we have…? = Restoranda bir şey isterken: Can I have…? / Can we have…?
+story: Dinner
+> Waiter: Good evening. Are you ready to order? = İyi akşamlar. Sipariş vermeye hazır mısınız?
+> Emma: Yes. I would like the soup, please. = Evet. Çorba istiyorum, lütfen.
+> Waiter: And for you, sir? = Ya siz, efendim?
+> Tom: The fish and a salad, please. = Balık ve bir salata, lütfen. ? Tom ne sipariş etti? = The fish and a salad, please. / The soup, please. / The chicken and a dessert.
+> Waiter: Would you like something to drink? = Bir şey içmek ister misiniz?
+> Emma: Two waters, please. = İki su, lütfen.
+
+## going | I am going to travel | Planlar: «going to» | #2F6B4F
+w: going to = -ecek (plan)
+w: plan = plan
+w: next week = gelecek hafta
+w: next year = gelecek yıl
+w: holiday = tatil | 🏖️
+w: visit = ziyaret etmek
+w: learn = öğrenmek
+w: move = taşınmak
+w: start = başlamak
+w: soon = yakında
+w: weekend = hafta sonu
+s: I am going to visit my aunt next week. = Gelecek hafta teyzemi ziyaret edeceğim.
+s: We are going to have a holiday in August. = Ağustosta tatil yapacağız.
+s: She is going to learn Spanish. = O İspanyolca öğrenecek.
+s: What are you going to do this weekend? = Bu hafta sonu ne yapacaksın?
+s: They are going to move to a new house. = Onlar yeni bir eve taşınacak.
+s: It is going to rain. = Yağmur yağacak.
+t: be going to + fiil = Önceden kararlaştırılmış planlar için: I am going to study tonight.
+t: It is going to rain = Görünen işaretlere dayanan tahmin: Bulutlara bak, yağmur yağacak.
+
+# A2 | İnsanlar ve iş | Karşılaştırma, meslek, okul, hobiler, sağlık
+
+## comp | Bigger and better | Karşılaştırma | #B83440
+w: bigger = daha büyük
+w: smaller = daha küçük
+w: older = daha yaşlı, daha eski
+w: younger = daha genç
+w: taller = daha uzun (boy)
+w: cheaper = daha ucuz
+w: better = daha iyi
+w: worse = daha kötü
+w: more = daha (fazla)
+w: than = -den, -dan (göre)
+w: interesting = ilginç
+w: easy = kolay
+w: difficult = zor
+s: Istanbul is bigger than Ankara. = İstanbul Ankara'dan daha büyük.
+s: My brother is taller than me. = Erkek kardeşim benden daha uzun.
+s: This phone is cheaper than that one. = Bu telefon şundan daha ucuz.
+s: English is easier than Chinese. = İngilizce Çinceden daha kolay.
+s: This book is more interesting than the film. = Bu kitap filmden daha ilginç.
+s: Today is better than yesterday. = Bugün dünden daha iyi.
+t: -er than = Kısa sıfatlara -er: big → bigger, tall → taller. «-den» anlamı «than» ile: taller than me.
+t: more + uzun sıfat = Uzun sıfatlarda «more»: more interesting, more expensive.
+t: good → better, bad → worse = Düzensiz: good → better, bad → worse, far → further.
+
+## sup | The best day | En üstünlük | #855700
+w: the biggest = en büyük
+w: the smallest = en küçük
+w: the best = en iyi | 🏆
+w: the worst = en kötü
+w: the most = en (fazla)
+w: famous = ünlü
+w: high = yüksek
+w: mountain = dağ | ⛰️
+w: river = nehir | 🏞️
+w: world = dünya | 🌍
+w: country = ülke
+w: city = şehir | 🏙️
+s: This is the best day of my life! = Bu hayatımın en güzel günü!
+s: Everest is the highest mountain in the world. = Everest dünyanın en yüksek dağı.
+s: Who is the tallest in your family? = Ailende en uzun kim?
+s: It is the most famous city in the country. = Ülkenin en ünlü şehri.
+s: That was the worst film. = O en kötü filmdi.
+s: The Euphrates is a long river. = Fırat uzun bir nehir.
+t: the + -est = En üstünlük: the biggest, the tallest. Uzun sıfatlarla: the most beautiful.
+t: in the world = «-in en …» yapısında «in»: the best student in the class (sınıfın en iyi öğrencisi).
+
+## job | What do you do? | Meslekler | #8A4FBF
+w: job = iş, meslek
+w: engineer = mühendis | 👷
+w: nurse = hemşire | 👩‍⚕️
+w: driver = şoför | 🚕
+w: farmer = çiftçi | 🧑‍🌾
+w: lawyer = avukat | ⚖️
+w: office = ofis | 🏢
+w: boss = patron
+w: salary = maaş
+w: earn = kazanmak
+w: interview = mülakat, görüşme
+w: hard-working = çalışkan
+s: What do you do? = Ne iş yapıyorsun?
+s: I am an engineer. = Mühendisim.
+s: She works in a hospital as a nurse. = Hastanede hemşire olarak çalışıyor.
+s: My boss is very kind. = Patronum çok nazik.
+s: I have a job interview tomorrow. = Yarın iş görüşmem var.
+s: He earns a good salary. = İyi bir maaş kazanıyor.
+s: Farmers work very hard. = Çiftçiler çok sıkı çalışır.
+t: What do you do? = «Ne iş yapıyorsun?» sorusu: What do you do? Cevap: I'm a teacher.
+t: as a nurse = «olarak»: She works as a nurse (hemşire olarak çalışıyor).
+story: A new job
+> Sara: I have a job interview tomorrow. = Yarın iş görüşmem var.
+> Emma: Really? What is the job? = Gerçekten mi? İş ne?
+> Sara: Nurse, at the city hospital. = Hemşirelik, şehir hastanesinde. ? İş nerede? = Nurse, at the city hospital. / Engineer, in an office. / Driver, at the airport.
+> Emma: That is great! You are very hard-working. = Harika! Sen çok çalışkansın.
+> Sara: Thank you. I am a bit nervous. = Teşekkürler. Biraz gerginim.
+> Emma: Don't worry. Good luck! = Merak etme. İyi şanslar!
+
+## school | At school | Okul | #1C8FC7
+w: class = sınıf, ders
+w: lesson = ders
+w: homework = ödev | 📝
+w: exam = sınav
+w: pass = geçmek (sınavı)
+w: fail = kalmak (sınavdan)
+w: subject = ders (konu)
+w: maths = matematik | ➗
+w: history = tarih | 🏛️
+w: science = fen | 🔬
+w: university = üniversite | 🎓
+w: remember = hatırlamak
+s: I have a maths exam on Friday. = Cuma günü matematik sınavım var.
+s: Did you do your homework? = Ödevini yaptın mı?
+s: She passed all her exams. = Bütün sınavlarını geçti.
+s: History is my favourite subject. = Tarih en sevdiğim ders.
+s: My sister studies at university. = Kız kardeşim üniversitede okuyor.
+s: I cannot remember the answer. = Cevabı hatırlayamıyorum.
+t: do homework = Ödev için «do» kullanılır: do homework (make homework değil).
+t: favourite = «En sevdiğim»: my favourite subject. (Amerikan İngilizcesinde favorite.)
+
+## hobby | In my free time | Hobiler ve spor | #2F6B4F
+w: free time = boş zaman
+w: hobby = hobi
+w: paint = resim yapmak | 🎨
+w: photo = fotoğraf | 📷
+w: chess = satranç | ♟️
+w: game = oyun | 🎮
+w: team = takım
+w: match = maç
+w: win = kazanmak
+w: lose = kaybetmek
+w: often = sık sık
+w: sometimes = bazen
+w: never = asla, hiç
+s: What do you do in your free time? = Boş zamanında ne yaparsın?
+s: I often play chess with my grandfather. = Sık sık dedemle satranç oynarım.
+s: She sometimes paints. = O bazen resim yapar.
+s: Our team won the match! = Takımımız maçı kazandı!
+s: I never play computer games. = Hiç bilgisayar oyunu oynamam.
+s: He takes beautiful photos. = Güzel fotoğraflar çeker.
+t: often / sometimes / never = Sıklık zarfları fiilden önce gelir: I often play. Ama «be»den sonra: She is never late.
+t: play / go / do = Top oyunlarıyla play (play football), -ing sporlarla go (go swimming), diğerleriyle do (do yoga).
+
+## health | You should rest | Sağlık | #34488F
+w: should = -meli, -malı (tavsiye)
+w: rest = dinlenmek
+w: medicine = ilaç | 💊
+w: headache = baş ağrısı | 🤕
+w: cough = öksürük
+w: fever = ateş | 🤒
+w: a cold = soğukalgınlığı, nezle
+w: pharmacy = eczane | ⚕️
+w: appointment = randevu
+w: feel = hissetmek
+w: better = daha iyi
+w: healthy = sağlıklı | 🥗
+s: I do not feel well. = Kendimi iyi hissetmiyorum.
+s: I have a headache and a fever. = Başım ağrıyor ve ateşim var.
+s: You should rest and drink water. = Dinlenmeli ve su içmelisin.
+s: You should not eat so much sugar. = Bu kadar çok şeker yememelisin.
+s: I have an appointment with the doctor. = Doktordan randevum var.
+s: Do you feel better now? = Şimdi daha iyi misin?
+s: Take this medicine twice a day. = Bu ilacı günde iki kez al.
+t: should + fiil = Tavsiye: You should rest. Olumsuz: shouldn't.
+t: I have a cold = Hastalıklarda «have»: I have a cold (nezleyim), I have a fever (ateşim var).
+story: At the doctor's
+> Doctor: Hello. What is the problem? = Merhaba. Sorun ne?
+> Azad: I have a cough and a headache. = Öksürüğüm ve baş ağrım var.
+> Doctor: Do you have a fever? = Ateşin var mı?
+> Azad: Yes, a little. = Evet, biraz.
+> Doctor: You should rest for two days and drink a lot of water. = İki gün dinlenmeli ve bol su içmelisin. ? Doktor ne tavsiye ediyor? = You should rest for two days and drink a lot of water. / You should go to work today. / You should eat more sugar.
+> Azad: Thank you, doctor. = Teşekkürler, doktor.
+
+# A2 | Kurallar ve gündelik dil | Zorunluluk, miktar, sıklık, davetler
+
+## must | I have to work | Zorunluluk | #B83440
+w: have to = zorunda olmak
+w: must = -meli (kesin)
+w: mustn't = -memeli (yasak)
+w: don't have to = gerekmez
+w: rule = kural
+w: allowed = izinli
+w: uniform = üniforma
+w: quiet = sessiz | 🤫
+w: smoke = sigara içmek | 🚭
+w: wear = giymek, takmak
+w: seatbelt = emniyet kemeri
+s: I have to work on Saturday. = Cumartesi çalışmak zorundayım.
+s: You must wear a seatbelt. = Emniyet kemeri takmalısın.
+s: You mustn't smoke here. = Burada sigara içmemelisin.
+s: Students have to wear a uniform. = Öğrenciler üniforma giymek zorunda.
+s: You don't have to come. = Gelmek zorunda değilsin.
+s: Please be quiet in the library. = Kütüphanede lütfen sessiz olun.
+t: must / have to = İkisi de zorunluluk: «must» kural ve güçlü istek, «have to» dış zorunluluk: I have to get up early.
+t: mustn't ≠ don't have to = mustn't = yasak (yapmamalısın); don't have to = gerek yok (yapmasan da olur).
+
+## much | Some milk, any eggs? | Miktar | #855700
+w: some = biraz, birkaç
+w: any = hiç, herhangi
+w: much = çok (sayılamayan)
+w: many = çok (sayılan)
+w: a lot of = bir sürü
+w: a few = birkaç
+w: a little = biraz
+w: sugar = şeker
+w: salt = tuz | 🧂
+w: bottle = şişe | 🍾
+w: kilo = kilo
+w: enough = yeterli
+s: We need some milk. = Biraz süte ihtiyacımız var.
+s: Are there any eggs? = Hiç yumurta var mı?
+s: There is not much sugar. = Fazla şeker yok.
+s: How many apples do you want? = Kaç elma istiyorsun?
+s: How much water do you drink? = Ne kadar su içiyorsun?
+s: I have a lot of friends. = Bir sürü arkadaşım var.
+s: Is there enough bread? = Yeterli ekmek var mı?
+t: some / any = Olumlu cümlede some, soru ve olumsuzda any: I have some money. Do you have any money?
+t: many / much = Sayılanlarla many (many apples), sayılamayanlarla much (much water). Olumlu cümlede genelde «a lot of».
+
+## often | Always on time | Sıklık ve zaman | #8A4FBF
+w: always = her zaman
+w: usually = genellikle
+w: rarely = nadiren
+w: once = bir kez
+w: twice = iki kez
+w: on time = zamanında | ⏱️
+w: already = zaten, çoktan
+w: still = hâlâ
+w: again = tekrar
+w: during = sırasında
+w: until = -e kadar
+s: I always have breakfast. = Her zaman kahvaltı yaparım.
+s: He is rarely late. = O nadiren geç kalır.
+s: I go to the gym twice a week. = Haftada iki kez spor salonuna giderim.
+s: The bus is never on time. = Otobüs asla zamanında gelmez.
+s: She is still sleeping. = O hâlâ uyuyor.
+s: Can you say that again? = Bunu tekrar söyler misin?
+s: I work until six. = Altıya kadar çalışırım.
+t: twice a week = «haftada iki kez»: once a day, twice a week, three times a month.
+t: How often…? = «Ne sıklıkla?»: How often do you exercise?
+
+## invite | Would you like to come? | Davet ve telefon | #1C8FC7
+w: invite = davet etmek | 💌
+w: party = parti | 🎉
+w: birthday = doğum günü | 🎂
+w: free = boş, müsait; ücretsiz
+w: message = mesaj | 💬
+w: call back = geri aramak
+w: tonight = bu gece
+w: maybe = belki
+w: sure = tabii, elbette
+w: of course = elbette
+w: busy = meşgul
+w: let's = haydi …-elim
+s: Would you like to come to my party? = Partime gelmek ister misin?
+s: I would love to! = Çok isterim!
+s: Sorry, I am busy tonight. = Üzgünüm, bu gece meşgulüm.
+s: Are you free on Saturday? = Cumartesi boş musun?
+s: Let's go to the cinema. = Hadi sinemaya gidelim.
+s: Can you call me back later? = Beni sonra geri arayabilir misin?
+s: I sent you a message. = Sana bir mesaj gönderdim.
+t: Would you like to…? = Kibar davet: Would you like to come? Cevap: I'd love to! / Sorry, I can't.
+t: Let's = Öneri: Let's + yalın fiil: Let's eat (hadi yiyelim).
+story: A birthday party
+> Emma: Hi Azad! It is my birthday on Saturday. = Selam Azad! Cumartesi benim doğum günüm.
+> Azad: Happy birthday, Emma! = Doğum günün kutlu olsun, Emma!
+> Emma: Would you like to come to my party? = Partime gelmek ister misin?
+> Azad: I would love to! What time? = Çok isterim! Saat kaçta? ? Azad ne cevap verdi? = I would love to! What time? / Sorry, I am busy. / Maybe next year.
+> Emma: At seven. Bring Rojda too! = Yedide. Rojda'yı da getir!
+> Azad: Sure. See you on Saturday! = Tabii. Cumartesi görüşürüz!
+
+## house2 | Can you help me? | Ev işleri ve rica | #2F6B4F
+w: wash the dishes = bulaşık yıkamak | 🍽️
+w: do the laundry = çamaşır yıkamak | 🧺
+w: tidy = toplamak, düzenlemek
+w: make the bed = yatağı yapmak | 🛏️
+w: vacuum = süpürmek
+w: rubbish = çöp | 🗑️
+w: take out = dışarı çıkarmak
+w: borrow = ödünç almak
+w: lend = ödünç vermek
+w: open = açmak
+w: close = kapatmak
+s: Could you open the window, please? = Pencereyi açabilir misin, lütfen?
+s: Can I borrow your pen? = Kalemini ödünç alabilir miyim?
+s: Please take out the rubbish. = Lütfen çöpü dışarı çıkar.
+s: I wash the dishes after dinner. = Akşam yemeğinden sonra bulaşık yıkarım.
+s: Tidy your room! = Odanı topla!
+s: Could you lend me ten pounds? = Bana on sterlin ödünç verebilir misin?
+t: Could you…? = «Can you»dan daha kibar rica: Could you help me?
+t: borrow / lend = borrow = ödünç almak (benden alırsın), lend = ödünç vermek (sana veririm).

@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { speak } from "@/lib/audio";
 import { LANGS, M, t, tArr } from "@/lib/i18n";
 import { type Lang, resetAll, setCkbScript, switchCourse, update, useS } from "@/lib/store";
-import { COURSES, type CourseId, type Script } from "@/lib/course";
+import { coursesFor, type CourseId, type Script } from "@/lib/course";
 import { Icon } from "@/ui/icons";
 import { Btn, toast } from "@/ui/kit";
 import { askReminder, scheduleReminders } from "@/lib/remind";
@@ -37,12 +37,13 @@ export default function Settings() {
       </View>
       <ScrollView contentContainerStyle={{ padding: 18, paddingTop: 6, gap: 22, maxWidth: 560, width: "100%", alignSelf: "center" }}>
         <View style={{ gap: 8 }}><L>{t("course")}</L>
-          <Seg items={COURSES.map((c) => ({ v: c.id, l: c.name, sub: c.beta ? t("courseBeta") : M(c.sub) }))} value={s.course} onPick={(v) => { if (v === "ckb" && !s.ckbScript) setCkbScript("both"); switchCourse(v as CourseId); }} />
+          <Seg items={coursesFor(s.lang).map((c) => ({ v: c.id, l: c.name, sub: c.beta ? t("courseBeta") : M(c.sub) }))} value={s.course} onPick={(v) => { if (v === "ckb" && !s.ckbScript) setCkbScript("both"); switchCourse(v as CourseId); }} />
           {s.course === "zza" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteZza")}</Text> : null}
+        {s.course === "eng" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteEng")}</Text> : null}
           {s.course === "ckb" ? <><L>{t("scriptSet")}</L>
             <Seg items={[{ v: "ar", l: t("scriptAr") }, { v: "lat", l: t("scriptLat") }, { v: "both", l: t("scriptBoth") }]} value={s.ckbScript || "both"} onPick={(v) => setCkbScript(v as Script)} /></> : null}
         </View>
-        <View style={{ gap: 8 }}><L>{t("baseLang")}</L><Seg items={LANGS.map(([c, n]) => ({ v: c, l: n }))} value={s.lang || "tr"} onPick={(v) => update((x) => { x.lang = v as Lang; })} /></View>
+        <View style={{ gap: 8 }}><L>{t("baseLang")}</L><Seg items={LANGS.map(([c, n]) => ({ v: c, l: n }))} value={s.lang || "tr"} onPick={(v) => { if (!coursesFor(v).some((c) => c.id === s.course)) switchCourse("kmr"); update((x) => { x.lang = v as Lang; }); }} /></View>
         <View style={{ gap: 0 }}>
         <View style={row}><L>{t("sfx")}</L><Switch value={s.set.sfx} onValueChange={(v) => update((x) => { x.set.sfx = v; })} trackColor={{ true: th.kesk }} /></View>
         <View style={[row, { borderTopWidth: 0 }]}><L>{t("voice")}</L><Switch value={s.set.voice} onValueChange={(v) => update((x) => { x.set.voice = v; })} trackColor={{ true: th.kesk }} /></View>
@@ -65,7 +66,7 @@ export default function Settings() {
         </View>
         <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("voiceNotePack", { n: Object.keys(AUDIO).length })}</Text>
         <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("speakNote")}</Text>
-        <Btn title={t("testVoice")} upper={false} kind="ghost" icon={<Icon.spk size={20} color={th.ink} />} onPress={() => speak("Silav, tu çawa yî?")} />
+        <Btn title={t("testVoice")} upper={false} kind="ghost" icon={<Icon.spk size={20} color={th.ink} />} onPress={() => speak(s.course === "eng" ? "Hello, how are you?" : "Silav, tu çawa yî?")} />
         <Pressable onPress={() => { if (!armed) return setArmed(true); resetAll(); router.replace("/"); }} accessibilityRole="button" style={{ alignItems: "center", justifyContent: "center", minHeight: 48, padding: 10 }}>
           <Text style={{ fontFamily: F.bodyHeavy, color: th.sorDeep }}>{armed ? t("resetSure") : t("reset")}</Text>
         </Pressable>

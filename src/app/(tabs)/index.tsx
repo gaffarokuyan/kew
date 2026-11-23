@@ -124,7 +124,7 @@ export default function Learn() {
       <View style={{ height: H.end, alignItems: "center", justifyContent: "center", gap: 10 }}>
         <KilimRule color={th.zer} h={10} seed={41} style={{ width: 160, alignSelf: "center" }} />
         <Juji size={96} />
-        <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t(courseId() === "zza" ? "pathEndZza" : courseId() === "ckb" ? "pathEndCkb" : "pathEnd", { u: UNITS.length, n: NODES.length, w: uniqueWords() })}</Text>
+        <Text style={{ fontFamily: F.italic, fontSize: TS.md, lineHeight: 24, color: th.muted, textAlign: "center", maxWidth: 320 }}>{t(courseId() === "zza" ? "pathEndZza" : courseId() === "ckb" ? "pathEndCkb" : courseId() === "eng" ? "pathEndEng" : "pathEnd", { u: UNITS.length, n: NODES.length, w: uniqueWords() })}</Text>
       </View>
     );
   };

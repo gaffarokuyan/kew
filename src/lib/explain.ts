@@ -41,7 +41,9 @@ function sentenceHint(given: string, want: string): string[] {
   if (miss.length) out.push(M("Eksik kelime: |Missing: |Fehlt: ") + miss.map((x) => `«${x}»`).join(", "));
   if (extra.length) out.push(M("Fazla kelime: |Not needed: |Überflüssig: ") + extra.map((x) => `«${x}»`).join(", "));
   if (!miss.length && !extra.length && g.join(" ") !== w.join(" ")) {
-    out.push(M(courseId() === "ckb"
+    out.push(M(courseId() === "eng"
+      ? "Kelimeler doğru, sıra yanlış. İngilizcede sıra özne + fiil + nesnedir (I eat bread); fiil sona gitmez.|Right words, wrong order: subject + verb + object.|Richtige Wörter, falsche Reihenfolge: Subjekt + Verb + Objekt."
+      : courseId() === "ckb"
       ? "Kelimeler doğru, sıra yanlış. Soranîde fiil genellikle cümlenin sonunda gelir.|Right words, wrong order. In Soranî the verb usually comes last.|Richtige Wörter, falsche Reihenfolge. Im Soranî steht das Verb meist am Ende."
       : "Kelimeler doğru, sıra yanlış. Kürtçede fiil genellikle cümlenin sonunda gelir (Ez nan dixwim).|Right words, wrong order. In Kurdish the verb usually comes last (Ez nan dixwim).|Richtige Wörter, falsche Reihenfolge. Im Kurdischen steht das Verb meist am Ende (Ez nan dixwim)."));
   }

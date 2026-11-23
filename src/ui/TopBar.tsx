@@ -3,7 +3,7 @@ import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
 import { M, t, tArr } from "@/lib/i18n";
-import { COURSES, type CourseId } from "@/lib/course";
+import { COURSES, coursesFor, type CourseId } from "@/lib/course";
 import { ScriptOptions } from "@/ui/ScriptPicker";
 import { day, dayAdd, HEART_MS, MAXH, setCkbScript, switchCourse, update, useS } from "@/lib/store";
 import { Diamond, Sun } from "./art";
@@ -75,10 +75,11 @@ export function TopBar() {
       <Sheet visible={course} onClose={closeCourse}>
         {scr ? <ScriptOptions onPick={(m) => { setCkbScript(m); if (s.course !== "ckb") switchCourse("ckb"); closeCourse(); }} /> : <>
         <Text style={{ fontFamily: F.display, fontSize: TS.xl, color: th.ink }}>{t("course")}</Text>
-        {COURSES.map((c) => (
+        {coursesFor(s.lang).map((c) => (
           <Btn key={c.id} title={`${c.name} · ${M(c.sub)}${c.beta ? " · " + t("courseBeta") : ""}`} upper={false} kind={s.course === c.id ? "primary" : "ghost"}
             onPress={() => { sfx("tap"); if (c.id === "ckb" && !s.ckbScript) { setScr(true); return; } switchCourse(c.id as CourseId); setCourse(false); }} />))}
         {s.course === "zza" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteZza")}</Text> : null}
+        {s.course === "eng" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteEng")}</Text> : null}
         {s.course === "ckb" ? <Btn title={t("scriptSet")} upper={false} kind="ghost" onPress={() => setScr(true)} /> : null}
       </>}
       </Sheet>

@@ -4,7 +4,7 @@ import { Pressable, ScrollView, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
-import { COURSES, courseId, LEVELS, levelFirstUnit, UNITS, type CourseId, type Level } from "@/lib/course";
+import { COURSES, courseId, coursesFor, LEVELS, levelFirstUnit, UNITS, type CourseId, type Level } from "@/lib/course";
 import { LANGS, M, T, t, t2, tArr } from "@/lib/i18n";
 import { setCkbScript, switchCourse, type Lang, update, useS } from "@/lib/store";
 import { ScriptOptions } from "@/ui/ScriptPicker";
@@ -20,6 +20,7 @@ const LEVEL_CHOICES = [0, 1, 2, 3];
 const COURSE_SAMPLE: Record<CourseId, { hi: string; hiLat?: string; where: string }> = {
   kmr: { hi: "Silav, tu çawa yî?", where: "Bakur, Rojava, Başûr (Behdînan) ve diaspora|Bakur, Rojava, Başûr (Behdînan) and the diaspora|Bakur, Rojava, Başûr (Behdînan) und die Diaspora" },
   ckb: { hi: "سڵاو، چۆنی؟", hiLat: "Sillaw, çonî?", where: "Başûr (Hewlêr, Silêmanî) ve Rojhelat|Başûr (Hewlêr, Silêmanî) and Rojhelat|Başûr (Hewlêr, Silêmanî) und Rojhelat" },
+  eng: { hi: "Hello, how are you?", where: "Dünyanın ortak dili: Türkçe üzerinden, A1'den B1'e|The world's common language|Die Weltsprache" },
   zza: { hi: "Merheba, ti senî yê?", where: "Dersim, Çewlîg, Palu, Sêwregi ve diaspora|Dersim, Çewlîg, Palu, Sêwregi and the diaspora|Dersim, Çewlîg, Palu, Sêwregi und die Diaspora" },
 };
 
@@ -88,7 +89,7 @@ export default function Onboarding() {
             <Title align="left">{t("onbCourse")}</Title>
             <Lead align="left">{t("onbCourseText")}</Lead>
             <View style={{ width: "100%", gap: 10 }}>
-              {COURSES.map((c) => { const smp = COURSE_SAMPLE[c.id]; const on = courseId() === c.id; return (
+              {coursesFor(s.lang).map((c) => { const smp = COURSE_SAMPLE[c.id]; const on = courseId() === c.id; return (
                 <Pressable key={c.id} onPress={() => { tap(); switchCourse(c.id); setStep(c.id === "ckb" ? 6 : 2); }} accessibilityRole="button" accessibilityLabel={`${c.name}. ${M(c.sub)}`} style={choice(on)}>
                   <View style={{ flex: 1, gap: 2 }}>
                     <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>

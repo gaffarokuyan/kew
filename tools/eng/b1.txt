@@ -1,0 +1,404 @@
+// English B1 — for Turkish speakers
+# B1 | Deneyimler | Present perfect, past continuous, alışkanlıklar, gelecek
+
+## pp1 | Have you ever…? | Deneyimler | #34488F
+w: ever = hiç (soru)
+w: never = hiç, asla
+w: been = bulunmuş, gitmiş
+w: seen = görmüş
+w: tried = denemiş
+w: eaten = yemiş
+w: done = yapmış
+w: abroad = yurt dışı | ✈️
+w: experience = deneyim
+w: once = bir kez
+w: twice = iki kez
+w: in my life = hayatımda
+s: Have you ever been to London? = Hiç Londra'ya gittin mi?
+s: I have never eaten sushi. = Hiç suşi yemedim.
+s: She has been abroad twice. = O iki kez yurt dışına gitti.
+s: Have you ever tried Kurdish food? = Hiç Kürt yemeği denedin mi?
+s: I have seen this film three times. = Bu filmi üç kez izledim.
+s: It is the best book I have ever read. = Okuduğum en iyi kitap bu.
+t: have / has + V3 = Present perfect, zamanı belli olmayan deneyimleri anlatır: I have been to Van.
+t: Have you ever…? = «Hiç … oldun mu?»: Have you ever seen snow? Cevap: Yes, I have. / No, I haven't.
+t: been / gone = He has been to Paris (gidip döndü) ≠ He has gone to Paris (gitti, hâlâ orada).
+n: Zaman belliyse (yesterday, in 2020) present perfect değil geçmiş zaman kullanılır: I went to London in 2020.
+
+## pp2 | I have just finished | Yeni olanlar | #B83440
+w: just = az önce
+w: already = çoktan
+w: yet = henüz, daha
+w: for = -dir (süre)
+w: since = -den beri
+w: lost = kaybetmiş
+w: found = bulmuş
+w: broken = kırılmış
+w: moved = taşınmış
+w: known = tanımış, bilmiş
+w: recently = son zamanlarda
+s: I have just finished my homework. = Ödevimi az önce bitirdim.
+s: Have you eaten yet? = Yemek yedin mi?
+s: She has already left. = O çoktan çıktı.
+s: I have lost my keys! = Anahtarlarımı kaybettim!
+s: We have lived here for ten years. = On yıldır burada yaşıyoruz.
+s: I have known him since 2015. = Onu 2015'ten beri tanıyorum.
+s: They have not arrived yet. = Henüz gelmediler.
+t: for / since = for + süre (for two years = iki yıldır), since + başlangıç (since 2019 = 2019'dan beri).
+t: just / already / yet = just ve already fiilden önce: I have just eaten. yet soru ve olumsuzun sonunda: Not yet!
+t: I have lived here for… = Türkçedeki «-dır … yaşıyorum» İngilizcede present perfect ile söylenir (I am living here for… değil).
+story: Lost keys
+> Tom: Oh no! I have lost my keys. = Eyvah! Anahtarlarımı kaybettim.
+> Emma: Have you looked in your bag? = Çantana baktın mı?
+> Tom: Yes, I have already looked there. = Evet, oraya çoktan baktım.
+> Emma: Wait… are these your keys? I have just found them on the table. = Bekle… bunlar senin anahtarların mı? Az önce masada buldum. ? Anahtarlar neredeydi? = Wait… are these your keys? I have just found them on the table. / Yes, they were in my bag. / I have lost them in the park.
+> Tom: Yes! Thank you so much! = Evet! Çok teşekkür ederim!
+
+## pc | I was walking home | Geçmişte sürerken | #855700
+w: was walking = yürüyordum
+w: while = -iken
+w: when = -dığında
+w: suddenly = aniden
+w: happen = olmak (olay)
+w: accident = kaza | 🚑
+w: fall = düşmek
+w: break = kırmak, kırılmak
+w: ring = çalmak (telefon) | 🔔
+w: rain = yağmur | 🌧️
+w: shout = bağırmak
+s: I was walking home when it started to rain. = Yağmur başladığında eve yürüyordum.
+s: What were you doing at eight o'clock? = Saat sekizde ne yapıyordun?
+s: She was cooking while he was reading. = O kitap okurken kadın yemek pişiriyordu.
+s: The phone rang while I was sleeping. = Ben uyurken telefon çaldı.
+s: Suddenly, I heard a noise. = Aniden bir ses duydum.
+s: He fell and broke his arm. = Düştü ve kolunu kırdı.
+s: What happened? = Ne oldu?
+t: was / were + -ing = Geçmişte süren eylem (-iyordu): I was watching TV.
+t: when / while = Uzun eylem (past continuous) kısa eylemle (past simple) kesilir: I was sleeping when the phone rang.
+story: An accident
+> Rojda: What happened to your arm? = Koluna ne oldu?
+> Azad: I fell off my bike. = Bisikletten düştüm.
+> Rojda: Oh no! What were you doing? = Olamaz! Ne yapıyordun?
+> Azad: I was riding to school when a dog ran in front of me. = Okula gidiyordum, önüme bir köpek fırladı. ? Azad nasıl düştü? = I was riding to school when a dog ran in front of me. / I was walking in the rain. / I was sleeping when the phone rang.
+> Rojda: I hope you feel better soon. = Umarım yakında iyileşirsin.
+
+## used | I used to live there | Eskiden | #8A4FBF
+w: used to = eskiden …-rdı
+w: childhood = çocukluk
+w: village = köy | 🏡
+w: grow up = büyümek
+w: change = değişmek
+w: different = farklı
+w: memory = anı
+w: miss = özlemek
+w: nowadays = günümüzde
+w: anymore = artık (olumsuz)
+w: neighbour = komşu
+s: I used to live in a village. = Eskiden bir köyde yaşardım.
+s: Did you use to play outside? = Eskiden dışarıda oynar mıydın?
+s: She didn't use to like coffee. = Eskiden kahve sevmezdi.
+s: I grew up in Mardin. = Mardin'de büyüdüm.
+s: Our town has changed a lot. = Kasabamız çok değişti.
+s: I miss my childhood friends. = Çocukluk arkadaşlarımı özlüyorum.
+s: He doesn't live here anymore. = O artık burada yaşamıyor.
+t: used to + fiil = Geçmişteki ama artık olmayan alışkanlık: I used to smoke (eskiden sigara içerdim).
+t: didn't use to = Soru ve olumsuzda «use to» (d yok): Did you use to…? I didn't use to…
+story: Grandfather's village
+> Emma: Where did your grandfather grow up, Rojda? = Deden nerede büyüdü, Rojda?
+> Rojda: In a small village near the mountains. = Dağların yakınında küçük bir köyde.
+> Emma: What did he use to do there? = Orada eskiden ne yapardı?
+> Rojda: He used to look after sheep and tell stories at night. = Koyun güderdi ve geceleri hikâye anlatırdı. ? Dede eskiden ne yapardı? = He used to look after sheep and tell stories at night. / He used to work in a bank. / He used to live in London.
+> Emma: That sounds beautiful. = Kulağa çok güzel geliyor.
+> Rojda: Yes. He still misses it. = Evet. Hâlâ özlüyor.
+
+## will | It will be fine | Gelecek ve tahmin | #1C8FC7
+w: will = -ecek
+w: won't = -meyecek
+w: probably = muhtemelen
+w: definitely = kesinlikle
+w: future = gelecek
+w: hope = ummak
+w: think = düşünmek, sanmak
+w: promise = söz vermek | 🤞
+w: decide = karar vermek
+w: offer = teklif etmek
+w: forget = unutmak
+s: I think it will rain tomorrow. = Sanırım yarın yağmur yağacak.
+s: Don't worry, I will help you. = Merak etme, sana yardım edeceğim.
+s: I promise I won't be late. = Söz veriyorum, geç kalmayacağım.
+s: People will probably live on Mars one day. = İnsanlar muhtemelen bir gün Mars'ta yaşayacak.
+s: I hope you will come. = Umarım gelirsin.
+s: Will you marry me? = Benimle evlenir misin?
+t: will = Anlık kararlar, sözler, teklifler ve tahminler: I'll call you. It will be sunny.
+t: will / going to = Plan önceden yapıldıysa going to: I am going to visit Van. O an karar verildiyse will: I'll get the phone!
+
+# B1 | Koşullar ve yapılar | If cümleleri, edilgen, ilgi cümleleri, aktarma
+
+## if1 | If it rains… | Gerçek koşullar | #2F6B4F
+w: if = eğer, -se
+w: unless = -medikçe
+w: as soon as = -ir -irmez
+w: miss = kaçırmak
+w: hurry = acele etmek
+w: get = almak, olmak
+w: wet = ıslak
+w: angry = kızgın | 😠
+w: worry = endişelenmek
+w: in case = diye, ihtimaline karşı
+w: umbrella = şemsiye | ☂️
+s: If it rains, we will stay at home. = Yağmur yağarsa evde kalacağız.
+s: If you don't hurry, you will miss the bus. = Acele etmezsen otobüsü kaçıracaksın.
+s: I will call you as soon as I arrive. = Varır varmaz seni arayacağım.
+s: Take an umbrella in case it rains. = Yağmur yağar diye şemsiye al.
+s: If you heat ice, it melts. = Buzu ısıtırsan erir.
+s: My mother will be angry if I am late. = Geç kalırsam annem kızacak.
+t: If + geniş zaman, will + fiil = Gerçek olasılık: If it rains, I will stay home. If'li kısımda «will» kullanılmaz.
+t: unless = if not: Unless you study, you will fail (çalışmazsan kalırsın).
+
+## if2 | If I were rich… | Hayalî koşullar | #B83440
+w: would = -erdi
+w: were = olsaydı (if ile)
+w: rich = zengin | 💰
+w: lottery = piyango
+w: island = ada | 🏝️
+w: travel = seyahat etmek
+w: around = etrafında
+w: advice = tavsiye
+w: in your place = senin yerinde
+w: wish = keşke, dilemek
+w: imagine = hayal etmek
+s: If I were rich, I would travel around the world. = Zengin olsaydım dünyayı gezerdim.
+s: If I won the lottery, I would buy a house. = Piyango çıksa bir ev alırdım.
+s: What would you do if you lived on an island? = Bir adada yaşasaydın ne yapardın?
+s: If I were you, I would talk to her. = Senin yerinde olsam onunla konuşurdum.
+s: I wish I could speak English fluently. = Keşke akıcı İngilizce konuşabilsem.
+s: Imagine a world without music. = Müziksiz bir dünya hayal et.
+t: If + geçmiş zaman, would + fiil = Hayalî/şimdiki gerçek dışı durum: If I had time, I would help you.
+t: If I were you = Tavsiye kalıbı: If I were you, I would… (Senin yerinde olsam…). «were» her özneyle kullanılabilir.
+story: The lottery
+> Tom: What would you do if you won the lottery? = Piyango çıksa ne yapardın?
+> Sara: I would buy a house by the sea. And you? = Deniz kenarında bir ev alırdım. Ya sen?
+> Tom: I would travel around the world. = Dünyayı gezerdim. ? Tom ne yapardı? = I would travel around the world. / I would buy a house by the sea. / I would stay at home.
+> Sara: Would you stop working? = Çalışmayı bırakır mıydın?
+> Tom: No, I love my job too much! = Hayır, işimi çok seviyorum!
+
+## pass | It was built in 1900 | Edilgen yapı | #855700
+w: built = inşa edilmiş
+w: made = yapılmış
+w: written = yazılmış
+w: invented = icat edilmiş
+w: spoken = konuşulan
+w: grown = yetiştirilmiş
+w: sold = satılmış
+w: called = adlandırılan
+w: stolen = çalınmış
+w: bridge = köprü | 🌉
+w: carpet = halı | 🧶
+w: by = tarafından
+s: This bridge was built in 1900. = Bu köprü 1900'de inşa edildi.
+s: Kurdish is spoken in many countries. = Kürtçe birçok ülkede konuşulur.
+s: This carpet was made by hand. = Bu halı elle yapıldı.
+s: The telephone was invented by Bell. = Telefon Bell tarafından icat edildi.
+s: My bike was stolen yesterday. = Bisikletim dün çalındı.
+s: Tea is grown in Rize. = Rize'de çay yetiştirilir.
+t: be + V3 = Edilgen: işi yapan değil iş önemli olduğunda. It is made (yapılır), it was made (yapıldı).
+t: by = İşi yapanı söylemek için «by»: written by Ehmedê Xanî (Ehmedê Xanî tarafından yazılmış).
+
+## rel | The man who… | İlgi cümleleri | #8A4FBF
+w: who = ki o (insan)
+w: which = ki o (şey)
+w: that = ki (insan ya da şey)
+w: where = -dığı yer
+w: whose = kimin, -nın
+w: person = kişi
+w: thing = şey
+w: place = yer
+w: author = yazar | ✍️
+w: neighbour = komşu
+w: café = kafe | ☕
+s: The man who lives next door is a doctor. = Yan dairede oturan adam doktor.
+s: This is the book which I told you about. = Bu sana bahsettiğim kitap.
+s: That is the café where we first met. = Şurası ilk tanıştığımız kafe.
+s: She is the woman whose son plays football. = Oğlu futbol oynayan kadın o.
+s: I like people who are honest. = Dürüst insanları severim.
+s: The film that we watched was boring. = İzlediğimiz film sıkıcıydı.
+t: who / which / that = İnsanlar için who, eşyalar için which, ikisi için that. Türkçedeki «-en, -dığı» eklerinin karşılığı.
+t: where / whose = Yer için where (the house where I was born = doğduğum ev), sahiplik için whose.
+n: Türkçede ilgi eki ismin önüne gelir (yan dairede oturan adam), İngilizcede sonra: the man who lives next door.
+
+## rep | She said that… | Aktarma | #1C8FC7
+w: said = dedi
+w: told = söyledi (birine)
+w: asked = sordu
+w: explained = açıkladı
+w: answered = cevap verdi
+w: whether = -ip -mediğini
+w: news = haber | 📰
+w: tell = anlatmak, söylemek
+w: say = demek
+w: agree = katılmak
+w: complain = şikâyet etmek
+s: She said that she was tired. = Yorgun olduğunu söyledi.
+s: He told me that he loved the city. = Bana şehri sevdiğini söyledi.
+s: They asked me where I lived. = Bana nerede yaşadığımı sordular.
+s: I asked whether the shop was open. = Dükkânın açık olup olmadığını sordum.
+s: The teacher explained the rule again. = Öğretmen kuralı tekrar açıkladı.
+s: What did she say? = Ne dedi?
+t: say / tell = say + söz (She said hello), tell + kişi (She told me the news).
+t: am → was = Aktarırken zaman genelde bir geri gider: «I am tired» → She said (that) she was tired.
+
+# B1 | Dünya ve fikirler | Fiil kalıpları, doğa, teknoloji, duygular, kültür
+
+## ger | I enjoy reading | -ing mi, to mu? | #2F6B4F
+w: enjoy = zevk almak
+w: avoid = kaçınmak
+w: finish = bitirmek
+w: mind = sakıncası olmak
+w: decide = karar vermek
+w: hope = ummak
+w: want = istemek
+w: need = ihtiyaç duymak
+w: stop = durmak, bırakmak
+w: try = denemek, çalışmak
+w: plan = planlamak
+s: I enjoy reading before bed. = Yatmadan önce okumaktan keyif alırım.
+s: She decided to study medicine. = Tıp okumaya karar verdi.
+s: Do you mind opening the window? = Pencereyi açmanın sakıncası var mı?
+s: He stopped smoking last year. = Geçen yıl sigarayı bıraktı.
+s: I need to finish this report. = Bu raporu bitirmem gerekiyor.
+s: We are planning to visit Hakkari. = Hakkari'yi ziyaret etmeyi planlıyoruz.
+s: Try to avoid eating late. = Geç yemek yemekten kaçınmaya çalış.
+t: enjoy / finish / mind / avoid + -ing = Bu fiillerden sonra -ing gelir: I enjoy cooking.
+t: want / decide / hope / need + to = Bu fiillerden sonra to + fiil: I want to go.
+t: stop smoking / stop to smoke = stop + -ing = bırakmak; stop + to = bir şey yapmak için durmak.
+
+## env | Save the planet | Doğa ve çevre | #34488F
+w: environment = çevre | 🌱
+w: nature = doğa
+w: pollution = kirlilik | 🏭
+w: climate = iklim
+w: recycle = geri dönüştürmek | ♻️
+w: plastic = plastik
+w: waste = atık, israf etmek
+w: energy = enerji | ⚡
+w: forest = orman | 🌲
+w: protect = korumak
+w: save = kurtarmak, tasarruf etmek
+w: plant = bitki, dikmek | 🌿
+s: We should recycle more plastic. = Daha fazla plastiği geri dönüştürmeliyiz.
+s: Air pollution is a big problem in cities. = Hava kirliliği şehirlerde büyük bir sorun.
+s: The climate is changing fast. = İklim hızla değişiyor.
+s: Don't waste water. = Suyu israf etme.
+s: We planted trees in the forest. = Ormana ağaç diktik.
+s: Everyone can help protect nature. = Herkes doğayı korumaya yardım edebilir.
+t: should / shouldn't = Öneri ve görüş: We should save energy.
+t: a lot of / lots of = Bol miktar: There is a lot of waste.
+story: Planting trees
+> Emma: What are you doing this weekend? = Bu hafta sonu ne yapıyorsun?
+> Azad: We are going to plant trees with my school. = Okulumla ağaç dikmeye gideceğiz.
+> Emma: That's a great idea! Why? = Harika bir fikir! Neden?
+> Azad: Because the forest near our town burned last summer. = Çünkü kasabamızın yakınındaki orman geçen yaz yandı. ? Neden ağaç dikiyorlar? = Because the forest near our town burned last summer. / Because they want to sell wood. / Because it is raining.
+> Emma: Can I come and help? = Gelip yardım edebilir miyim?
+> Azad: Of course! The more people, the better. = Tabii! Ne kadar çok kişi, o kadar iyi.
+
+## tech | Online | Teknoloji | #B83440
+w: computer = bilgisayar | 💻
+w: internet = internet | 🌐
+w: website = web sitesi
+w: app = uygulama | 📲
+w: download = indirmek | ⬇️
+w: password = şifre | 🔒
+w: screen = ekran
+w: charge = şarj etmek | 🔋
+w: online = çevrimiçi
+w: delete = silmek
+w: share = paylaşmak
+w: send = göndermek
+s: I downloaded a new app. = Yeni bir uygulama indirdim.
+s: I forgot my password. = Şifremi unuttum.
+s: My phone needs charging. = Telefonumun şarj olması gerekiyor.
+s: She shared the photos online. = Fotoğrafları internette paylaştı.
+s: Don't spend too much time in front of the screen. = Ekran karşısında çok zaman geçirme.
+s: Can you send me the link? = Bana bağlantıyı gönderebilir misin?
+t: spend time + -ing = Zaman geçirmek: I spend too much time watching videos.
+t: online / offline = Çevrimiçi / çevrimdışı. «on the internet» da denir.
+
+## feel | How do you feel about it? | Duygular ve fikirler | #855700
+w: excited = heyecanlı | 🤩
+w: worried = endişeli | 😟
+w: surprised = şaşırmış | 😮
+w: disappointed = hayal kırıklığına uğramış
+w: proud = gururlu
+w: embarrassed = utanmış | 😳
+w: opinion = fikir, görüş
+w: agree = katılmak
+w: disagree = katılmamak
+w: in my opinion = bence
+w: I think = sanırım, bence
+w: because = çünkü
+s: I am really excited about the trip. = Gezi için gerçekten heyecanlıyım.
+s: She was disappointed with her exam results. = Sınav sonuçlarından hayal kırıklığına uğradı.
+s: In my opinion, the book is better than the film. = Bence kitap filmden daha iyi.
+s: I agree with you. = Sana katılıyorum.
+s: I am not sure I agree. = Katıldığımdan emin değilim.
+s: We are very proud of you. = Seninle çok gurur duyuyoruz.
+t: -ed / -ing = Duygu sıfatları: I am bored (canım sıkılıyor) ≠ The film is boring (film sıkıcı).
+t: excited about / proud of / worried about = Sıfatla birlikte gelen edatlar ezberlenir: proud of (…ile gurur duymak).
+story: The exam results
+> Sara: I got my exam results today. = Bugün sınav sonuçlarımı aldım.
+> Tom: And? Are you happy? = Ee? Mutlu musun?
+> Sara: I passed! I am so surprised. = Geçtim! Çok şaşırdım.
+> Tom: I am not surprised. You studied very hard. = Ben şaşırmadım. Çok sıkı çalıştın. ? Tom neden şaşırmadı? = I am not surprised. You studied very hard. / I am very worried about you. / You did not study at all.
+> Sara: Thank you. My parents are very proud of me. = Teşekkürler. Ailem benimle çok gurur duyuyor.
+
+## culture | Stories and traditions | Kültür ve gelenekler | #8A4FBF
+w: tradition = gelenek
+w: festival = bayram, festival | 🎊
+w: celebrate = kutlamak
+w: wedding = düğün | 💍
+w: guest = misafir
+w: storyteller = hikâye anlatıcısı
+w: legend = efsane
+w: fire = ateş | 🔥
+w: spring = bahar
+w: dance = dans, halay | 💃
+w: century = yüzyıl
+w: language = dil
+s: Newroz is celebrated on the twenty-first of March. = Newroz 21 Mart'ta kutlanır.
+s: People jump over the fire and dance together. = İnsanlar ateşin üzerinden atlar ve birlikte halay çeker.
+s: Guests are always welcome in our house. = Evimizde misafirler her zaman hoş karşılanır.
+s: The storyteller told an old legend. = Hikâye anlatıcısı eski bir efsane anlattı.
+s: How many languages do you speak? = Kaç dil konuşuyorsun?
+s: Weddings in my village last for three days. = Köyümde düğünler üç gün sürer.
+t: is celebrated = Gelenekleri anlatırken edilgen yapı sık kullanılır: Newroz is celebrated in spring.
+t: on the 21st of March = Tarihlerde «on»: on the 21st of March / on March 21st.
+story: Newroz
+> Emma: What is Newroz? = Newroz nedir?
+> Rojda: It is the Kurdish new year. It is celebrated on March 21st. = Kürt yeni yılıdır. 21 Mart'ta kutlanır.
+> Emma: How do you celebrate it? = Nasıl kutluyorsunuz?
+> Rojda: We light a fire, wear colourful clothes and dance. = Ateş yakıyoruz, renkli giysiler giyiyoruz ve halay çekiyoruz. ? Newroz'da ne yapılır? = We light a fire, wear colourful clothes and dance. / We stay at home and watch TV. / We buy a big cake.
+> Emma: It sounds wonderful! Can I come next year? = Harika görünüyor! Seneye gelebilir miyim?
+> Rojda: Of course! You are always welcome. = Tabii! Her zaman başımızın üstünde yerin var.
+
+## phr | Phrasal verbs | Deyimsel fiiller | #1C8FC7
+w: look for = aramak
+w: look after = bakmak (birine)
+w: give up = vazgeçmek
+w: find out = öğrenmek, keşfetmek
+w: turn on = açmak (cihaz)
+w: turn off = kapatmak (cihaz)
+w: put on = giymek
+w: take off = çıkarmak; kalkmak (uçak)
+w: get on = binmek
+w: get off = inmek
+w: pick up = almak (birini), kaldırmak
+w: run out of = tükenmek
+s: I am looking for my glasses. = Gözlüğümü arıyorum.
+s: Can you look after my cat this weekend? = Bu hafta sonu kedime bakabilir misin?
+s: Don't give up! = Vazgeçme!
+s: Please turn off the lights. = Lütfen ışıkları kapat.
+s: We got off the bus at the last stop. = Son durakta otobüsten indik.
+s: I will pick you up at six. = Seni altıda alırım.
+s: We have run out of milk. = Sütümüz bitti.
+t: Phrasal verb = Fiil + küçük kelime yeni bir anlam verir: look (bakmak) → look for (aramak), look after (bakmak, ilgilenmek).
+t: turn it off = Nesne zamir ise araya girer: Turn it off (Turn off it değil).

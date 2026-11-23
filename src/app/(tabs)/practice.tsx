@@ -46,9 +46,9 @@ export default function Practice() {
     { k: "sprint", c: th.plum, ic: <Icon.bolt size={26} color="#fff" />, ti: t("pSprint"), su: t("pSprintSub"), dis: lw.length < 6 },
     { k: "sounds", c: th.zer, ic: <Icon.ear size={26} color="#2E1F00" />, ti: t("pSounds"), su: s.set.voice ? t("pSoundsSub") : t("voiceOff"), dis: !soundsOk },
     { k: "read", c: th.kesk, ic: <Icon.book size={26} />, ti: t("pRead"), su: t("pReadSub"), dis: readable < 1 },
-    { k: "pod", c: th.plum, ic: <Icon.pod size={26} />, ti: t("pPod"), su: pods ? t("pPodSub") + ` · ${pods}` : t("podSoon"), dis: false },
-    { k: "culture", c: th.zer, ic: <Icon.book size={26} color="#2E1F00" />, ti: t("cultTitle"), su: weekCard().title + (s.culture?.[weekCard().id] ? " ✓" : ` · ${t("cultNew")}`), dis: false },
-    { k: "bridge", c: th.sky, ic: <Icon.bridge size={26} />, ti: t("bridgeTitle"), su: t("bridgeSub"), dis: false },
+    ...(courseId() === "eng" ? [] : [{ k: "pod", c: th.plum, ic: <Icon.pod size={26} />, ti: t("pPod"), su: pods ? t("pPodSub") + ` · ${pods}` : t("podSoon"), dis: false },
+      { k: "culture", c: th.zer, ic: <Icon.book size={26} color="#2E1F00" />, ti: t("cultTitle"), su: weekCard().title + (s.culture?.[weekCard().id] ? " ✓" : ` · ${t("cultNew")}`), dis: false },
+      { k: "bridge", c: th.sky, ic: <Icon.bridge size={26} />, ti: t("bridgeTitle"), su: t("bridgeSub"), dis: false }]),
     ...(courseId() === "ckb" ? [{ k: "alpha", c: th.sor, ic: <Icon.abc size={26} />, ti: t("alphaTitle"), su: t("alphaSub"), dis: false }] : []),
   ];
   return (

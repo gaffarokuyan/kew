@@ -1,15 +1,20 @@
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from "expo-audio";
 import * as Haptics from "expo-haptics";
+import * as Speech from "expo-speech";
 import { AUDIO } from "@/content/audioMap";
+import { courseId } from "./course";
 import { getS } from "./store";
 
 const key = (s: string) => s.normalize("NFC").trim();
 const strip = (s: string) => key(s.replace(/[.,!?;:…«»]+/g, ""));
 export function audioFor(text: string): number | undefined {
+  if (courseId() === "eng") return undefined; // the Kurmancî clips never apply to English
   const k = key(text), k2 = strip(text);
   return AUDIO[k] ?? AUDIO[k2] ?? AUDIO[k2.toLowerCase()];
 }
-export const hasAudio = (text: string) => audioFor(text) != null;
+/** English is read by the device's own English voice (Android TTS / browser speech), so every text has audio. */
+const tts = () => courseId() === "eng";
+export const hasAudio = (text: string) => (tts() ? !!text : audioFor(text) != null);
 
 let voice: AudioPlayer | null = null;
 const fx: Record<string, AudioPlayer> = {};
@@ -30,7 +35,15 @@ export async function initAudio() {
 /** Plays the recording of a Kurmancî word or sentence. Returns false when no recording exists. */
 export function speak(text: string, slow = false, onEnd?: () => void): boolean {
   const s = getS();
-  if (!s.set.voice || !text || !voice) return false;
+  if (!s.set.voice || !text) return false;
+  if (tts()) {
+    try {
+      Speech.stop();
+      Speech.speak(text, { language: "en-US", rate: slow ? 0.62 : 0.92 * (s.set.rate || 1), onDone: onEnd, onError: onEnd ? () => onEnd() : undefined });
+      return true;
+    } catch { return false; }
+  }
+  if (!voice) return false;
   const src = audioFor(text);
   if (src == null) return false;
   try {
@@ -45,7 +58,7 @@ export function speak(text: string, slow = false, onEnd?: () => void): boolean {
     return true;
   } catch { return false; }
 }
-export function stopVoice() { try { voice?.pause(); } catch {} }
+export function stopVoice() { try { voice?.pause(); } catch {} try { if (tts()) Speech.stop(); } catch {} }
 
 export function sfx(name: Sfx) {
   const s = getS();

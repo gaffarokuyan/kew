@@ -25,7 +25,8 @@ Bu dosya, projeye başka bir Claude oturumundan / hesabından devam edebilmek i�
 |---|---|---|
 | **Kurmancî** (`kmr`) | A1–B1, 67 ünite | `assets/audio/` (ders kayıtları, Ülgen sesi — bkz. §5) |
 | **Zazakî** (`zza`) | A1 beta, Vate yazımı | yok (TTS desteklemiyor) |
-| **Soranî** (`ckb`) | A1–B1 beta, **iki alfabe** (Arap / Latin / ikisi) | ders sesi yok; podcast sesli |
+| **Soranî** (`ckb`) | A1–B2 beta, **iki alfabe** (Arap / Latin / ikisi) | ders sesi yok; podcast sesli |
+| **English** (`eng`) | A1–B1 beta, 52 ünite, **yalnızca Türkçe arayüzle** (`base: ["tr"]`) | cihazın İngilizce sesi (expo-speech, en-US) |
 
 ---
 
@@ -49,6 +50,7 @@ src/lib/
 src/ui/             Tema, ikonlar, maskot çizimleri, ortak bileşenler, TopBar (kurs seçici), ScriptPicker
 src/content/
   course.json course_zza.json course_ckb.json   Kurs içerikleri
+  course_eng.json   ÜRETİLMİŞ: tools/eng/build.py (kaynak: tools/eng/a1.txt a2.txt b1.txt, basit satır biçimi; anlamlar yalnızca Türkçe)
   strings.json      Arayüz metinleri "tr|en|de"
   audioMap.ts       ÜRETİLMİŞ: Kurmancî metin -> assets/audio/<hash>.mp3
   podcasts.json     ÜRETİLMİŞ: tools/podcast/build.py
@@ -149,6 +151,8 @@ Claude sesi **dinleyemez**; doğrulama yalnızca STT ile. Şüpheli satırları 
 - Kurmancî yazım: Hawar alfabesi; kontrol için Mazdek spellcheck. Soranî içerikte Latin karşılığı `LAT` haritasında.
 - Tıklama sesi kaldırıldı (kullanıcı istemedi); `sfx("tap")` yalnızca titreşim.
 - Kullanıcı kısa ve doğrudan yanıt sever. Uzun işlerde ilerlemeyi kısa notlarla bildir.
+- İngilizce kursu: cevap karşılaştırmada kısaltmalar açılır (I'm = I am, doesn't = does not; exercises.ts `enNorm`). Konuşma alıştırması ve ses farkı pratiği bu kursta kapalı; köprü, kültür, podcast kartları gizli.
+- Web yayınında `_expo/` klasörü silinmez (eski parçalar kalsın, açık sekmeler bozulmasın); ErrorBoundary eski parça hatasında bir kez yeniler.
 - Tasarım: "kilim" teması (kilim desenli ayraçlar, sıcak renkler, köşesi küçük yuvarlatılmış kartlar).
 
 ---

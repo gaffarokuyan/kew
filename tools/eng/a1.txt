@@ -1,0 +1,500 @@
+// English A1 — for Turkish speakers
+# A1 | Temeller | Selamlaşma, tanışma, «be» fiili, sayılar, aile, renkler
+
+## hello | Hello! | Selamlaşma | #2F6B4F
+w: hello = merhaba | 👋
+w: hi = selam
+w: good morning = günaydın | 🌅
+w: good night = iyi geceler | 🌙
+w: goodbye = hoşça kal
+w: bye = görüşürüz
+w: yes = evet | ✅
+w: no = hayır | ❌
+w: please = lütfen
+w: thank you = teşekkür ederim | 🙏
+w: thanks = sağ ol
+w: sorry = özür dilerim
+s: Hello, how are you? = Merhaba, nasılsın?
+s: I am fine, thank you. = İyiyim, teşekkür ederim.
+s: Good morning, Emma! = Günaydın, Emma!
+s: Good night, Tom. = İyi geceler, Tom.
+s: Yes, please. = Evet, lütfen.
+s: No, thank you. = Hayır, teşekkür ederim.
+s: Goodbye, see you tomorrow! = Hoşça kal, yarın görüşürüz!
+t: How are you? = «Nasılsın?» Cevap: I am fine / I'm fine (İyiyim). «I'm», «I am»ın kısa hâlidir.
+t: Good morning / Good evening = Sabah «good morning», akşam «good evening», yatarken «good night» denir.
+n: İngilizcede «you» hem «sen» hem «siz» demektir; tek kelimeyle herkese hitap edersin.
+story: Hello, Emma!
+> Tom: Hello, Emma! = Merhaba, Emma!
+> Emma: Hi, Tom! How are you? = Selam, Tom! Nasılsın?
+> Tom: I am fine, thank you. And you? = İyiyim, teşekkür ederim. Ya sen? ? Tom ne cevap verir? = I am fine, thank you. And you? / Good night, Emma. / No, please.
+> Emma: I am fine too. = Ben de iyiyim.
+> Tom: Goodbye, Emma! = Hoşça kal, Emma!
+
+## me | My name is… | Tanışma | #34488F
+w: name = isim, ad
+w: my = benim
+w: your = senin
+w: I = ben
+w: you = sen, siz
+w: from = -den, -dan
+w: where = nerede, nereli
+w: nice = güzel, hoş
+w: meet = tanışmak | 🤝
+w: friend = arkadaş | 🧑‍🤝‍🧑
+w: Turkey = Türkiye | 🇹🇷
+w: England = İngiltere | 🇬🇧
+s: What is your name? = Adın ne?
+s: My name is Azad. = Benim adım Azad.
+s: Where are you from? = Nerelisin?
+s: I am from Turkey. = Türkiyeliyim.
+s: Nice to meet you. = Tanıştığıma memnun oldum.
+s: This is my friend Emma. = Bu benim arkadaşım Emma.
+s: Emma is from England. = Emma İngiltereli.
+t: What is your name? = «What» = ne. Soru kelimesi başa gelir: What is your name? (Adın ne?)
+t: I am from… = «-liyim, -luyum» İngilizcede «I am from + ülke» ile söylenir: I am from Turkey.
+story: Nice to meet you
+> Azad: Hi! My name is Azad. What is your name? = Selam! Benim adım Azad. Senin adın ne?
+> Emma: My name is Emma. = Benim adım Emma.
+> Azad: Where are you from, Emma? = Nerelisin, Emma?
+> Emma: I am from England. And you? = İngiltereliyim. Ya sen? ? Emma nereli? = I am from England. And you? / I am from Turkey. And you? / My name is Azad.
+> Azad: I am from Turkey. Nice to meet you! = Türkiyeliyim. Tanıştığıma memnun oldum!
+> Emma: Nice to meet you too! = Ben de memnun oldum!
+
+## be | I am a student | «be» fiili | #B83440
+w: am = -im (ben ile)
+w: is = -dir (o ile)
+w: are = -sin, -siz, -ler
+w: he = o (erkek)
+w: she = o (kadın)
+w: it = o (eşya, hayvan)
+w: we = biz
+w: they = onlar
+w: student = öğrenci | 🎓
+w: teacher = öğretmen | 🧑‍🏫
+w: doctor = doktor | 🩺
+w: happy = mutlu | 😊
+w: tired = yorgun | 😴
+s: I am a student. = Ben bir öğrenciyim.
+s: She is a teacher. = O bir öğretmen.
+s: He is a doctor. = O bir doktor.
+s: We are friends. = Biz arkadaşız.
+s: They are happy. = Onlar mutlu.
+s: You are tired. = Sen yorgunsun.
+s: It is a cat. = O bir kedi.
+s: I am not tired. = Yorgun değilim.
+t: I am / you are / he is = «be» fiili: I am, you are, he/she/it is, we are, they are. Türkçedeki «-im, -sin, -dir» ekleri gibi.
+t: He is / She is = Türkçede tek «o» var; İngilizcede erkek için «he», kadın için «she», eşya ve hayvan için «it».
+t: I am not = Olumsuz için «not»: I am not, he is not (isn't), they are not (aren't).
+n: Meslek söylerken «a» kullanılır: She is a teacher. Türkçede «bir» çoğu zaman söylenmez, İngilizcede gerekir.
+
+## num | One, two, three | Sayılar | #855700
+w: one = bir | 1️⃣
+w: two = iki | 2️⃣
+w: three = üç | 3️⃣
+w: four = dört | 4️⃣
+w: five = beş | 5️⃣
+w: six = altı | 6️⃣
+w: seven = yedi | 7️⃣
+w: eight = sekiz | 8️⃣
+w: nine = dokuz | 9️⃣
+w: ten = on | 🔟
+w: twenty = yirmi
+w: hundred = yüz | 💯
+w: how old = kaç yaşında
+w: year = yıl
+s: How old are you? = Kaç yaşındasın?
+s: I am twenty years old. = Yirmi yaşındayım.
+s: I have two cats. = İki kedim var.
+s: She has three brothers. = Onun üç erkek kardeşi var.
+s: There are ten students. = On öğrenci var.
+s: My phone number is five, three, one. = Telefon numaram beş, üç, bir.
+t: How old are you? = Yaş «be» ile söylenir: I am 20 (years old). «I have 20 years» denmez.
+t: two cats = Birden fazlaysa isme -s eklenir: one cat, two cats. Türkçede «iki kediler» denmez ama İngilizcede -s şart.
+
+## fam | My family | Aile | #8A4FBF
+w: family = aile | 👨‍👩‍👧
+w: mother = anne | 👩
+w: father = baba | 👨
+w: sister = kız kardeş, abla | 👧
+w: brother = erkek kardeş, ağabey | 👦
+w: son = oğul
+w: daughter = kız evlat
+w: grandmother = büyükanne | 👵
+w: grandfather = büyükbaba | 👴
+w: baby = bebek | 👶
+w: his = onun (erkek)
+w: her = onun (kadın)
+w: our = bizim
+s: This is my family. = Bu benim ailem.
+s: My mother is a teacher. = Annem öğretmen.
+s: His father is a doctor. = Onun babası doktor.
+s: Her brother is ten years old. = Onun erkek kardeşi on yaşında.
+s: Our grandmother is happy. = Büyükannemiz mutlu.
+s: I have one sister. = Bir kız kardeşim var.
+s: They have a baby. = Onların bir bebeği var.
+t: my / your / his / her / our / their = İyelik: benim, senin, onun (erkek), onun (kadın), bizim, onların. Ek yerine ismin önüne gelir: my mother = annem.
+t: Emma's brother = 's ile sahiplik: Emma's brother = Emma'nın erkek kardeşi.
+story: Emma's family
+> Emma: This is my family. = Bu benim ailem.
+> Tom: Is this your mother? = Bu senin annen mi?
+> Emma: Yes, she is a teacher. = Evet, o öğretmen. ? Emma'nın annesi ne iş yapıyor? = Yes, she is a teacher. / Yes, he is a doctor. / No, she is a baby.
+> Tom: And who is this? = Peki bu kim?
+> Emma: That is my brother. He is ten. = O benim erkek kardeşim. On yaşında.
+
+## things | This is a book | Eşyalar ve renkler | #1C8FC7
+w: book = kitap | 📕
+w: pen = kalem | 🖊️
+w: bag = çanta | 👜
+w: phone = telefon | 📱
+w: key = anahtar | 🔑
+w: red = kırmızı | 🟥
+w: blue = mavi | 🟦
+w: green = yeşil | 🟩
+w: yellow = sarı | 🟨
+w: black = siyah | ⬛
+w: white = beyaz | ⬜
+w: this = bu
+w: that = şu, o
+s: This is a book. = Bu bir kitap.
+s: That is my bag. = Şu benim çantam.
+s: The pen is blue. = Kalem mavi.
+s: I have a red phone. = Kırmızı bir telefonum var.
+s: Is this your key? = Bu senin anahtarın mı?
+s: My bag is black and white. = Çantam siyah beyaz.
+s: What colour is it? = O ne renk?
+t: a / an = «bir» anlamında. Sesli harfle başlayan kelimeden önce «an»: a book, an apple.
+t: a red phone = Sıfat ismin önüne gelir, Türkçedeki gibi: kırmızı telefon = red phone.
+t: Is this your key? = Soru yaparken «is» başa geçer: This is… → Is this…?
+
+# A1 | Günlük hayat | Yemek, ev, zaman, günlük işler, sevdiklerin
+
+## food | I like apples | Yemek ve içecek | #2F6B4F
+w: bread = ekmek | 🍞
+w: water = su | 💧
+w: tea = çay | 🍵
+w: coffee = kahve | ☕
+w: milk = süt | 🥛
+w: apple = elma | 🍎
+w: egg = yumurta | 🥚
+w: cheese = peynir | 🧀
+w: rice = pirinç, pilav | 🍚
+w: breakfast = kahvaltı | 🍳
+w: lunch = öğle yemeği
+w: dinner = akşam yemeği
+w: hungry = aç
+w: eat = yemek (fiil) | 🍽️
+w: drink = içmek
+s: I eat bread and cheese for breakfast. = Kahvaltıda ekmek ve peynir yerim.
+s: Do you want tea or coffee? = Çay mı kahve mi istersin?
+s: I drink water. = Su içerim.
+s: She does not drink milk. = O süt içmez.
+s: I am hungry. = Açım.
+s: We have dinner at seven. = Yedide akşam yemeği yeriz.
+s: An apple, please. = Bir elma, lütfen.
+t: I eat / She eats = Geniş zamanda he, she, it ile fiile -s gelir: I eat, she eats.
+t: I do not drink = Olumsuz: do not (don't) + fiil. He/she/it ile: does not (doesn't): She doesn't drink milk.
+t: I am hungry = «Açım» İngilizcede «be» ile söylenir: I am hungry, I am thirsty (susadım).
+story: Breakfast
+> Mum: Good morning, Tom! Are you hungry? = Günaydın, Tom! Aç mısın?
+> Tom: Yes, I am very hungry. = Evet, çok açım.
+> Mum: Do you want eggs? = Yumurta ister misin?
+> Tom: Yes, please. And bread and cheese. = Evet, lütfen. Bir de ekmek ve peynir. ? Tom ne istiyor? = Yes, please. And bread and cheese. / No, thank you. Just water. / Good night, Mum.
+> Mum: Tea or milk? = Çay mı, süt mü?
+> Tom: Tea, please. Thank you, Mum! = Çay, lütfen. Teşekkürler, anne!
+
+## home | There is a garden | Ev | #34488F
+w: house = ev | 🏠
+w: room = oda | 🚪
+w: kitchen = mutfak
+w: bedroom = yatak odası | 🛏️
+w: bathroom = banyo | 🛁
+w: garden = bahçe | 🌳
+w: table = masa
+w: chair = sandalye | 🪑
+w: window = pencere | 🪟
+w: door = kapı
+w: big = büyük
+w: small = küçük
+w: there is = var (tekil)
+w: there are = var (çoğul)
+s: There is a big garden. = Büyük bir bahçe var.
+s: There are three rooms in my house. = Evimde üç oda var.
+s: The kitchen is small. = Mutfak küçük.
+s: Is there a bathroom? = Banyo var mı?
+s: The chair is next to the table. = Sandalye masanın yanında.
+s: My bedroom has a big window. = Yatak odamın büyük bir penceresi var.
+s: There is not a garden. = Bahçe yok.
+t: There is / There are = «Var» demek: tekil için there is, çoğul için there are. Soru: Is there…? / Are there…?
+t: in / on / under / next to = Yer edatları ismin önüne gelir: in the room (odada), on the table (masada), under the chair (sandalyenin altında), next to (yanında).
+
+## time | What time is it? | Günler ve saat | #B83440
+w: Monday = pazartesi
+w: Tuesday = salı
+w: Wednesday = çarşamba
+w: Thursday = perşembe
+w: Friday = cuma
+w: Saturday = cumartesi
+w: Sunday = pazar
+w: today = bugün | 📅
+w: tomorrow = yarın
+w: yesterday = dün
+w: week = hafta
+w: o'clock = saat (tam) | 🕒
+w: half past = buçuk
+s: What time is it? = Saat kaç?
+s: It is three o'clock. = Saat üç.
+s: It is half past seven. = Saat yedi buçuk.
+s: Today is Monday. = Bugün pazartesi.
+s: I work on Saturday. = Cumartesi çalışırım.
+s: See you on Friday! = Cuma görüşürüz!
+s: Tomorrow is Sunday. = Yarın pazar.
+t: on Monday / at three o'clock = Günlerle «on», saatlerle «at»: on Monday, at 3 o'clock.
+t: Monday = Gün ve ay adları büyük harfle yazılır: Monday, Friday, January.
+
+## day | I get up at seven | Günlük işler | #855700
+w: get up = kalkmak | ⏰
+w: wash = yıkamak
+w: go = gitmek
+w: work = çalışmak, iş | 💼
+w: school = okul | 🏫
+w: home = ev (yuva)
+w: read = okumak | 📖
+w: watch TV = televizyon izlemek | 📺
+w: sleep = uyumak | 😴
+w: every day = her gün
+w: morning = sabah
+w: evening = akşam
+w: usually = genellikle
+s: I get up at seven. = Yedide kalkarım.
+s: She goes to school every day. = O her gün okula gider.
+s: My father works in a bank. = Babam bankada çalışır.
+s: We watch TV in the evening. = Akşam televizyon izleriz.
+s: He usually reads a book. = O genellikle kitap okur.
+s: I go home at five. = Beşte eve giderim.
+s: They sleep at eleven. = Onlar on birde uyur.
+t: She goes / He watches = he, she, it ile fiile -s gelir; -o, -sh, -ch ile bitenlere -es: go → goes, watch → watches.
+t: go home = «home» ile «to» kullanılmaz: go home (eve gitmek), ama go to school (okula gitmek).
+story: Tom's day
+> Emma: What time do you get up, Tom? = Kaçta kalkıyorsun, Tom?
+> Tom: I get up at seven. = Yedide kalkarım.
+> Emma: Do you go to school by bus? = Okula otobüsle mi gidiyorsun?
+> Tom: No, I walk. School is near. = Hayır, yürüyorum. Okul yakın. ? Tom okula nasıl gidiyor? = No, I walk. School is near. / Yes, I go by bus. / I go home at five.
+> Emma: What do you do in the evening? = Akşam ne yapıyorsun?
+> Tom: I read a book and I sleep at ten. = Kitap okuyorum ve onda uyuyorum.
+
+## like | I love music | Sevdiklerim | #8A4FBF
+w: like = sevmek, hoşlanmak | 👍
+w: love = çok sevmek | ❤️
+w: hate = nefret etmek
+w: music = müzik | 🎵
+w: football = futbol | ⚽
+w: film = film | 🎬
+w: dog = köpek | 🐶
+w: cat = kedi | 🐱
+w: swim = yüzmek | 🏊
+w: dance = dans etmek | 💃
+w: cook = yemek pişirmek | 🍳
+w: very much = çok
+s: I like music. = Müziği severim.
+s: She loves dogs. = O köpekleri çok sever.
+s: I do not like football. = Futbolu sevmem.
+s: Do you like cats? = Kedileri sever misin?
+s: He likes swimming. = O yüzmeyi sever.
+s: We love dancing very much. = Dans etmeyi çok severiz.
+s: I hate cold water. = Soğuk sudan nefret ederim.
+t: I like swimming = «sevmek» fiilinden sonra fiil gelirse -ing alır: I like cooking (yemek yapmayı severim).
+t: I like dogs = Genel olarak sevilen şeyler çoğul söylenir: I like cats (kedileri severim).
+
+## ask | Do you speak English? | Soru sormak | #1C8FC7
+w: what = ne
+w: who = kim
+w: when = ne zaman
+w: why = neden
+w: how = nasıl
+w: which = hangi
+w: speak = konuşmak | 🗣️
+w: live = yaşamak, oturmak
+w: understand = anlamak
+w: know = bilmek
+w: English = İngilizce
+w: Turkish = Türkçe
+s: Do you speak English? = İngilizce konuşur musun?
+s: Yes, I speak a little English. = Evet, biraz İngilizce konuşurum.
+s: Where do you live? = Nerede yaşıyorsun?
+s: Does she understand Turkish? = O Türkçe anlıyor mu?
+s: Who is that man? = O adam kim?
+s: Why are you sad? = Neden üzgünsün?
+s: I do not know. = Bilmiyorum.
+t: Do you…? / Does she…? = Geniş zamanda soru: Do + özne + fiil. he/she/it ile Does: Does she live here? (Fiile -s gelmez.)
+t: Where do you live? = Soru kelimesi + do/does + özne + fiil: What do you want? (Ne istiyorsun?)
+
+# A1 | Çevremde | Şehir, alışveriş, hava, beden, giysi, yetenekler
+
+## city | Where is the station? | Şehirde | #2F6B4F
+w: street = sokak, cadde | 🛣️
+w: station = istasyon | 🚉
+w: bank = banka | 🏦
+w: hospital = hastane | 🏥
+w: park = park | 🏞️
+w: shop = dükkân | 🏪
+w: left = sol | ⬅️
+w: right = sağ | ➡️
+w: straight on = dümdüz
+w: near = yakın
+w: far = uzak
+w: turn = dönmek
+s: Where is the station? = İstasyon nerede?
+s: Turn left, then go straight on. = Sola dön, sonra dümdüz git.
+s: The bank is on the right. = Banka sağda.
+s: Is the hospital far? = Hastane uzak mı?
+s: No, it is near. = Hayır, yakın.
+s: Excuse me, is there a shop near here? = Affedersiniz, buralarda bir dükkân var mı?
+t: Excuse me = Yabancıya soru sormadan önce «Excuse me» (affedersiniz) denir.
+t: Turn left! = Emir cümlesi fiille başlar, özne yok: Turn left (sola dön), Go straight on (düz git).
+story: Excuse me!
+> Azad: Excuse me, where is the station? = Affedersiniz, istasyon nerede?
+> Mr Brown: Go straight on and turn left. = Düz gidin ve sola dönün.
+> Azad: Is it far? = Uzak mı?
+> Mr Brown: No, it is near. Five minutes. = Hayır, yakın. Beş dakika. ? İstasyon uzak mı? = No, it is near. Five minutes. / Yes, it is very far. / Turn right at the bank.
+> Azad: Thank you very much! = Çok teşekkür ederim!
+
+## shop | How much is it? | Alışveriş | #34488F
+w: how much = ne kadar, kaç para
+w: money = para | 💵
+w: price = fiyat
+w: cheap = ucuz
+w: expensive = pahalı
+w: buy = satın almak | 🛒
+w: pay = ödemek | 💳
+w: want = istemek
+w: these = bunlar
+w: those = şunlar
+w: shoes = ayakkabı | 👟
+w: card = kart | 💳
+s: How much is this bag? = Bu çanta ne kadar?
+s: It is twenty pounds. = Yirmi sterlin.
+s: That is very expensive! = Bu çok pahalı!
+s: These shoes are cheap. = Bu ayakkabılar ucuz.
+s: I want to buy a phone. = Bir telefon almak istiyorum.
+s: Can I pay by card? = Kartla ödeyebilir miyim?
+s: How much are those apples? = Şu elmalar ne kadar?
+t: How much is / How much are = Tekil için «is», çoğul için «are»: How much is the bag? How much are the shoes?
+t: this → these, that → those = Bu → bunlar, şu → şunlar. Çoğul isimle «these/those» kullanılır.
+
+## weather | It is sunny | Hava ve mevsimler | #B83440
+w: weather = hava | 🌤️
+w: sunny = güneşli | ☀️
+w: rainy = yağmurlu | 🌧️
+w: snow = kar | ❄️
+w: cold = soğuk | 🥶
+w: hot = sıcak | 🥵
+w: warm = ılık
+w: windy = rüzgârlı | 💨
+w: summer = yaz | 🏖️
+w: winter = kış | ⛄
+w: spring = ilkbahar | 🌸
+w: autumn = sonbahar | 🍂
+s: What is the weather like? = Hava nasıl?
+s: It is sunny and hot. = Hava güneşli ve sıcak.
+s: It is cold in winter. = Kışın hava soğuk.
+s: It is raining now. = Şu an yağmur yağıyor.
+s: I love summer. = Yazı çok severim.
+s: It snows in January. = Ocakta kar yağar.
+t: It is cold = Hava durumunda özne «it»tir: It is hot (hava sıcak), It is windy (rüzgârlı).
+t: in summer = Mevsimlerle «in»: in winter (kışın), in spring (ilkbaharda).
+
+## body | My head hurts | Beden | #855700
+w: head = baş | 🙂
+w: eye = göz | 👁️
+w: ear = kulak | 👂
+w: nose = burun | 👃
+w: mouth = ağız | 👄
+w: hand = el | ✋
+w: arm = kol | 💪
+w: leg = bacak | 🦵
+w: foot = ayak | 🦶
+w: tooth = diş | 🦷
+w: hurt = acımak, ağrımak
+w: ill = hasta | 🤒
+s: My head hurts. = Başım ağrıyor.
+s: I am ill today. = Bugün hastayım.
+s: She has blue eyes. = Onun mavi gözleri var.
+s: Wash your hands, please. = Lütfen ellerini yıka.
+s: My feet are cold. = Ayaklarım üşüyor.
+s: I have two arms and two legs. = İki kolum ve iki bacağım var.
+t: foot → feet, tooth → teeth = Bazı çoğullar düzensizdir: foot → feet, tooth → teeth, man → men, child → children.
+t: My head hurts = «Başım ağrıyor»: ağrıyan yer + hurts. Ayrıca: I have a headache.
+
+## clothes | I am wearing a coat | Giysiler | #8A4FBF
+w: shirt = gömlek | 👔
+w: T-shirt = tişört | 👕
+w: dress = elbise | 👗
+w: trousers = pantolon | 👖
+w: coat = palto, mont | 🧥
+w: hat = şapka | 🎩
+w: socks = çorap | 🧦
+w: wear = giymek
+w: new = yeni
+w: old = eski, yaşlı
+w: beautiful = güzel
+w: size = beden, boyut
+s: I am wearing a coat. = Mont giyiyorum.
+s: She is wearing a beautiful dress. = O güzel bir elbise giyiyor.
+s: These trousers are new. = Bu pantolon yeni.
+s: My socks are black. = Çoraplarım siyah.
+s: What size are you? = Kaç beden giyiyorsun?
+s: Put on your hat, it is cold. = Şapkanı tak, hava soğuk.
+t: trousers / jeans / shorts = Bu kelimeler hep çoğuldur: My trousers are new (pantolonum yeni).
+t: I am wearing = Şu an üzerinde olan için şimdiki zaman: I am wearing a T-shirt.
+
+## can | I can swim | Yapabildiklerim | #1C8FC7
+w: can = -ebilmek
+w: cannot = -emez
+w: drive = araba sürmek | 🚗
+w: play = oynamak, çalmak
+w: guitar = gitar | 🎸
+w: sing = şarkı söylemek | 🎤
+w: draw = çizmek | ✏️
+w: ride = binmek | 🚲
+w: help = yardım etmek | 🆘
+w: well = iyi (biçimde)
+w: fast = hızlı
+s: I can swim. = Yüzebilirim.
+s: She cannot drive. = O araba süremez.
+s: Can you play the guitar? = Gitar çalabilir misin?
+s: He can sing very well. = O çok iyi şarkı söyleyebilir.
+s: Can you help me, please? = Bana yardım edebilir misiniz, lütfen?
+s: I can ride a bike. = Bisiklete binebilirim.
+s: We can run fast. = Hızlı koşabiliriz.
+t: can + fiil = «can» her özneyle aynıdır, fiil yalın kalır: She can swim (She cans / can swims değil).
+t: Can you…? = Soru ve rica: Can you help me? Olumsuz: cannot (can't).
+story: Can you swim?
+> Emma: Can you swim, Azad? = Yüzebilir misin, Azad?
+> Azad: Yes, I can. I swim every summer. = Evet, yüzebilirim. Her yaz yüzerim.
+> Emma: I cannot swim, but I can ride a bike. = Ben yüzemem ama bisiklete binebilirim. ? Emma ne yapabilir? = I cannot swim, but I can ride a bike. / I can swim very fast. / I cannot ride a bike.
+> Azad: Can you help me with my English? = İngilizcem için bana yardım edebilir misin?
+> Emma: Of course I can! = Tabii ki edebilirim!
+
+## now | I am reading now | Şu an ne yapıyorsun? | #2F6B4F
+w: now = şimdi | ⏳
+w: right now = tam şu an
+w: listen = dinlemek | 🎧
+w: look = bakmak | 👀
+w: wait = beklemek
+w: write = yazmak | ✍️
+w: study = ders çalışmak | 📚
+w: talk = konuşmak, sohbet etmek
+w: run = koşmak | 🏃
+w: walk = yürümek | 🚶
+w: busy = meşgul
+s: I am reading a book now. = Şu an kitap okuyorum.
+s: What are you doing? = Ne yapıyorsun?
+s: She is studying in her room. = O odasında ders çalışıyor.
+s: They are watching a film. = Onlar film izliyor.
+s: Look! It is snowing. = Bak! Kar yağıyor.
+s: I am busy right now. = Şu an meşgulüm.
+s: Are you listening to me? = Beni dinliyor musun?
+t: am / is / are + -ing = Şimdiki zaman (-iyor): I am reading, he is running, we are waiting.
+t: run → running, write → writing = Bazı fiillerde harf ikilenir (run → running), sondaki -e düşer (write → writing).
+n: «I read» her zaman yaptığın şey (okurum), «I am reading» şu an yaptığın şey (okuyorum).
