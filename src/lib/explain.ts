@@ -50,8 +50,19 @@ function sentenceHint(given: string, want: string): string[] {
   return out;
 }
 
+/** For a correct sentence: a tip from that sentence's own unit whose example shares a word with it, or nothing. */
+export function unitTipFor(sentence: string): Why["tip"] {
+  const u = UNITS.find((x) => x.sents?.some((r) => r[0] === sentence)); if (!u?.tips?.length) return undefined;
+  const toks = new Set(norm(sentence).split(" ").filter((x) => x.length > 1));
+  for (const [ku, m] of u.tips) {
+    const tt = norm(ku).split(/[ ·/+…→=]+/).filter((x) => x.length > 1);
+    if (tt.filter((x) => toks.has(x)).length >= Math.min(2, tt.length)) return { ku, m: M(m) };
+  }
+  return undefined;
+}
+
 /** a tip from the course whose example shares a word with the answer */
-function findTip(text: string): Why["tip"] {
+export function findTip(text: string): Why["tip"] {
   const toks = new Set(norm(text).split(" ").filter((x) => x.length > 1));
   const unit = WORD[text]?.unit;
   const ordered = unit ? [...UNITS.filter((u) => u.id === unit), ...UNITS] : UNITS;

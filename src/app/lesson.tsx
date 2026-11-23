@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import Animated, { Easing, FadeIn, FadeInDown, SlideInDown, SlideInRight, useAnimatedStyle, useSharedValue, withSequence, withSpring, withTiming, ZoomIn } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
-import { explain } from "@/lib/explain";
+import { explain, unitTipFor } from "@/lib/explain";
 import { askReminder, scheduleReminders } from "@/lib/remind";
 import { hasAudio, speak, sfx, stopVoice } from "@/lib/audio";
 import { altForms, arOf, CKB_KEYS, isRtl, latSub } from "@/lib/script";
@@ -54,6 +54,7 @@ function build(params: { node?: string; practice?: string; jump?: string; legend
 }
 
 export default function Lesson() {
+  const [startedAt] = useState(() => Date.now());
   const params = useLocalSearchParams<{ node?: string; practice?: string; jump?: string; legend?: string }>();
   const th = useTheme(); const s = useS(); const ins = useSafeAreaInsets();
   const init = useMemo(() => build(params), []);
@@ -157,7 +158,7 @@ export default function Lesson() {
 
   const pct = Math.max(4, Math.round((done / total) * 100));
   const locked = !!verdict;
-  const inf = init.practice || ((s.infUntil ?? 0) > Date.now() && !isJump);
+  const inf = init.practice || ((s.infUntil ?? 0) > startedAt && !isJump);
   const heartLabel = inf ? "∞" : isJump ? String(lives) : String(s.hearts);
 
   return (
@@ -219,12 +220,27 @@ function Footer({ e, verdict, answer, combo, onCheck, onNext, onSkip, bottom }: 
           {verdict.said && verdict.heard ? <Text style={{ fontFamily: F.italic, color: th.muted }}>{t("heard", { h: verdict.heard })}</Text> : null}
           {verdict.mean && !verdict.match && !verdict.said ? <Text style={{ fontFamily: F.body, color: th.muted }}>{ok ? `${verdict.ans} = ${verdict.mean}` : verdict.mean}</Text> : null}
           {!ok && !verdict.said && !verdict.match ? <WhyBox v={verdict} /> : null}
+          {ok && verdict.sentence ? <GoodTip v={verdict} /> : null}
         </View>
         {verdict.ku && hasAudio(verdict.ku) ? <Spk text={verdict.ku} size={40} /> : null}
       </View>
       <Btn title={t("cont")} kind={ok ? "primary" : "bad"} onPress={onNext} />
     </Animated.View>
   );
+}
+
+/** After a correct sentence: the matching grammar tip, shown once per tip per session (like Busuu's note). */
+const tipsShown = new Set<string>();
+function GoodTip({ v }: { v: Info }) {
+  const th = useTheme();
+  const tip = useMemo(() => { const x = unitTipFor(v.ku ?? v.ans ?? ""); if (!x || tipsShown.has(x.ku)) return null; tipsShown.add(x.ku); return x; }, [v]);
+  if (!tip) return null;
+  return (
+    <View style={{ marginTop: 6, gap: 2, padding: 10, borderRadius: 10, borderTopLeftRadius: 3, backgroundColor: th.surface, borderWidth: 1, borderColor: th.line2 }}>
+      <Text style={{ fontFamily: F.bodyHeavy, fontSize: TS.xs, color: th.keskDeep }}>{t("tipKind")}</Text>
+      <Text style={{ fontFamily: F.serif, fontSize: TS.md, color: th.ink }}>{tip.ku}</Text>
+      <Text style={{ fontFamily: F.body, fontSize: TS.sm, lineHeight: 20, color: th.ink }}>{tip.m}</Text>
+    </View>);
 }
 
 /** "Neden?" — tap to see why the answer was wrong (letter pair, missing words, word order, matching grammar tip). */
@@ -317,6 +333,7 @@ function Exercise(p: ExP) {
     case "speak": return <SpeakEx {...c} e={e} />;
     case "tip": return <TipCard unit={e.unit} />;
     case "sound": return <SoundEx {...c} e={e} />;
+    case "tf": return <TrueFalse {...c} e={e} />;
     default: return <TypeEx {...c} e={e} />;
   }
 }
@@ -441,6 +458,33 @@ function Build({ e, locked, setAnswer }: P<"build">) {
     </View>
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "center" }}>
       {toks.map(({ i }) => <Chip key={i} i={i} ghost={picked.includes(i)} onPress={() => { sfx("tap"); if (!e.rev) speak(toks[i].tk); setPicked((p) => [...p, i]); }} />)}
+    </View>
+  </>);
+}
+
+/** «Doğru mu, yanlış mı?»: is this the right translation of the sentence? */
+function TrueFalse({ e, locked, verdict, setAnswer }: P<"tf">) {
+  const th = useTheme(); const [sel, setSel] = useState<"t" | "f" | null>(null);
+  useEffect(() => { setAnswer({ val: sel, get: () => ({ ok: (sel === "t") === e.ok, ans: e.s[0], mean: M(e.s[1]), ku: e.s[0], sentence: true }) }); }, [sel]);
+  const right: "t" | "f" = e.ok ? "t" : "f";
+  return (<>
+    <Kind icon={<Icon.check size={18} color={th.keskDeep} />} label={t("tfKind")} />
+    <JujiSays text={e.s[0]} who={speakerFor(e.s[0])} />
+    <View style={{ gap: 4, padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderStyle: "dashed", borderColor: th.line2 }}>
+      <Text style={{ fontFamily: F.bodyHeavy, fontSize: TS.xs, letterSpacing: 0.5, color: th.muted }}>{t("tfMeans")}</Text>
+      <Text style={{ fontFamily: F.bodySemi, fontSize: 20, lineHeight: 27, color: th.ink }}>{e.shown}</Text>
+    </View>
+    <View style={{ flexDirection: "row", gap: 12 }}>
+      {(["t", "f"] as const).map((k) => {
+        const st = verdict ? (k === right ? "right" : k === sel ? "wrong" : "") : k === sel ? "sel" : "";
+        const bc = st === "right" ? th.kesk : st === "wrong" ? th.sor : st === "sel" ? th.sky : th.line2;
+        return (
+          <Pressable key={k} onPress={() => { if (locked) return; sfx("tap"); buzz("select"); setSel(k); }} accessibilityRole="button" accessibilityState={{ selected: st === "sel" }}
+            style={({ pressed }) => ({ flex: 1, minHeight: 64, alignItems: "center", justifyContent: "center", flexDirection: "row", gap: 8, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: st ? 2 : 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: bc, backgroundColor: st === "sel" ? th.skySoft : st === "right" ? th.keskSoft : st === "wrong" ? th.sorSoft : th.surface })}>
+            {k === "t" ? <Icon.check size={20} color={st ? bc : th.keskDeep} /> : <Icon.x size={18} color={st ? bc : th.sorDeep} />}
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 19, color: th.ink }}>{t(k === "t" ? "tfTrue" : "tfFalse")}</Text>
+          </Pressable>);
+      })}
     </View>
   </>);
 }

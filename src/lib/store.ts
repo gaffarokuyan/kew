@@ -47,6 +47,8 @@ export type State = {
   /** One-time hints already shown (e.g. "tap a word to see its meaning"). */
   tips?: Record<string, boolean>;
   /** Shop: Juji's scarf, scarves owned, double-XP and unlimited-hearts end times, promo codes used. */
+  /** Why the learner is learning (onboarding answer), personalises Juji's lines. */
+  why?: string;
   outfit?: string; owned?: string[]; boostUntil?: number; infUntil?: number; promo?: string[];
 };
 const DEF = (): State => ({

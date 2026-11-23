@@ -15,7 +15,8 @@ export type Ex =
   | { t: "speak"; w: W; sent?: boolean }
   | { t: "recall"; w: W }
   | { t: "tip"; unit: string }
-  | { t: "sound"; w: W; opts: [string, string]; ans: string; letters: boolean };
+  | { t: "sound"; w: W; opts: [string, string]; ans: string; letters: boolean }
+  | { t: "tf"; s: SentRow; shown: string; ok: boolean };
 
 export const shuffle = <T,>(a: T[]): T[] => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 export const pick = <T,>(a: T[], n: number) => shuffle(a).slice(0, n);
@@ -98,6 +99,11 @@ export function genSent(n: NodeT, voice: boolean): Ex[] {
   const hs = u.sents.filter((s) => hasAudio(s[0]));
   if (voice && hs.length) { const s = pick(hs, 1)[0]; ex.push({ t: "type", w: { ku: s[0], m: s[1], pic: null } }); }
   ex.push({ t: "match", pairs: pick(pool, Math.min(5, pool.length)) });
+  // «Doğru mu, yanlış mı?»: a sentence with its own meaning, or with another sentence's meaning.
+  if (u.sents.length >= 3) {
+    const [s, o] = pick(u.sents, 2), right = Math.random() < 0.5;
+    ex.push({ t: "tf", s, shown: right ? M(s[1]) : M(o[1]), ok: right });
+  }
   const out = shuffle(ex).slice(0, 12);
   if (voice && canSpeak(u)) {
     const ss = u.sents.filter((s) => hasAudio(s[0]) && s[0].split(" ").length <= 6);
