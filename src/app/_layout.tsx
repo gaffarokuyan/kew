@@ -1,11 +1,10 @@
-import { Alegreya_500Medium_Italic, Alegreya_700Bold, Alegreya_700Bold_Italic, Alegreya_800ExtraBold } from "@expo-google-fonts/alegreya";
 import { Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold, useFonts } from "@expo-google-fonts/nunito";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import * as SystemUI from "expo-system-ui";
 import { useEffect, useState } from "react";
-import { AppState, View } from "react-native";
+import { AppState, Platform, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { initAudio } from "@/lib/audio";
@@ -23,7 +22,12 @@ SplashScreen.preventAutoHideAsync().catch(() => {});
 export default function RootLayout() {
   const th = useTheme();
   const [ready, setReady] = useState(false);
-  const [fonts] = useFonts({ Alegreya_500Medium_Italic, Alegreya_700Bold, Alegreya_700Bold_Italic, Alegreya_800ExtraBold, Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold });
+  const [fonts] = useFonts({
+    // Alegreya with lining figures frozen in (tools: pyftfeatfreeze -f lnum), so "A1" no longer reads as "Aı".
+    Alegreya_500Medium_Italic: require("../../assets/fonts/Alegreya_500Medium_Italic_lnum.ttf"),
+    Alegreya_700Bold: require("../../assets/fonts/Alegreya_700Bold_lnum.ttf"),
+    Alegreya_700Bold_Italic: require("../../assets/fonts/Alegreya_700Bold_Italic_lnum.ttf"),
+    Alegreya_800ExtraBold: require("../../assets/fonts/Alegreya_800ExtraBold_lnum.ttf"), Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold });
 
   useEffect(() => {
     let stopLeague: (() => void) | null = null;
@@ -69,7 +73,21 @@ export default function RootLayout() {
 }
 
 /** Instead of closing, show what went wrong and offer a way back to the Kurmancî course. */
+/** Web: an open tab can ask for a code chunk from an older deploy. Reload once to pick up the new build. */
+function staleChunk(error: unknown) {
+  const m = String((error as Error)?.message || error) + String((error as Error)?.name || "");
+  if (Platform.OS !== "web" || !/Loading module|AsyncRequireError|ChunkLoadError|Failed to fetch dynamically/i.test(m)) return false;
+  try {
+    const k = "juji:reloaded", last = Number(sessionStorage.getItem(k) || 0);
+    if (Date.now() - last < 30_000) return false; // already tried: show the screen instead of looping
+    sessionStorage.setItem(k, String(Date.now()));
+  } catch {}
+  location.reload();
+  return true;
+}
+
 export function ErrorBoundary({ error, retry }: ErrorBoundaryProps) {
+  if (staleChunk(error)) return null;
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center", padding: 24, gap: 14, backgroundColor: "#FBF6EC" }}>
       <Text style={{ fontSize: 22, fontWeight: "800", color: "#2A1F14" }}>Juji bir hatayla karşılaştı</Text>

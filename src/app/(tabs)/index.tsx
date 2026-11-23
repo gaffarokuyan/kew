@@ -144,8 +144,8 @@ export default function Learn() {
         <View style={{ height: BANNER - 12, flexDirection: "row", alignItems: "stretch", borderRadius: 14, borderTopLeftRadius: 6, backgroundColor: bCol, borderBottomWidth: 4, borderColor: shade(bCol, 0.7), overflow: "hidden" }}>
           <KilimRule color="rgba(255,255,255,0.22)" h={9} lines={false} seed={UNITS.indexOf(bu) + 5} style={{ position: "absolute", left: 10, right: 72, bottom: 4 }} />
           <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: 16, paddingBottom: 6 }}>
-            <Text style={{ color: "rgba(255,255,255,0.88)", fontFamily: F.bodyHeavy, fontSize: TS.xs }}>{SECTIONS[bu.si].lvl} · {t("unit")} {UNITS.indexOf(bu) + 1}{"   "}<Text style={{ fontFamily: F.body }}>{bDone}/{bnodes.length}</Text></Text>
-            <Text numberOfLines={1} style={{ color: "#fff", fontFamily: F.display, fontSize: 23, lineHeight: 28 }}>{bu.ku}<Text style={{ fontFamily: F.bodySemi, fontSize: TS.sm }}>{"  "}{M(bu.name)}</Text></Text>
+            <Text numberOfLines={1} style={{ color: "rgba(255,255,255,0.88)", fontFamily: F.bodyHeavy, fontSize: TS.xs }}>{SECTIONS[bu.si].lvl} · {t("unit")} {UNITS.indexOf(bu) + 1} · {M(bu.name)}{"   "}<Text style={{ fontFamily: F.body }}>{bDone}/{bnodes.length}</Text></Text>
+            <Text numberOfLines={1} style={{ color: "#fff", fontFamily: F.display, fontSize: 24, lineHeight: 30 }}>{bu.ku}</Text>
           </View>
           <Pressable onPress={() => { sfx("tap"); buzz("tap"); setSheet({ type: bJump ? "jump" : "guide", id: bu.id }); }} accessibilityRole="button" accessibilityLabel={bJump ? t("jump") : t("guide")}
             style={({ pressed }) => ({ width: 64, alignItems: "center", justifyContent: "center", borderLeftWidth: 1, borderColor: "rgba(255,255,255,0.25)", backgroundColor: pressed ? "rgba(0,0,0,0.12)" : "transparent" })}>

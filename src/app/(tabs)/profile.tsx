@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Line, Rect, Text as SvgText } from "react-native-svg";
 import { LEVELS, NODES, SECTIONS, UNIT, UNITS } from "@/lib/course";
 import { LANGS, t, t2, tArr } from "@/lib/i18n";
@@ -57,6 +57,10 @@ export default function Profile() {
           <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: TS.xxl, lineHeight: 38, color: th.ink }}>{t("learner")}</Text>
           <Text style={{ fontFamily: F.bodySemi, color: th.muted }}>{t("learnerSub")}, {LANGS[li][1]}</Text>
         </View>
+        <Pressable onPress={() => router.push("/settings")} accessibilityRole="button" accessibilityLabel={t("settings")} hitSlop={6}
+          style={({ pressed }) => ({ alignSelf: "flex-start", width: 44, height: 44, borderRadius: 12, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? th.surface2 : "transparent" })}>
+          <Icon.gear size={24} color={th.muted} />
+        </Pressable>
       </View>
       <View style={{ flexDirection: "row", borderRadius: 14, borderWidth: 1, borderColor: th.line, backgroundColor: th.surface }}>
         {stat(<Icon.fire size={22} color={th.fire} />, s.streak, t("kStreak"))}

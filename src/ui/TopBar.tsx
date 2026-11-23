@@ -1,4 +1,3 @@
-import { router } from "expo-router";
 import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -34,19 +33,18 @@ export function TopBar() {
   const buy = (cost: number, fn: () => void, msg: string) => { if (s.gems < cost) return toast(t("notEnough")); update((x) => { x.gems -= cost; fn(); }); sfx("chest"); setShop(false); toast(msg); };
   return (
     <View style={{ paddingTop: ins.top, backgroundColor: th.bg, borderBottomWidth: 1, borderColor: th.line }}>
-      <View style={{ height: 58, flexDirection: "row", alignItems: "center", paddingHorizontal: 12, gap: 2, maxWidth: 640, width: "100%", alignSelf: "center" }}>
+      <View style={{ height: 58, flexDirection: "row", alignItems: "center", paddingHorizontal: 12, gap: 6, maxWidth: 640, width: "100%", alignSelf: "center" }}>
         <View style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 6, paddingLeft: 4 }} accessible accessibilityRole="header" accessibilityLabel="Juji">
           <Sun size={20} color={th.zer} />
           <Text style={{ fontFamily: F.italicBold, fontSize: 26, lineHeight: 30, color: th.ink, letterSpacing: -0.4 }}>Juji</Text>
           <Pressable onPress={() => { sfx("tap"); setCourse(true); }} accessibilityRole="button" accessibilityLabel={t("course")} hitSlop={8}
-            style={{ marginLeft: 4, paddingHorizontal: 9, paddingVertical: 4, borderRadius: 8, borderWidth: 1.5, borderColor: th.line2 }}>
-            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, color: th.muted }}>{COURSES.find((c) => c.id === s.course)?.name ?? "Kurmancî"} ▾</Text>
+            style={{ marginLeft: 6, paddingHorizontal: 11, paddingVertical: 6, borderRadius: 9, borderWidth: 1.5, borderColor: th.line2 }}>
+            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: th.muted }}>{COURSES.find((c) => c.id === s.course)?.name ?? "Kurmancî"} ▾</Text>
           </Pressable>
         </View>
         <Stat onPress={() => setStreak(true)} label={t("streakAria", { n: s.streak })}><Icon.fire size={22} color={s.last === day() ? th.fire : th.faint} />{num(s.streak, s.last === day() ? th.fire : th.muted)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("gemsAria", { n: s.gems })}><Icon.gem size={21} color={th.sky} />{num(s.gems, th.skyDeep)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("heartsAria", { n: s.hearts })}><Icon.heart size={22} color={th.sor} />{num(s.hearts, th.sorDeep)}</Stat>
-        <Stat onPress={() => router.push("/settings")} label={t("settings")}><Icon.gear size={22} color={th.muted} /></Stat>
       </View>
 
       <Sheet visible={shop} onClose={() => setShop(false)}>
