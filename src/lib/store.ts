@@ -37,6 +37,8 @@ export type State = {
   culture?: Record<string, number>;
   /** Daily reminder: on/off and time (local notifications). Undefined = never asked. */
   remind?: { on: boolean; h: number; m: number };
+  /** Units whose «Efsane» challenge was passed */
+  legend?: Record<string, number>;
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,

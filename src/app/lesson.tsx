@@ -10,7 +10,7 @@ import { altForms, arOf, CKB_KEYS, isRtl, latSub } from "@/lib/script";
 import { closeness, micAllowed, PASS, pauseSpeak, recMode, recognize, REC_OPTS, SttError } from "@/lib/speech";
 import { useAudioRecorder } from "expo-audio";
 import { courseId, NODE, NODES, UNIT, UNITS, WORD } from "@/lib/course";
-import { buildEx, genJump, genLearn, genMistakes, genReview, genSent, genSounds, lev, mean, norm, pick, shuffle, type Ex, type W } from "@/lib/exercises";
+import { buildEx, genJump, genLegend, genLearn, genMistakes, genReview, genSent, genSounds, lev, mean, norm, pick, shuffle, type Ex, type W } from "@/lib/exercises";
 import { M, t, tArr, locale } from "@/lib/i18n";
 import { addXP, day, dayAdd, need, getS, learned, markSent, markWord, MAXH, update, useS, wordStrength } from "@/lib/store";
 import { Juji, KilimRule, Medallion, Sun } from "@/ui/art";
@@ -20,17 +20,18 @@ import { Btn, confetti, Lead, Pic, Sheet, Spk, Title } from "@/ui/kit";
 import { WeekDots } from "@/ui/TopBar";
 import { F, TS, useTheme } from "@/ui/theme";
 
-type Kind = "learn" | "sent" | "jump" | "weak" | "mistakes" | "listen" | "sprint" | "sounds";
+type Kind = "learn" | "sent" | "jump" | "legend" | "weak" | "mistakes" | "listen" | "sprint" | "sounds";
 type Info = { given?: string | null; pi?: number; heard?: string; said?: boolean; ok: boolean; ans?: string; mean?: string | null; ku?: string; typo?: boolean; match?: boolean; slip?: boolean; sentence?: boolean };
 type Ans = { val: string | null; get: () => Info };
-type Phase = { p: "play" } | { p: "done"; xp: number; acc: number; secs: number; gems: number; goalHit: boolean; streakUp: boolean } | { p: "fail" } | { p: "streak" } | { p: "jumpPass" } | { p: "jumpFail" };
+type Phase = { p: "play" } | { p: "done"; xp: number; acc: number; secs: number; gems: number; goalHit: boolean; streakUp: boolean } | { p: "fail" } | { p: "streak" } | { p: "jumpPass" } | { p: "jumpFail" } | { p: "legendPass" } | { p: "legendFail" };
 
 const voiceOn = () => getS().set.voice;
 const now = () => Date.now();
 const rnd = (n: number) => Math.floor(Math.random() * n);
 
-function build(params: { node?: string; practice?: string; jump?: string }) {
+function build(params: { node?: string; practice?: string; jump?: string; legend?: string }) {
   const v = voiceOn(), s = getS();
+  if (params.legend) return { kind: "legend" as Kind, exs: genLegend(params.legend, v), id: null as string | null, practice: false, xp: 30 };
   if (params.jump) return { kind: "jump" as Kind, exs: genJump(params.jump, v), id: null as string | null, practice: false, xp: 20 };
   if (params.node) {
     const n = NODE[params.node];
@@ -52,7 +53,7 @@ function build(params: { node?: string; practice?: string; jump?: string }) {
 }
 
 export default function Lesson() {
-  const params = useLocalSearchParams<{ node?: string; practice?: string; jump?: string }>();
+  const params = useLocalSearchParams<{ node?: string; practice?: string; jump?: string; legend?: string }>();
   const th = useTheme(); const s = useS(); const ins = useSafeAreaInsets();
   const init = useMemo(() => build(params), []);
   const [queue, setQueue] = useState<Ex[]>(() => init.exs.map((e) => ({ ...e })));
@@ -68,7 +69,7 @@ export default function Lesson() {
   const [combo, setCombo] = useState(0);
   useEffect(() => { Rf.current.t0 = now(); }, []);
   const e = queue[0];
-  const isJump = init.kind === "jump";
+  const isJump = init.kind === "jump" || init.kind === "legend";
   useEffect(() => { if (process.env.EXPO_PUBLIC_E2E) Object.assign(globalThis, { __kewEx: e }); }, [e]);
   useEffect(() => () => stopVoice(), []);
 
@@ -123,6 +124,12 @@ export default function Lesson() {
   };
   const finishJump = (pass: boolean) => {
     stopVoice();
+    if (init.kind === "legend") {
+      if (!pass) { sfx("bad"); return setPhase({ p: "legendFail" }); }
+      const uid = params.legend!; const first = !getS().legend?.[uid];
+      update((x) => { x.legend = { ...(x.legend ?? {}), [uid]: Date.now() }; if (first) x.gems += 30; });
+      addXP(30); sfx("win"); buzz("win"); confetti(); return setPhase({ p: "legendPass" });
+    }
     if (!pass) { sfx("bad"); return setPhase({ p: "jumpFail" }); }
     const uid = params.jump!; const idx = NODES.findIndex((n) => n.unit === uid);
     update((x) => {
@@ -143,7 +150,7 @@ export default function Lesson() {
     setQueue(q);
   };
 
-  if (phase.p !== "play") return <ResultView phase={phase} practice={init.practice} kind={init.kind} jumpUnit={params.jump} close={close} setPhase={setPhase} />;
+  if (phase.p !== "play") return <ResultView phase={phase} practice={init.practice} kind={init.kind} jumpUnit={params.jump ?? params.legend} close={close} setPhase={setPhase} />;
   if (!e) return null;
 
   const pct = Math.max(4, Math.round((done / total) * 100));
@@ -581,6 +588,15 @@ function ResultView({ phase, practice, kind, jumpUnit, close, setPhase }: { phas
     <Juji size={140} sad /><Title>{t("failTitle")}</Title><Lead>{t("failText")}</Lead>
     <Btn title={t("practiceHeart")} kind="sky" onPress={() => router.replace({ pathname: "/lesson", params: { practice: "weak" } })} style={{ alignSelf: "stretch" }} />
     <Btn title={t("home")} kind="ghost" onPress={close} style={{ alignSelf: "stretch" }} />
+  </>);
+  if (phase.p === "legendFail") return wrap(<><Juji size={140} sad /><Title>{t("legendFail")}</Title><Lead>{t("legendFailText")}</Lead><Btn title={t("home")} onPress={close} style={{ alignSelf: "stretch" }} /></>);
+  if (phase.p === "legendPass") return wrap(<>
+    <Animated.View entering={ZoomIn.springify().damping(11)} style={{ alignItems: "center", justifyContent: "center" }}>
+      <Medallion size={170} color={th.zer} accent={th.zerDeep} core={false} />
+      <View style={{ position: "absolute" }}><Icon.crown size={70} color={th.zerDeep} /></View>
+    </Animated.View>
+    <Title color={th.zerDeep}>{t("legendPass")}</Title><Lead>{t("legendPassText", { u: UNIT[jumpUnit!]?.ku ?? "" })}</Lead>
+    <Btn title={t("contOn")} onPress={close} style={{ alignSelf: "stretch" }} />
   </>);
   if (phase.p === "jumpFail") return wrap(<><Juji size={140} sad /><Title>{t("jumpFail")}</Title><Lead>{t("jumpFailText")}</Lead><Btn title={t("home")} onPress={close} style={{ alignSelf: "stretch" }} /></>);
   if (phase.p === "jumpPass") return wrap(<><Juji size={140} /><Title>{t("jumpPass")}</Title><Lead>{t("jumpPassText", { u: UNIT[jumpUnit!].ku })}</Lead><Btn title={t("contOn")} onPress={close} style={{ alignSelf: "stretch" }} /></>);

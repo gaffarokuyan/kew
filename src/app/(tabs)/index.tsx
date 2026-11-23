@@ -7,7 +7,7 @@ import { speak, sfx } from "@/lib/audio";
 import { courseId, META, NODES, SECTIONS, uniqueWords, UNIT, UNITS, type Level, type NodeT, type Unit } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
 import { nodeTitle } from "@/lib/nodes";
-import { firstOpen, isDone, unlocked, update, useS } from "@/lib/store";
+import { firstOpen, getS, isDone, unlocked, update, useS } from "@/lib/store";
 import { Chest, Diamond, Juji, KilimRule, Medallion } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
@@ -57,7 +57,7 @@ function unitAt(y: number) {
 export default function Learn() {
   const th = useTheme(); const s = useS(); rows();
   const list = useRef<FlatList<Row>>(null);
-  const [sheet, setSheet] = useState<null | { type: "node" | "chest" | "guide" | "jump"; id: string; gems?: number }>(null);
+  const [sheet, setSheet] = useState<null | { type: "node" | "chest" | "guide" | "jump" | "legend"; id: string; gems?: number }>(null);
   const [topUnit, setTopUnit] = useState(UNITS[0].id);
   const cur = firstOpen(s);
 
@@ -70,7 +70,7 @@ export default function Learn() {
   const openNode = (n: NodeT) => {
     if (!unlocked(n.id)) { sfx("bad"); buzz("bad"); toast(t("lockedFirst")); return; }
     if (n.type === "chest") {
-      if (isDone(n.id)) return toast(t("chestDone"));
+      if (isDone(n.id)) { buzz("tap"); return setSheet({ type: "legend", id: n.unit }); }
       const g = chestGems();
       update((x) => { x.gems += g; x.done[n.id] = true; }); sfx("chest"); buzz("win"); confetti();
       return setSheet({ type: "chest", id: n.id, gems: g });
@@ -179,7 +179,10 @@ function PathNode({ n, off, cur, here, deco, onPress }: { n: NodeT; off: number;
   const label = `${u.ku}: ${nodeTitle(n)}`;
   if (n.type === "chest") return (
     <View style={{ height: H.node, alignItems: "center", justifyContent: "center" }}>
-      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} style={{ transform: [{ translateX: off }] }}><Chest size={78} open={dn} lock={!un} /></Pressable>
+      <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} style={{ transform: [{ translateX: off }] }}>
+        <Chest size={78} open={dn} lock={!un} />
+        {dn ? <View style={{ position: "absolute", top: -14, right: -10, width: 34, height: 34, borderRadius: 17, alignItems: "center", justifyContent: "center", backgroundColor: s.legend?.[n.unit] ? th.zer : th.surface, borderWidth: 2, borderColor: th.zer }}><Icon.crown size={18} color={s.legend?.[n.unit] ? "#fff" : th.zerDeep} /></View> : null}
+      </Pressable>
     </View>
   );
   const uc = ucol(u.col, th);
@@ -259,6 +262,14 @@ function NodeSheets({ sheet, close }: { sheet: null | { type: string; id: string
     );
   }
   const u = UNIT[sheet.id];
+  if (sheet.type === "legend") { const lg = !!getS().legend?.[u.id]; return (
+    <Sheet visible center onClose={close}>
+      <View style={{ alignItems: "center" }}><Icon.crown size={72} color={th.zer} /></View>
+      <Text style={{ fontFamily: F.display, fontSize: TS.xl, color: th.ink, textAlign: "center" }}>{t("legendTitle", { u: u.ku })}</Text>
+      <Text style={{ fontFamily: F.body, color: th.muted, textAlign: "center", lineHeight: 21 }}>{lg ? t("legendDone") : t("legendText")}</Text>
+      <Btn title={t("legend")} onPress={() => { close(); router.push({ pathname: "/lesson", params: { legend: u.id } }); }} />
+      <Btn title={t("close")} kind="ghost" onPress={close} />
+    </Sheet>); }
   if (sheet.type === "jump") return (
     <Sheet visible center onClose={close}>
       <View style={{ alignItems: "center" }}><Icon.jump size={64} color={ucol(u.col, th)} /></View>

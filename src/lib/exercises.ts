@@ -121,6 +121,14 @@ export function genJump(uid: string, voice: boolean): Ex[] {
   pick(UNITS.slice(Math.max(0, ui - 3), ui), 2).forEach((x) => exs.push(buildEx(pick(x.sents, 1)[0], x, Math.random() < 0.5)));
   return shuffle(exs);
 }
+/** «Efsane» (legendary) challenge for a finished unit: no multiple choice — recall, typing and both-way sentence building. */
+export function genLegend(uid: string, voice: boolean): Ex[] {
+  const u = UNIT[uid]; const ws = shuffle(u.words.map(toW));
+  const ex: Ex[] = ws.slice(0, 6).map((w, i) => (voice && i % 3 === 2 && hasAudio(w.ku) ? { t: "type", w } : recallEx(w)) as Ex);
+  pick(u.sents, 4).forEach((s, i) => ex.push(buildEx(s, u, i % 2 === 1)));
+  ex.push({ t: "match", pairs: pick(ws, Math.min(5, ws.length)) });
+  return shuffle(ex);
+}
 export const nodeOf = (id: string) => NODE[id];
 /** Every Kurmancî string an exercise might speak — used to warm the audio player. */
 export const exTexts = (e: Ex): string[] =>
