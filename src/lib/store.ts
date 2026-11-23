@@ -44,6 +44,8 @@ export type State = {
   lg?: { secret: string; nick: string };
   /** Last league state from the server, so the screen opens instantly and offline. */
   lgCache?: LeagueState;
+  /** One-time hints already shown (e.g. "tap a word to see its meaning"). */
+  tips?: Record<string, boolean>;
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,

@@ -17,6 +17,7 @@ import { Juji, KilimRule, Medallion, Sun } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
 import { Btn, confetti, Lead, Pic, Sheet, Spk, Title } from "@/ui/kit";
+import { GlossText, Person, speakerFor } from "@/ui/Speaker";
 import { WeekDots } from "@/ui/TopBar";
 import { F, TS, useTheme } from "@/ui/theme";
 
@@ -162,7 +163,10 @@ export default function Lesson() {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 14, paddingHorizontal: 16, height: 56 }}>
           <Pressable onPress={() => setQuit(true)} accessibilityRole="button" accessibilityLabel={t("quitAria")} style={{ width: 44, height: 44, marginLeft: -10, alignItems: "center", justifyContent: "center" }}><Icon.x size={24} color={th.muted} /></Pressable>
-          <LessonBar pct={pct} hot={combo >= 5} />
+          <View style={{ flex: 1 }}>
+            {combo >= 2 ? <Animated.Text key={combo} entering={ZoomIn.springify().damping(10)} style={{ position: "absolute", top: -17, left: 4, fontFamily: F.bodyHeavy, fontSize: 11, letterSpacing: 0.8, color: combo >= 3 ? th.zerDeep : th.keskDeep }}>{t("comboTag", { n: combo })}</Animated.Text> : null}
+            <LessonBar pct={pct} hot={combo >= 3} />
+          </View>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }} accessible accessibilityLabel={init.practice ? "∞" : t("heartsAria", { n: heartLabel })}><Icon.heart size={22} color={init.practice ? th.sky : th.sor} /><Text style={{ fontFamily: F.bodyHeavy, fontSize: 17, color: init.practice ? th.skyDeep : th.sorDeep }}>{heartLabel}</Text></View>
         </View>
         <ScrollView contentContainerStyle={{ padding: 18, gap: 18, flexGrow: 1, maxWidth: 560, width: "100%", alignSelf: "center" }} keyboardShouldPersistTaps="handled">
@@ -192,7 +196,7 @@ function Footer({ e, verdict, answer, combo, onCheck, onNext, onSkip, bottom }: 
     if (e.t === "match") return <View style={{ padding: 16, paddingBottom: 22 + bottom, borderTopWidth: 1, borderColor: th.line }}><Text style={{ textAlign: "center", fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>{t("matchHint")}</Text></View>;
     return <View style={{ padding: 16, paddingBottom: 16 + bottom, borderTopWidth: 1, borderColor: th.line }}><Btn title={t("check")} disabled={!answer?.val} onPress={onCheck} /></View>;
   }
-  const ok = verdict.ok; const pr = tArr("praise");
+  const ok = verdict.ok; const pr = courseId() === "eng" ? tArr("praiseEng") : tArr("praise");
   const title = verdict.said ? (ok ? t("jujiOk") : t("sayAgain")) : ok ? (verdict.typo ? t("typo") : pr[(verdict.pi ?? 0) % pr.length]) : t("correctIs");
   const showCombo = ok && combo >= 3 && combo % 2 === 1;
   return (
@@ -253,16 +257,17 @@ function Kind({ icon, label, color }: { icon: React.ReactNode; label: string; co
 }
 function Q({ children }: { children: React.ReactNode }) { const th = useTheme(); return <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: 29, lineHeight: 34, color: th.ink, letterSpacing: -0.2 }}>{children}</Text>; }
 
-function JujiSays({ text, voice = true }: { text: string; voice?: boolean }) {
+function JujiSays({ text, voice = true, who, gloss }: { text: string; voice?: boolean; who?: string; gloss?: boolean }) {
   const th = useTheme();
   return (
-    <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 8 }}>
-      <Juji size={96} />
+    <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 8, zIndex: 5 }}>
+      {who && who !== "Juji" ? <View style={{ width: 96, alignItems: "center" }}><Person name={who} size={118} /></View> : <Juji size={96} />}
       <View style={{ flex: 1, marginBottom: 24 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10, padding: 14, borderRadius: 16, borderBottomLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface }}>
           {voice && hasAudio(text) ? <Spk text={text} size={40} /> : null}
           <View style={{ flex: 1 }}>
-            <Text style={{ fontFamily: voice ? F.serif : F.bodyHeavy, fontSize: voice ? 22 : 19, lineHeight: voice ? 30 : 25, color: th.ink }}>{text}</Text>
+            {gloss && voice && !isRtl() ? <GlossText text={text} />
+              : <Text style={{ fontFamily: voice ? F.serif : F.bodyHeavy, fontSize: voice ? 22 : 19, lineHeight: voice ? 30 : 25, color: th.ink }}>{text}</Text>}
             {latSub(text) ? <Text style={{ fontFamily: F.italic, fontSize: 15, color: th.muted }}>{latSub(text)}</Text> : null}
           </View>
         </View>
@@ -271,6 +276,17 @@ function JujiSays({ text, voice = true }: { text: string; voice?: boolean }) {
       </View>
     </View>
   );
+}
+
+const isNew = (ku: string) => !getS().words[ku];
+/** Purple "YENİ KELİME" tag for words the learner meets for the first time. */
+function NewTag() {
+  const th = useTheme();
+  return (
+    <Animated.View entering={ZoomIn.springify().damping(12)} style={{ flexDirection: "row", alignItems: "center", gap: 6, marginBottom: -8 }}>
+      <View style={{ width: 16, height: 16, borderRadius: 4, transform: [{ rotate: "45deg" }], backgroundColor: th.plum, alignItems: "center", justifyContent: "center" }}><View style={{ width: 6, height: 6, borderRadius: 1, backgroundColor: "#fff" }} /></View>
+      <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, letterSpacing: 0.8, color: th.plum }}>{t("newWord").toLocaleUpperCase(locale() === "tr" ? "tr" : "en")}</Text>
+    </Animated.View>);
 }
 
 function Opt({ label, idx, state, onPress, ku }: { label: string; idx: number; state: "" | "sel" | "right" | "wrong"; onPress: () => void; ku?: boolean }) {
@@ -326,7 +342,7 @@ function Choice({ e, locked, verdict, setAnswer }: P<"mc" | "mcr" | "listen">) {
   useEffect(() => { setAnswer({ val: sel, get: () => ({ ok: norm(sel!) === norm(correct), ans: correct, mean: e.t === "mcr" ? null : mean(w), ku: w.ku }) }); }, [sel]);
   return (<>
     {e.t === "mc" && <><Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("howSay")} /><Q>{t("howSayQ", { w: mean(w) })}</Q></>}
-    {e.t === "mcr" && <><Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("whatMeans")} /><JujiSays text={w.ku} /></>}
+    {e.t === "mcr" && <>{isNew(w.ku) ? <NewTag /> : null}<Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={t("whatMeans")} /><JujiSays text={w.ku} /></>}
     {e.t === "listen" && <><Kind icon={<Icon.ear size={18} color={th.keskDeep} />} label={t("hearSelect")} />
       <View style={{ flexDirection: "row", justifyContent: "center", gap: 14, paddingVertical: 10 }}><Spk text={w.ku} size={84} /><Spk text={w.ku} slow size={60} /></View></>}
     <View style={{ gap: 10 }}>
@@ -343,18 +359,22 @@ function PicEx({ e, locked, verdict, setAnswer }: P<"pic">) {
   useEffect(() => { const tm = setTimeout(() => speak(w.ku), 300); return () => clearTimeout(tm); }, []);
   useEffect(() => { setAnswer({ val: sel, get: () => ({ ok: sel === w.ku, ans: w.ku, mean: mean(w), ku: w.ku }) }); }, [sel]);
   return (<>
-    <Kind icon={<Icon.star size={18} color={th.keskDeep} />} label={t("pickPic")} />
-    <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}><Q>{t("whichIs", { w: w.ku })}</Q>{hasAudio(w.ku) ? <Spk text={w.ku} size={40} /> : null}</View>
-    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
+    {isNew(w.ku) ? <NewTag /> : null}
+    <Q>{t("pickPic")}</Q>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+      {hasAudio(w.ku) ? <Spk text={w.ku} size={44} /> : null}
+      <Text style={{ fontFamily: F.serif, fontSize: 24, color: th.ink, textDecorationLine: "underline", textDecorationStyle: "dotted", textDecorationColor: th.faint }}>{w.ku}</Text>
+    </View>
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12, justifyContent: "space-between" }}>
       {e.cards.map((c) => {
         const st = verdict ? (c.ku === w.ku ? "right" : c.ku === sel ? "wrong" : "") : c.ku === sel ? "sel" : "";
         const bc = st === "sel" ? th.sky : st === "right" ? th.kesk : st === "wrong" ? th.sor : th.line2;
         return (
-          <Pressable key={c.ku} onPress={() => { if (locked) return; sfx("tap"); setSel(c.ku); }} accessibilityRole="button"
-            accessibilityLabel={verdict ? c.ku : undefined}
-            style={{ width: "47%", aspectRatio: 1, alignItems: "center", justifyContent: "center", gap: 6, borderRadius: 16, borderTopLeftRadius: 4, borderWidth: st ? 2 : 1.5, borderBottomWidth: 4, borderColor: bc, backgroundColor: st === "sel" ? th.skySoft : st === "right" ? th.keskSoft : st === "wrong" ? th.sorSoft : th.surface }}>
-            <Pic p={c.pic} size={70} />
-            <Text style={{ fontFamily: F.serif, fontSize: TS.lg, color: th.ink, opacity: verdict ? 1 : 0 }}>{c.ku}</Text>
+          <Pressable key={c.ku} onPress={() => { if (locked) return; sfx("tap"); buzz("select"); setSel(c.ku); }} accessibilityRole="button"
+            accessibilityLabel={mean(c)} accessibilityState={{ selected: st === "sel" }}
+            style={({ pressed }) => ({ width: "48%", aspectRatio: 0.86, alignItems: "center", justifyContent: "center", gap: 10, borderRadius: 16, borderTopLeftRadius: 4, borderWidth: st ? 2 : 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: bc, backgroundColor: st === "sel" ? th.skySoft : st === "right" ? th.keskSoft : st === "wrong" ? th.sorSoft : th.surface })}>
+            <Animated.View key={st} entering={st === "sel" || st === "right" ? ZoomIn.springify().damping(9) : undefined}><Pic p={c.pic} size={78} /></Animated.View>
+            <Text numberOfLines={2} style={{ fontFamily: F.bodySemi, fontSize: 17, textAlign: "center", paddingHorizontal: 6, color: st === "sel" ? th.skyDeep : st === "right" ? th.keskDeep : st === "wrong" ? th.sorDeep : th.ink }}>{mean(c)}</Text>
           </Pressable>);
       })}
     </View>
@@ -411,7 +431,7 @@ function Build({ e, locked, setAnswer }: P<"build">) {
     </Pressable>);
   return (<>
     <Kind icon={<Icon.chat size={18} color={th.keskDeep} />} label={e.rev ? t("toBase") : t("toKu")} />
-    <JujiSays text={e.prompt} voice={!!e.rev} />
+    <JujiSays text={e.prompt} voice={!!e.rev} who={speakerFor(e.ans + e.prompt)} gloss={!!e.rev} />
     <View style={{ minHeight: 120, flexDirection: !e.rev && isRtl() ? "row-reverse" : "row", flexWrap: "wrap", alignContent: "flex-start", gap: 8, paddingVertical: 10, backgroundColor: "transparent" }}>
       <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: 62, height: 1.5, backgroundColor: th.line2 }} />
       <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, bottom: 2, height: 1.5, backgroundColor: th.line2 }} />

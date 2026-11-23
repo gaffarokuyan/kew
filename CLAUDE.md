@@ -48,6 +48,7 @@ src/lib/
   podcast.ts        Podcast şeması + uzaktan manifest (gh-pages/podcasts.json, yüksek version kazanır)
   script.ts i18n.ts nodes.ts
 src/ui/             Tema, ikonlar, maskot çizimleri, ortak bileşenler, TopBar (kurs seçici), ScriptPicker
+  Speaker.tsx       Ayakta duran konuşan karakterler (Person, CHARS renkleriyle) ve GlossText: kelimeye dokununca anlamı (WORD'den, en uzun 3 kelimelik ifade önce)
 src/content/
   course.json course_zza.json course_ckb.json   Kurs içerikleri
   course_eng.json   ÜRETİLMİŞ: tools/eng/build.py (kaynak: tools/eng/a1.txt a2.txt b1.txt, basit satır biçimi; anlamlar yalnızca Türkçe)

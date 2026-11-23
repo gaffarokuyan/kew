@@ -1,21 +1,22 @@
 import { router } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
-import Animated, { FadeInDown } from "react-native-reanimated";
+import Animated, { FadeInDown, ZoomIn } from "react-native-reanimated";
+import Svg, { Circle, Path, Rect } from "react-native-svg";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
-import { COURSES, courseId, coursesFor, LEVELS, levelFirstUnit, UNITS, type CourseId, type Level } from "@/lib/course";
+import { COURSES, courseId, coursesFor, LEVELS, levelFirstUnit, NODES, UNITS, type CourseId, type Level } from "@/lib/course";
 import { LANGS, M, T, t, t2, tArr } from "@/lib/i18n";
 import { setCkbScript, switchCourse, type Lang, update, useS } from "@/lib/store";
 import { ScriptOptions } from "@/ui/ScriptPicker";
-import { Diamond, Juji, KilimRule, Medallion } from "@/ui/art";
+import { Juji, KilimRule, Medallion } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Btn, Lead, Title, toast } from "@/ui/kit";
 import { F, levelCol, TS, useTheme } from "@/ui/theme";
 
 /** Self-rated level → where a placement (jump) test could drop the learner. */
-const TARGET: Record<number, Level> = { 2: "A2", 3: "B1" };
-const LEVEL_CHOICES = [0, 1, 2, 3];
+const TARGET: Record<number, Level> = { 2: "A2", 3: "B1", 4: "B1" };
+const LEVEL_CHOICES = [0, 1, 2, 3, 4];
 /** A greeting and where each course is mostly spoken, shown on the course picker. */
 const COURSE_SAMPLE: Record<CourseId, { hi: string; hiLat?: string; where: string }> = {
   kmr: { hi: "Silav, tu çawa yî?", where: "Bakur, Rojava, Başûr (Behdînan) ve diaspora|Bakur, Rojava, Başûr (Behdînan) and the diaspora|Bakur, Rojava, Başûr (Behdînan) und die Diaspora" },
@@ -39,12 +40,14 @@ export default function Onboarding() {
   const th = useTheme(); const s = useS();
   const [step, setStep] = useState(s.lang ? 1 : 0);
   const jt = jumpTarget(s.level);
-  const finish = (jump?: string) => {
+  const finish = (jump?: string, firstLesson?: boolean) => {
     update((x) => { x.onboard = true; });
     router.replace("/(tabs)");
     if (jump) setTimeout(() => router.push({ pathname: "/lesson", params: { jump } }), 350);
+    else if (firstLesson && NODES[0]) setTimeout(() => router.push({ pathname: "/lesson", params: { node: NODES[0].id } }), 350);
     else if (s.level > 0) setTimeout(() => toast(t("heritageHint")), 700);
   };
+  const afterGoal = () => setStep(jt ? 7 : 8);
   const goals = [10, 20, 30, 50], mins = [5, 10, 15, 20];
   const choice = (on: boolean) => ({ pressed }: { pressed: boolean }) => ({
     minHeight: 64, flexDirection: "row" as const, gap: 14, alignItems: "center" as const, paddingVertical: 14, paddingHorizontal: 16, borderRadius: 14, borderTopLeftRadius: 4,
@@ -105,14 +108,12 @@ export default function Onboarding() {
           </>}
           {step === 6 && <ScriptOptions onPick={(m) => { tap(); setCkbScript(m); setStep(2); }} />}
           {step === 2 && <>
-            <Title align="left">{t("onbLevel")}</Title>
+            <Ask key="lvl" text={t("onbLevel")} />
             <View style={{ width: "100%", gap: 10 }}>
               {LEVEL_CHOICES.map((i) => { const [a, b] = t2("lvl" + i); return (
                 <Pressable key={i} onPress={() => { tap(); update((x) => { x.level = i; }); setStep(3); }} accessibilityRole="button" accessibilityLabel={`${a}. ${b}`} style={choice(false)}>
-                  {/* Rising pips: how much Kurmancî the learner already has. */}
-                  <View style={{ width: 34, flexDirection: "row", flexWrap: "wrap", gap: 2 }} importantForAccessibility="no-hide-descendants">
-                    {[0, 1, 2, 3].map((k) => <Diamond key={k} size={10} filled={k <= i} color={k <= i ? th.zer : th.line2} />)}
-                  </View>
+                  {/* Rising bars: how much the learner already has. */}
+                  <Bars n={i + 1} />
                   <View style={{ flex: 1 }}>
                     <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{a}</Text>
                     <Text style={{ fontFamily: F.body, color: th.muted }}>{b}</Text>
@@ -121,7 +122,7 @@ export default function Onboarding() {
             </View>
           </>}
           {step === 3 && <>
-            <Title align="left">{t("onbGoal")}</Title><Lead align="left">{t("onbGoalText")}</Lead>
+            <Ask text={t("onbGoal")} /><Lead align="left">{t("onbGoalText")}</Lead>
             <View style={{ flexDirection: "row", gap: 8, width: "100%" }}>
               {goals.map((g, i) => { const on = s.goal === g; return (
                 <Pressable key={g} onPress={() => { tap(); update((x) => { x.goal = g; }); }} accessibilityRole="button" accessibilityState={{ selected: on }}
@@ -130,7 +131,29 @@ export default function Onboarding() {
                   <Text style={{ fontFamily: F.body, color: th.muted, fontSize: 12 }}>{t("min", { n: mins[i] })}</Text>
                 </Pressable>); })}
             </View>
-            <Btn title={t("setGoal")} onPress={() => (jt ? setStep(4) : finish())} style={{ alignSelf: "stretch" }} />
+            <Btn title={t("setGoal")} onPress={afterGoal} style={{ alignSelf: "stretch" }} />
+          </>}
+          {step === 7 && jt && <>
+            <Ask text={t("onbWhere")} />
+            <View style={{ width: "100%", gap: 12 }}>
+              {[0, 1].map((k) => { const rec = (s.level >= 2 ? 1 : 0) === k; return (
+                <Pressable key={k} onPress={() => { tap(); if (k === 0) setStep(8); else setStep(4); }} accessibilityRole="button" accessibilityLabel={`${t(k ? "onbKnowQ" : "onbNewQ")}. ${t(k ? "onbKnowSub" : "onbNewSub")}`}
+                  style={({ pressed }) => ({ ...choice(rec)({ pressed }), minHeight: 96, paddingTop: 18 })}>
+                  {rec ? <Text style={{ position: "absolute", top: -9, right: 12, overflow: "hidden", paddingHorizontal: 8, paddingVertical: 2, borderRadius: 6, backgroundColor: th.sky, color: "#fff", fontFamily: F.bodyHeavy, fontSize: 11, letterSpacing: 0.6 }}>{t("onbRec").toLocaleUpperCase(s.lang === "tr" ? "tr" : "en")}</Text> : null}
+                  {k === 0 ? <BookOne /> : <Compass />}
+                  <View style={{ flex: 1, gap: 2 }}>
+                    <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{t(k ? "onbKnowQ" : "onbNewQ")}</Text>
+                    <Text style={{ fontFamily: F.body, color: th.muted }}>{t(k ? "onbKnowSub" : "onbNewSub")}</Text>
+                  </View>
+                </Pressable>); })}
+            </View>
+          </>}
+          {step === 8 && <>
+            <View style={{ alignItems: "center", gap: 6, paddingVertical: 30 }}>
+              <View style={{ marginBottom: 34 }}><Bubble text={t("onbReady")} center /></View>
+              <Animated.View entering={ZoomIn.delay(150).springify().damping(10)}><Juji size={150} /></Animated.View>
+            </View>
+            <Btn title={t("cont")} onPress={() => finish(undefined, true)} style={{ alignSelf: "stretch" }} />
           </>}
           {step === 4 && jt && <>
             <View style={{ alignItems: "center", justifyContent: "center", alignSelf: "flex-start" }}>
@@ -146,4 +169,57 @@ export default function Onboarding() {
       </ScrollView>
     </SafeAreaView>
   );
+}
+
+/** Juji asks the question in a speech bubble, the text typed out like Duolingo's owl. */
+function Ask({ text }: { text: string }) {
+  return (
+    <View style={{ flexDirection: "row", alignItems: "center", gap: 10, marginBottom: 4 }}>
+      <Juji size={84} />
+      <Bubble text={text} />
+    </View>);
+}
+function Bubble({ text, center }: { text: string; center?: boolean }) {
+  const th = useTheme(); const [n, setN] = useState(0);
+  useEffect(() => { const id = setInterval(() => setN((k) => { if (k >= text.length) { clearInterval(id); return k; } return k + 1; }), 22); return () => clearInterval(id); }, [text]);
+  return (
+    <View style={{ flex: center ? 0 : 1, maxWidth: 300 }} accessible accessibilityRole="header" accessibilityLabel={text}>
+      <View style={{ paddingVertical: 12, paddingHorizontal: 14, borderRadius: 14, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface }}>
+        {/* the full text keeps the size steady while it types out */}
+        <Text style={{ fontFamily: F.bodyHeavy, fontSize: 18, lineHeight: 24, color: "transparent" }}>{text}</Text>
+        <Text style={{ position: "absolute", top: 12, left: 14, right: 14, fontFamily: F.bodyHeavy, fontSize: 18, lineHeight: 24, color: th.ink }}>{text.slice(0, n)}</Text>
+      </View>
+      <View style={center
+        ? { position: "absolute", bottom: -6, alignSelf: "center", width: 12, height: 12, backgroundColor: th.surface, borderRightWidth: 1.5, borderBottomWidth: 1.5, borderColor: th.line2, transform: [{ rotate: "45deg" }] }
+        : { position: "absolute", left: -6, top: 20, width: 12, height: 12, backgroundColor: th.surface, borderLeftWidth: 1.5, borderBottomWidth: 1.5, borderColor: th.line2, transform: [{ rotate: "45deg" }] }} />
+    </View>);
+}
+function Bars({ n }: { n: number }) {
+  const th = useTheme();
+  return (
+    <Svg width={30} height={24} viewBox="0 0 30 24" importantForAccessibility="no-hide-descendants">
+      {[0, 1, 2, 3, 4].map((k) => <Rect key={k} x={k * 6} y={20 - (k + 1) * 4} width={4.2} height={(k + 1) * 4} rx={1.2} fill={k < n ? th.sky : th.line2} />)}
+    </Svg>);
+}
+function BookOne() {
+  const th = useTheme();
+  return (
+    <View style={{ width: 52, height: 60, alignItems: "center", justifyContent: "center" }}>
+      <Svg width={46} height={56} viewBox="0 0 46 56">
+        <Rect x={3} y={3} width={40} height={50} rx={5} fill={th.zer} />
+        <Rect x={3} y={45} width={40} height={8} rx={3} fill="#00000022" />
+        <Path d="M10 3 L10 14 L14 11 L18 14 L18 3Z" fill={th.sor} />
+      </Svg>
+      <Text style={{ position: "absolute", fontFamily: F.display, fontSize: 26, color: "#4a3200" }}>1</Text>
+    </View>);
+}
+function Compass() {
+  const th = useTheme();
+  return (
+    <Svg width={52} height={52} viewBox="0 0 52 52">
+      <Circle cx={26} cy={26} r={23} fill={th.surface} stroke={th.sky} strokeWidth={4} />
+      <Path d="M26 9 L32 26 L26 26Z" fill={th.sor} /><Path d="M26 9 L20 26 L26 26Z" fill="#e57373" />
+      <Path d="M26 43 L20 26 L26 26Z" fill={th.line2} /><Path d="M26 43 L32 26 L26 26Z" fill={th.faint} />
+      <Circle cx={26} cy={26} r={2.6} fill={th.ink} />
+    </Svg>);
 }
