@@ -11,6 +11,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { initAudio } from "@/lib/audio";
 import { t } from "@/lib/i18n";
 import { hydrate, switchCourse, tick } from "@/lib/store";
+import { scheduleReminders } from "@/lib/remind";
 import type { ErrorBoundaryProps } from "expo-router";
 import { Pressable, ScrollView, Text } from "react-native";
 import { ConfettiHost, toast, ToastHost } from "@/ui/kit";
@@ -28,9 +29,10 @@ export default function RootLayout() {
       const frozen = await hydrate();
       await initAudio();
       setReady(true);
+      scheduleReminders();
       if (frozen) setTimeout(() => toast(t("freezeUsed", { n: frozen })), 800);
     })();
-    const sub = AppState.addEventListener("change", (s) => { if (s === "active") tick(); });
+    const sub = AppState.addEventListener("change", (s) => { if (s === "active") { tick(); scheduleReminders(); } });
     return () => sub.remove();
   }, []);
   useEffect(() => { SystemUI.setBackgroundColorAsync(th.bg).catch(() => {}); }, [th.bg]);
@@ -50,6 +52,9 @@ export default function RootLayout() {
           <Stack.Screen name="read" options={{ animation: "slide_from_bottom" }} />
           <Stack.Screen name="podcasts" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="episode" options={{ animation: "slide_from_right" }} />
+          <Stack.Screen name="bridge" options={{ animation: "slide_from_right" }} />
+          <Stack.Screen name="alpha" options={{ animation: "slide_from_right" }} />
+          <Stack.Screen name="culture" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="settings" options={{ presentation: "modal" }} />
         </Stack>
         <ConfettiHost />

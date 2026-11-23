@@ -22,7 +22,7 @@ export type Prog = { done: State["done"]; words: State["words"]; mistakes: strin
 export type State = {
   v: 3; onboard: boolean; lang: Lang | null; level: number; goal: number; xp: number; gems: number;
   hearts: number; heartAt: number; streak: number; last: string | null; freeze: number; best: number;
-  done: Record<string, boolean>; words: Record<string, { s: number; t: number; seen: number }>; mistakes: string[];
+  done: Record<string, boolean>; words: Record<string, { s: number; t: number; seen: number; x?: number }>; mistakes: string[];
   xpLog: Record<string, number>; daily: { date: string | null; xp: number; lessons: number; bestCombo: number; claimed: string[] };
   stats: { perfect: number; stories: number; lessons: number; jumps: number };
   set: { sfx: boolean; voice: boolean; rate: number; speak: boolean }; speakPause: number;
@@ -33,6 +33,10 @@ export type State = {
   pods: Record<string, number>;
   /** Podcast level the learner last picked (A1, A2, ...), per course. */
   podLvl: Record<string, string>;
+  /** Culture cards read: id -> time */
+  culture?: Record<string, number>;
+  /** Daily reminder: on/off and time (local notifications). Undefined = never asked. */
+  remind?: { on: boolean; h: number; m: number };
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,
@@ -149,7 +153,13 @@ export function dueScore(ku: string, s = S) {
 export function markWord(ku: string, ok: boolean) {
   if (!WORD[ku]) return;
   const w = S.words[ku] || { s: 0, t: Date.now(), seen: 0 };
-  S.words[ku] = { seen: w.seen + 1, s: ok ? Math.min(4, w.s + 1) : Math.max(0, w.s - 1), t: Date.now() };
+  // x = how often this word was missed: a word missed again and again ("leech") drops faster and comes back sooner
+  const x = (w.x ?? 0) + (ok ? 0 : 1);
+  S.words[ku] = { seen: w.seen + 1, s: ok ? Math.min(4, w.s + 1) : Math.max(0, w.s - (x >= 3 ? 2 : 1)), t: Date.now(), x };
+}
+/** How much a word needs review now: overdue-ness, weighted up for words the learner keeps missing. */
+export function need(ku: string, s = S) {
+  return dueScore(ku, s) * (1 + 0.5 * Math.min(4, s.words[ku]?.x ?? 0));
 }
 /** Remember a sentence the learner got wrong, for the «my mistakes» mini lesson. */
 export function markSent(ku: string, ok: boolean) {

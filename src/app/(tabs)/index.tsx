@@ -16,7 +16,7 @@ import { alpha, F, levelCol, shade, TS, ucol, useTheme } from "@/ui/theme";
 
 type Row =
   | { k: "lvl"; lvl: Level } | { k: "sec"; si: number }
-  | { k: "unit"; u: Unit; ui: number; first: boolean } | { k: "node"; n: NodeT; off: number } | { k: "end" };
+  | { k: "unit"; u: Unit; ui: number; first: boolean } | { k: "node"; n: NodeT; off: number; deco?: boolean } | { k: "end" };
 /* Fixed row heights let the list jump straight to the current lesson. */
 const H = { lvl: 172, sec: 96, unit: 72, node: 108, end: 250 } as const;
 const OFFS = [0, -50, -76, -50, 0, 50, 76, 50];
@@ -30,7 +30,7 @@ function buildRows(): Row[] {
     sec.units.forEach((u0, j) => {
       const ui = UNITS.findIndex((x) => x.id === u0.id); const u = UNITS[ui];
       rows.push({ k: "unit", u, ui, first: si === 0 && j === 0 }); k = 0;
-      NODES.filter((n) => n.unit === u.id).forEach((n) => rows.push({ k: "node", n, off: OFFS[k++ % OFFS.length] }));
+      NODES.filter((n) => n.unit === u.id).forEach((n) => { const off = OFFS[k++ % OFFS.length]; rows.push({ k: "node", n, off, deco: Math.abs(off) === 76 && k <= 4 }); });
     });
   });
   rows.push({ k: "end" });
@@ -119,7 +119,7 @@ export default function Learn() {
         </View>
       );
     }
-    if (r.k === "node") return <PathNode n={r.n} off={r.off} cur={cur?.id === r.n.id} onPress={() => openNode(r.n)} />;
+    if (r.k === "node") return <PathNode n={r.n} off={r.off} cur={cur?.id === r.n.id} here={cur?.unit === r.n.unit} deco={!!r.deco} onPress={() => openNode(r.n)} />;
     return (
       <View style={{ height: H.end, alignItems: "center", justifyContent: "center", gap: 10 }}>
         <KilimRule color={th.zer} h={10} seed={41} style={{ width: 160, alignSelf: "center" }} />
@@ -170,7 +170,7 @@ function ProgressLozenge({ pct, color }: { pct: number; color: string }) {
   );
 }
 
-function PathNode({ n, off, cur, onPress }: { n: NodeT; off: number; cur: boolean; onPress: () => void }) {
+function PathNode({ n, off, cur, here, deco, onPress }: { n: NodeT; off: number; cur: boolean; here: boolean; deco: boolean; onPress: () => void }) {
   const th = useTheme(); const s = useS(); const u = UNIT[n.unit];
   const dn = isDone(n.id, s), un = unlocked(n.id, s);
   const bob = useSharedValue(0);
@@ -190,6 +190,7 @@ function PathNode({ n, off, cur, onPress }: { n: NodeT; off: number; cur: boolea
   const sq = 60; // side of the lozenge before rotation; its diagonal is ~85px
   return (
     <View style={{ height: H.node, alignItems: "center", justifyContent: "center" }}>
+      {deco ? <PathDeco side={off < 0 ? 1 : -1} juji={here} color={uc} seed={n.ui} /> : null}
       <View style={{ width: 88, height: 88, transform: [{ translateX: off }] }}>
         {/* "Start" flag sits beside the stop, on the side with more room, so it never covers a unit heading. */}
         {cur && <Animated.View style={[{ position: "absolute", top: 28, flexDirection: off > 0 ? "row-reverse" : "row", alignItems: "center", zIndex: 2 }, off > 0 ? { right: 88 + 12 } : { left: 88 + 12 }, tip]} pointerEvents="none">
@@ -208,6 +209,19 @@ function PathNode({ n, off, cur, onPress }: { n: NodeT; off: number; cur: boolea
           </>)}
         </Pressable>
       </View>
+    </View>
+  );
+}
+
+/** Decoration in the empty space opposite the path's widest bend: Juji waits beside the unit you are on; other units get a faint woven medallion. */
+function PathDeco({ side, juji, color, seed }: { side: number; juji: boolean; color: string; seed: number }) {
+  const th = useTheme(); const y = useSharedValue(0);
+  useEffect(() => { y.value = juji ? withRepeat(withSequence(withTiming(-5, { duration: 900 }), withTiming(0, { duration: 900 })), -1) : 0; }, [juji, y]);
+  const bob = useAnimatedStyle(() => ({ transform: [{ translateY: y.value }] }));
+  return (
+    <View pointerEvents="none" importantForAccessibility="no-hide-descendants" style={{ position: "absolute", top: juji ? -6 : 10, [side > 0 ? "right" : "left"]: 6 }}>
+      {juji ? <Animated.View style={bob}><Juji size={104} /></Animated.View>
+        : <View style={{ opacity: 0.32 }}><Medallion size={78} color={color} accent={th.zer} seed={seed} core={false} /></View>}
     </View>
   );
 }

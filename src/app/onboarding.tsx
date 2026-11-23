@@ -4,9 +4,10 @@ import { Pressable, ScrollView, Text, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
-import { LEVELS, levelFirstUnit, UNITS, type Level } from "@/lib/course";
-import { LANGS, T, t, t2, tArr } from "@/lib/i18n";
-import { type Lang, update, useS } from "@/lib/store";
+import { COURSES, courseId, LEVELS, levelFirstUnit, UNITS, type CourseId, type Level } from "@/lib/course";
+import { LANGS, M, T, t, t2, tArr } from "@/lib/i18n";
+import { setCkbScript, switchCourse, type Lang, update, useS } from "@/lib/store";
+import { ScriptOptions } from "@/ui/ScriptPicker";
 import { Diamond, Juji, KilimRule, Medallion } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Btn, Lead, Title, toast } from "@/ui/kit";
@@ -15,6 +16,12 @@ import { F, levelCol, TS, useTheme } from "@/ui/theme";
 /** Self-rated level → where a placement (jump) test could drop the learner. */
 const TARGET: Record<number, Level> = { 2: "A2", 3: "B1" };
 const LEVEL_CHOICES = [0, 1, 2, 3];
+/** A greeting and where each course is mostly spoken, shown on the course picker. */
+const COURSE_SAMPLE: Record<CourseId, { hi: string; hiLat?: string; where: string }> = {
+  kmr: { hi: "Silav, tu çawa yî?", where: "Bakur, Rojava, Başûr (Behdînan) ve diaspora|Bakur, Rojava, Başûr (Behdînan) and the diaspora|Bakur, Rojava, Başûr (Behdînan) und die Diaspora" },
+  ckb: { hi: "سڵاو، چۆنی؟", hiLat: "Sillaw, çonî?", where: "Başûr (Hewlêr, Silêmanî) ve Rojhelat|Başûr (Hewlêr, Silêmanî) and Rojhelat|Başûr (Hewlêr, Silêmanî) und Rojhelat" },
+  zza: { hi: "Merheba, ti senî yê?", where: "Dersim, Çewlîg, Palu, Sêwregi ve diaspora|Dersim, Çewlîg, Palu, Sêwregi and the diaspora|Dersim, Çewlîg, Palu, Sêwregi und die Diaspora" },
+};
 
 /** The highest course level at or below the wanted one that exists in the content and is not the very start. */
 function jumpTarget(level: number) {
@@ -52,7 +59,7 @@ export default function Onboarding() {
               <Juji size={124} />
               <View style={{ flex: 1, paddingBottom: 14 }}>
                 <Text accessibilityRole="header" style={{ fontFamily: F.italicBold, fontSize: 64, lineHeight: 68, color: th.ink, letterSpacing: -1 }}>Juji</Text>
-                <Text style={{ fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>Kurmancî</Text>
+                <Text style={{ fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>Kurmancî · Soranî · Kirmanckî</Text>
               </View>
             </View>
             <KilimRule color={th.sor} accent={th.zer} h={14} seed={2} />
@@ -75,8 +82,27 @@ export default function Onboarding() {
             <Title align="left" size={40}>{t("onbHi")}</Title>
             <Lead align="left">{t("onbHiText")}</Lead>
             <KilimRule color={th.kesk} accent={th.zer} h={12} seed={5} />
-            <Btn title={t("letsGo")} onPress={() => setStep(2)} style={{ alignSelf: "stretch" }} />
+            <Btn title={t("letsGo")} onPress={() => setStep(COURSES.length > 1 ? 5 : 2)} style={{ alignSelf: "stretch" }} />
           </>}
+          {step === 5 && <>
+            <Title align="left">{t("onbCourse")}</Title>
+            <Lead align="left">{t("onbCourseText")}</Lead>
+            <View style={{ width: "100%", gap: 10 }}>
+              {COURSES.map((c) => { const smp = COURSE_SAMPLE[c.id]; const on = courseId() === c.id; return (
+                <Pressable key={c.id} onPress={() => { tap(); switchCourse(c.id); setStep(c.id === "ckb" ? 6 : 2); }} accessibilityRole="button" accessibilityLabel={`${c.name}. ${M(c.sub)}`} style={choice(on)}>
+                  <View style={{ flex: 1, gap: 2 }}>
+                    <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+                      <Text style={{ fontFamily: F.display, fontSize: TS.lg + 2, color: th.ink }}>{c.name}</Text>
+                      {c.beta ? <Text style={{ fontFamily: F.bodyHeavy, fontSize: 11, color: th.zerDeep, borderWidth: 1, borderColor: th.zer, borderRadius: 6, paddingHorizontal: 5 }}>{t("courseBeta")}</Text> : null}
+                    </View>
+                    <Text style={{ fontFamily: F.serif, fontSize: TS.md, color: th.ink, writingDirection: smp.hiLat ? "rtl" : "ltr", textAlign: "left" }}>{smp.hi}</Text>
+                    {smp.hiLat ? <Text style={{ fontFamily: F.italic, fontSize: TS.sm, color: th.muted }}>{smp.hiLat}</Text> : null}
+                    <Text style={{ fontFamily: F.body, fontSize: TS.sm, color: th.muted }}>{M(smp.where)}</Text>
+                  </View>
+                </Pressable>); })}
+            </View>
+          </>}
+          {step === 6 && <ScriptOptions onPick={(m) => { tap(); setCkbScript(m); setStep(2); }} />}
           {step === 2 && <>
             <Title align="left">{t("onbLevel")}</Title>
             <View style={{ width: "100%", gap: 10 }}>

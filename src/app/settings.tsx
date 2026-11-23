@@ -1,13 +1,15 @@
 import { router } from "expo-router";
 import { useState } from "react";
-import { Pressable, ScrollView, Switch, Text, View } from "react-native";
+import { Platform, Pressable, ScrollView, Switch, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { speak } from "@/lib/audio";
 import { LANGS, M, t, tArr } from "@/lib/i18n";
 import { type Lang, resetAll, setCkbScript, switchCourse, update, useS } from "@/lib/store";
 import { COURSES, type CourseId, type Script } from "@/lib/course";
 import { Icon } from "@/ui/icons";
-import { Btn } from "@/ui/kit";
+import { Btn, toast } from "@/ui/kit";
+import { askReminder, scheduleReminders } from "@/lib/remind";
+import { AUDIO } from "@/content/audioMap";
 import { F, TS, useTheme } from "@/ui/theme";
 
 function Seg<T extends string | number>({ items, value, onPick }: { items: { v: T; l: string; sub?: string }[]; value: T; onPick: (v: T) => void }) {
@@ -46,13 +48,22 @@ export default function Settings() {
         <View style={[row, { borderTopWidth: 0 }]}><L>{t("voice")}</L><Switch value={s.set.voice} onValueChange={(v) => update((x) => { x.set.voice = v; })} trackColor={{ true: th.kesk }} /></View>
         <View style={[row, { borderTopWidth: 0 }]}><L>{t("speakSet")}</L><Switch value={s.set.speak} onValueChange={(v) => update((x) => { x.set.speak = v; x.speakPause = 0; })} trackColor={{ true: th.kesk }} /></View>
         </View>
+        {Platform.OS !== "web" ? <View style={{ gap: 8 }}>
+          <View style={[row, { borderTopWidth: 0, paddingHorizontal: 0 }]}><L>{t("remind")}</L><Switch value={!!s.remind?.on} onValueChange={async (v) => {
+            const ok = v ? await askReminder() : true;
+            update((x) => { x.remind = { on: v && ok, h: x.remind?.h ?? 19, m: x.remind?.m ?? 0 }; }); scheduleReminders();
+            if (v && !ok) toast(t("remindDenied"));
+          }} trackColor={{ true: th.kesk }} /></View>
+          {s.remind?.on ? <Seg items={[[8, 0], [12, 30], [19, 0], [21, 0]].map(([h, m]) => ({ v: h * 60 + m, l: `${h}:${String(m).padStart(2, "0")}` }))} value={(s.remind.h * 60 + s.remind.m)}
+            onPick={(v) => { update((x) => { x.remind = { on: true, h: Math.floor(v / 60), m: v % 60 }; }); scheduleReminders(); }} /> : null}
+        </View> : null}
         <View style={{ gap: 8 }}><L>{t("rate")}</L>
           <Seg items={[0.85, 1, 1.2].map((r, i) => ({ v: r, l: tArr("rates")[i] }))} value={s.set.rate} onPick={(v) => { update((x) => { x.set.rate = v; }); setTimeout(() => speak("Silav, tu çawa yî?"), 50); }} />
         </View>
         <View style={{ gap: 8 }}><L>{t("dailyGoal")}</L>
           <Seg items={[10, 20, 30, 50].map((g, i) => ({ v: g, l: tArr("goals")[i], sub: `${g} XP` }))} value={s.goal} onPick={(v) => update((x) => { x.goal = v; })} />
         </View>
-        <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("voiceNotePack", { n: 1412 })}</Text>
+        <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("voiceNotePack", { n: Object.keys(AUDIO).length })}</Text>
         <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("speakNote")}</Text>
         <Btn title={t("testVoice")} upper={false} kind="ghost" icon={<Icon.spk size={20} color={th.ink} />} onPress={() => speak("Silav, tu çawa yî?")} />
         <Pressable onPress={() => { if (!armed) return setArmed(true); resetAll(); router.replace("/"); }} accessibilityRole="button" style={{ alignItems: "center", justifyContent: "center", minHeight: 48, padding: 10 }}>

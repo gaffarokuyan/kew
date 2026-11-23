@@ -1,8 +1,10 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
-import Animated, { FadeIn, FadeInDown, SlideInDown, useAnimatedStyle, useSharedValue, withSequence, withTiming } from "react-native-reanimated";
+import Animated, { Easing, FadeIn, FadeInDown, SlideInDown, SlideInRight, useAnimatedStyle, useSharedValue, withSequence, withSpring, withTiming, ZoomIn } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+import { explain } from "@/lib/explain";
+import { askReminder, scheduleReminders } from "@/lib/remind";
 import { hasAudio, speak, sfx, stopVoice } from "@/lib/audio";
 import { altForms, arOf, CKB_KEYS, isRtl, latSub } from "@/lib/script";
 import { closeness, micAllowed, PASS, pauseSpeak, recMode, recognize, REC_OPTS, SttError } from "@/lib/speech";
@@ -10,7 +12,7 @@ import { useAudioRecorder } from "expo-audio";
 import { courseId, NODE, NODES, UNIT, UNITS, WORD } from "@/lib/course";
 import { buildEx, genJump, genLearn, genMistakes, genReview, genSent, genSounds, lev, mean, norm, pick, shuffle, type Ex, type W } from "@/lib/exercises";
 import { M, t, tArr, locale } from "@/lib/i18n";
-import { addXP, day, dayAdd, dueScore, getS, learned, markSent, markWord, MAXH, update, useS, wordStrength } from "@/lib/store";
+import { addXP, day, dayAdd, need, getS, learned, markSent, markWord, MAXH, update, useS, wordStrength } from "@/lib/store";
 import { Juji, KilimRule, Medallion, Sun } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Icon } from "@/ui/icons";
@@ -19,7 +21,7 @@ import { WeekDots } from "@/ui/TopBar";
 import { F, TS, useTheme } from "@/ui/theme";
 
 type Kind = "learn" | "sent" | "jump" | "weak" | "mistakes" | "listen" | "sprint" | "sounds";
-type Info = { pi?: number; heard?: string; said?: boolean; ok: boolean; ans?: string; mean?: string | null; ku?: string; typo?: boolean; match?: boolean; slip?: boolean; sentence?: boolean };
+type Info = { given?: string | null; pi?: number; heard?: string; said?: boolean; ok: boolean; ans?: string; mean?: string | null; ku?: string; typo?: boolean; match?: boolean; slip?: boolean; sentence?: boolean };
 type Ans = { val: string | null; get: () => Info };
 type Phase = { p: "play" } | { p: "done"; xp: number; acc: number; secs: number; gems: number; goalHit: boolean; streakUp: boolean } | { p: "fail" } | { p: "streak" } | { p: "jumpPass" } | { p: "jumpFail" };
 
@@ -32,13 +34,18 @@ function build(params: { node?: string; practice?: string; jump?: string }) {
   if (params.jump) return { kind: "jump" as Kind, exs: genJump(params.jump, v), id: null as string | null, practice: false, xp: 20 };
   if (params.node) {
     const n = NODE[params.node];
-    return { kind: n.type as Kind, exs: n.type === "learn" ? genLearn(n, v, s.words) : genSent(n, v), id: n.id, practice: false, xp: 10 };
+    const exs = n.type === "learn" ? genLearn(n, v, s.words) : genSent(n, v);
+    // interleaving: weave in the two words from other units that most need review
+    const unitWords = new Set(UNIT[n.unit].words.map((w) => w[0]));
+    const due = learned().filter((k) => !unitWords.has(k) && need(k) >= 1).sort((a, b) => need(b) - need(a)).slice(0, 2);
+    if (due.length && n.type === "learn") exs.splice(Math.max(1, exs.length - 2), 0, ...genReview(due, v, false, due.length, (k) => wordStrength(k)));
+    return { kind: n.type as Kind, exs, id: n.id, practice: false, xp: 10 };
   }
   const kind = (params.practice || "weak") as Kind; const lw = learned();
   if (kind === "sounds") return { kind, exs: genSounds(10), id: null, practice: true, xp: 10 };
   if (kind === "mistakes") return { kind, exs: genMistakes([...s.mistakes], [...s.msents], v), id: null, practice: true, xp: 10 };
   // spaced repetition: most overdue words first
-  let ws = [...lw].sort((a, b) => dueScore(b) - dueScore(a) || wordStrength(a) - wordStrength(b) || Math.random() - 0.5).slice(0, 8);
+  let ws = [...lw].sort((a, b) => need(b) - need(a) || wordStrength(a) - wordStrength(b) || Math.random() - 0.5).slice(0, 8);
   if (ws.length < 4) ws = [...new Set([...ws, ...lw])].slice(0, 8);
   const exs: Ex[] = kind === "sprint" ? [0, 1, 2].map(() => ({ t: "match", pairs: pick(lw.map((k) => WORD[k]) as W[], Math.min(5, lw.length)) }) as Ex) : genReview(ws, v, kind === "listen", 99, (k) => wordStrength(k));
   return { kind, exs, id: null, practice: true, xp: 10 };
@@ -148,19 +155,15 @@ export default function Lesson() {
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 14, paddingHorizontal: 16, height: 56 }}>
           <Pressable onPress={() => setQuit(true)} accessibilityRole="button" accessibilityLabel={t("quitAria")} style={{ width: 44, height: 44, marginLeft: -10, alignItems: "center", justifyContent: "center" }}><Icon.x size={24} color={th.muted} /></Pressable>
-          <View style={{ flex: 1, height: 14, borderRadius: 7, backgroundColor: th.surface2, overflow: "hidden" }} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: 100, now: pct }}>
-            <View style={{ width: `${pct}%`, height: "100%", backgroundColor: th.kesk, borderRadius: 7 }}>
-              <View style={{ marginTop: 3, marginHorizontal: 6, height: 3, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.28)" }} />
-            </View>
-          </View>
+          <LessonBar pct={pct} hot={combo >= 5} />
           <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }} accessible accessibilityLabel={init.practice ? "∞" : t("heartsAria", { n: heartLabel })}><Icon.heart size={22} color={init.practice ? th.sky : th.sor} /><Text style={{ fontFamily: F.bodyHeavy, fontSize: 17, color: init.practice ? th.skyDeep : th.sorDeep }}>{heartLabel}</Text></View>
         </View>
         <ScrollView contentContainerStyle={{ padding: 18, gap: 18, flexGrow: 1, maxWidth: 560, width: "100%", alignSelf: "center" }} keyboardShouldPersistTaps="handled">
-          <Animated.View key={step} entering={FadeIn.duration(220)} style={{ gap: 18 }}>
+          <Animated.View key={step} entering={SlideInRight.duration(260).easing(Easing.out(Easing.cubic))} style={{ gap: 18 }}>
             <Exercise e={e} locked={locked} setAnswer={setAnswer} judge={judge} verdict={verdict} lose={loseLife} skip={skipSpeak} />
           </Animated.View>
         </ScrollView>
-        <Footer e={e} verdict={verdict} answer={answer} combo={combo} onCheck={() => answer && judge(answer.get())} onNext={next} onSkip={skipSpeak} bottom={ins.bottom} />
+        <Footer e={e} verdict={verdict} answer={answer} combo={combo} onCheck={() => answer && judge({ ...answer.get(), given: answer.val })} onNext={next} onSkip={skipSpeak} bottom={ins.bottom} />
       </KeyboardAvoidingView>
       <Sheet visible={quit} center onClose={() => setQuit(false)}>
         <View style={{ alignItems: "center" }}><Juji size={110} sad /></View>
@@ -202,12 +205,34 @@ function Footer({ e, verdict, answer, combo, onCheck, onNext, onSkip, bottom }: 
           {verdict.said ? <Text style={{ fontFamily: F.serif, color: th.ink, fontSize: TS.lg }}>{verdict.ans}</Text> : null}
           {verdict.said && verdict.heard ? <Text style={{ fontFamily: F.italic, color: th.muted }}>{t("heard", { h: verdict.heard })}</Text> : null}
           {verdict.mean && !verdict.match && !verdict.said ? <Text style={{ fontFamily: F.body, color: th.muted }}>{ok ? `${verdict.ans} = ${verdict.mean}` : verdict.mean}</Text> : null}
+          {!ok && !verdict.said && !verdict.match ? <WhyBox v={verdict} /> : null}
         </View>
         {verdict.ku && hasAudio(verdict.ku) ? <Spk text={verdict.ku} size={40} /> : null}
       </View>
       <Btn title={t("cont")} kind={ok ? "primary" : "bad"} onPress={onNext} />
     </Animated.View>
   );
+}
+
+/** "Neden?" — tap to see why the answer was wrong (letter pair, missing words, word order, matching grammar tip). */
+function WhyBox({ v }: { v: Info }) {
+  const th = useTheme(); const [open, setOpen] = useState(false);
+  const why = useMemo(() => explain(v.given, v.ans ?? "", !!v.sentence, v.ku), [v]);
+  if (!why) return null;
+  if (!open) return (
+    <Pressable onPress={() => { sfx("tap"); setOpen(true); }} accessibilityRole="button" style={{ alignSelf: "flex-start", marginTop: 4, paddingVertical: 6 }}>
+      <Text style={{ fontFamily: F.bodyHeavy, fontSize: TS.sm, color: th.sorDeep, textDecorationLine: "underline" }}>{t("whyQ")}</Text>
+    </Pressable>);
+  return (
+    <View style={{ marginTop: 6, gap: 4, padding: 10, borderRadius: 10, borderTopLeftRadius: 3, backgroundColor: th.surface, borderWidth: 1, borderColor: th.line2 }}>
+      {v.given ? <Text style={{ fontFamily: F.body, fontSize: TS.sm, color: th.muted }}>{t("whyYours", { a: v.given })}</Text> : null}
+      {why.lines.map((l, i) => <Text key={i} style={{ fontFamily: F.body, fontSize: TS.sm, lineHeight: 20, color: th.ink }}>{l}</Text>)}
+      {why.tip ? <View style={{ gap: 2, marginTop: 2 }}>
+        <Text style={{ fontFamily: F.bodyHeavy, fontSize: TS.xs, color: th.muted }}>{t("tipKind")}</Text>
+        <Text style={{ fontFamily: F.serif, fontSize: TS.md, color: th.ink }}>{why.tip.ku}</Text>
+        <Text style={{ fontFamily: F.body, fontSize: TS.sm, lineHeight: 20, color: th.ink }}>{why.tip.m}</Text>
+      </View> : null}
+    </View>);
 }
 
 /* ================= exercises ================= */
@@ -531,6 +556,20 @@ function CountUp({ to, prefix = "", suffix = "", style }: { to: number; prefix?:
   return <Text style={style}>{prefix}{n}{suffix}</Text>;
 }
 
+/** Lesson progress: eases forward after each answer; turns gold with a soft pulse during a 5+ streak. */
+function LessonBar({ pct, hot }: { pct: number; hot: boolean }) {
+  const th = useTheme(); const w = useSharedValue(pct); const g = useSharedValue(1);
+  useEffect(() => { w.value = withSpring(pct, { damping: 18, stiffness: 140 }); }, [pct, w]);
+  useEffect(() => { if (hot) g.value = withSequence(withTiming(1.18, { duration: 160 }), withTiming(1, { duration: 260 })); }, [hot, pct, g]);
+  const fill = useAnimatedStyle(() => ({ width: `${w.value}%`, transform: [{ scaleY: g.value }] }));
+  return (
+    <View style={{ flex: 1, height: 14, borderRadius: 7, backgroundColor: th.surface2, overflow: "hidden" }} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: 100, now: pct }}>
+      <Animated.View style={[{ height: "100%", backgroundColor: hot ? th.zer : th.kesk, borderRadius: 7 }, fill]}>
+        <View style={{ marginTop: 3, marginHorizontal: 6, height: 3, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.32)" }} />
+      </Animated.View>
+    </View>);
+}
+
 function ResultView({ phase, practice, kind, jumpUnit, close, setPhase }: { phase: Phase; practice: boolean; kind: Kind; jumpUnit?: string; close: () => void; setPhase: (p: Phase) => void }) {
   const th = useTheme(); const s = useS();
   const wrap = (children: React.ReactNode) => (
@@ -564,17 +603,26 @@ function ResultView({ phase, practice, kind, jumpUnit, close, setPhase }: { phas
   const big = { fontFamily: F.display, fontSize: 30 };
   const pctPre = locale() === "tr" ? "%" : "", pctSuf = locale() === "tr" ? "" : "%";
   return wrap(<>
-    <View style={{ alignItems: "center", justifyContent: "center" }}>
+    <Animated.View entering={ZoomIn.springify().damping(12)} style={{ alignItems: "center", justifyContent: "center" }}>
       <Medallion size={170} color={th.zer} accent={th.sor} core={false} />
       <View style={{ position: "absolute" }}><Sun size={74} color={th.zer} /></View>
-    </View>
+    </Animated.View>
     <Title>{practice ? t("practiceDone") : phase.acc === 100 ? t("perfect") : t("lessonDone")}</Title>
     <Lead>{(phase.goalHit ? t("goalHit") + " " : "") + (practice ? t("heartWon") : phase.gems ? t("gemsEarned", { n: phase.gems }) : "")}</Lead>
-    <View style={{ flexDirection: "row", gap: 10, alignSelf: "stretch" }}>
+    <Animated.View entering={FadeInDown.delay(250).duration(380)} style={{ flexDirection: "row", gap: 10, alignSelf: "stretch" }}>
       {tile(t("totalXp"), th.zer, <CountUp to={phase.xp} prefix="+" style={{ ...big, color: th.zerDeep }} />)}
       {tile(t("accuracy"), th.kesk, <CountUp to={phase.acc} prefix={pctPre} suffix={pctSuf} style={{ ...big, color: th.keskDeep }} />)}
       {tile(t("time"), th.sky, <Text style={{ ...big, color: th.skyDeep }}>{Math.floor(secs / 60)}:{String(secs % 60).padStart(2, "0")}</Text>)}
-    </View>
-    <Btn title={t("contOn")} onPress={() => { if (phase.streakUp) { sfx("fire"); setPhase({ p: "streak" }); } else close(); }} style={{ alignSelf: "stretch" }} />
+    </Animated.View>
+    {Platform.OS !== "web" && !s.remind && s.stats.lessons >= 1 ? (
+      <Animated.View entering={FadeInDown.delay(500).duration(380)} style={{ alignSelf: "stretch", gap: 8, padding: 14, borderRadius: 14, borderTopLeftRadius: 4, backgroundColor: th.surface, borderWidth: 1.5, borderColor: th.line2 }}>
+        <Text style={{ fontFamily: F.serif, fontSize: TS.lg, color: th.ink }}>{t("remindAsk")}</Text>
+        <Text style={{ fontFamily: F.body, fontSize: TS.sm, lineHeight: 20, color: th.muted }}>{t("remindAskText")}</Text>
+        <View style={{ flexDirection: "row", gap: 8 }}>
+          <Btn title={t("remindNo")} kind="ghost" upper={false} style={{ flex: 1 }} onPress={() => update((x) => { x.remind = { on: false, h: 19, m: 0 }; })} />
+          <Btn title={t("remindYes")} kind="sky" upper={false} style={{ flex: 1 }} onPress={async () => { const ok = await askReminder(); update((x) => { x.remind = { on: ok, h: 19, m: 0 }; }); scheduleReminders(); }} />
+        </View>
+      </Animated.View>) : null}
+    <Btn title={t("contOn")} onPress={() => { scheduleReminders(); if (phase.streakUp) { sfx("fire"); setPhase({ p: "streak" }); } else close(); }} style={{ alignSelf: "stretch" }} />
   </>);
 }

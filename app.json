@@ -48,7 +48,15 @@
           }
         }
       ],
-      "expo-status-bar"
+      "expo-status-bar",
+      [
+        "expo-notifications",
+        {
+          "color": "#2F7A4F",
+          "enableRemoteNotifications": false,
+          "icon": "./assets/notification-icon.png"
+        }
+      ]
     ],
     "scheme": "kew",
     "backgroundColor": "#F7F5F0",
