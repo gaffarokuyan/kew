@@ -11,6 +11,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { initAudio } from "@/lib/audio";
 import { t } from "@/lib/i18n";
 import { hydrate, switchCourse, tick } from "@/lib/store";
+import { startLeagueSync, syncLeague } from "@/lib/league";
 import { scheduleReminders } from "@/lib/remind";
 import type { ErrorBoundaryProps } from "expo-router";
 import { Pressable, ScrollView, Text } from "react-native";
@@ -25,15 +26,17 @@ export default function RootLayout() {
   const [fonts] = useFonts({ Alegreya_500Medium_Italic, Alegreya_700Bold, Alegreya_700Bold_Italic, Alegreya_800ExtraBold, Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold });
 
   useEffect(() => {
+    let stopLeague: (() => void) | null = null;
     (async () => {
       const frozen = await hydrate();
       await initAudio();
       setReady(true);
       scheduleReminders();
+      stopLeague = startLeagueSync();
       if (frozen) setTimeout(() => toast(t("freezeUsed", { n: frozen })), 800);
     })();
-    const sub = AppState.addEventListener("change", (s) => { if (s === "active") { tick(); scheduleReminders(); } });
-    return () => sub.remove();
+    const sub = AppState.addEventListener("change", (s) => { if (s === "active") { tick(); scheduleReminders(); syncLeague(); } });
+    return () => { sub.remove(); stopLeague?.(); };
   }, []);
   useEffect(() => { SystemUI.setBackgroundColorAsync(th.bg).catch(() => {}); }, [th.bg]);
   useEffect(() => { if (ready && fonts) SplashScreen.hideAsync().catch(() => {}); }, [ready, fonts]);
@@ -55,6 +58,7 @@ export default function RootLayout() {
           <Stack.Screen name="bridge" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="alpha" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="culture" options={{ animation: "slide_from_right" }} />
+          <Stack.Screen name="league" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="settings" options={{ presentation: "modal" }} />
         </Stack>
         <ConfettiHost />

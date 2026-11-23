@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import type { LeagueState } from "@/lib/league";
 import { useSyncExternalStore } from "react";
 import { ARB, LAT, loadCourse, NODES, NODE_INDEX, WORD, type CourseId, type Script } from "./course";
 
@@ -39,6 +40,10 @@ export type State = {
   remind?: { on: boolean; h: number; m: number };
   /** Units whose «Efsane» challenge was passed */
   legend?: Record<string, number>;
+  /** Weekly league identity (random secret, never shown) and the nickname the learner picked. */
+  lg?: { secret: string; nick: string };
+  /** Last league state from the server, so the screen opens instantly and offline. */
+  lgCache?: LeagueState;
 };
 const DEF = (): State => ({
   v: 3, onboard: false, lang: null, level: 0, goal: 20, xp: 0, gems: 120, hearts: MAXH, heartAt: Date.now(), streak: 0, last: null,
@@ -52,6 +57,8 @@ const listeners = new Set<() => void>();
 let saveT: ReturnType<typeof setTimeout> | null = null;
 
 export const getS = () => S;
+/** Low-level change subscription (for background sync); components should use useStore. */
+export const subscribe = (cb: () => void) => { listeners.add(cb); return () => { listeners.delete(cb); }; };
 /** Mutate state, then notify subscribers and persist (debounced). */
 export function update(fn: (s: State) => void) {
   fn(S);

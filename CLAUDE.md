@@ -53,6 +53,7 @@ src/content/
   audioMap.ts       ÜRETİLMİŞ: Kurmancî metin -> assets/audio/<hash>.mp3
   podcasts.json     ÜRETİLMİŞ: tools/podcast/build.py
 supabase/functions/juji-stt/   STT köprüsü (deploy edilmiş; anahtar Supabase secret KURDISH_STT_KEY)
+supabase/functions/juji-league/ Haftalık lig + arkadaşlar (verify_jwt kapalı, başlık x-juji-app; tablolar juji_players/juji_week/juji_friends, yalnızca fonksiyon erişir)
 tools/podcast/      İçerik ve ses üretim betikleri (bkz. §4–5)
 arsiv/ses-eski/     Eski ses kayıtları (uygulamada kullanılmıyor; geri dönüş için README var)
 ```
@@ -138,7 +139,7 @@ Claude sesi **dinleyemez**; doğrulama yalnızca STT ile. Şüpheli satırları 
 | ElevenLabs | Podcast ve ders sesleri, Scribe STT | Kredi biter: hata `quota_exceeded`. Anahtar izinleri: Text to Speech, Speech to Text, Voices Read, User Read |
 | Kurdish TTS (kurdishtts.com) | Uygulama içi konuşma kontrolü (STT); eski ses üretimi | Ücretsiz kota ayda 20.000 karakter; TTS ve STT ayrı anahtar |
 | Mazdek AI (MCP) | Yazım denetimi `kmr`/`ckb`/`zza` (ücretsiz), Soranî Arap⇄Latin (ücretsiz), çeviri (ücretli) | TTS yok |
-| Supabase | `juji-stt` edge function | Başlık `x-juji-app: juji-app-1` |
+| Supabase | `juji-stt`, `juji-league` edge function | Başlık `x-juji-app: juji-app-1`. Lig: takma ad + haftalık XP; cihazda gizli anahtar, sunucuda yalnızca hash'i. Haftalar Pazartesi 00:00 (TR saati); grup 30 kişi, 10 lig (Tov→Stêrk) |
 
 ---
 

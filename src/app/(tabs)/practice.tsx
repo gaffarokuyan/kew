@@ -9,6 +9,7 @@ import { episodesFor, loadPods, usePodsVersion } from "@/lib/podcast";
 import { day, dueScore, learned, update, useS, wordStrength } from "@/lib/store";
 import { courseId, UNITS } from "@/lib/course";
 import { weekCard } from "@/lib/culture";
+import { myRank, TIERS } from "@/lib/league";
 import { Icon } from "@/ui/icons";
 import { KilimRule } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
@@ -36,7 +37,9 @@ export default function Practice() {
     { id: "les", tx: t("qLessons"), v: d.lessons, max: 2, g: 15, ic: <Icon.target size={26} color={th.sor} /> },
     { id: "combo", tx: t("qCombo"), v: d.bestCombo, max: 5, g: 20, ic: <Icon.fire size={26} color={th.fire} /> },
   ];
+  const lgRank = s.lgCache ? myRank(s.lgCache) : 0;
   const modes = [
+    { k: "league", c: th.zer, ic: <Icon.trophy size={26} color="#2E1F00" />, ti: t("lgTitle"), su: s.lg && s.lgCache && lgRank ? t("lgCardRank", { t: TIERS[s.lgCache.tier].ku, n: lgRank }) : t("lgCardSub"), dis: false },
     { k: "weak", c: th.kesk, ic: <Icon.redo size={26} />, ti: t("pWords"), su: lw.length < 4 ? t("pNeed4") : due ? t("pWordsDue", { n: due }) : t("pWordsSub", { n: weak.length }), dis: lw.length < 4 },
     { k: "mistakes", c: th.sor, ic: <Icon.target size={26} color="#fff" />, ti: t("pMist"), su: t("pMistSub", { n: s.mistakes.length, m: s.msents.length }), dis: s.mistakes.length + s.msents.length < 2 },
     { k: "listen", c: th.sky, ic: <Icon.ear size={26} color="#fff" />, ti: t("pListen"), su: s.set.voice ? t("pListenSub") : t("voiceOff"), dis: lw.length < 4 || !s.set.voice },
@@ -82,7 +85,7 @@ export default function Practice() {
 
       <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", rowGap: 12 }}>
         {modes.map((m) => (
-          <Pressable key={m.k} disabled={m.dis} onPress={() => { sfx("tap"); buzz("tap"); if (m.k === "read") router.push("/read"); else if (m.k === "pod") router.push("/podcasts"); else if (m.k === "bridge") router.push("/bridge"); else if (m.k === "culture") router.push("/culture"); else if (m.k === "alpha") router.push("/alpha"); else router.push({ pathname: "/lesson", params: { practice: m.k } }); }} accessibilityRole="button" accessibilityLabel={`${m.ti}. ${m.su}`} accessibilityState={{ disabled: m.dis }}
+          <Pressable key={m.k} disabled={m.dis} onPress={() => { sfx("tap"); buzz("tap"); if (m.k === "read") router.push("/read"); else if (m.k === "league") router.push("/league"); else if (m.k === "pod") router.push("/podcasts"); else if (m.k === "bridge") router.push("/bridge"); else if (m.k === "culture") router.push("/culture"); else if (m.k === "alpha") router.push("/alpha"); else router.push({ pathname: "/lesson", params: { practice: m.k } }); }} accessibilityRole="button" accessibilityLabel={`${m.ti}. ${m.su}`} accessibilityState={{ disabled: m.dis }}
             style={({ pressed }) => ({ width: "48.5%", minHeight: 132, padding: 14, gap: 6, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: th.line2, backgroundColor: th.surface, opacity: m.dis ? 0.55 : 1 })}>
             <View style={{ width: 42, height: 42, borderRadius: 10, borderTopLeftRadius: 3, backgroundColor: m.c, alignItems: "center", justifyContent: "center" }}>{m.ic}</View>
             <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{m.ti}</Text>
