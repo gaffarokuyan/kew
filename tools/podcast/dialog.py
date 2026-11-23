@@ -9,7 +9,7 @@ KEY = open(os.path.expanduser("~/.secrets/elevenlabs")).read().strip()
 # speaker -> (voice_id, stability)
 VOICE = {"Juji": ("h5qtAtbcNxKhIa170f34", 0.5),    # Abdulgaffar Kurmancî (user's own cloned voice)
          "Bapîr": ("nMvZRihyU408YNgNXHuX", 0.4),   # Gaspar
-         "Dapîr": ("UOxKeHS7lixzgw35mtAR", 0.5)}   # Grandma Titina
+         "Dapîr": ("0M3917teU4Y57BvDVCKx", 0.5)}   # "Juji Dapîr": IVC clone of Kurdish TTS kurmanji_233 (user choice)
 GAP = 0.35
 FIX = {("kmr-b1-01", 0): "Silav hevalno! Ez Jûjî me, û ev podkasta asta B1 ye. Îro du mêvanên me hene: Bapîr û Dapîr!",
        ("kmr-b1-01", 12): "Bapîr, her tim wisa dibêje... lê ew, ji xewa sibê jî pir hez dike!"}

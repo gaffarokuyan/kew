@@ -1,5 +1,5 @@
 {
- "version": 7,
+ "version": 8,
  "episodes": [
   {
    "id": "kmr-a1-01",
@@ -1339,67 +1339,67 @@
      "s": "Juji",
      "t": "Hûn çiqas li wir diman?",
      "m": "Orada ne kadar kalırdınız?|How long did you stay there?|Wie lange bliebt ihr dort?",
-     "at": 26.35
+     "at": 26.87
     },
     {
      "s": "Bapîr",
      "t": "Ji meha Gulanê heta Îlonê. Me konên reş vedidan, û her sibe pez didotin.",
      "m": "Mayıstan eylüle kadar. Kara çadırlar kurardık ve her sabah koyunları sağardık.|From May until September. We put up black tents, and every morning we milked the sheep.|Von Mai bis September. Wir schlugen schwarze Zelte auf und molken jeden Morgen die Schafe.",
-     "at": 28.1
+     "at": 28.62
     },
     {
      "s": "Dapîr",
      "t": "Min û jinên din, ji şîrê pez penîr û rûn çêdikirin. Kar pir bû, lê dilê me şa bû!",
      "m": "Ben ve diğer kadınlar koyun sütünden peynir ve yağ yapardık. İş çoktu ama gönlümüz şendi!|The other women and I made cheese and butter from the sheep's milk. There was a lot of work, but our hearts were happy!|Ich und die anderen Frauen machten aus der Schafsmilch Käse und Butter. Es gab viel Arbeit, aber unsere Herzen waren froh!",
-     "at": 33.69
+     "at": 34.21
     },
     {
      "s": "Juji",
      "t": "Ma tiştek heye ku hûn niha bêriya wî dikin?",
      "m": "Şimdi özlediğiniz bir şey var mı?|Is there something you miss now?|Gibt es etwas, das ihr jetzt vermisst?",
-     "at": 41.4
+     "at": 42.15
     },
     {
      "s": "Dapîr",
      "t": "Erê... Şevên zozanan! Em li dora agir rûdiniştin, dengbêjan stran digotin, zarokan jî guhdarî dikirin.",
      "m": "Evet... Yayla geceleri! Ateşin etrafında otururduk, dengbêjler şarkı söylerdi, çocuklar da dinlerdi.|Yes... The nights on the summer pastures! We sat around the fire, the dengbêj sang, and the children listened.|Ja... Die Nächte auf den Sommerweiden! Wir saßen ums Feuer, die Dengbêj sangen, und die Kinder hörten zu.",
-     "at": 44.36
+     "at": 45.11
     },
     {
      "s": "Bapîr",
      "t": "Lê niha, gelek gund vala bûne. Ciwan çûne bajaran, û kesek naçe zozanan.",
      "m": "Ama şimdi pek çok köy boşaldı. Gençler şehirlere gitti, kimse yaylaya gitmiyor.|But now, many villages have emptied. The young have gone to the cities, and nobody goes to the pastures.|Aber jetzt sind viele Dörfer leer. Die Jungen sind in die Städte gezogen, und niemand geht mehr auf die Sommerweiden.",
-     "at": 52.79
+     "at": 54.4
     },
     {
      "s": "Juji",
      "t": "Eger îro hûn ciwan bûna, hûn ê dîsa biçûna zozanan?",
      "m": "Bugün genç olsaydınız yine yaylaya gider miydiniz?|If you were young today, would you go to the pastures again?|Wenn ihr heute jung wärt, würdet ihr wieder auf die Sommerweiden gehen?",
-     "at": 58.87
+     "at": 60.48
     },
     {
      "s": "Bapîr",
      "t": "Bê guman! Eger lingên min alîkariya min bikirana, ez ê sibê biçûma!",
      "m": "Elbette! Bacaklarım bana yardım etseydi, yarın giderdim!|Of course! If my legs helped me, I would go tomorrow!|Natürlich! Wenn meine Beine mitmachten, würde ich morgen gehen!",
-     "at": 62.9
+     "at": 64.51
     },
     {
      "s": "Dapîr",
      "t": "Bapîr her tim wisa dibêje... lê ew ji xewa sibê jî pir hez dike!",
      "m": "Dede hep böyle der... ama sabah uykusunu da çok sever!|Grandpa always says that... but he also loves his morning sleep!|Opa sagt das immer... aber er liebt auch seinen Morgenschlaf!",
-     "at": 67.73
+     "at": 69.35
     },
     {
      "s": "Bapîr",
      "t": "Ne rast e!... Belkî, hinekî rast e.",
      "m": "Doğru değil! ... Belki biraz doğrudur.|That is not true! ... Maybe it is a little true.|Das stimmt nicht! ... Vielleicht stimmt es ein bisschen.",
-     "at": 73.84
+     "at": 75.81
     },
     {
      "s": "Juji",
      "t": "Spas ji bo çîrokên we. Hevalno, hûn jî ji kal û pîrên xwe bipirsin: wan havîn çawa derbas dikirin? Heta podkasta din, xatirê we!",
      "m": "Hikâyeleriniz için teşekkürler. Arkadaşlar, siz de büyüklerinize sorun: yazları nasıl geçirirlerdi? Bir sonraki podcaste kadar hoşça kalın!|Thanks for your stories. Friends, ask your grandparents too: how did they spend their summers? Until the next podcast, goodbye!|Danke für eure Geschichten. Freunde, fragt auch eure Großeltern: Wie haben sie ihre Sommer verbracht? Bis zum nächsten Podcast, tschüss!",
-     "at": 77.68
+     "at": 79.64
     }
    ],
    "words": [
@@ -1457,7 +1457,7 @@
      "a": 0
     }
    ],
-   "dur": 87.4
+   "dur": 89.3
   },
   {
    "id": "ckb-a1-01",
