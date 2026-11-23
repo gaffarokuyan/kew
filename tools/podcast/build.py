@@ -3,7 +3,7 @@ Bump VERSION on every content change: the app takes the remote manifest only if 
 import json, os, sys
 VERSION = int(sys.argv[1])
 D = "/home/claude/kew_pod/"; URL = "https://gaffarokuyan.github.io/kew/pod/"
-eps = [e for c in ["kmr", "ckb"] for e in json.load(open(D + c + ".json"))["episodes"]]
+eps = [e for c in ["kmr", "ckb", "ckb2"] for e in json.load(open(D + c + ".json"))["episodes"]]
 assert len({e["id"] for e in eps}) == len(eps)
 n = 0
 for e in eps:

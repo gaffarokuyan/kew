@@ -6,17 +6,27 @@ Key: ~/.secrets/elevenlabs
 import concurrent.futures as cf, difflib, json, os, re, subprocess, sys, unicodedata
 D = "/home/claude/kew_pod/"; OUT = D + "audio_dlg/"; C = D + "cache_dlg/"
 KEY = open(os.path.expanduser("~/.secrets/elevenlabs")).read().strip()
-# speaker -> (voice_id, stability)
-VOICE = {"Juji": ("h5qtAtbcNxKhIa170f34", 0.5),    # Abdulgaffar Kurmancî (user's own cloned voice)
-         "Bapîr": ("nMvZRihyU408YNgNXHuX", 0.4),   # Gaspar
-         "Dapîr": ("0M3917teU4Y57BvDVCKx", 0.5)}   # "Juji Dapîr": IVC clone of Kurdish TTS kurmanji_233 (user choice)
+# speaker -> (voice_id, stability), per course
+JUJI = ("h5qtAtbcNxKhIa170f34", 0.5)       # Abdulgaffar Kurmancî (user's own cloned voice)
+GASPAR = ("nMvZRihyU408YNgNXHuX", 0.4)
+VOICES = {
+  "kmr": {"Juji": JUJI, "Bapîr": GASPAR,
+          "Dapîr": ("0M3917teU4Y57BvDVCKx", 0.5)},          # clone of Kurdish TTS kurmanji_233
+  "ckb": {"Juji": JUJI, "Bapîr": GASPAR, "Firoşkar": GASPAR,
+          "Rojda": ("gKBBj5qeN1aYCf7AcOpK", 0.5),           # clone of Kurdish TTS sorani_986
+          "Azad": ("NCVqmerGBlwFSqHbpR0D", 0.5),            # clone of Kurdish TTS sorani_1
+          "Bijîşk": ("9UoAU5im7Rl44J2IvBHU", 0.5)},   # Ülgen
+}
 GAP = 0.35
 FIX = {("kmr-b1-01", 0): "Silav hevalno! Ez Jûjî me, û ev podkasta asta B1 ye. Îro du mêvanên me hene: Bapîr û Dapîr!",
-       ("kmr-b1-01", 12): "Bapîr, her tim wisa dibêje... lê ew, ji xewa sibê jî pir hez dike!"}
+       ("kmr-b1-01", 12): "Bapîr, her tim wisa dibêje... lê ew, ji xewa sibê jî pir hez dike!",
+       ("ckb-a1-01", 5): "تۆ، خوێندکاریت؟", ("ckb-a2-01", 8): "ئەمڕۆش، نەورۆز هەر وایە؟"}
 os.makedirs(OUT, exist_ok=True); os.makedirs(C, exist_ok=True)
 
 def norm(s):
-    s = unicodedata.normalize("NFC", s.lower()); s = re.sub(r"[^\wçêîşû ]", " ", s); return " ".join(s.split())
+    s = unicodedata.normalize("NFC", s.lower())
+    for a, b in (("ي", "ی"), ("ك", "ک"), ("ة", "ە"), ("\u200c", ""), ("ـ", ""), ("وو", "و")): s = s.replace(a, b)
+    s = re.sub(r"[^\wçêîşû ]", " ", s); return " ".join(s.split())
 def score(a, b): return difflib.SequenceMatcher(None, norm(a), norm(b)).ratio()
 def dur(p): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p], capture_output=True, text=True).stdout)
 def ff(*a): subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", *a], check=True, timeout=120)
@@ -32,20 +42,20 @@ def tts(text, voice, stab, out):
         print("  TTS FAIL", r.stdout.strip(), open(out + ".tmp", "rb").read(200), flush=True)
     sys.exit("tts gave up")
 
-def stt(p):
+def stt(p, lang="kmr"):
     js = p[:-4] + ".stt.json"
     if not os.path.exists(js):
         r = subprocess.run(["curl", "-sS", "--max-time", "120", "-X", "POST", "https://api.elevenlabs.io/v1/speech-to-text", "-H", "xi-api-key: " + KEY,
-                            "-F", "model_id=scribe_v1", "-F", "language_code=kmr", "-F", "file=@" + p], capture_output=True, text=True)
+                            "-F", "model_id=scribe_v1", "-F", "language_code=" + lang, "-F", "file=@" + p], capture_output=True, text=True)
         open(js, "w").write(r.stdout)
     return json.load(open(js)).get("text", "")
 
-eps = {e["id"]: e for e in json.load(open(D + "kmr.json"))["episodes"]}
+eps = {e["id"]: e for f in ("kmr", "ckb", "ckb2") for e in json.load(open(D + f + ".json"))["episodes"]}
 for eid in sys.argv[1:]:
     e = eps[eid]
     def one(il):
-        i, l = il; v, st = VOICE[l["s"]]; text = FIX.get((eid, i), l["t"])
-        p = tts(text, v, st, f"{C}{eid}_{i:02d}.mp3"); said = stt(p); return p, said, score(said, l["t"])
+        i, l = il; c = e["course"]; v, st = VOICES[c][l["s"]]; text = FIX.get((eid, i), l["t"]).replace("ژوژی", "ژووژی")
+        p = tts(text, v, st, f"{C}{eid}_{i:02d}.mp3"); said = stt(p, c); return p, said, score(said, l["t"])
     with cf.ThreadPoolExecutor(3) as ex: res = list(ex.map(one, enumerate(e["lines"])))
     parts, at, t, rep = [], [], 0.5, []
     for i, (l, (p, said, sc)) in enumerate(zip(e["lines"], res)):

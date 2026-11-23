@@ -63,7 +63,8 @@ export default function Story() {
       </View>
       <ScrollView ref={scroll} contentContainerStyle={{ padding: 18, gap: 14, maxWidth: 560, width: "100%", alignSelf: "center" }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Icon.story size={18} color={th.keskDeep} /><Text style={{ fontFamily: F.italicBold, fontSize: TS.md, color: th.keskDeep }}>{t("story")}</Text></View>
-        <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: TS.xxl, lineHeight: 38, color: th.ink }}>{st.title}</Text>
+        <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: TS.xxl, lineHeight: /[\u0600-\u06FF]/.test(st.title) ? 56 : 38, paddingHorizontal: 2, color: th.ink, writingDirection: /[\u0600-\u06FF]/.test(st.title) ? "rtl" : "ltr" }}>{st.title}</Text>
+        {latSub(st.title) ? <Text style={{ fontFamily: F.italic, fontSize: TS.md, color: th.muted, marginTop: -6 }}>{latSub(st.title)}</Text> : null}
         <KilimRule color={th.kesk} accent={th.zer} h={10} seed={st.title.length} style={{ marginBottom: 4 }} />
         {shown.map((l, k) => { const mine = l[0] === me; return (
           <Animated.View key={k} entering={FadeInUp.duration(260)} style={{ flexDirection: mine ? "row-reverse" : "row", gap: 10, alignItems: "flex-start" }}>
