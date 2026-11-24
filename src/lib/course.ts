@@ -2,6 +2,7 @@ import data from "@/content/course.json";
 import zza from "@/content/course_zza.json";
 import ckb from "@/content/course_ckb.json";
 import eng from "@/content/course_eng.json";
+import deu from "@/content/course_deu.json";
 
 export type Meaning = string; // "tr|en|de"
 export type WordRow = [string, Meaning, string?];
@@ -17,10 +18,10 @@ export type Char = { c: string; hair: string; g: "m" | "f"; scarf?: string; mous
 export type NodeT = { id: string; unit: string; ui: number; type: "learn" | "sent" | "story" | "chest"; range?: [number, number]; k?: number };
 export type Word = { ku: string; m: Meaning; pic: string | null; unit: string };
 
-export type CourseId = "kmr" | "zza" | "ckb" | "eng";
+export type CourseId = "kmr" | "zza" | "ckb" | "eng" | "deu";
 /** How Soranî is written: Arabic-based Kurdish alphabet, Latin, or both (Arabic large, Latin underneath). */
 export type Script = "ar" | "lat" | "both";
-const DATA: Record<CourseId, typeof data> = { kmr: data, zza: zza as unknown as typeof data, ckb: ckb as unknown as typeof data, eng: eng as unknown as typeof data };
+const DATA: Record<CourseId, typeof data> = { kmr: data, zza: zza as unknown as typeof data, ckb: ckb as unknown as typeof data, eng: eng as unknown as typeof data, deu: deu as unknown as typeof data };
 /** Courses offered; `beta` courses are new and still being checked by native speakers. */
 const ALL_COURSES: { id: CourseId; name: string; sub: Meaning; beta?: boolean; base?: string[] }[] = [
   { id: "kmr", name: "Kurmancî", sub: "Kürtçe (Kurmancî)|Kurdish (Kurmanji)|Kurdisch (Kurmancî)" },
@@ -28,7 +29,12 @@ const ALL_COURSES: { id: CourseId; name: string; sub: Meaning; beta?: boolean; b
   { id: "ckb", name: "Soranî", sub: "Kürtçe (Soranî)|Kurdish (Sorani)|Kurdisch (Soranî)", beta: true },
   // English is taught from Turkish only, so it is offered only with a Turkish interface.
   { id: "eng", name: "English", sub: "İngilizce|English|Englisch", beta: true, base: ["tr"] },
+  { id: "deu", name: "Deutsch", sub: "Almanca|German|Deutsch", beta: true, base: ["tr"] },
 ];
+/** Foreign-language courses taught from Turkish: read by the device voice, no Kurdish-only extras. */
+export const FOREIGN: Partial<Record<CourseId, { tts: string; hi: string }>> = { eng: { tts: "en-US", hi: "Hello, how are you?" }, deu: { tts: "de-DE", hi: "Hallo, wie geht es dir?" } };
+export const isForeign = (id: CourseId = courseId()) => !!FOREIGN[id];
+
 /** Courses that have content. */
 export const COURSES = ALL_COURSES.filter((c) => (DATA[c.id]?.SECTIONS?.length ?? 0) > 0);
 /** Courses that can be taught in the given interface language. */

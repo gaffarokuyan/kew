@@ -1,0 +1,452 @@
+// Deutsch A1 — for Turkish speakers
+# A1 | Temeller | Selamlaşma, tanışma, «sein» fiili, sayılar, aile
+
+## hallo | Hallo! | Selamlaşma | #2F6B4F
+w: hallo = merhaba | 👋
+w: guten Morgen = günaydın | 🌅
+w: guten Tag = iyi günler
+w: guten Abend = iyi akşamlar | 🌆
+w: gute Nacht = iyi geceler | 🌙
+w: tschüss = hoşça kal
+w: auf Wiedersehen = görüşmek üzere
+w: ja = evet | ✅
+w: nein = hayır | ❌
+w: bitte = lütfen; rica ederim
+w: danke = teşekkürler | 🙏
+w: Entschuldigung = affedersiniz
+s: Hallo, wie geht es dir? = Merhaba, nasılsın?
+s: Mir geht es gut, danke. = İyiyim, teşekkürler.
+s: Guten Morgen, Lena! = Günaydın, Lena!
+s: Gute Nacht, Max. = İyi geceler, Max.
+s: Ja, bitte. = Evet, lütfen.
+s: Nein, danke. = Hayır, teşekkürler.
+s: Tschüss, bis morgen! = Hoşça kal, yarın görüşürüz!
+t: Wie geht es dir? / Wie geht es Ihnen? = «Nasılsın?» arkadaşa «dir», büyüklere ve yabancılara «Ihnen» ile sorulur. Cevap: Mir geht es gut (İyiyim).
+t: bitte = «bitte» hem «lütfen» hem de teşekküre karşılık «rica ederim» demektir: Danke! – Bitte!
+n: Almancada bütün isimler büyük harfle başlar: der Tag, die Nacht, das Buch.
+story: Guten Morgen!
+> Max: Guten Morgen, Lena! = Günaydın, Lena!
+> Lena: Hallo, Max! Wie geht es dir? = Selam, Max! Nasılsın?
+> Max: Mir geht es gut, danke. Und dir? = İyiyim, teşekkürler. Ya sen? ? Max ne cevap verdi? = Mir geht es gut, danke. Und dir? / Gute Nacht, Lena. / Nein, bitte.
+> Lena: Auch gut, danke. = Ben de iyiyim, teşekkürler.
+> Max: Tschüss, Lena! = Hoşça kal, Lena!
+
+## ich | Ich heiße Azad | Tanışma | #34488F
+w: ich = ben
+w: du = sen
+w: Sie = siz (kibar)
+w: heißen = adı … olmak
+w: Name = isim, ad
+w: woher = nereden
+w: kommen = gelmek
+w: aus = -den, -dan
+w: wohnen = oturmak, yaşamak | 🏠
+w: in = -de, -da; içinde
+w: die Türkei = Türkiye | 🇹🇷
+w: Deutschland = Almanya | 🇩🇪
+s: Wie heißt du? = Adın ne?
+s: Ich heiße Azad. = Benim adım Azad.
+s: Woher kommst du? = Nerelisin?
+s: Ich komme aus der Türkei. = Türkiyeliyim.
+s: Ich wohne in Berlin. = Berlin'de oturuyorum.
+s: Freut mich! = Memnun oldum!
+s: Wie heißen Sie? = Adınız ne?
+t: Ich heiße… = «Adım …»: Almancada «adlanmak» fiiliyle söylenir: Ich heiße Rojda. «Mein Name ist Rojda» da olur.
+t: aus der Türkei = Bazı ülke adları artikel alır: aus der Türkei, in der Schweiz. Çoğu almaz: aus Deutschland.
+t: ich komme / du kommst = Fiil sonu kişiye göre değişir: ich komm-e, du komm-st, er komm-t.
+story: Freut mich!
+> Azad: Hallo! Ich heiße Azad. Wie heißt du? = Selam! Benim adım Azad. Senin adın ne?
+> Lena: Ich heiße Lena. Woher kommst du? = Benim adım Lena. Nerelisin?
+> Azad: Ich komme aus der Türkei. Und du? = Türkiyeliyim. Ya sen? ? Azad nereli? = Ich komme aus der Türkei. Und du? / Ich komme aus Deutschland. / Ich heiße Lena.
+> Lena: Ich komme aus Hamburg. Ich wohne in Berlin. = Hamburg'luyum. Berlin'de oturuyorum.
+> Azad: Freut mich, Lena! = Memnun oldum, Lena!
+
+## sein | Ich bin Student | «sein» fiili | #B83440
+w: sein = olmak
+w: bin = -im (ich ile)
+w: bist = -sin (du ile)
+w: ist = -dir (er, sie, es ile)
+w: sind = -iz, -siniz, -ler
+w: er = o (erkek)
+w: sie = o (kadın); onlar
+w: es = o (nesne)
+w: wir = biz
+w: Student = öğrenci (erkek) | 🎓
+w: Lehrerin = öğretmen (kadın) | 🧑‍🏫
+w: müde = yorgun | 😴
+w: glücklich = mutlu | 😊
+s: Ich bin Student. = Ben öğrenciyim.
+s: Sie ist Lehrerin. = O öğretmen.
+s: Wir sind Freunde. = Biz arkadaşız.
+s: Bist du müde? = Yorgun musun?
+s: Er ist nicht glücklich. = O mutlu değil.
+s: Das ist mein Bruder. = Bu benim erkek kardeşim.
+t: ich bin / du bist / er ist = «sein»: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.
+t: Ich bin Student = Meslekte artikel kullanılmaz: Ich bin Lehrer (Ben öğretmenim). Kadın için -in eklenir: Lehrerin, Studentin.
+t: nicht = Olumsuz için «nicht»: Ich bin nicht müde (Yorgun değilim).
+
+## zahl | Eins, zwei, drei | Sayılar | #855700
+w: eins = bir | 1️⃣
+w: zwei = iki | 2️⃣
+w: drei = üç | 3️⃣
+w: vier = dört | 4️⃣
+w: fünf = beş | 5️⃣
+w: sechs = altı | 6️⃣
+w: sieben = yedi | 7️⃣
+w: acht = sekiz | 8️⃣
+w: neun = dokuz | 9️⃣
+w: zehn = on | 🔟
+w: zwanzig = yirmi
+w: hundert = yüz | 💯
+w: alt = yaşlı; eski
+w: Jahr = yıl
+s: Wie alt bist du? = Kaç yaşındasın?
+s: Ich bin zwanzig Jahre alt. = Yirmi yaşındayım.
+s: Ich habe zwei Kinder. = İki çocuğum var.
+s: Meine Telefonnummer ist drei, fünf, acht. = Telefon numaram üç, beş, sekiz.
+s: Das kostet zehn Euro. = Bu on euro tutuyor.
+s: Wir haben drei Katzen. = Üç kedimiz var.
+t: einundzwanzig = Almancada iki basamaklı sayılar tersten söylenir: 21 = einundzwanzig (bir ve yirmi).
+t: Ich bin 20 Jahre alt = Yaş «sein» ile söylenir: Ich bin 20 (Jahre alt).
+
+## familie | Meine Familie | Aile | #8A4FBF
+w: Familie = aile | 👨‍👩‍👧
+w: Mutter = anne | 👩
+w: Vater = baba | 👨
+w: Schwester = kız kardeş | 👧
+w: Bruder = erkek kardeş | 👦
+w: Kind = çocuk | 🧒
+w: Oma = büyükanne | 👵
+w: Opa = büyükbaba | 👴
+w: haben = sahip olmak
+w: mein = benim
+w: dein = senin
+w: verheiratet = evli | 💍
+s: Das ist meine Familie. = Bu benim ailem.
+s: Meine Mutter ist Ärztin. = Annem doktor.
+s: Hast du Geschwister? = Kardeşin var mı?
+s: Ich habe eine Schwester. = Bir kız kardeşim var.
+s: Mein Vater ist sechzig Jahre alt. = Babam altmış yaşında.
+s: Bist du verheiratet? = Evli misin?
+t: der / die / das = Almancada her ismin bir artikeli var: der Vater (eril), die Mutter (dişil), das Kind (nötr). Artikeli kelimeyle birlikte ezberle.
+t: mein / meine = İyelik de artikele uyar: mein Vater, meine Mutter, mein Kind.
+t: ich habe / du hast = «haben»: ich habe, du hast, er hat, wir haben.
+story: Lenas Familie
+> Lena: Das ist meine Familie. = Bu benim ailem.
+> Max: Ist das deine Mutter? = Bu senin annen mi?
+> Lena: Ja, sie ist Ärztin. = Evet, o doktor. ? Lena'nın annesi ne iş yapıyor? = Ja, sie ist Ärztin. / Ja, er ist Lehrer. / Nein, sie ist ein Kind.
+> Max: Und wer ist das? = Peki bu kim?
+> Lena: Das ist mein Bruder. Er ist zehn. = Bu benim erkek kardeşim. On yaşında.
+
+# A1 | Günlük hayat | Yemek, ev, saat, günlük işler
+
+## essen | Ich esse Brot | Yemek ve içecek | #1C8FC7
+w: Brot = ekmek | 🍞
+w: Wasser = su | 💧
+w: Tee = çay | 🍵
+w: Kaffee = kahve | ☕
+w: Milch = süt | 🥛
+w: Apfel = elma | 🍎
+w: Ei = yumurta | 🥚
+w: Käse = peynir | 🧀
+w: Frühstück = kahvaltı | 🍳
+w: essen = yemek (fiil) | 🍽️
+w: trinken = içmek
+w: Hunger = açlık
+w: gern = severek
+s: Ich esse Brot und Käse. = Ekmek ve peynir yerim.
+s: Möchtest du Tee oder Kaffee? = Çay mı kahve mi istersin?
+s: Ich trinke gern Tee. = Çay içmeyi severim.
+s: Ich habe Hunger. = Acıktım.
+s: Er trinkt keine Milch. = O süt içmez.
+s: Ein Wasser, bitte. = Bir su, lütfen.
+t: gern = «Severek»: Ich trinke gern Tee (Çay içmeyi severim). Türkçedeki «-meyi severim» yapısının kısa yolu.
+t: kein / keine = İsmi olumsuz yapar: Ich habe kein Brot (Ekmeğim yok). Fiil için «nicht», isim için «kein».
+t: Ich habe Hunger = «Açım» Almancada «açlığım var» diye söylenir: Ich habe Hunger, ich habe Durst (susadım).
+story: Frühstück
+> Frau Schmidt: Guten Morgen, Max! Hast du Hunger? = Günaydın, Max! Aç mısın?
+> Max: Ja, ich habe großen Hunger! = Evet, çok açım!
+> Frau Schmidt: Möchtest du ein Ei? = Yumurta ister misin?
+> Max: Ja, bitte. Und Brot mit Käse. = Evet, lütfen. Bir de peynirli ekmek. ? Max ne istiyor? = Ja, bitte. Und Brot mit Käse. / Nein, danke. Nur Wasser. / Gute Nacht.
+> Frau Schmidt: Tee oder Milch? = Çay mı süt mü?
+> Max: Tee, bitte. Danke! = Çay, lütfen. Teşekkürler!
+
+## haus | Mein Zimmer | Ev | #2F6B4F
+w: Haus = ev | 🏠
+w: Wohnung = daire
+w: Zimmer = oda | 🚪
+w: Küche = mutfak
+w: Bad = banyo | 🛁
+w: Tisch = masa
+w: Stuhl = sandalye | 🪑
+w: Bett = yatak | 🛏️
+w: Fenster = pencere | 🪟
+w: groß = büyük
+w: klein = küçük
+w: es gibt = var
+s: Meine Wohnung ist klein. = Dairem küçük.
+s: Es gibt drei Zimmer. = Üç oda var.
+s: Die Küche ist groß. = Mutfak büyük.
+s: Gibt es ein Bad? = Banyo var mı?
+s: Der Stuhl ist neben dem Tisch. = Sandalye masanın yanında.
+s: Mein Zimmer hat ein großes Fenster. = Odamın büyük bir penceresi var.
+t: es gibt = «Var» demenin yolu: Es gibt einen Park (Bir park var). Soru: Gibt es…?
+t: der Tisch → dem Tisch = Edatlardan sonra artikel değişebilir: neben dem Tisch (masanın yanında). Şimdilik kalıp olarak öğren.
+
+## zeit | Wie spät ist es? | Günler ve saat | #B83440
+w: Montag = pazartesi
+w: Dienstag = salı
+w: Mittwoch = çarşamba
+w: Donnerstag = perşembe
+w: Freitag = cuma
+w: Samstag = cumartesi
+w: Sonntag = pazar
+w: heute = bugün | 📅
+w: morgen = yarın
+w: gestern = dün
+w: Uhr = saat | 🕒
+w: halb = yarım, buçuk
+w: Woche = hafta
+s: Wie spät ist es? = Saat kaç?
+s: Es ist drei Uhr. = Saat üç.
+s: Heute ist Montag. = Bugün pazartesi.
+s: Ich arbeite am Samstag. = Cumartesi çalışırım.
+s: Bis Freitag! = Cumaya kadar! / Cuma görüşürüz!
+s: Morgen ist Sonntag. = Yarın pazar.
+t: am Montag / um drei Uhr = Günlerle «am», saatlerle «um»: am Freitag, um 8 Uhr.
+t: halb acht = Dikkat! «halb acht» 7:30 demek (sekize yarım var). 8:30 = halb neun.
+
+## tag | Ich stehe um sieben auf | Günlük işler | #855700
+w: aufstehen = kalkmak | ⏰
+w: arbeiten = çalışmak | 💼
+w: lernen = öğrenmek, ders çalışmak | 📚
+w: gehen = gitmek; yürümek
+w: fahren = (araçla) gitmek | 🚗
+w: Schule = okul | 🏫
+w: lesen = okumak | 📖
+w: schlafen = uyumak | 😴
+w: fernsehen = televizyon izlemek | 📺
+w: jeden Tag = her gün
+w: Morgen = sabah
+w: Abend = akşam
+s: Ich stehe um sieben Uhr auf. = Saat yedide kalkarım.
+s: Sie geht jeden Tag zur Schule. = O her gün okula gider.
+s: Mein Vater arbeitet in einer Bank. = Babam bir bankada çalışır.
+s: Am Abend sehen wir fern. = Akşam televizyon izleriz.
+s: Er liest ein Buch. = O kitap okuyor.
+s: Ich fahre mit dem Bus. = Otobüsle giderim.
+t: aufstehen → Ich stehe … auf = Ayrılabilen fiiller: ön ek cümlenin sonuna gider: Ich stehe um 7 Uhr auf.
+t: er liest / er schläft = Bazı fiillerde ünlü değişir: lesen → er liest, schlafen → er schläft, fahren → er fährt.
+story: Max' Tag
+> Lena: Wann stehst du auf, Max? = Kaçta kalkıyorsun, Max?
+> Max: Ich stehe um sieben Uhr auf. = Yedide kalkarım.
+> Lena: Fährst du mit dem Bus zur Schule? = Okula otobüsle mi gidiyorsun?
+> Max: Nein, ich gehe zu Fuß. Die Schule ist nah. = Hayır, yürüyorum. Okul yakın. ? Max okula nasıl gidiyor? = Nein, ich gehe zu Fuß. Die Schule ist nah. / Ja, ich fahre mit dem Bus. / Ich stehe um sieben Uhr auf.
+> Lena: Und am Abend? = Ya akşam?
+> Max: Ich lese ein Buch und schlafe um zehn. = Kitap okurum ve onda uyurum.
+
+# A1 | Dışarıda | Şehir, alışveriş, hava, istekler
+
+## stadt | Wo ist der Bahnhof? | Şehirde | #8A4FBF
+w: Straße = cadde, sokak | 🛣️
+w: Bahnhof = tren istasyonu | 🚉
+w: Bank = banka | 🏦
+w: Krankenhaus = hastane | 🏥
+w: Apotheke = eczane | ⚕️
+w: Supermarkt = süpermarket | 🛒
+w: links = sola, solda | ⬅️
+w: rechts = sağa, sağda | ➡️
+w: geradeaus = dümdüz
+w: nah = yakın
+w: weit = uzak
+w: wo = nerede
+s: Entschuldigung, wo ist der Bahnhof? = Affedersiniz, istasyon nerede?
+s: Gehen Sie geradeaus und dann links. = Düz gidin, sonra sola dönün.
+s: Die Apotheke ist rechts. = Eczane sağda.
+s: Ist das Krankenhaus weit? = Hastane uzak mı?
+s: Nein, es ist nah. = Hayır, yakın.
+s: Gibt es hier einen Supermarkt? = Burada bir süpermarket var mı?
+t: Gehen Sie…! = Kibar emir: fiil + Sie: Gehen Sie links (Sola gidin). Arkadaşa: Geh links!
+t: Wo? = «Nerede?» sorusu: Wo ist…? «Nereye?» için Wohin?
+story: Entschuldigung!
+> Azad: Entschuldigung, wo ist der Bahnhof? = Affedersiniz, istasyon nerede?
+> Herr Weber: Gehen Sie geradeaus und dann links. = Düz gidin, sonra sola dönün.
+> Azad: Ist es weit? = Uzak mı?
+> Herr Weber: Nein, nur fünf Minuten. = Hayır, sadece beş dakika. ? İstasyon uzak mı? = Nein, nur fünf Minuten. / Ja, sehr weit. / Gehen Sie rechts.
+> Azad: Vielen Dank! = Çok teşekkürler!
+> Herr Weber: Bitte schön! = Rica ederim!
+
+## kaufen | Was kostet das? | Alışveriş | #1C8FC7
+w: kaufen = satın almak
+w: kosten = tutmak (fiyat)
+w: Euro = euro | 💶
+w: billig = ucuz
+w: teuer = pahalı
+w: bezahlen = ödemek | 💳
+w: Karte = kart
+w: bar = nakit
+w: möchten = istemek (kibar)
+w: Schuhe = ayakkabı | 👟
+w: Jacke = ceket, mont | 🧥
+w: Größe = beden
+s: Was kostet die Jacke? = Ceket ne kadar?
+s: Sie kostet fünfzig Euro. = Elli euro.
+s: Das ist zu teuer! = Bu çok pahalı!
+s: Die Schuhe sind billig. = Ayakkabılar ucuz.
+s: Ich möchte das kaufen. = Bunu almak istiyorum.
+s: Kann ich mit Karte bezahlen? = Kartla ödeyebilir miyim?
+s: Haben Sie das in Größe M? = Bunun M bedeni var mı?
+t: ich möchte = «İstiyorum»un kibar hâli: Ich möchte einen Kaffee. Mağazada ve kafede hep bunu kullan.
+t: Kann ich…? = «…-ebilir miyim?»: Kann ich bar bezahlen? (Nakit ödeyebilir miyim?) Fiil sona gider.
+
+## wetter | Es ist sonnig | Hava | #2F6B4F
+w: Wetter = hava | 🌤️
+w: Sonne = güneş | ☀️
+w: Regen = yağmur | 🌧️
+w: Schnee = kar | ❄️
+w: kalt = soğuk | 🥶
+w: warm = sıcak, ılık
+w: heiß = çok sıcak | 🥵
+w: Sommer = yaz | 🏖️
+w: Winter = kış | ⛄
+w: Frühling = ilkbahar | 🌸
+w: Herbst = sonbahar | 🍂
+w: regnen = yağmur yağmak
+s: Wie ist das Wetter? = Hava nasıl?
+s: Es ist sonnig und warm. = Hava güneşli ve sıcak.
+s: Im Winter ist es kalt. = Kışın hava soğuk.
+s: Es regnet heute. = Bugün yağmur yağıyor.
+s: Ich mag den Sommer. = Yazı severim.
+s: Im Januar schneit es oft. = Ocakta sık sık kar yağar.
+t: Es ist kalt = Hava durumunda özne «es»: Es ist warm, es regnet, es schneit.
+t: im Sommer = Mevsim ve aylarla «im»: im Winter, im Mai.
+
+## wollen | Kannst du mir helfen? | İstekler ve yetenekler | #B83440
+w: können = -ebilmek
+w: wollen = istemek
+w: müssen = zorunda olmak
+w: helfen = yardım etmek | 🆘
+w: sprechen = konuşmak | 🗣️
+w: Deutsch = Almanca
+w: Türkisch = Türkçe
+w: Kurdisch = Kürtçe
+w: schwimmen = yüzmek | 🏊
+w: kochen = yemek pişirmek | 🍳
+w: ein bisschen = biraz
+s: Kannst du mir helfen? = Bana yardım edebilir misin?
+s: Ich spreche ein bisschen Deutsch. = Biraz Almanca konuşuyorum.
+s: Sprechen Sie Türkisch? = Türkçe konuşuyor musunuz?
+s: Ich kann nicht schwimmen. = Yüzemem.
+s: Ich will Deutsch lernen. = Almanca öğrenmek istiyorum.
+s: Ich muss heute arbeiten. = Bugün çalışmak zorundayım.
+s: Mein Vater spricht Kurdisch. = Babam Kürtçe konuşur.
+t: können / wollen / müssen + fiil = Yardımcı fiil ikinci sırada, asıl fiil yalın hâlde en sonda: Ich kann gut kochen.
+t: ich kann / du kannst = Yardımcı fiillerde ich ve er aynıdır: ich kann, er kann; ich muss, er muss.
+story: Sprichst du Deutsch?
+> Lena: Sprichst du Deutsch, Azad? = Almanca konuşuyor musun, Azad?
+> Azad: Ja, ein bisschen. Ich lerne jeden Tag. = Evet, biraz. Her gün çalışıyorum.
+> Lena: Super! Was sprichst du noch? = Süper! Başka ne konuşuyorsun?
+> Azad: Kurdisch und Türkisch. = Kürtçe ve Türkçe. ? Azad başka hangi dilleri konuşuyor? = Kurdisch und Türkisch. / Nur Deutsch. / Englisch und Spanisch.
+> Lena: Toll! Kannst du mir ein Wort auf Kurdisch sagen? = Harika! Bana Kürtçe bir kelime söyleyebilir misin?
+> Azad: Natürlich: «Silav» heißt «Hallo». = Tabii: «Silav», «merhaba» demek.
+
+# A1 | İnsanlar ve planlar | Meslek, beden, hobiler, geçmiş
+
+## beruf | Was bist du von Beruf? | Meslekler | #855700
+w: Beruf = meslek
+w: Arzt = doktor (erkek) | 🩺
+w: Ärztin = doktor (kadın)
+w: Ingenieur = mühendis | 👷
+w: Verkäufer = satıcı
+w: Koch = aşçı | 🧑‍🍳
+w: Fahrer = şoför | 🚕
+w: Büro = ofis | 🏢
+w: Firma = şirket
+w: Kollege = iş arkadaşı
+w: verdienen = kazanmak (para)
+s: Was bist du von Beruf? = Mesleğin ne?
+s: Ich bin Ingenieur. = Ben mühendisim.
+s: Sie arbeitet als Köchin. = O aşçı olarak çalışıyor.
+s: Mein Büro ist in der Stadt. = Ofisim şehirde.
+s: Meine Kollegen sind nett. = İş arkadaşlarım nazik.
+s: Er arbeitet bei einer Firma. = O bir şirkette çalışıyor.
+t: Was bist du von Beruf? = Meslek sorusu kalıbı. Cevapta artikel yok: Ich bin Fahrer.
+t: als = «olarak»: Sie arbeitet als Ärztin (doktor olarak çalışıyor).
+
+## koerper | Mein Kopf tut weh | Beden ve sağlık | #8A4FBF
+w: Kopf = baş | 🙂
+w: Auge = göz | 👁️
+w: Ohr = kulak | 👂
+w: Nase = burun | 👃
+w: Mund = ağız | 👄
+w: Hand = el | ✋
+w: Bein = bacak | 🦵
+w: Bauch = karın
+w: krank = hasta | 🤒
+w: wehtun = acımak, ağrımak
+w: Termin = randevu
+w: Fieber = ateş
+s: Mein Kopf tut weh. = Başım ağrıyor.
+s: Ich bin krank. = Hastayım.
+s: Ich habe Fieber. = Ateşim var.
+s: Ich brauche einen Termin beim Arzt. = Doktordan randevu almam lazım.
+s: Gute Besserung! = Geçmiş olsun!
+s: Mein Bauch tut weh. = Karnım ağrıyor.
+t: … tut weh = «… ağrıyor»: Mein Kopf tut weh. Çoğulda: Meine Füße tun weh.
+t: Gute Besserung! = Hasta birine «Geçmiş olsun!» demenin kalıbı.
+story: Beim Arzt
+> Ärztin: Guten Tag! Was fehlt Ihnen? = İyi günler! Neyiniz var?
+> Max: Mein Kopf tut weh und ich habe Fieber. = Başım ağrıyor ve ateşim var.
+> Ärztin: Seit wann? = Ne zamandan beri?
+> Max: Seit gestern. = Dünden beri. ? Max ne zamandan beri hasta? = Seit gestern. / Seit einem Jahr. / Seit morgen.
+> Ärztin: Sie müssen viel trinken und zwei Tage im Bett bleiben. = Bol su içmeli ve iki gün yatakta kalmalısınız.
+> Max: Danke, Frau Doktor. = Teşekkürler, doktor hanım.
+
+## hobby | Was machst du gern? | Hobiler | #1C8FC7
+w: Hobby = hobi
+w: Freizeit = boş zaman
+w: Musik = müzik | 🎵
+w: Fußball = futbol | ⚽
+w: spielen = oynamak; çalmak
+w: tanzen = dans etmek | 💃
+w: Film = film | 🎬
+w: Freund = arkadaş (erkek)
+w: Freundin = arkadaş (kadın)
+w: oft = sık sık
+w: manchmal = bazen
+w: nie = asla, hiç
+s: Was machst du gern in deiner Freizeit? = Boş zamanında ne yapmayı seversin?
+s: Ich spiele gern Fußball. = Futbol oynamayı severim.
+s: Sie hört oft Musik. = O sık sık müzik dinler.
+s: Manchmal gehen wir ins Kino. = Bazen sinemaya gideriz.
+s: Ich tanze nie. = Hiç dans etmem.
+s: Am Wochenende treffe ich meine Freunde. = Hafta sonu arkadaşlarımla buluşurum.
+t: Manchmal gehen wir… = Cümle başka bir öğeyle başlarsa fiil yine ikinci sırada kalır, özne fiilden sonra gelir: Heute spiele ich Fußball.
+t: gern / lieber / am liebsten = severek / daha çok severek / en çok severek: Ich trinke lieber Tee.
+
+## gestern | Was hast du gemacht? | Geçmiş zaman | #2F6B4F
+w: gemacht = yaptı
+w: gegessen = yedi
+w: getrunken = içti
+w: gesehen = gördü
+w: gearbeitet = çalıştı
+w: gelernt = öğrendi
+w: gegangen = gitti
+w: gefahren = (araçla) gitti
+w: war = idi
+w: hatte = vardı
+w: letzte Woche = geçen hafta
+s: Was hast du gestern gemacht? = Dün ne yaptın?
+s: Ich habe Deutsch gelernt. = Almanca çalıştım.
+s: Wir haben Pizza gegessen. = Pizza yedik.
+s: Sie ist nach Köln gefahren. = O Köln'e gitti.
+s: Ich war letzte Woche krank. = Geçen hafta hastaydım.
+s: Hast du den Film gesehen? = Filmi gördün mü?
+t: haben/sein + Partizip = Konuşmada geçmiş zaman (Perfekt): Ich habe gegessen. Hareket bildiren fiillerde «sein»: Ich bin gegangen.
+t: ge-…-t / ge-…-en = Düzenli fiiller: machen → gemacht. Düzensizler: essen → gegessen, sehen → gesehen. Partizip cümlenin sonuna gider.
+story: Das Wochenende
+> Max: Was hast du am Wochenende gemacht, Rojda? = Hafta sonu ne yaptın, Rojda?
+> Rojda: Ich bin mit meiner Familie nach Hamburg gefahren. = Ailemle Hamburg'a gittim.
+> Max: Schön! Was habt ihr dort gemacht? = Güzel! Orada ne yaptınız?
+> Rojda: Wir haben Fisch gegessen und das Meer gesehen. = Balık yedik ve denizi gördük. ? Rojda Hamburg'da ne yaptı? = Wir haben Fisch gegessen und das Meer gesehen. / Ich habe zu Hause gelernt. / Wir sind ins Kino gegangen.
+> Max: Ich war zu Hause und habe Filme gesehen. = Ben evdeydim ve film izledim.

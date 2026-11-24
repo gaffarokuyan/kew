@@ -27,6 +27,9 @@ Bu dosya, projeye başka bir Claude oturumundan / hesabından devam edebilmek i�
 | **Zazakî** (`zza`) | A1 beta, Vate yazımı | yok (TTS desteklemiyor) |
 | **Soranî** (`ckb`) | A1–B2 beta, **iki alfabe** (Arap / Latin / ikisi) | ders sesi yok; podcast sesli |
 | **English** (`eng`) | A1–B1 beta, 52 ünite, **yalnızca Türkçe arayüzle** (`base: ["tr"]`) | cihazın İngilizce sesi (expo-speech, en-US) |
+| **Deutsch** (`deu`) | A1 beta, 17 ünite, yalnızca Türkçe arayüzle | cihazın Almanca sesi (de-DE) |
+
+Yabancı dil kursları `course.ts` → `FOREIGN` (tts dili + örnek cümle) ve `isForeign()` ile tanımlanır; yeni dil = FOREIGN'a satır + `tools/<dil>/` içerik + `CourseBadge` kodu/rengi + i18n `to<Dil>` + lig sunucusundaki COURSES listesi.
 
 ---
 
@@ -52,9 +55,11 @@ src/lib/
   podcast.ts        Podcast şeması + uzaktan manifest (gh-pages/podcasts.json, yüksek version kazanır)
   script.ts i18n.ts nodes.ts
 src/ui/             Tema, ikonlar, maskot çizimleri, ortak bileşenler, TopBar (kurs seçici), ScriptPicker
+  CourseBadge.tsx   Kurs rozeti (renkli kilim baklavası + KU/SO/KI/EN/DE) ve CourseRow; üst bar, ayarlar, profil
   Speaker.tsx       Ayakta duran konuşan karakterler (Person, CHARS renkleriyle) ve GlossText: kelimeye dokununca anlamı (WORD'den, en uzun 3 kelimelik ifade önce)
 src/content/
   course.json course_zza.json course_ckb.json   Kurs içerikleri
+  course_deu.json   ÜRETİLMİŞ: tools/deu/build.py (kaynak tools/deu/a1.txt; cevapta ä=ae, ö=oe, ü=ue, ß=ss kabul)
   course_eng.json   ÜRETİLMİŞ: tools/eng/build.py (kaynak: tools/eng/a1.txt a2.txt b1.txt, basit satır biçimi; anlamlar yalnızca Türkçe)
   strings.json      Arayüz metinleri "tr|en|de"
   audioMap.ts       ÜRETİLMİŞ: Kurmancî metin -> assets/audio/<hash>.mp3

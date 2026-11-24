@@ -5,7 +5,7 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
 const GROUP = 30, MAX_TIER = 9, XP_CAP = 20000;
 const CODE_ABC = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-const COURSES = new Set(["kmr", "ckb", "zza", "eng"]);
+const COURSES = new Set(["kmr", "ckb", "zza", "eng", "deu"]);
 
 const cors = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "content-type, x-juji-app", "Access-Control-Allow-Methods": "POST, OPTIONS" };
 const json = (b: unknown, status = 200) => new Response(JSON.stringify(b), { status, headers: { ...cors, "Content-Type": "application/json" } });

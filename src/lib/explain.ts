@@ -41,7 +41,9 @@ function sentenceHint(given: string, want: string): string[] {
   if (miss.length) out.push(M("Eksik kelime: |Missing: |Fehlt: ") + miss.map((x) => `«${x}»`).join(", "));
   if (extra.length) out.push(M("Fazla kelime: |Not needed: |Überflüssig: ") + extra.map((x) => `«${x}»`).join(", "));
   if (!miss.length && !extra.length && g.join(" ") !== w.join(" ")) {
-    out.push(M(courseId() === "eng"
+    out.push(M(courseId() === "deu"
+      ? "Kelimeler doğru, sıra yanlış. Almancada çekimli fiil cümlenin ikinci öğesidir: Ich trinke Tee. Heute trinke ich Tee.|Right words, wrong order: the verb comes second in German.|Richtige Wörter, falsche Reihenfolge: das Verb steht an zweiter Stelle."
+      : courseId() === "eng"
       ? "Kelimeler doğru, sıra yanlış. İngilizcede sıra özne + fiil + nesnedir (I eat bread); fiil sona gitmez.|Right words, wrong order: subject + verb + object.|Richtige Wörter, falsche Reihenfolge: Subjekt + Verb + Objekt."
       : courseId() === "ckb"
       ? "Kelimeler doğru, sıra yanlış. Soranîde fiil genellikle cümlenin sonunda gelir.|Right words, wrong order. In Soranî the verb usually comes last.|Richtige Wörter, falsche Reihenfolge. Im Soranî steht das Verb meist am Ende."

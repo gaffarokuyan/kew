@@ -201,7 +201,7 @@ function Footer({ e, verdict, answer, combo, onCheck, onNext, onSkip, bottom }: 
     if (e.t === "match") return <View style={{ padding: 16, paddingBottom: 22 + bottom, borderTopWidth: 1, borderColor: th.line }}><Text style={{ textAlign: "center", fontFamily: F.italic, fontSize: TS.md, color: th.muted }}>{t("matchHint")}</Text></View>;
     return <View style={{ padding: 16, paddingBottom: 16 + bottom, borderTopWidth: 1, borderColor: th.line }}><Btn title={t("check")} disabled={!answer?.val} onPress={onCheck} /></View>;
   }
-  const ok = verdict.ok; const pr = courseId() === "eng" ? tArr("praiseEng") : tArr("praise");
+  const ok = verdict.ok; const pr = courseId() === "eng" ? tArr("praiseEng") : courseId() === "deu" ? tArr("praiseDeu") : tArr("praise");
   const title = verdict.said ? (ok ? t("jujiOk") : t("sayAgain")) : ok ? (verdict.typo ? t("typo") : pr[(verdict.pi ?? 0) % pr.length]) : t("correctIs");
   const showCombo = ok && combo >= 3 && combo % 2 === 1;
   return (
@@ -520,7 +520,7 @@ function TypeEx({ e, locked, setAnswer }: P<"type" | "recall">) {
     <TextInput ref={ref} value={v} onChangeText={setV} editable={!locked} placeholder={t("typePh")} placeholderTextColor={th.faint} autoCapitalize="none" autoCorrect={false} spellCheck={false} multiline
       accessibilityLabel={t("answer")} style={{ writingDirection: isRtl() ? "rtl" : "ltr", textAlign: isRtl() ? "right" : "left", minHeight: 110, padding: 14, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderColor: th.line2, backgroundColor: th.surface, color: th.ink, fontFamily: F.serif, fontSize: 22, textAlignVertical: "top" }} />
     <View style={{ flexDirection: isRtl() ? "row-reverse" : "row", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
-      {(isRtl() ? CKB_KEYS : courseId() === "eng" ? [] : courseId() === "zza" ? ["ê", "î", "û", "ç", "ş", "ı", "ğ"] : ["ê", "î", "û", "ç", "ş"]).map((k) => <Pressable key={k} onPress={() => { buzz("select"); setV((x) => x + k); ref.current?.focus(); }} accessibilityRole="button" accessibilityLabel={k} style={{ width: isRtl() ? 40 : 48, height: isRtl() ? 42 : 48, borderRadius: 10, borderWidth: 1.5, borderBottomWidth: 4, borderColor: th.line2, backgroundColor: th.surface, alignItems: "center", justifyContent: "center" }}>
+      {(isRtl() ? CKB_KEYS : courseId() === "eng" ? [] : courseId() === "deu" ? ["ä", "ö", "ü", "ß"] : courseId() === "zza" ? ["ê", "î", "û", "ç", "ş", "ı", "ğ"] : ["ê", "î", "û", "ç", "ş"]).map((k) => <Pressable key={k} onPress={() => { buzz("select"); setV((x) => x + k); ref.current?.focus(); }} accessibilityRole="button" accessibilityLabel={k} style={{ width: isRtl() ? 40 : 48, height: isRtl() ? 42 : 48, borderRadius: 10, borderWidth: 1.5, borderBottomWidth: 4, borderColor: th.line2, backgroundColor: th.surface, alignItems: "center", justifyContent: "center" }}>
         <Text style={{ fontFamily: F.serif, fontSize: 22, color: th.ink }}>{k}</Text></Pressable>)}
     </View>
   </>);

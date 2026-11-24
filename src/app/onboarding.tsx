@@ -5,7 +5,7 @@ import Animated, { Easing, FadeInDown, useAnimatedStyle, useSharedValue, withDel
 import Svg, { Circle, Path, Rect } from "react-native-svg";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
-import { courseId, coursesFor, LEVELS, levelFirstUnit, NODES, UNITS, type CourseId, type Level } from "@/lib/course";
+import { courseId, coursesFor, isForeign, LEVELS, levelFirstUnit, NODES, UNITS, type CourseId, type Level } from "@/lib/course";
 import { LANGS, M, t, t2, tArr } from "@/lib/i18n";
 import { askReminder, scheduleReminders } from "@/lib/remind";
 import { setCkbScript, switchCourse, type Lang, update, useS } from "@/lib/store";
@@ -23,6 +23,7 @@ const LEVEL_CHOICES = [0, 1, 2, 3, 4];
 const COURSE_SAMPLE: Record<CourseId, { hi: string; hiLat?: string; where: string }> = {
   kmr: { hi: "Silav, tu çawa yî?", where: "Bakur, Rojava, Başûr (Behdînan) ve diaspora|Bakur, Rojava, Başûr (Behdînan) and the diaspora|Bakur, Rojava, Başûr (Behdînan) und die Diaspora" },
   ckb: { hi: "سڵاو، چۆنی؟", hiLat: "Sillaw, çonî?", where: "Başûr (Hewlêr, Silêmanî) ve Rojhelat|Başûr (Hewlêr, Silêmanî) and Rojhelat|Başûr (Hewlêr, Silêmanî) und Rojhelat" },
+  deu: { hi: "Hallo, wie geht es dir?", where: "Almanya, Avusturya, İsviçre: Türkçe üzerinden, A1|Germany, Austria, Switzerland|Deutschland, Österreich, Schweiz" },
   eng: { hi: "Hello, how are you?", where: "Dünyanın ortak dili: Türkçe üzerinden, A1'den B1'e|The world's common language|Die Weltsprache" },
   zza: { hi: "Merheba, ti senî yê?", where: "Dersim, Çewlîg, Palu, Sêwregi ve diaspora|Dersim, Çewlîg, Palu, Sêwregi and the diaspora|Dersim, Çewlîg, Palu, Sêwregi und die Diaspora" },
 };
@@ -64,7 +65,7 @@ export default function Onboarding() {
   const afterGoal = () => setStep(native && !s.remind ? 10 : jt ? 7 : 8);
   const afterRemind = () => setStep(jt ? 7 : 8);
   const goals = [10, 20, 30, 50], mins = [5, 10, 15, 20];
-  const whys = courseId() === "eng" ? WHY_EN : WHY_KU;
+  const whys = isForeign() ? WHY_EN : WHY_KU;
   const choice = (on: boolean) => ({ pressed }: { pressed: boolean }) => ({
     minHeight: 64, flexDirection: "row" as const, gap: 14, alignItems: "center" as const, paddingVertical: 14, paddingHorizontal: 16, borderRadius: 14, borderTopLeftRadius: 4,
     backgroundColor: on ? th.skySoft : th.surface, borderWidth: on ? 2 : 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: on ? th.sky : th.line2,
@@ -149,7 +150,7 @@ export default function Onboarding() {
               {whys.map((k) => { const on = s.why === k; return (
                 <Pressable key={k} onPress={() => { tap(); update((x) => { x.why = k; }); setTimeout(() => setStep(2), 180); }} accessibilityRole="button" accessibilityState={{ selected: on }} style={choice(on)}>
                   <Text style={{ fontSize: 26 }}>{WHY_ICON[k]}</Text>
-                  <Text style={{ flex: 1, fontFamily: F.bodyHeavy, fontSize: 17, color: th.ink }}>{t(courseId() === "eng" ? `whyEn_${k}` : `why_${k}`)}</Text>
+                  <Text style={{ flex: 1, fontFamily: F.bodyHeavy, fontSize: 17, color: th.ink }}>{t(isForeign() ? `whyEn_${k}` : `why_${k}`)}</Text>
                 </Pressable>); })}
             </View>
           </>}

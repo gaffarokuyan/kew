@@ -4,7 +4,7 @@ import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { sfx } from "@/lib/audio";
 import { M, t, tArr } from "@/lib/i18n";
-import { COURSES, coursesFor, type CourseId } from "@/lib/course";
+import { COURSES, coursesFor, isForeign, type CourseId } from "@/lib/course";
 import { ScriptOptions } from "@/ui/ScriptPicker";
 import { day, dayAdd, HEART_MS, MAXH, setCkbScript, switchCourse, update, useS } from "@/lib/store";
 import { Diamond } from "./art";
@@ -80,7 +80,7 @@ export function TopBar() {
           <CourseRow key={c.id} id={c.id} name={c.name} sub={M(c.sub)} beta={c.beta ? t("courseBeta") : undefined} on={s.course === c.id}
             onPress={() => { sfx("tap"); if (c.id === "ckb" && !s.ckbScript) { setScr(true); return; } switchCourse(c.id as CourseId); setCourse(false); }} />))}
         {s.course === "zza" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteZza")}</Text> : null}
-        {s.course === "eng" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteEng")}</Text> : null}
+        {isForeign(s.course) ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteForeign")}</Text> : null}
         {s.course === "ckb" ? <Btn title={t("scriptSet")} upper={false} kind="ghost" onPress={() => setScr(true)} /> : null}
       </>}
       </Sheet>

@@ -17,7 +17,7 @@ const left = (ends: number) => {
   const ms = Math.max(0, ends - Date.now()), d = Math.floor(ms / 864e5), h = Math.floor((ms % 864e5) / 36e5);
   return d > 0 ? t("lgEnds", { d, h }) : t("lgEndsH", { h: Math.max(1, h) });
 };
-const COURSE_TAG: Record<string, string> = { kmr: "Kurmancî", ckb: "Soranî", zza: "Kirmanckî", eng: "English" };
+const COURSE_TAG: Record<string, string> = { kmr: "Kurmancî", ckb: "Soranî", zza: "Kirmanckî", eng: "English", deu: "Deutsch" };
 
 /** «Haftalık lig»: weekly XP race in groups of 30, ten tiers from Tov (seed) to Stêrk (star), plus friends by code. */
 export default function League() {

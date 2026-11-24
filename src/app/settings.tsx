@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { speak } from "@/lib/audio";
 import { LANGS, M, t, tArr } from "@/lib/i18n";
 import { type Lang, resetAll, setCkbScript, switchCourse, update, useS } from "@/lib/store";
-import { coursesFor, type CourseId, type Script } from "@/lib/course";
+import { coursesFor, FOREIGN, isForeign, type CourseId, type Script } from "@/lib/course";
 import { BackupCard } from "@/ui/BackupCard";
 import { CourseRow } from "@/ui/CourseBadge";
 import { Icon } from "@/ui/icons";
@@ -58,7 +58,7 @@ export default function Settings() {
                 onPress={() => { if (c.id === "ckb" && !s.ckbScript) setCkbScript("both"); switchCourse(c.id as CourseId); }} />))}
           </View>
           {s.course === "zza" ? <Note>{t("courseNoteZza")}</Note> : null}
-          {s.course === "eng" ? <Note>{t("courseNoteEng")}</Note> : null}
+          {isForeign(s.course) ? <Note>{t("courseNoteForeign")}</Note> : null}
           {s.course === "ckb" ? <><L>{t("scriptSet")}</L>
             <Seg items={[{ v: "ar", l: t("scriptAr") }, { v: "lat", l: t("scriptLat") }, { v: "both", l: t("scriptBoth") }]} value={s.ckbScript || "both"} onPick={(v) => setCkbScript(v as Script)} /></> : null}
         </Card>
@@ -76,8 +76,8 @@ export default function Settings() {
           <Row label={t("voice")}><Switch value={s.set.voice} onValueChange={(v) => update((x) => { x.set.voice = v; })} trackColor={{ true: th.kesk }} /></Row>
           <Row label={t("speakSet")} last><Switch value={s.set.speak} onValueChange={(v) => update((x) => { x.set.speak = v; x.speakPause = 0; })} trackColor={{ true: th.kesk }} /></Row>
           <L>{t("rate")}</L>
-          <Seg items={[0.85, 1, 1.2].map((r, i) => ({ v: r, l: tArr("rates")[i] }))} value={s.set.rate} onPick={(v) => { update((x) => { x.set.rate = v; }); setTimeout(() => speak(s.course === "eng" ? "Hello, how are you?" : "Silav, tu çawa yî?"), 50); }} />
-          <Btn title={t("testVoice")} upper={false} kind="ghost" icon={<Icon.spk size={20} color={th.ink} />} onPress={() => speak(s.course === "eng" ? "Hello, how are you?" : "Silav, tu çawa yî?")} />
+          <Seg items={[0.85, 1, 1.2].map((r, i) => ({ v: r, l: tArr("rates")[i] }))} value={s.set.rate} onPick={(v) => { update((x) => { x.set.rate = v; }); setTimeout(() => speak(FOREIGN[s.course]?.hi ?? "Silav, tu çawa yî?"), 50); }} />
+          <Btn title={t("testVoice")} upper={false} kind="ghost" icon={<Icon.spk size={20} color={th.ink} />} onPress={() => speak(FOREIGN[s.course]?.hi ?? "Silav, tu çawa yî?")} />
           <Note>{t("voiceNotePack", { n: Object.keys(AUDIO).length })} {t("speakNote")}</Note>
         </Card>
 

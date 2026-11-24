@@ -3,8 +3,8 @@ import type { CourseId } from "@/lib/course";
 import { F, type Theme, useTheme } from "@/ui/theme";
 
 /** Each course gets a colour and a two-letter code, shown on a kilim diamond. */
-export const COURSE_CODE: Record<CourseId, string> = { kmr: "KU", ckb: "SO", zza: "KI", eng: "EN" };
-export const courseColor = (id: CourseId, th: Theme) => (id === "ckb" ? th.sor : id === "zza" ? th.plum : id === "eng" ? th.sky : th.kesk);
+export const COURSE_CODE: Record<CourseId, string> = { kmr: "KU", ckb: "SO", zza: "KI", eng: "EN", deu: "DE" };
+export const courseColor = (id: CourseId, th: Theme) => (id === "ckb" ? th.sor : id === "zza" ? th.plum : id === "eng" ? th.sky : id === "deu" ? th.zerDeep : th.kesk);
 
 export function CourseBadge({ id, size = 30 }: { id: CourseId; size?: number }) {
   const th = useTheme(); const c = courseColor(id, th);

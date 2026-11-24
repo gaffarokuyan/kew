@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Circle, Text as SvgText } from "react-native-svg";
 import { speak, sfx } from "@/lib/audio";
-import { SAYINGS } from "@/lib/course";
+import { SAYINGS, isForeign } from "@/lib/course";
 import { M, t } from "@/lib/i18n";
 import { episodesFor, loadPods, usePodsVersion } from "@/lib/podcast";
 import { day, dueScore, learned, update, useS, wordStrength } from "@/lib/store";
@@ -46,7 +46,7 @@ export default function Practice() {
     { k: "sprint", c: th.plum, ic: <Icon.bolt size={26} color="#fff" />, ti: t("pSprint"), su: lw.length < 6 ? t("pNeedN", { n: 6 }) : t("pSprintSub"), dis: lw.length < 6, need: [lw.length, 6] },
     { k: "sounds", c: th.zer, ic: <Icon.ear size={26} color="#2E1F00" />, ti: t("pSounds"), su: s.set.voice ? (lw.length < 4 ? t("pNeed4") : t("pSoundsSub")) : t("voiceOff"), dis: !soundsOk, need: s.set.voice && courseId() === "kmr" ? [lw.length, 4] : undefined },
     { k: "read", c: th.kesk, ic: <Icon.book size={26} />, ti: t("pRead"), su: t("pReadSub"), dis: readable < 1 },
-    ...(courseId() === "eng" ? [] : [{ k: "pod", c: th.plum, ic: <Icon.pod size={26} />, ti: t("pPod"), su: pods ? t("pPodSub") + ` · ${pods}` : t("podSoon"), dis: false },
+    ...(isForeign() ? [] : [{ k: "pod", c: th.plum, ic: <Icon.pod size={26} />, ti: t("pPod"), su: pods ? t("pPodSub") + ` · ${pods}` : t("podSoon"), dis: false },
       { k: "culture", c: th.zer, ic: <Icon.book size={26} color="#2E1F00" />, ti: t("cultTitle"), su: weekCard().title + (s.culture?.[weekCard().id] ? " ✓" : ` · ${t("cultNew")}`), dis: false },
       { k: "bridge", c: th.sky, ic: <Icon.bridge size={26} />, ti: t("bridgeTitle"), su: t("bridgeSub"), dis: false }]),
     ...(courseId() === "ckb" ? [{ k: "alpha", c: th.sor, ic: <Icon.abc size={26} />, ti: t("alphaTitle"), su: t("alphaSub"), dis: false }] : []),

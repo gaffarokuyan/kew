@@ -14,7 +14,7 @@ export function t(k: string, v: Record<string, string | number> = {}): string {
   if (typeof s !== "string") return k;
   for (const [a, b] of Object.entries(v)) s = s.split(`{${a}}`).join(String(b));
   const c = courseId();
-  return c === "zza" ? toZza(s) : c === "ckb" ? toCkb(s) : c === "eng" ? toEng(s) : s;
+  return c === "zza" ? toZza(s) : c === "ckb" ? toCkb(s) : c === "eng" ? toEng(s) : c === "deu" ? toDeu(s) : s;
 }
 export const tArr = (k: string): string[] => { const row = T[k]; return (row?.[LI()] ?? row?.[0] ?? []) as string[]; };
 export const t2 = (k: string) => t(k).split("|");
@@ -36,4 +36,8 @@ function toCkb(s: string) {
 /** Interface strings for the English course (taught from Turkish): Kurmancîde → İngilizcede, … */
 function toEng(s: string) {
   return s.replace(/Kurmancî/g, "İngilizce").replace(/Kurmanji/g, "English").replace(/Kürtçe/g, "İngilizce");
+}
+/** Interface strings for the German course (taught from Turkish). */
+function toDeu(s: string) {
+  return s.replace(/Kurmancî/g, "Almanca").replace(/Kurmanji/g, "German").replace(/Kürtçe/g, "Almanca");
 }

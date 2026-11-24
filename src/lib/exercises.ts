@@ -23,8 +23,10 @@ export const pick = <T,>(a: T[], n: number) => shuffle(a).slice(0, n);
 /** English answers: one apostrophe, and contractions spelled out, so «I'm» and «I am» both pass. */
 const CONTR: [RegExp, string][] = [[/\bcan't\b/g, "cannot"], [/\bwon't\b/g, "will not"], [/\bshan't\b/g, "shall not"], [/n't\b/g, " not"], [/'m\b/g, " am"], [/'re\b/g, " are"], [/'ve\b/g, " have"], [/'ll\b/g, " will"], [/'d\b/g, " would"], [/\bcan not\b/g, "cannot"], [/\b(it|that|he|she|what|where|who|there|here|how)'s\b/g, "$1 is"], [/\blet's\b/g, "let us"]];
 const enNorm = (s: string) => { let x = s.toLowerCase().replace(/[’‘`]/g, "'"); for (const [a, b] of CONTR) x = x.replace(a, b); return x; };
+/** German answers: umlauts may be typed as ae/oe/ue and ß as ss. */
+const deNorm = (s: string) => s.toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss").replace(/[’‘`]/g, "'");
 export const norm = (s: string) =>
-  (courseId() === "eng" ? enNorm(String(s).normalize("NFC")) : String(s).normalize("NFC").toLocaleLowerCase(locale() === "tr" ? "tr" : "en"))
+  (courseId() === "eng" ? enNorm(String(s).normalize("NFC")) : courseId() === "deu" ? deNorm(String(s).normalize("NFC")) : String(s).normalize("NFC").toLocaleLowerCase(locale() === "tr" ? "tr" : "en"))
     // Arabic-script Kurdish: unify Arabic/Persian letter variants and drop marks
     .replace(/ي/g, "ی").replace(/ك/g, "ک").replace(/ة/g, "ە").replace(/ه‍/g, "ە").replace(/[\u064B-\u0652\u200C\u200D\u0640]/g, "")
     .replace(/[.,!?¿;:'’"«»…\-،؟؛]/g, " ").replace(/\s+/g, " ").trim();
