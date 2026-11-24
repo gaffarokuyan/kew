@@ -117,6 +117,7 @@ Test için Playwright kullanılabilir (localStorage `kew:v3` içine durum yazıp
 | Rojda, Berfîn | Ülgen | `9UoAU5im7Rl44J2IvBHU` |
 | Azad | Yunus C | `aB3kjBYXGX3jTKxg1bsE` |
 | Bapîr (dede) | Seyfullah Kartal | `mF7tIc9VLrznhGooGjaT` |
+| Dapîr (nine, B1) | Grandma Titina | `UOxKeHS7lixzgw35mtAR` |
 | Dayik (anne) | Belma | `KbaseEXyT9EE0CQLEfbB` |
 | Bijîşk (doktor) | Buket | `FDs1ZX5J4e4f2c2erxtW` |
 | Firoşkar (satıcı) | Murat Ekim | `TqNc7APmsiuh2GbDHtCn` |
@@ -126,7 +127,8 @@ Test için Playwright kullanılabilir (localStorage `kew:v3` içine durum yazıp
 2. Önce Latin harfle üret → ElevenLabs **Scribe** (`scribe_v1`, `kmr` / `ckb`) ile yazıya dök → benzerlik puanı.
 3. Puan < 0.9 ise Arap harfli Kurmancî ile de üret (`to_arabic`), iyi olanı tut.
 4. Zor kelimeler için `FIX` sözlüğünde heceleme ipucu (`xwiş-ka`); `best.py` zayıf satırlar için birden çok deneme üretip en iyisini `pick.json`a yazar.
-5. "Juji" adı "Jûjî" diye okutulur. Aynı anda en fazla 3 istek.
+5. Latin "Ax" → "eks" okunuyor; Arap harfiyle `ئاخ` yaz (dialog.py FIX).
+6. "Juji" adı "Jûjî" diye okutulur. Aynı anda en fazla 3 istek.
 Claude sesi **dinleyemez**; doğrulama yalnızca STT ile. Şüpheli satırları kullanıcıya liste olarak bildir.
 
 ---
