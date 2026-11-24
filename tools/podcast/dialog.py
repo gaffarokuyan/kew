@@ -11,7 +11,7 @@ JUJI = ("h5qtAtbcNxKhIa170f34", 0.5)       # Abdulgaffar Kurmancî (user's own c
 GASPAR = ("nMvZRihyU408YNgNXHuX", 0.4)
 VOICES = {
   "kmr": {"Juji": JUJI, "Bapîr": GASPAR,
-          "Dapîr": ("0M3917teU4Y57BvDVCKx", 0.5)},          # clone of Kurdish TTS kurmanji_233
+          "Dapîr": ("UOxKeHS7lixzgw35mtAR", 0.5)},          # Grandma Titina (yaşlı kadın; eski: 0M3917teU4Y57BvDVCKx klon)
   "ckb": {"Juji": JUJI, "Bapîr": GASPAR, "Firoşkar": GASPAR,
           "Rojda": ("gKBBj5qeN1aYCf7AcOpK", 0.5),           # clone of Kurdish TTS sorani_986
           "Azad": ("NCVqmerGBlwFSqHbpR0D", 0.5),            # clone of Kurdish TTS sorani_1
@@ -19,6 +19,7 @@ VOICES = {
 }
 GAP = 0.35
 FIX = {("kmr-b1-01", 0): "Silav hevalno! Ez Jûjî me, û ev podkasta asta B1 ye. Îro du mêvanên me hene: Bapîr û Dapîr!",
+       ("kmr-b1-01", 2): "ئاخ، lawo... Wê demê, em her havîn bi pez û dewarên xwe re derdiketin zozanan.",  # "Ax" Latin harfle "eks" okunuyor
        ("kmr-b1-01", 12): "Bapîr, her tim wisa dibêje... lê ew, ji xewa sibê jî pir hez dike!",
        ("ckb-a1-01", 5): "تۆ، خوێندکاریت؟", ("ckb-a2-01", 8): "ئەمڕۆش، نەورۆز هەر وایە؟"}
 os.makedirs(OUT, exist_ok=True); os.makedirs(C, exist_ok=True)
@@ -50,7 +51,8 @@ def stt(p, lang="kmr"):
         open(js, "w").write(r.stdout)
     return json.load(open(js)).get("text", "")
 
-eps = {e["id"]: e for f in ("kmr", "ckb", "ckb2") for e in json.load(open(D + f + ".json"))["episodes"]}
+SRC = [D + f + ".json" for f in ("kmr", "ckb", "ckb2") if os.path.exists(D + f + ".json")] or [os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../src/content/podcasts.json")]
+eps = {e["id"]: e for f in SRC for e in json.load(open(f))["episodes"]}
 for eid in sys.argv[1:]:
     e = eps[eid]
     def one(il):
