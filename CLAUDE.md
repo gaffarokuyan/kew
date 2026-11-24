@@ -131,7 +131,7 @@ Claude sesi **dinleyemez**; doğrulama yalnızca STT ile. Şüpheli satırları 
   ve zayıf kayıtları `lesson_report.txt`'e döker. Bitip bitmediğini `audioMap.ts` başlığından anla
   ("ElevenLabs eleven_v4, Ülgen" yazıyorsa bitti).
 - Eski sesler: `arsiv/ses-eski/dersler-kurdishtts/`.
-- **Kısa i kontrolü (Kasım 2026):** Kurmancî `i` = Türkçe ı sesi. `tools/icheck/`: kısa i geçen 1319 kayıt `juji-stt` (Kurdish STT) ile tarandı, i→î duyulan 97 kayıt Ülgen ile i→ı yazılarak (olmazsa Arap harfiyle) yeniden okutuldu; 76 kayıt düzeldi (`duzelen.txt`; 5 tanesi Soranî kadın klonu sesiyle, Soranî dil ipucu + Arap harfi: ifix3.py), 21 kayıt `kalan.txt`te. Eski hâller `arsiv/ses-eski/i-duzeltme-oncesi/`. ElevenLabs anahtarı `~/.secrets/elevenlabs`.
+- **Kısa i kontrolü (Kasım 2026):** Kurmancî `i` = Türkçe ı sesi. `tools/icheck/`: kısa i geçen 1319 kayıt `juji-stt` (Kurdish STT) ile tarandı, i→î duyulan 97 kayıt Ülgen ile i→ı yazılarak (olmazsa Arap harfiyle) yeniden okutuldu; 76 kayıt düzeldi (`duzelen.txt`; 5 tanesi Soranî kadın klonu sesiyle, Soranî dil ipucu + Arap harfi: ifix3.py), 21 kayıt `kalan.txt`te. Sonra kullanıcı listeyi kendi sesiyle okudu (kayıt sohbette); okuduğu 52 madde ElevenLabs speech-to-speech (`eleven_multilingual_sts_v2`) ile Ülgen sesine çevrilip yerine kondu (`tools/icheck/sts.py`, kullanıcı bu yolu dinleyerek seçti). Eski hâller `arsiv/ses-eski/i-duzeltme-oncesi/`. ElevenLabs anahtarı `~/.secrets/elevenlabs`.
 
 > Betiklerdeki yollar ilk oturumun makinesine göre yazılmış (`/home/claude/kew_pod/`, anahtar dosyaları `~/.k3`, `~/.k4`…).
 > Yeni ortamda bu yolları ve anahtar dosyalarını kendi ortamına göre ayarla.

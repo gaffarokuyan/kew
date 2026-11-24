@@ -1,61 +1,61 @@
-çi	b2d636c5cb.mp3	ulgen-ı	önce: Çî?	sonra: Çi?
-dayik	7c4079d75e.mp3	ulgen-ı	önce: Dayîk	sonra: Dayik!
-bira	e2839b4079.mp3	ulgen-ı	önce: Bîra!	sonra: Bira
-xwişk	128a3a92d7.mp3	ulgen-ı	önce: Xwîşk	sonra: Xwişk!
-Ev xwişka min e.	c5b1f76b81.mp3	ulgen-ı	önce: Ev xwîşka min e.	sonra: Ev xwişka min e.
-birinc	0956c60d0e.mp3	ulgen-ı	önce: Birînc.	sonra: Birinc!
-giran	1921d20618.mp3	ulgen-ı	önce: Gîran	sonra: Giran
-dil	580804ba3b.mp3	ulgen-ı	önce: Dîl!	sonra: Dil.
-ziman	0ef18feb98.mp3	ulgen-ı	önce: Zîman	sonra: Ziman
-firoşkar	6ae40f7494.mp3	ulgen-ı	önce: Fîroşkar	sonra: Firoşkar
-pir	4bfc20abc0.mp3	ulgen-ı	önce: Pîr	sonra: Pir.
-birûsk	45c064256b.mp3	ulgen-ı	önce: Bîrûsk	sonra: Birûsk.
-ditirsim	7ba22d1cf5.mp3	ulgen-ı	önce: Dîtirsim.	sonra: Ditirsim.
-bizin	4433d7e00e.mp3	ulgen-ı	önce: Bîzin!	sonra: Bizin.
-ez nikarim	7192eab78a.mp3	ulgen-ı	önce: Ez nikarîm.	sonra: Ez nikarim.
-fistan	68e080039e.mp3	ulgen-ı	önce: Fîstan	sonra: Fistan!
-şal û şapik	4dbbed2368.mp3	ulgen-ı	önce: Şal û şapîk!	sonra: Şal û şapik!
-birîn	2bd6fcd9f7.mp3	ulgen-ı	önce: Bîrîn	sonra: Birîn.
-pir caran	d4fc084464.mp3	ulgen-ı	önce: Pîr caran.	sonra: Pir caran.
-diran firçe kirin	977b6c4681.mp3	ulgen-ı	önce: Dîran firçe kirin.	sonra: Diran firçe kirin.
+çi	b2d636c5cb.mp3	sts-gaffar	önce: Çî?	sonra: Çi?
+dayik	7c4079d75e.mp3	sts-gaffar	önce: Dayîk	sonra: Dayik!
+bira	e2839b4079.mp3	sts-gaffar	önce: Bîra!	sonra: Birano!
+xwişk	128a3a92d7.mp3	sts-gaffar	önce: Xwîşk	sonra: Xweşik.
+Ev xwişka min e.	c5b1f76b81.mp3	sts-gaffar	önce: Ev xwîşka min e.	sonra: Ev xwişka min e.
+birinc	0956c60d0e.mp3	sts-gaffar	önce: Birînc.	sonra: Birinc.
+giran	1921d20618.mp3	sts-gaffar	önce: Gîran	sonra: Giran
+dil	580804ba3b.mp3	sts-gaffar	önce: Dîl!	sonra: Dir
+ziman	0ef18feb98.mp3	sts-gaffar	önce: Zîman	sonra: Bi ziman
+firoşkar	6ae40f7494.mp3	sts-gaffar	önce: Fîroşkar	sonra: Firoşkar
+pir	4bfc20abc0.mp3	sts-gaffar	önce: Pîr	sonra: Xêr!
+birûsk	45c064256b.mp3	sts-gaffar	önce: Bîrûsk	sonra: Birûsk.
+ditirsim	7ba22d1cf5.mp3	sts-gaffar	önce: Dîtirsim.	sonra: Ditirsim.
+bizin	4433d7e00e.mp3	sts-gaffar	önce: Bîzin!	sonra: Bizin.
+ez nikarim	7192eab78a.mp3	sts-gaffar	önce: Ez nikarîm.	sonra: Ez nikarim.
+fistan	68e080039e.mp3	sts-gaffar	önce: Fîstan	sonra: Fîsta.
+şal û şapik	4dbbed2368.mp3	sts-gaffar	önce: Şal û şapîk!	sonra: Şal û şepik!
+birîn	2bd6fcd9f7.mp3	sts-gaffar	önce: Bîrîn	sonra: Bijîn!
+pir caran	d4fc084464.mp3	sts-gaffar	önce: Pîr caran.	sonra: Pir car e.
+diran firçe kirin	977b6c4681.mp3	sts-gaffar	önce: Dîran firçe kirin.	sonra: Diran xwe çêkin.
 birazî / xwarzî	1fdc531df6.mp3	ulgen-ı	önce: Bîrazî, xwarzî	sonra: Birazî xorzî!
-firax	35ad99087b.mp3	ulgen-ı	önce: Fîrax	sonra: Firax.
-Kutilk heye?	ff868787f1.mp3	ulgen-ı	önce: Kutîlk heye?	sonra: Kutilk heye?
-cil û berg	dbcdd50f2d.mp3	ulgen-ı	önce: Cîl û berg	sonra: Cil û berg
-Sifre amade ye!	9902ab9cc7.mp3	ulgen-ı	önce: Sîfre amade ye.	sonra: Sifre amade ye.
-lîstikvan	9089b30378.mp3	ulgen-ı	önce: Lîstîkvan	sonra: Lîstikvan
-Pir xweş e. Ava wê şîn e.	6e977c380d.mp3	ulgen-ı	önce: Pîr xweş e, ava wê şîn e.	sonra: Pir xweş e, ava wê şîn e.
-Şivan pez dibe mêrgê.	f96dc990b4.mp3	ulgen-ı	önce: Şîvan pez dibe mêrgê.	sonra: Şivan pez dibe mêrgê.
-siwar bûn	7280aad8aa.mp3	ulgen-ı	önce: Sîwar bûn.	sonra: Siwar bûm
-zivirîn	4d569c6441.mp3	ulgen-ı	önce: Zîvirîn!	sonra: Zivirîn.
-pirsîn	e72f574803.mp3	ulgen-ı	önce: Pîrsîn	sonra: Pirsîn.
-Ez nikarim werim, bibore.	97b726ffcd.mp3	ulgen-ı	önce: Ez nikarîm werim. Bibore.	sonra: Ez nikarim werim bibore.
-… ji … -tir	901d83fe1e.mp3	ulgen-ı	önce: Cî. Tîr.	sonra: Ji tir.
-dilop	a028c120fa.mp3	ulgen-ı	önce: Dîlop	sonra: Dilop.
-xizan	de71614b8c.mp3	ulgen-ı	önce: Xîzan!	sonra: Xizan!
+firax	35ad99087b.mp3	sts-gaffar	önce: Fîrax	sonra: Firoş.
+Kutilk heye?	ff868787f1.mp3	sts-gaffar	önce: Kutîlk heye?	sonra: Kutilk heye.
+cil û berg	dbcdd50f2d.mp3	sts-gaffar	önce: Cîl û berg	sonra: Cil û berf.
+Sifre amade ye!	9902ab9cc7.mp3	sts-gaffar	önce: Sîfre amade ye.	sonra: Sifil amade ye.
+lîstikvan	9089b30378.mp3	sts-gaffar	önce: Lîstîkvan	sonra: Lîstikvan
+Pir xweş e. Ava wê şîn e.	6e977c380d.mp3	sts-gaffar	önce: Pîr xweş e, ava wê şîn e.	sonra: Pir xweş e, ava wî şîn e.
+Şivan pez dibe mêrgê.	f96dc990b4.mp3	sts-gaffar	önce: Şîvan pez dibe mêrgê.	sonra: Şivan paş dibe mêrgê.
+siwar bûn	7280aad8aa.mp3	sts-gaffar	önce: Sîwar bûn.	sonra: Siwar bûm
+zivirîn	4d569c6441.mp3	sts-gaffar	önce: Zîvirîn!	sonra: Zevirîn.
+pirsîn	e72f574803.mp3	sts-gaffar	önce: Pîrsîn	sonra: Pirsîn.
+Ez nikarim werim, bibore.	97b726ffcd.mp3	sts-gaffar	önce: Ez nikarîm werim. Bibore.	sonra: Ez nikarim werim bibore.
+… ji … -tir	901d83fe1e.mp3	sts-gaffar	önce: Cî. Tîr.	sonra: Ji tir.
+dilop	a028c120fa.mp3	sts-gaffar	önce: Dîlop	sonra: Dilok!
+xizan	de71614b8c.mp3	sts-gaffar	önce: Xîzan!	sonra: Xêzan!
 ji … ve	35cd0932a1.mp3	ulgen-ı	önce: Jî. Vê.	sonra: Ji ve.
-simbêl	e542a34ebd.mp3	ulgen-ı	önce: Sîmbêl	sonra: Simbêl
-dilovan	fababb3000.mp3	ulgen-ı	önce: Dîlovan!	sonra: Dilovan!
-Birayê min tembel e, lê jêhatî ye.	5080b1aada.mp3	ulgen-ı	önce: Bîrayê min tembelê lê jêhatî ye.	sonra: Birayê min tembel e lê jêhatî ye.
-dil + ovan / dil + pak	0d6990264c.mp3	ulgen-ı	önce: Dîl plusovan slash dîl plus pak.	sonra: Dil artê hovane, êyîk çizgê, dil artê pak
-dilteng	b0f1f31d4e.mp3	ulgen-ı	önce: Dîlteng!	sonra: Dilteng.
-Pir xweş bû. Pêşî em bi otobusê çûn Wanê.	823544ee97.mp3	ulgen-ı	önce: Pîr xweş bû, pêşî em bi otobûsê çûn Wanê.	sonra: Pir xweş bû, pêşî em bi otobûsê çûn Wanê.
-Ajokar ji cihê qezayê reviya.	0196f610f9.mp3	ulgen-ı	önce: Ajokar jî cihê qezayê reviya.	sonra: Ajokar ji cihê qezayê reviya.
-kincên kurdî	3f28743842.mp3	ulgen-ı	önce: Kîncên Kurdî	sonra: Kincên Kurdî
-çepik lêdan	e526371d6d.mp3	ulgen-ı	önce: Çepîk lê dan.	sonra: Çepik lê dan
-ji dil	48bb2c06ac.mp3	ulgen-ı	önce: Ci dîl!	sonra: Ji dil.
+simbêl	e542a34ebd.mp3	sts-gaffar	önce: Sîmbêl	sonra: Pisimbeş
+dilovan	fababb3000.mp3	sts-gaffar	önce: Dîlovan!	sonra: Kilovan!
+Birayê min tembel e, lê jêhatî ye.	5080b1aada.mp3	sts-gaffar	önce: Bîrayê min tembelê lê jêhatî ye.	sonra: Birayê min tembel e lê jêhatî.
+dil + ovan / dil + pak	0d6990264c.mp3	sts-gaffar	önce: Dîl plusovan slash dîl plus pak.	sonra: Dil, hovane, dilovan, dil pak Ez veqetînim?
+dilteng	b0f1f31d4e.mp3	sts-gaffar	önce: Dîlteng!	sonra: Dilpence!
+Pir xweş bû. Pêşî em bi otobusê çûn Wanê.	823544ee97.mp3	sts-gaffar	önce: Pîr xweş bû, pêşî em bi otobûsê çûn Wanê.	sonra: Pir xweş bû, pêşî em bi otobûsê çûn Wanê.
+Ajokar ji cihê qezayê reviya.	0196f610f9.mp3	sts-gaffar	önce: Ajokar jî cihê qezayê reviya.	sonra: Ajokar ji cihê qezayê lawiya.
+kincên kurdî	3f28743842.mp3	sts-gaffar	önce: Kîncên Kurdî	sonra: Kîncin kurdî?
+çepik lêdan	e526371d6d.mp3	sts-gaffar	önce: Çepîk lê dan.	sonra: Çepêk lê da.
+ji dil	48bb2c06ac.mp3	sts-gaffar	önce: Ci dîl!	sonra: Ji dil.
 Min ji dil zewaca wan pîroz kir û diyariyek da wan.	13881038ab.mp3	ulgen-ı	önce: Min jî dilzewaca wan pîroz kir û diyariyek da wan.	sonra: Min ji dil zewaca wan pîroz kir û diyariyek da wan.
-Dema kar ji saet heştan heta pêncan e. Ev ji bo te baş e?	6688cefdc8.mp3	ulgen-ı	önce: Demek her jî saet heştan heta pêncan e. Ev ji bo te baş e?	sonra: Dema kar ji saet heştan heta pêncan e. Ev ji bo te baş e?
-Min ji pirtûka ku te dabû min pir hez kir.	08f27ccf20.mp3	ulgen-ı	önce: Min jî pirtûka ku te dabû min pir hez kir.	sonra: Min ji pirtûka ku te dabû min pir hez kir.
+Dema kar ji saet heştan heta pêncan e. Ev ji bo te baş e?	6688cefdc8.mp3	sts-gaffar	önce: Demek her jî saet heştan heta pêncan e. Ev ji bo te baş e?	sonra: Dema kar ji saet heştan heta pêncan e. Ev ji bo te baş e.
+Min ji pirtûka ku te dabû min pir hez kir.	08f27ccf20.mp3	sts-gaffar	önce: Min jî pirtûka ku te dabû min pir hez kir.	sonra: Min ji pirtûka ku te dabû min pir hez kir.
 Ew jina ku li wir e, naskiriyeke min a kevn e.	9575f417f7.mp3	ulgen-ı	önce: Ew jîna ku li wir e, naskiriyeke min a kevn e.	sonra: Ew jina ku li wir e, naskiriyeke min a kevn e.
 Baş e. Bi kurtasî: em ê sibê zû bi rê bikevin!	38788f6ff2.mp3	ulgen-ı	önce: Baş e, bî kurtasî, em ê sibê zû bi rê bikevin.	sonra: Baş e, bi kurtasî, em ê sibê zû bi rê bikevin.
-Bihar ji bo min demsala herî xweş e.	17f711b7ec.mp3	ulgen-ı	önce: Bihar jî bû min demsala herî xweş e.	sonra: Bihar ji bo min demsala herî xweş e.
+Bihar ji bo min demsala herî xweş e.	17f711b7ec.mp3	sts-gaffar	önce: Bihar jî bû min demsala herî xweş e.	sonra: Bihar, ji bo min demsala herî xweş e.
 Şivanê ciwan bi şimşala xwe awazeke xemgîn lê dixist.	3d0a43c8a3.mp3	ulgen-ı	önce: Şîvanê Ciwan bi şimşala xwe awazeke xemgîn lê dixist.	sonra: Şivanê ciwan, bi şimşala xwe awazeke xemgîn lê dixist.
-çepik	da64b17fa4.mp3	ulgen-ı	önce: Çepîk	sonra: Çepik
-Pir baş e! Wê demê karê min tenê govend e.	9295ee07d5.mp3	ulgen-ı	önce: Pîr baş e, wê demê karê min tenê govend e.	sonra: Pir baş e, vê demê karê min tenê govend e.
-tam kirin	ae4bab3d5b.mp3	ulgen-ı	önce: Tam kirîn.	sonra: Tam kirin.
+çepik	da64b17fa4.mp3	sts-gaffar	önce: Çepîk	sonra: Çapekî!
+Pir baş e! Wê demê karê min tenê govend e.	9295ee07d5.mp3	sts-gaffar	önce: Pîr baş e, wê demê karê min tenê govend e.	sonra: Pir baş e, wê demê karê min tenê govend e.
+tam kirin	ae4bab3d5b.mp3	sts-gaffar	önce: Tam kirîn.	sonra: Ka em kirin.
 ji dil û can	e94693f462.mp3	ulgen-ı	önce: Jî dil û can	sonra: Ji dil û can.
-Min ji dil û can alîkariya wî kir, lê wî guh neda min.	e04b7149ac.mp3	ulgen-ı	önce: Min jî dil û can alîkariya wî kir lê wî guh neda min.	sonra: Min ji dil û can alîkariya wî kir, lê wî guh neda min.
+Min ji dil û can alîkariya wî kir, lê wî guh neda min.	e04b7149ac.mp3	sts-gaffar	önce: Min jî dil û can alîkariya wî kir lê wî guh neda min.	sonra: Min ji dil û can alîkariya wî kir, lê wî guh neda min.
 Li malê tenê bi kurdî biaxivin û çîrokan ji wan re bixwînin.	bd6f4afc9c.mp3	ulgen-ı	önce: Lî malê tenê bi kurdî biaxivin û çîrokan ji wan re bixwînin.	sonra: Li malê tenê bi kurdî biaxivin û çîrokan ji wan re bixwînin
 xuya kirin	0d980af069.mp3	ulgen-ı	önce: Xuya kirîn!	sonra: Xuyakirin!
 şimşal	113280107b.mp3	ulgen-ı	önce: Şîmşal!	sonra: Şimşat!
