@@ -7,7 +7,8 @@ import { M, t, tArr } from "@/lib/i18n";
 import { COURSES, coursesFor, type CourseId } from "@/lib/course";
 import { ScriptOptions } from "@/ui/ScriptPicker";
 import { day, dayAdd, HEART_MS, MAXH, setCkbScript, switchCourse, update, useS } from "@/lib/store";
-import { Diamond, Sun } from "./art";
+import { Diamond } from "./art";
+import { CourseBadge, CourseRow } from "./CourseBadge";
 import { Icon } from "./icons";
 import { Btn, Sheet, toast } from "./kit";
 import { F, TS, useTheme } from "./theme";
@@ -28,21 +29,19 @@ export function TopBar() {
   const th = useTheme(); const s = useS(); const ins = useSafeAreaInsets();
   const [shop, setShop] = useState(false); const [streak, setStreak] = useState(false); const [course, setCourse] = useState(false); const [scr, setScr] = useState(false);
   const closeCourse = () => { setCourse(false); setScr(false); };
-  const num = (n: number, c: string) => <Text style={{ fontFamily: F.bodyHeavy, fontSize: 16, color: c, fontVariant: ["tabular-nums"] }}>{n}</Text>;
+  const num = (n: number, c: string) => <Text style={{ fontFamily: F.bodyHeavy, fontSize: 17, color: c, fontVariant: ["tabular-nums"] }}>{n}</Text>;
   const wait = minsToHeart(s.hearts, s.heartAt);
   const days = [...Array(7)].map((_, i) => dayAdd(day(), i - 6));
   const buy = (cost: number, fn: () => void, msg: string) => { if (s.gems < cost) return toast(t("notEnough")); update((x) => { x.gems -= cost; fn(); }); sfx("chest"); setShop(false); toast(msg); };
   return (
     <View style={{ paddingTop: ins.top, backgroundColor: th.bg, borderBottomWidth: 1, borderColor: th.line }}>
-      <View style={{ height: 58, flexDirection: "row", alignItems: "center", paddingHorizontal: 12, gap: 6, maxWidth: 640, width: "100%", alignSelf: "center" }}>
-        <View style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: 6, paddingLeft: 4 }} accessible accessibilityRole="header" accessibilityLabel="Juji">
-          <Sun size={20} color={th.zer} />
-          <Text style={{ fontFamily: F.italicBold, fontSize: 26, lineHeight: 30, color: th.ink, letterSpacing: -0.4 }}>Juji</Text>
-          <Pressable onPress={() => { sfx("tap"); setCourse(true); }} accessibilityRole="button" accessibilityLabel={t("course")} hitSlop={8}
-            style={{ marginLeft: 6, paddingHorizontal: 11, paddingVertical: 6, borderRadius: 9, borderWidth: 1.5, borderColor: th.line2 }}>
-            <Text style={{ fontFamily: F.bodyHeavy, fontSize: 13, color: th.muted }}>{COURSES.find((c) => c.id === s.course)?.name ?? "Kurmancî"} ▾</Text>
-          </Pressable>
-        </View>
+      {/* Duolingo-style bar: course badge + three counters, evenly spaced so nothing overlaps on narrow phones. */}
+      <View style={{ height: 58, flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 14, maxWidth: 640, width: "100%", alignSelf: "center" }}>
+        <Pressable onPress={() => { sfx("tap"); setCourse(true); }} accessibilityRole="button" accessibilityLabel={`${t("course")}: ${COURSES.find((c) => c.id === s.course)?.name ?? "Kurmancî"}`} hitSlop={8}
+          style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 2, minHeight: 44, paddingHorizontal: 4, borderRadius: 10, backgroundColor: pressed ? th.surface2 : "transparent" })}>
+          <CourseBadge id={s.course} size={30} />
+          <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, color: th.muted }}>▾</Text>
+        </Pressable>
         <Stat onPress={() => setStreak(true)} label={t("streakAria", { n: s.streak })}><Icon.fire size={22} color={s.last === day() ? th.fire : th.faint} />{num(s.streak, s.last === day() ? th.fire : th.muted)}</Stat>
         <Stat onPress={() => router.push("/shop")} label={t("gemsAria", { n: s.gems })}><Icon.gem size={21} color={th.sky} />{num(s.gems, th.skyDeep)}</Stat>
         <Stat onPress={() => setShop(true)} label={t("heartsAria", { n: s.hearts })}><Icon.heart size={22} color={th.sor} />{num(s.hearts, th.sorDeep)}</Stat>
@@ -78,7 +77,7 @@ export function TopBar() {
         {scr ? <ScriptOptions onPick={(m) => { setCkbScript(m); if (s.course !== "ckb") switchCourse("ckb"); closeCourse(); }} /> : <>
         <Text style={{ fontFamily: F.display, fontSize: TS.xl, color: th.ink }}>{t("course")}</Text>
         {coursesFor(s.lang).map((c) => (
-          <Btn key={c.id} title={`${c.name} · ${M(c.sub)}${c.beta ? " · " + t("courseBeta") : ""}`} upper={false} kind={s.course === c.id ? "primary" : "ghost"}
+          <CourseRow key={c.id} id={c.id} name={c.name} sub={M(c.sub)} beta={c.beta ? t("courseBeta") : undefined} on={s.course === c.id}
             onPress={() => { sfx("tap"); if (c.id === "ckb" && !s.ckbScript) { setScr(true); return; } switchCourse(c.id as CourseId); setCourse(false); }} />))}
         {s.course === "zza" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteZza")}</Text> : null}
         {s.course === "eng" ? <Text style={{ fontFamily: F.italic, color: th.muted, fontSize: TS.sm }}>{t("courseNoteEng")}</Text> : null}

@@ -1,10 +1,12 @@
 import { router } from "expo-router";
 import { Pressable, ScrollView, Text, View } from "react-native";
 import Svg, { Line, Rect, Text as SvgText } from "react-native-svg";
-import { LEVELS, NODES, SECTIONS, UNIT, UNITS } from "@/lib/course";
+import { COURSES, LEVELS, NODES, SECTIONS, UNIT, UNITS } from "@/lib/course";
+import { myRank, TIERS } from "@/lib/league";
 import { LANGS, t, t2, tArr } from "@/lib/i18n";
 import { day, dayAdd, getS, learned, useS, type State } from "@/lib/store";
-import { Diamond, Juji, KilimRule } from "@/ui/art";
+import { Diamond, Juji, KilimRule, Medallion } from "@/ui/art";
+import { CourseBadge } from "@/ui/CourseBadge";
 import { Icon } from "@/ui/icons";
 import { Btn, H2, Meter } from "@/ui/kit";
 import { F, levelCol, TS, useTheme } from "@/ui/theme";
@@ -28,7 +30,7 @@ function Week() {
       <Line x1={pad} x2={W - pad} y1={gy} y2={gy} stroke={th.zer} strokeWidth={1.5} strokeDasharray="2 4" strokeLinecap="round" />
       {vals.map((v, i) => { const h = (v / max) * (H - 48), x = pad + i * (bw + gap), y = H - 24 - h; return (
         <Svg key={i}>
-          <Rect x={x} y={y} width={bw} height={Math.max(h, 0)} rx={3} fill={i === 6 ? th.kesk : th.dark ? th.line2 : th.line} />
+          <Rect x={x} y={v ? y : H - 28} width={bw} height={v ? Math.max(h, 4) : 4} rx={2} fill={v ? (i === 6 ? th.kesk : th.keskSoft) : th.line2} />
           {v ? <SvgText x={x + bw / 2} y={y - 5} fontSize={11} fontFamily="Nunito_800ExtraBold" textAnchor="middle" fill={th.ink}>{String(v)}</SvgText> : null}
           <SvgText x={x + bw / 2} y={H - 7} fontSize={11} fontFamily={i === 6 ? "Nunito_800ExtraBold" : "Nunito_700Bold"} textAnchor="middle" fill={i === 6 ? th.ink : th.muted}>{names[new Date(days[i] + "T12:00").getDay()]}</SvgText>
         </Svg>); })}
@@ -54,8 +56,11 @@ export default function Profile() {
           <View><Juji size={84} /></View>
         </View>
         <View style={{ flex: 1 }}>
-          <Text accessibilityRole="header" style={{ fontFamily: F.display, fontSize: TS.xxl, lineHeight: 38, color: th.ink }}>{t("learner")}</Text>
-          <Text style={{ fontFamily: F.bodySemi, color: th.muted }}>{t("learnerSub")}, {LANGS[li][1]}</Text>
+          <Text accessibilityRole="header" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7} style={{ fontFamily: F.display, fontSize: 30, lineHeight: 36, color: th.ink }}>{s.lg?.nick ?? t("learner")}</Text>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 4, marginLeft: -4 }}>
+            <CourseBadge id={s.course} size={22} />
+            <Text numberOfLines={2} style={{ flex: 1, fontFamily: F.bodySemi, fontSize: 14, color: th.muted }}>{COURSES.find((c) => c.id === s.course)?.name} · {LANGS[li][2]}</Text>
+          </View>
         </View>
         <Pressable onPress={() => router.push("/settings")} accessibilityRole="button" accessibilityLabel={t("settings")} hitSlop={6}
           style={({ pressed }) => ({ alignSelf: "flex-start", width: 44, height: 44, borderRadius: 12, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? th.surface2 : "transparent" })}>
@@ -68,6 +73,18 @@ export default function Profile() {
         {stat(<Icon.words size={22} color={th.kesk} />, learned(s).length, t("kWords"))}
         {stat(<Icon.trophy size={22} color={th.sky} />, `${units}/${UNITS.length}`, t("kUnits"), true)}
       </View>
+
+      <Pressable onPress={() => router.push("/league")} accessibilityRole="button" accessibilityLabel={t("lgTitle")}
+        style={({ pressed }) => ({ flexDirection: "row", alignItems: "center", gap: 14, padding: 14, borderRadius: 16, borderTopLeftRadius: 4, backgroundColor: th.panel, opacity: pressed ? 0.92 : 1 })}>
+        <Medallion size={58} color={TIERS[s.lgCache?.tier ?? 0].c} accent={th.zer} seed={(s.lgCache?.tier ?? 0) + 2} />
+        <View style={{ flex: 1, gap: 2 }}>
+          <Text style={{ fontFamily: F.display, fontSize: 20, color: th.panelInk }}>{s.lg && s.lgCache ? t("lgTier", { t: TIERS[s.lgCache.tier].ku }) : t("lgTitle")}</Text>
+          <Text style={{ fontFamily: F.body, fontSize: TS.sm, color: "rgba(246,240,228,0.8)" }}>
+            {s.lg && s.lgCache ? `${myRank(s.lgCache) ? t("lgRank", { n: myRank(s.lgCache) }) + " · " : ""}${t("lgFriendsN", { n: s.lgCache.friends.length })}` : t("lgCardSub")}
+          </Text>
+        </View>
+        <Text style={{ fontFamily: F.bodyHeavy, fontSize: 22, color: th.zer }}>›</Text>
+      </Pressable>
 
       <View style={{ gap: 12 }}>
         <H2>{t("levels")}</H2>
@@ -90,6 +107,7 @@ export default function Profile() {
           </View>
         </View>
         <Week />
+        {Object.keys(s.xpLog).filter((d) => d >= dayAdd(day(), -6)).every((d) => !s.xpLog[d]) ? <Text style={{ fontFamily: F.body, fontSize: TS.sm, color: th.muted, textAlign: "center" }}>{t("weekEmpty")}</Text> : null}
       </View>
 
       <View style={{ gap: 4 }}>
@@ -103,6 +121,7 @@ export default function Profile() {
             <View style={{ flex: 1 }}>
               <Text style={{ fontFamily: F.serif, fontSize: TS.md + 1, color: got ? th.ink : th.muted }}>{nm}</Text>
               <Text style={{ fontFamily: F.body, fontSize: TS.xs, color: th.muted }}>{ds}</Text>
+              {!got ? <View style={{ marginTop: 6 }}><Meter pct={(Math.min(v, max) / max) * 100} h={6} color={th.zer} /></View> : null}
             </View>
             {got ? <Icon.check size={20} color={th.keskDeep} /> : <Text style={{ fontFamily: F.bodyHeavy, fontSize: TS.xs, color: th.muted, fontVariant: ["tabular-nums"] }}>{Math.min(v, max)}/{max}</Text>}
           </View>); })}

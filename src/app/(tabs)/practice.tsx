@@ -38,13 +38,13 @@ export default function Practice() {
     { id: "combo", tx: t("qCombo"), v: d.bestCombo, max: 5, g: 20, ic: <Icon.fire size={26} color={th.fire} /> },
   ];
   const lgRank = s.lgCache ? myRank(s.lgCache) : 0;
-  const modes = [
+  const modes: { k: string; c: string; ic: React.ReactNode; ti: string; su: string; dis: boolean; need?: number[] }[] = [
     { k: "league", c: th.zer, ic: <Icon.trophy size={26} color="#2E1F00" />, ti: t("lgTitle"), su: s.lg && s.lgCache && lgRank ? t("lgCardRank", { t: TIERS[s.lgCache.tier].ku, n: lgRank }) : t("lgCardSub"), dis: false },
-    { k: "weak", c: th.kesk, ic: <Icon.redo size={26} />, ti: t("pWords"), su: lw.length < 4 ? t("pNeed4") : due ? t("pWordsDue", { n: due }) : t("pWordsSub", { n: weak.length }), dis: lw.length < 4 },
-    { k: "mistakes", c: th.sor, ic: <Icon.target size={26} color="#fff" />, ti: t("pMist"), su: t("pMistSub", { n: s.mistakes.length, m: s.msents.length }), dis: s.mistakes.length + s.msents.length < 2 },
-    { k: "listen", c: th.sky, ic: <Icon.ear size={26} color="#fff" />, ti: t("pListen"), su: s.set.voice ? t("pListenSub") : t("voiceOff"), dis: lw.length < 4 || !s.set.voice },
-    { k: "sprint", c: th.plum, ic: <Icon.bolt size={26} color="#fff" />, ti: t("pSprint"), su: t("pSprintSub"), dis: lw.length < 6 },
-    { k: "sounds", c: th.zer, ic: <Icon.ear size={26} color="#2E1F00" />, ti: t("pSounds"), su: s.set.voice ? t("pSoundsSub") : t("voiceOff"), dis: !soundsOk },
+    { k: "weak", c: th.kesk, ic: <Icon.redo size={26} />, ti: t("pWords"), su: lw.length < 4 ? t("pNeed4") : due ? t("pWordsDue", { n: due }) : t("pWordsSub", { n: weak.length }), dis: lw.length < 4, need: [lw.length, 4] },
+    { k: "mistakes", c: th.sor, ic: <Icon.target size={26} color="#fff" />, ti: t("pMist"), su: t("pMistSub", { n: s.mistakes.length, m: s.msents.length }), dis: s.mistakes.length + s.msents.length < 2, need: [s.mistakes.length + s.msents.length, 2] },
+    { k: "listen", c: th.sky, ic: <Icon.ear size={26} color="#fff" />, ti: t("pListen"), su: s.set.voice ? (lw.length < 4 ? t("pNeed4") : t("pListenSub")) : t("voiceOff"), dis: lw.length < 4 || !s.set.voice, need: s.set.voice ? [lw.length, 4] : undefined },
+    { k: "sprint", c: th.plum, ic: <Icon.bolt size={26} color="#fff" />, ti: t("pSprint"), su: lw.length < 6 ? t("pNeedN", { n: 6 }) : t("pSprintSub"), dis: lw.length < 6, need: [lw.length, 6] },
+    { k: "sounds", c: th.zer, ic: <Icon.ear size={26} color="#2E1F00" />, ti: t("pSounds"), su: s.set.voice ? (lw.length < 4 ? t("pNeed4") : t("pSoundsSub")) : t("voiceOff"), dis: !soundsOk, need: s.set.voice && courseId() === "kmr" ? [lw.length, 4] : undefined },
     { k: "read", c: th.kesk, ic: <Icon.book size={26} />, ti: t("pRead"), su: t("pReadSub"), dis: readable < 1 },
     ...(courseId() === "eng" ? [] : [{ k: "pod", c: th.plum, ic: <Icon.pod size={26} />, ti: t("pPod"), su: pods ? t("pPodSub") + ` · ${pods}` : t("podSoon"), dis: false },
       { k: "culture", c: th.zer, ic: <Icon.book size={26} color="#2E1F00" />, ti: t("cultTitle"), su: weekCard().title + (s.culture?.[weekCard().id] ? " ✓" : ` · ${t("cultNew")}`), dis: false },
@@ -86,10 +86,17 @@ export default function Practice() {
       <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", rowGap: 12 }}>
         {modes.map((m) => (
           <Pressable key={m.k} disabled={m.dis} onPress={() => { sfx("tap"); buzz("tap"); if (m.k === "read") router.push("/read"); else if (m.k === "league") router.push("/league"); else if (m.k === "pod") router.push("/podcasts"); else if (m.k === "bridge") router.push("/bridge"); else if (m.k === "culture") router.push("/culture"); else if (m.k === "alpha") router.push("/alpha"); else router.push({ pathname: "/lesson", params: { practice: m.k } }); }} accessibilityRole="button" accessibilityLabel={`${m.ti}. ${m.su}`} accessibilityState={{ disabled: m.dis }}
-            style={({ pressed }) => ({ width: "48.5%", minHeight: 132, padding: 14, gap: 6, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: th.line2, backgroundColor: th.surface, opacity: m.dis ? 0.55 : 1 })}>
-            <View style={{ width: 42, height: 42, borderRadius: 10, borderTopLeftRadius: 3, backgroundColor: m.c, alignItems: "center", justifyContent: "center" }}>{m.ic}</View>
-            <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: th.ink }}>{m.ti}</Text>
-            <Text style={{ fontFamily: F.body, fontSize: TS.xs, color: th.muted }}>{m.su}</Text>
+            style={({ pressed }) => ({ width: "48.5%", minHeight: 140, padding: 14, gap: 6, borderRadius: 14, borderTopLeftRadius: 4, borderWidth: 1.5, borderBottomWidth: m.dis ? 1.5 : pressed ? 1.5 : 4, marginTop: pressed && !m.dis ? 2.5 : 0, borderColor: th.line2, borderStyle: m.dis ? "dashed" : "solid", backgroundColor: m.dis ? th.bg : th.surface })}>
+            <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" }}>
+              <View style={{ width: 42, height: 42, borderRadius: 10, borderTopLeftRadius: 3, backgroundColor: m.dis ? th.line2 : m.c, alignItems: "center", justifyContent: "center" }}>{m.ic}</View>
+              {m.dis ? <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: th.surface2, alignItems: "center", justifyContent: "center" }}><Text style={{ fontSize: 13 }}>🔒</Text></View> : null}
+            </View>
+            <Text style={{ fontFamily: F.serif, fontSize: TS.lg, lineHeight: 24, color: m.dis ? th.muted : th.ink }}>{m.ti}</Text>
+            <Text style={{ fontFamily: m.dis ? F.bodySemi : F.body, fontSize: TS.xs, lineHeight: 17, color: m.dis ? th.ink : th.muted }}>{m.su}</Text>
+            {m.dis && m.need ? <View style={{ flexDirection: "row", alignItems: "center", gap: 8, marginTop: "auto" }}>
+              <View style={{ flex: 1 }}><Meter pct={(Math.min(m.need[0], m.need[1]) / m.need[1]) * 100} h={6} color={m.c} /></View>
+              <Text style={{ fontFamily: F.bodyHeavy, fontSize: 12, color: th.muted, fontVariant: ["tabular-nums"] }}>{Math.min(m.need[0], m.need[1])}/{m.need[1]}</Text>
+            </View> : null}
           </Pressable>))}
       </View>
     </ScrollView>
