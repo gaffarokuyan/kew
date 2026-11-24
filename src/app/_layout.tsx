@@ -9,7 +9,8 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { initAudio } from "@/lib/audio";
 import { t } from "@/lib/i18n";
-import { hydrate, switchCourse, tick } from "@/lib/store";
+import { getS, hydrate, switchCourse, tick } from "@/lib/store";
+import { backupNow, startAutoBackup } from "@/lib/backup";
 import { startLeagueSync, syncLeague } from "@/lib/league";
 import { scheduleReminders } from "@/lib/remind";
 import type { ErrorBoundaryProps } from "expo-router";
@@ -30,17 +31,20 @@ export default function RootLayout() {
     Alegreya_800ExtraBold: require("../../assets/fonts/Alegreya_800ExtraBold_lnum.ttf"), Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold });
 
   useEffect(() => {
-    let stopLeague: (() => void) | null = null;
+    let stopLeague: (() => void) | null = null, stopBackup: (() => void) | null = null;
     (async () => {
       const frozen = await hydrate();
       await initAudio();
       setReady(true);
       scheduleReminders();
-      stopLeague = startLeagueSync();
+      stopLeague = startLeagueSync(); stopBackup = startAutoBackup();
       if (frozen) setTimeout(() => toast(t("freezeUsed", { n: frozen })), 800);
     })();
-    const sub = AppState.addEventListener("change", (s) => { if (s === "active") { tick(); scheduleReminders(); syncLeague(); } });
-    return () => { sub.remove(); stopLeague?.(); };
+    const sub = AppState.addEventListener("change", (s) => {
+      if (s === "active") { tick(); scheduleReminders(); syncLeague(); }
+      else if (getS().backup?.auto) backupNow(); // leaving the app: save progress to the cloud
+    });
+    return () => { sub.remove(); stopLeague?.(); stopBackup?.(); };
   }, []);
   useEffect(() => { SystemUI.setBackgroundColorAsync(th.bg).catch(() => {}); }, [th.bg]);
   useEffect(() => { if (ready && fonts) SplashScreen.hideAsync().catch(() => {}); }, [ready, fonts]);

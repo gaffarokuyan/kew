@@ -10,6 +10,7 @@ import { LANGS, M, t, t2, tArr } from "@/lib/i18n";
 import { askReminder, scheduleReminders } from "@/lib/remind";
 import { setCkbScript, switchCourse, type Lang, update, useS } from "@/lib/store";
 import { ScriptOptions } from "@/ui/ScriptPicker";
+import { RestoreForm } from "@/ui/BackupCard";
 import { Juji, KilimRule, Medallion } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
 import { Btn, Lead, Title, toast } from "@/ui/kit";
@@ -69,7 +70,7 @@ export default function Onboarding() {
     backgroundColor: on ? th.skySoft : th.surface, borderWidth: on ? 2 : 1.5, borderBottomWidth: pressed ? 1.5 : 4, marginTop: pressed ? 2.5 : 0, borderColor: on ? th.sky : th.line2,
   });
   const tap = () => { sfx("tap"); buzz("select"); };
-  const back = step === 0 ? null : step === 5 ? 0 : step === 6 ? 5 : step === 9 ? (courseId() === "ckb" ? 6 : 5) : step === 2 ? 9 : step === 3 ? 2 : step === 10 ? 3 : step === 7 ? (native && !s.remind ? 10 : 3) : step === 8 ? (jt ? 7 : 3) : step === 4 ? 7 : null;
+  const back = step === 0 ? null : step === 5 || step === 11 ? 0 : step === 6 ? 5 : step === 9 ? (courseId() === "ckb" ? 6 : 5) : step === 2 ? 9 : step === 3 ? 2 : step === 10 ? 3 : step === 7 ? (native && !s.remind ? 10 : 3) : step === 8 ? (jt ? 7 : 3) : step === 4 ? 7 : null;
   const prog = [0, 5, 6, 9, 2, 3, 10, 7, 8, 4].indexOf(step) / 9;
   const curLang = LANGS.find(([c]) => c === s.lang) ?? LANGS[0];
   return (
@@ -112,7 +113,7 @@ export default function Onboarding() {
           </View>
           <View style={{ gap: 12, width: "100%", maxWidth: 440, alignSelf: "center" }}>
             <Btn title={t("welcomeStart")} onPress={() => { tap(); setStep(5); }} />
-            <Pressable onPress={() => toast(t("loginSoon"))} accessibilityRole="button" style={{ alignSelf: "center", paddingVertical: 10 }}>
+            <Pressable onPress={() => { tap(); setStep(11); }} accessibilityRole="button" style={{ alignSelf: "center", paddingVertical: 10 }}>
               <Text style={{ fontFamily: F.body, fontSize: TS.md, color: "rgba(246,240,228,0.85)" }}>{t("haveAccount")} <Text style={{ fontFamily: F.bodyHeavy, color: th.zer }}>{t("signIn")}</Text></Text>
             </Pressable>
           </View>
@@ -135,6 +136,11 @@ export default function Onboarding() {
                 </Pressable>); })}
             </View>
             <Lead align="left">{t("onbCourseText")}</Lead>
+          </>}
+          {step === 11 && <>
+            <Ask text={t("bkWelcomeQ")} />
+            <Lead align="left">{t("bkWelcomeText")}</Lead>
+            <RestoreForm onDone={() => { router.replace("/(tabs)"); }} />
           </>}
           {step === 6 && <ScriptOptions onPick={(m) => { tap(); setCkbScript(m); setStep(9); }} />}
           {step === 9 && <>

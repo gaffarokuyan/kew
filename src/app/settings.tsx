@@ -6,6 +6,7 @@ import { speak } from "@/lib/audio";
 import { LANGS, M, t, tArr } from "@/lib/i18n";
 import { type Lang, resetAll, setCkbScript, switchCourse, update, useS } from "@/lib/store";
 import { coursesFor, type CourseId, type Script } from "@/lib/course";
+import { BackupCard } from "@/ui/BackupCard";
 import { CourseRow } from "@/ui/CourseBadge";
 import { Icon } from "@/ui/icons";
 import { Btn, toast } from "@/ui/kit";
@@ -60,6 +61,10 @@ export default function Settings() {
           {s.course === "eng" ? <Note>{t("courseNoteEng")}</Note> : null}
           {s.course === "ckb" ? <><L>{t("scriptSet")}</L>
             <Seg items={[{ v: "ar", l: t("scriptAr") }, { v: "lat", l: t("scriptLat") }, { v: "both", l: t("scriptBoth") }]} value={s.ckbScript || "both"} onPick={(v) => setCkbScript(v as Script)} /></> : null}
+        </Card>
+
+        <Card title={t("bkTitle")}>
+          <BackupCard />
         </Card>
 
         <Card title={t("baseLang")}>

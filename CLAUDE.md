@@ -39,7 +39,7 @@ src/app/            Ekranlar (Expo Router). (tabs)/ = Öğren, Pratik, Kelimeler
   podcasts.tsx      Podcast listesi (üstte seviye seçici A1/A2, seçim store.podLvl'de)
   episode.tsx       Podcast oynatıcı (oynat/duraklat, ±10 sn, hız, satır takibi, sonda 3 soru)
   shop.tsx          Mağaza (yalnızca elmas, gerçek para yok): çift XP 15 dk, sınırsız can 60 dk, can doldur, seri dondurma, Juji atkıları (art.tsx SCARVES), promosyon kodları (PROMO)
-  onboarding.tsx    Karşılama (Juji, köşede 🌐 arayüz dili, Öğrenmeye başla / Giriş yap=yakında) → kurs → (Soranî alfabe) → Neden öğreniyorsun (store.why) → seviye → günlük hedef (dk) → hatırlatma (yalnız mobil) → başlangıç yeri → ilk ders
+  onboarding.tsx    Karşılama (Juji, köşede 🌐 arayüz dili, Öğrenmeye başla / Giriş yap = yedek koduyla geri yükleme) → kurs → (Soranî alfabe) → Neden öğreniyorsun (store.why) → seviye → günlük hedef (dk) → hatırlatma (yalnız mobil) → başlangıç yeri → ilk ders
   plus.tsx          Juji Plus ekranı (ücretsiz/Plus tablosu, aylık/yıllık, 7 gün deneme). Fiyatlar yer tutucu; satın alma henüz bağlı değil
   settings.tsx _layout.tsx (ErrorBoundary burada)
 src/lib/
@@ -60,6 +60,7 @@ src/content/
   audioMap.ts       ÜRETİLMİŞ: Kurmancî metin -> assets/audio/<hash>.mp3
   podcasts.json     ÜRETİLMİŞ: tools/podcast/build.py
 supabase/functions/juji-stt/   STT köprüsü (deploy edilmiş; anahtar Supabase secret KURDISH_STT_KEY)
+supabase/functions/juji-backup/ Bulut yedeği: 12 haneli yedek kodu (sunucuda yalnızca hash'i), save/load/delete; tablo juji_backup. İstemci: src/lib/backup.ts (otomatik: ilerleme değişince 2 dk sonra ve uygulamadan çıkarken), src/ui/BackupCard.tsx (Ayarlar + karşılamadaki Giriş yap)
 supabase/functions/juji-league/ Haftalık lig + arkadaşlar (verify_jwt kapalı, başlık x-juji-app; tablolar juji_players/juji_week/juji_friends, yalnızca fonksiyon erişir)
 tools/podcast/      İçerik ve ses üretim betikleri (bkz. §4–5)
 arsiv/ses-eski/     Eski ses kayıtları (uygulamada kullanılmıyor; geri dönüş için README var)

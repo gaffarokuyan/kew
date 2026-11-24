@@ -51,6 +51,8 @@ export type State = {
   why?: string;
   /** Juji Plus subscription/trial (written by billing once Plus is switched on; see lib/plus.ts). */
   plus?: { until?: number; product?: string; trialUsed?: boolean };
+  /** Cloud backup: recovery code (only its hash is on the server), auto on/off, last successful backup time. */
+  backup?: { code: string; auto: boolean; at?: number };
   outfit?: string; owned?: string[]; boostUntil?: number; infUntil?: number; promo?: string[];
 };
 const DEF = (): State => ({
@@ -93,6 +95,14 @@ export async function hydrate() {
   } catch {}
   loadCourse(S.course || "kmr", S.ckbScript || "both");
   return tick();
+}
+/** Replace the whole state with a restored backup (merged over defaults like hydrate), then persist. */
+export function replaceState(raw: Partial<State>) {
+  const d = DEF();
+  const r = raw as State;
+  S = { ...d, ...r, set: { ...d.set, ...(r.set || {}) }, daily: { ...d.daily, ...(r.daily || {}) }, stats: { ...d.stats, ...(r.stats || {}) } } as State;
+  loadCourse(S.course || "kmr", S.ckbScript || "both");
+  update(() => {});
 }
 /** Change the Soranî alphabet. Progress is keyed by the shown text, so re-key it between Arabic and Latin. */
 export function setCkbScript(m: Script) {
