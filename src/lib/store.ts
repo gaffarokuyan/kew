@@ -49,6 +49,8 @@ export type State = {
   /** Shop: Juji's scarf, scarves owned, double-XP and unlimited-hearts end times, promo codes used. */
   /** Why the learner is learning (onboarding answer), personalises Juji's lines. */
   why?: string;
+  /** Juji Plus subscription/trial (written by billing once Plus is switched on; see lib/plus.ts). */
+  plus?: { until?: number; product?: string; trialUsed?: boolean };
   outfit?: string; owned?: string[]; boostUntil?: number; infUntil?: number; promo?: string[];
 };
 const DEF = (): State => ({

@@ -4,6 +4,7 @@ import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollVie
 import Animated, { Easing, FadeIn, FadeInDown, SlideInDown, SlideInRight, useAnimatedStyle, useSharedValue, withSequence, withSpring, withTiming, ZoomIn } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import { explain, unitTipFor } from "@/lib/explain";
+import { hasPlus, PLUS_ENABLED } from "@/lib/plus";
 import { askReminder, scheduleReminders } from "@/lib/remind";
 import { hasAudio, speak, sfx, stopVoice } from "@/lib/audio";
 import { altForms, arOf, CKB_KEYS, isRtl, latSub } from "@/lib/script";
@@ -79,6 +80,7 @@ export default function Lesson() {
     if (init.practice) return;
     if (isJump) { setLives((l) => { const n = l - 1; return n; }); return; }
     if ((getS().infUntil ?? 0) > Date.now()) return; // unlimited hearts from the shop
+    if (PLUS_ENABLED && hasPlus()) return; // Juji Plus: unlimited hearts
     update((x) => { x.hearts = Math.max(0, x.hearts - 1); if (x.hearts === MAXH - 1) x.heartAt = Date.now(); });
   };
 

@@ -64,6 +64,7 @@ export default function RootLayout() {
           <Stack.Screen name="culture" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="league" options={{ animation: "slide_from_right" }} />
           <Stack.Screen name="shop" options={{ animation: "slide_from_bottom" }} />
+          <Stack.Screen name="plus" options={{ animation: "slide_from_bottom" }} />
           <Stack.Screen name="settings" options={{ presentation: "modal" }} />
         </Stack>
         <ConfettiHost />

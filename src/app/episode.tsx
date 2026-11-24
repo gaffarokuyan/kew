@@ -9,6 +9,7 @@ import { shuffle } from "@/lib/exercises";
 import { M, t } from "@/lib/i18n";
 import { episode, episodesFor, fmt, lineAt, titleOf, loadPods, usePodsVersion, type PodLine } from "@/lib/podcast";
 import { canOffline, download, localAudio } from "@/lib/offline";
+import { plusAllows, requirePlus } from "@/lib/plus";
 import { addXP, getS, update } from "@/lib/store";
 import { Avatar, KilimRule } from "@/ui/art";
 import { buzz } from "@/ui/haptics";
@@ -50,6 +51,7 @@ export default function EpisodeScreen() {
   const rtl = /[\u0600-\u06FF]/.test(main(e.lines[0]));
   const save = async () => {
     if (dl === "busy" || dl === "yes") return;
+    if (!plusAllows()) { requirePlus(() => {}); return; } // offline download is a Plus feature once Plus is on
     setDl("busy"); const ok = await download(e); setDl(ok ? "yes" : "err"); buzz(ok ? "ok" : "bad");
   };
   const close = () => { try { player.pause(); } catch {} stopVoice(); router.back(); };

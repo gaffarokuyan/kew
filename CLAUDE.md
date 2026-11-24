@@ -40,6 +40,7 @@ src/app/            Ekranlar (Expo Router). (tabs)/ = Öğren, Pratik, Kelimeler
   episode.tsx       Podcast oynatıcı (oynat/duraklat, ±10 sn, hız, satır takibi, sonda 3 soru)
   shop.tsx          Mağaza (yalnızca elmas, gerçek para yok): çift XP 15 dk, sınırsız can 60 dk, can doldur, seri dondurma, Juji atkıları (art.tsx SCARVES), promosyon kodları (PROMO)
   onboarding.tsx    Karşılama (Juji, köşede 🌐 arayüz dili, Öğrenmeye başla / Giriş yap=yakında) → kurs → (Soranî alfabe) → Neden öğreniyorsun (store.why) → seviye → günlük hedef (dk) → hatırlatma (yalnız mobil) → başlangıç yeri → ilk ders
+  plus.tsx          Juji Plus ekranı (ücretsiz/Plus tablosu, aylık/yıllık, 7 gün deneme). Fiyatlar yer tutucu; satın alma henüz bağlı değil
   settings.tsx _layout.tsx (ErrorBoundary burada)
 src/lib/
   course.ts         Kurs yükleme: loadCourse(id, script) tabloları yerinde değiştirir; Soranî Latin dönüşümü (LAT)
@@ -47,6 +48,7 @@ src/lib/
   exercises.ts      Ders üretimi, SRS tekrar aralıkları
   audio.ts          speak(text): metni audioMap'te arar ve çalar; sfx
   speech.ts         Konuşma alıştırması: kayıt → Supabase "juji-stt" → kurdishtts STT (XHR ile, expo/fetch FormData göndermiyor)
+  plus.ts           Juji Plus anahtarı: PLUS_ENABLED=false iken hiçbir şey kilitli değil ve Plus'a giriş noktası görünmez. Açmadan önce: Play ödeme hesabı, juji_plus_monthly/yearly (7 gün deneme) abonelikleri, RevenueCat (dev/EAS build), sunucu doğrulaması. Kilitler: sınırsız can (lesson.tsx), podcast indirme (episode.tsx)
   podcast.ts        Podcast şeması + uzaktan manifest (gh-pages/podcasts.json, yüksek version kazanır)
   script.ts i18n.ts nodes.ts
 src/ui/             Tema, ikonlar, maskot çizimleri, ortak bileşenler, TopBar (kurs seçici), ScriptPicker
@@ -168,4 +170,5 @@ Claude sesi **dinleyemez**; doğrulama yalnızca STT ile. Şüpheli satırları 
 - Zazakî ve Soranî içeriğin anadili konuşan biri tarafından gözden geçirilmesi.
 - Soranî / Zazakî ders sesleri (Zazakî için TTS yok).
 - B2 seviyesi (istendi, ertelendi).
+- Juji Plus'ı açmak (kullanıcı kararı: altyapı hazır, Play'de yayın ve ilk birkaç yüz kullanıcıdan sonra). Dersler her zaman ücretsiz kalacak.
 - Play Console: gizlilik sayfası (mikrofon), Data safety formu, kapalı test için AAB yükleme — kullanıcı yapar.
