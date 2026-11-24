@@ -1,22 +1,16 @@
 # Kurdish STT hâlâ î duyuyor (dinleyerek kontrol edilecek)
 didan	ec317032cd.mp3	duyulan: Dîdan
-di … de	c1a11c7452.mp3	duyulan: Dî. 10.
-Ez qet naçim wir.	2090010bae.mp3	duyulan: Ez qet naçim wîr.
 Xwişka min dergistî ye.	ca69b98059.mp3	duyulan: Xwîşka min dergîştiye.
 biraştî	76dbdc5409.mp3	duyulan: Bîraştî
 cilşo	a37b0f8ebd.mp3	duyulan: Cîlşo!
 Ez alîkariya dayika xwe dikim.	407edb1390.mp3	duyulan: Ez alîkariya dayîka xwe dikim.
 werziş	f521c4440a.mp3	duyulan: Werzîş!
-dirûn	b4ea893eda.mp3	duyulan: Dîrûn
 farisî	2479fe8f76.mp3	duyulan: Farîsî
 bi- … -e / -in	c5358b9be7.mp3	duyulan: Bi e în.
 Telefon û televizyon hebûn?	c3fb804dc9.mp3	duyulan: Telefon û televîzyon hebûn?
 Me televizyon seyr dikir.	5ee7659c11.mp3	duyulan: Me televîzyon seyr dikir.
-çiraya sor	5797c7cd51.mp3	duyulan: Çîraya Sor
 xemilîn	821b839a49.mp3	duyulan: Xemîlîn.
 Ji bo ku tu tendurist bimînî, divê tu werziş bikî.	c534bd708d.mp3	duyulan: Ji bo ku tu tendurist bimînî, divê tu werzîş bikî.
-Ez dixwazim li zanîngehê beşa zimanzaniyê bixwînim.	67ccfbe66c.mp3	duyulan: Ez dixwazim li zanîngehê beşa zimanzanîyê bixwînim.
-Xwişka min par ji beşa dîrokê mezûn bû û bawernameya xwe wergirt.	b85436096b.mp3	duyulan: Xwîşka min par ji beşa dîrokê mezlum bû û bawermendariya xwe wergirt.
 Zimanê dayikê nasnameya mirov e, divê em wî biparêzin.	21cae875d5.mp3	duyulan: Zimanê dayîkê, nasnameya mirov e, divê em wî biparêzin.
 Şevbaş, dayik.	41b651fa67.mp3	duyulan: Şev baş, dayîk.
 di- + kök + -im	df5907118c.mp3	duyulan: Dîn, artê, kek, artê, îm
@@ -24,5 +18,5 @@ eger + bi-	002335667d.mp3	duyulan: Eger klas bî
 neynik	5fabc934de.mp3	duyulan: Neynîk, neynîk
 pijandin	8539a3491b.mp3	duyulan: Pîjandîn
 komir	4cc195e00a.mp3	duyulan: Komîr!
-dirûtin	fa1fe7873d.mp3	duyulan: Dirûtîn
 dims	5927205243.mp3	duyulan: Dîms
+Xwişka min par ji beşa dîrokê mezûn bû û bawernameya xwe wergirt.	b85436096b.mp3	duyulan: Xwîşka min par ji beşa dîrokê mezlum bû û bawermendariya xwe wergirt.
