@@ -17,7 +17,7 @@ Bu dosya, projeye başka bir Claude oturumundan / hesabından devam edebilmek i�
 | Paket | `com.okuyanstudio.jujilang` |
 | Depo / dal | `gaffarokuyan/kew`, çalışma dalı **`b1-kilim-tasarim`** (main'e push yok) |
 | Web sürümü | https://gaffarokuyan.github.io/kew/ (`gh-pages` dalı) |
-| Sürüm | `app.json` → `version` / `android.versionCode` (şu an 1.0.3 / 4) |
+| Sürüm | `app.json` → `version` / `android.versionCode` (şu an 1.0.4 / 5) |
 | Teknoloji | Expo SDK 58, React Native 0.88, Expo Router, expo-audio, Reanimated, react-native-svg, Hermes |
 
 ### Kurslar
